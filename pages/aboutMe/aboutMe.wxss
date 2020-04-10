@@ -127,11 +127,21 @@
   color: #969696;
   line-height: 28rpx;
 }
+.container .bookinfo-container .book-comment .cover-image {
+  width: 80rpx;
+  height: 96rpx;
+  margin-bottom: 16rpx;
+}
 .container .bookinfo-container .book-record {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.container .bookinfo-container .book-record .cover-image {
+  width: 80rpx;
+  height: 96rpx;
+  margin-bottom: 16rpx;
 }
 .container .bookinfo-container .book-record .comment-num {
   width: auto;
@@ -200,6 +210,28 @@
   justify-content: center;
   align-items: flex-start;
   margin-left: 20rpx;
+}
+.container .aboutme-container .my-block .my-left .my-info .my-info-num {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  letter-spacing: 14rpx;
+  margin-top: 6rpx;
+  line-height: 28rpx;
+}
+.container .aboutme-container .my-block .my-left .my-info .green {
+  color: #009051;
+}
+.container .aboutme-container .my-block .my-left .my-info .deepGrey {
+  color: #517da8;
+}
+.container .aboutme-container .my-block .my-left .my-info .deepYellow {
+  color: #cba571;
+}
+.container .aboutme-container .my-block .my-left .my-info .deepBlue {
+  color: #0091ff;
 }
 .container .aboutme-container .my-block .my-all {
   margin-right: 30rpx;

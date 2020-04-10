@@ -9,8 +9,8 @@
   "window": {
  "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F96D3D",
-    "navigationBarTitleText": "ColorUI",
-    "navigationStyle": "custom",
+    "navigationBarTitleText": "WeChat",
+    "navigationStyle": "default", 
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
@@ -19,7 +19,7 @@
   "tabBar": {
       "custom": false,
       "color": "#a9b7b7",
-      "selectedColor": "#11cd6e",
+      "selectedColor": "#F96D3D",
       "borderStyle": "black",
     "list": [
     {

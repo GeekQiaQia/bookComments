@@ -1,13 +1,52 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+	<!--轮播图-->
+	<view style="width: 100%;">
+	  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+		<swiper-item wx:for="{{swiperList}}" wx:key="key">
+		  <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+		  <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+		</swiper-item>
+	  </swiper>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="card-container">
+	  <view class="card-item">
+		  <view class="card-item-title">
+			  <view class="avatar">
+				 <text class="cuIcon-people"></text>
+			  </view>
+			  <view class="basicinfo">
+				  <view>
+					  <text class="name">林间小路</text><text class="notice">转发</text>
+				  </view>
+				  <view>
+				  		<text class="time">2019-10-12</text><text class="star fill"> 
+						<text class="cuIcon-favorfill lg text-gray"></text>
+						<text class="cuIcon-favorfill lg text-gray"></text>
+						<text class="cuIcon-favorfill lg text-gray"></text>
+						<text class="cuIcon-favorfill lg text-gray"></text>
+						<text class="cuIcon-favorfill lg text-gray"></text>
+						</text>
+				  </view>
+			  </view>
+			  
+		  </view>
+		  <view class="content-container">
+		  		<text class="resume">看书之后，震撼人心，书中对主角阿米尔的心里描写很深刻，也揭露人性的灰色地带，小时候评判世界的标准就是好人与坏人之区别，长大了与复杂社会的碰撞，每一次碰壁也慢慢了解人性这中不仅有黑白之分，还有…</text>
+				
+		  </view>
+		  <view class="releation-container">
+			  <view class="releation-info">
+				  <text class="releation ">1006有用 · </text>
+				  <text class="releation ">35回复 · </text>
+				  <text class="releation ">8转发</text>
+			  </view>
+			  <view class="book-info">
+			  				  <text class="book-name">《追风筝的人》</text>
+			  				   <text class="cuIcon-right lg text-gray"></text>
+			  </view>
+			
+		  </view>
+	  </view>
   </view>
 </view>

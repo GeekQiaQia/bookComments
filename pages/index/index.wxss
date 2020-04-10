@@ -1,21 +1,131 @@
-/**index.wxss**/
-.userinfo {
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+.card-container {
+  height: auto;
+  width: 100%;
+  margin-bottom: 32rpx;
+}
+.card-container .card-item {
+  width: 750rpx;
+  height: 352rpx;
+  background: #ffffff;
+  padding: 0rpx 30rpx 16rpx 32rpx;
+}
+.card-container .card-item .card-item-title {
+  height: 96rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.card-container .card-item .card-item-title .avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background-color: #f8f7ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.card-container .card-item .card-item-title .basicinfo {
+  width: auto;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.card-container .card-item .card-item-title .basicinfo .name {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 34rpx;
+  margin: 2rpx  16rpx 2rpx 0rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.card-container .card-item .card-item-title .basicinfo .notice {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 34rpx;
+}
+.card-container .card-item .card-item-title .basicinfo .time {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 28rpx;
+  margin-right: 10rpx;
+}
+.card-container .card-item .card-item-title .basicinfo .star {
+  width: 20rpx;
+  height: 20rpx;
+}
+.card-container .card-item .card-item-title .basicinfo .star .fill {
+  color: #F96D3D;
+}
+.card-container .card-item .card-item-title .basicinfo .star .unfill {
+  color: #A3A3A4;
+}
+.card-container .card-item .content-container {
+  width: auto;
+  height: auto;
+  margin-top: 32rpx;
+}
+.card-container .card-item .content-container .resume {
+  width: 688rpx;
+  height: 157rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 39rpx;
+}
+.card-container .card-item .releation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+}
+.card-container .card-item .releation-container .releation-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card-container .card-item .releation-container .releation-info .releation {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 32rpx;
+}
+.card-container .card-item .releation-container .book-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.card-container .card-item .releation-container .book-info .book-name {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 32rpx;
 }
