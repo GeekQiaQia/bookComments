@@ -1,0 +1,118 @@
+<!--pages/aboutMe/aboutMe.wxml-->
+<view class="container">
+	<view class="avatar-container">
+		<view class="userinfo">
+			<block wx:if="{{!hasUserInfo && canIUse}}">
+				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				<view class="userinfo-basic">
+					<text class="userinfo-nickname">{{loginInfo.name}}</text>
+					<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+				</view>
+			</block>
+			<block wx:else>
+				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				<view class="userinfo-basic">
+					<text class="userinfo-nickname">{{loginInfo.name}}</text>
+					<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+				</view>
+			</block>
+		</view>
+
+	</view>
+	<view class="login-container"  wx:if="{{!hasUserInfo && canIUse}}">
+		<block>
+			<text class="login-tip">登录书评，查看更多信息</text>
+			<button class="login-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信快捷登录 </button>
+		</block>
+	</view>
+	<view class="follow-container">
+			<view class="follow-info">
+				<text>0</text><text style="margin-left: 42rpx;">我关注的人</text>
+			</view>
+			<view class="split"></view>
+			<view class="follow-info">
+				<text>0</text><text style="margin-left: 42rpx;" >关注我的人</text>
+			</view>
+	</view>
+	<view class="bookinfo-container">
+		<view class="book-comment">
+			<text class="comment-title">我的书评</text>
+			<text class="comment-num">0条</text>
+		</view>
+		<view class="book-record">
+			<text class="comment-title">读书笔记</text>
+			<text class="comment-num">0条</text>
+		</view>
+	</view>
+	<view class="aboutme-container">
+		<view class="aboutme-split">
+			<view class="split"></view>
+			<text class="title">我的内容</text>
+		</view>
+		<view class="my-block">
+			
+			<view class="my-left">
+				<view class="icon">
+					<text class="cuIcon-message lg text-gray"></text>
+				</view>
+				<view class="my-info">
+					<text>我的回复</text>
+					<text>0条</text>
+				</view>
+			</view>
+			<view class="my-all">
+				全部
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+		<view class="my-block">
+		
+			<view class="my-left">
+				<view class="icon">
+					<text class="cuIcon-message lg text-gray"></text>
+				</view>
+				<view class="my-info">
+					<text>我的推荐</text>
+					<text>0条</text>
+				</view>
+			</view>
+			<view class="my-all">
+				全部
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+		<view class="my-block">
+			
+			
+			<view class="my-left">
+				<view class="icon">
+					<text class="cuIcon-message lg text-gray"></text>
+				</view>
+				<view class="my-info">
+					<text>我的历史</text>
+					<text>0条</text>
+				</view>
+			</view>
+			<view class="my-all">
+				全部
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+		<view class="my-block">
+			
+			<view class="my-left">
+				<view class="icon">
+					<text class="cuIcon-message lg text-gray"></text>
+				</view>
+				<view class="my-info">
+					<text>我的消息</text>
+					<text>0条</text>
+				</view>
+			</view>
+			<view class="my-all">
+				全部
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+	</view>
+</view>

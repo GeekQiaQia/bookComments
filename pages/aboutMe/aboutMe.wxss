@@ -1,0 +1,206 @@
+.container .avatar-container {
+  width: 750rpx;
+  height: 192rpx;
+  background: #f96d3d;
+}
+.container .avatar-container .userinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ffffff;
+}
+.container .avatar-container .userinfo .userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-color: #EFEFF4;
+}
+.container .avatar-container .userinfo .userinfo-basic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container .avatar-container .userinfo .userinfo-basic .userinfo-nickname {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 48rpx;
+}
+.container .avatar-container .userinfo .userinfo-basic .userinfo-signature {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #efeff4;
+  line-height: 28rpx;
+}
+.container .login-container {
+  margin-top: 364rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.container .login-container .login-tip {
+  width: 308rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+}
+.container .login-container .login-btn {
+  width: 368rpx;
+  height: 80rpx;
+  margin-top: 40rpx;
+  background: #07c160;
+  border-radius: 8rpx;
+  color: #ffffff;
+}
+.container .follow-container {
+  width: 750rpx;
+  height: 112rpx;
+  background: #f96d3d;
+  box-shadow: 0rpx 2rpx 0rpx 0rpx #b8b8b8;
+  border-top: 1rpx solid #B8B8B8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .follow-container .follow-info {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .follow-container .split {
+  width: 2rpx;
+  height: 68rpx;
+  border: 1rpx solid #B8B8B8;
+}
+.container .bookinfo-container {
+  width: 100%;
+  height: 256rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .bookinfo-container .comment-title {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .bookinfo-container .book-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .bookinfo-container .book-comment .comment-num {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 28rpx;
+}
+.container .bookinfo-container .book-record {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .bookinfo-container .book-record .comment-num {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 28rpx;
+}
+.container .aboutme-container {
+  margin-top: 16rpx;
+  height: 592rpx;
+  width: 100%;
+  background: #ffffff;
+}
+.container .aboutme-container .aboutme-split {
+  height: 80rpx;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 32rpx ;
+}
+.container .aboutme-container .aboutme-split .split {
+  margin-left: 32rpx ;
+  margin-right: 12rpx;
+  width: 4rpx;
+  height: 36rpx;
+  border: 1rpx solid #f96d3d;
+}
+.container .aboutme-container .aboutme-split .title {
+  width: 136rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+}
+.container .aboutme-container .my-block {
+  width: 100%;
+  height: 128rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e2e2e2;
+  border-bottom: 1rpx solid #E2E2E2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .aboutme-container .my-block .my-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .aboutme-container .my-block .my-left .icon {
+  margin-left: 32rpx;
+  margin-right: 20rpx;
+}
+.container .aboutme-container .my-block .my-left .my-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 20rpx;
+}
+.container .aboutme-container .my-block .my-all {
+  margin-right: 30rpx;
+}

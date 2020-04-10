@@ -1,0 +1,44 @@
+{
+  "pages": [
+   "pages/index/index",
+   "pages/aboutMe/aboutMe",
+   "pages/findOut/findOut",
+   "pages/hotRecommend/hotRecommend",
+   "pages/logs/logs"
+  ],
+  "window": {
+ "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F96D3D",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+      "custom": false,
+      "color": "#a9b7b7",
+      "selectedColor": "#11cd6e",
+      "borderStyle": "black",
+    "list": [
+    {
+        
+          "pagePath": "pages/index/index",
+           "text": "发现"  
+  
+    },
+      {
+        "pagePath": "pages/hotRecommend/hotRecommend",
+        "text": "热门书评"
+      },
+      {
+        "pagePath": "pages/aboutMe/aboutMe",
+        "text": "我的"
+        
+      }
+  ]  
+  
+  },
+  "sitemapLocation": "sitemap.json"
+}
