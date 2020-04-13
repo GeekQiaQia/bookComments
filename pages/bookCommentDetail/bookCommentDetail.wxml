@@ -1,0 +1,38 @@
+<!--pages/bookCommentDetail/bookCommentDetail.wxml-->
+<view class="container">
+	<view class="book-card">
+		
+			<cover-image
+	                class="cover-image"
+	                src="{{bookInfo.url}}"
+	                bindload="imageLoad"
+	                binderror="imageError">
+	            </cover-image>
+				<view class="info-detail">
+					<text class="name">《一个人的朝圣》</text>
+			        <commentStars  model:stars="{{bookInfo.star}}"></commentStars>
+					<text class="commentsNum">30686人评分</text>
+					<view class="info-obj">
+						<text class="info-key spacing">作者：</text>
+						<text class="info-value">蕾秋·乔伊斯(Rachel Joyce)</text>
+					</view>
+					<view class="info-obj">
+						<text class="info-key spacing">译者：</text>
+						<text class="info-value">黄妙瑜</text>
+					</view>
+					<view class="info-obj">
+						<text class="info-key spacing">类别：</text>
+						<text class="info-value">文学</text>
+					</view>
+					<view class="info-obj">
+						<text class="info-key one-spacing">出版社：</text>
+						<text class="info-value">北京联合出版公司</text>
+					</view>
+					<view class="info-obj">
+						<text class="info-key">出版年份:</text>
+						<text class="info-value">2013年9月</text>
+					</view>
+					
+				</view>
+	</view>
+</view>

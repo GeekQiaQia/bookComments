@@ -1,0 +1,32 @@
+/* components/commentStars/commentStars.wxss */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .star {
+  width: 20rpx;
+  height: 20rpx;
+}
+.container .cuIcon-people:before {
+  content: "\e736";
+}
+.container .cuIcon-favorfill:before {
+  content: "\e64b";
+}
+.container .cuIcon-right:before {
+  content: "\e6a3";
+}
+.container .text-gray,
+.container .line-gray,
+.container .lines-gray {
+  color: #aaaaaa;
+}
+.container .text-orange {
+  color: #F96D3D;
+}
+.container .lg {
+  width: 80upx;
+  height: 80upx;
+}

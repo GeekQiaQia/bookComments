@@ -1,0 +1,76 @@
+.book-card {
+  width: 688rpx;
+  height: 288rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16rpx;
+}
+.book-card .cover-image {
+  width: 176rpx;
+  height: 256rpx;
+  margin-right: 32rpx;
+}
+.book-card .info-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.book-card .info-detail .name {
+  width: 272rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 48rpx;
+}
+.book-card .info-detail .commentsNum {
+  width: 108rpx;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.book-card .info-detail .info-obj {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.book-card .info-detail .info-obj .spacing {
+  letter-spacing: 20rpx;
+}
+.book-card .info-detail .info-obj .one-spacing {
+  letter-spacing: 7rpx;
+}
+.book-card .info-detail .info-obj .info-key {
+  width: 126rpx;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.book-card .info-detail .info-obj .info-value {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #576b95;
+  text-align: left;
+  line-height: 32rpx;
+}

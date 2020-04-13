@@ -4,6 +4,7 @@
    "pages/aboutMe/aboutMe",
    "pages/findOut/findOut",
    "pages/hotRecommend/hotRecommend",
+   "pages/bookCommentDetail/bookCommentDetail",
    "pages/logs/logs"
   ],
   "window": {
