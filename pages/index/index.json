@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+	"enablePullDownRefresh":true,
+  "usingComponents": {
+	   "cardItem":"../../components/cardItem/cardItem"
+  },
   "navigationBarTitleText": "发现"
 }

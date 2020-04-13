@@ -1,0 +1,57 @@
+<!--pages/aboutMe/aboutMe.wxml-->
+<view class="container">
+	<view wx:for="{{cardInfo}}" wx:key="index">
+		
+	
+  <view class="card-container">
+	  <view class="card-item">
+		  <view class="card-item-title">
+			  <view class="avatar">
+				<cover-image
+				                class="cover-image"
+				                src="{{item.iconUrl}}"
+				                bindload="imageLoad"
+				                binderror="imageError">
+				            </cover-image>
+			  </view>
+			  <view class="basicinfo">
+				  <view>
+					  <text class="name">{{item.name}}</text><text class="notice">{{item.notice}}</text>
+				  </view>
+				  <view>
+				  		<text class="time">{{item.time}}</text><text class="star fill"> 
+						
+						<block wx:for="{{item.star}}" wx:key="index"> 
+							<text  class="cuIcon-favorfill lg text-orange"></text>
+						</block>
+						<block wx:for="{{starMax-item.star}}" wx:key="index">
+							<text class="cuIcon-favorfill lg text-gray"></text>
+						</block>
+
+						</text>
+				  </view>
+			  </view>
+			  
+		  </view>
+		  
+		  <view class="content-container">
+		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.resume}}</text>
+		  </view>
+		  
+		  <view class="releation-container">
+			  <view class="releation-info">
+				  <text class="releation ">{{item.like}}有用 · </text>
+				  <text class="releation ">{{item.reply}}回复 · </text>
+				  <text class="releation ">{{item.forward}}转发</text>
+			  </view>
+			  <view class="book-info">
+			  				  <text class="book-name">{{item.title}}</text>
+			  				   <text class="cuIcon-right lg text-gray"></text>
+			  </view>
+			
+		  </view>
+	  </view>
+  </view>
+	
+   </view>
+</view>
