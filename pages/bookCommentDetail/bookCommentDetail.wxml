@@ -25,14 +25,72 @@
 						<text class="info-value">文学</text>
 					</view>
 					<view class="info-obj">
-						<text class="info-key one-spacing">出版社：</text>
+						<text class="info-key seven-spacing">出版社：</text>
 						<text class="info-value">北京联合出版公司</text>
 					</view>
 					<view class="info-obj">
-						<text class="info-key">出版年份:</text>
+						<text class="info-key one-spacing">出版年份:</text>
 						<text class="info-value">2013年9月</text>
 					</view>
 					
 				</view>
 	</view>
+	<view  class="top-comment">
+		<view class="card-item">
+			<view class="card-item-title">
+						  <view class="avatar">
+							<cover-image
+							                class="cover-image"
+							                src="{{item.iconUrl}}"
+							                bindload="imageLoad"
+							                binderror="imageError">
+							            </cover-image>
+						  </view>
+						  <view class="basicinfo">
+							  <view>
+								  <text class="name">{{item.name}}</text><text class="notice">{{item.notice}}</text>
+							  </view>
+							  <view class="time-star">
+							  		<text class="time">{{item.time}}</text>
+									<commentStars  model:stars="{{item.star}}"></commentStars>
+							  </view>
+						  </view>
+						  
+			</view>
+			
+			<view class="content-container">
+				<text class="book-topic">{{item.title}}</text>
+					<text class="resume "  >{{item.resume}}</text>
+			</view>
+			
+			<view class="releation-container">
+						  <view class="releation-info">
+							  <text class="releation ">{{item.like}}有用 · </text>
+							  <text class="releation ">{{item.reply}}回复 · </text>
+							  <text class="releation ">{{item.forward}}转发</text>
+							  <text class="cuIcon-right lg text-gray" bindtap="handleBookDetail"></text>
+						  </view>
+						  
+						
+			</view>
+		</view>
+	</view>
+	<view class="more-comment-tip">
+		<view class="more-comment">
+			更多评论
+		</view>
+		<view class="comment-num">
+			3180条
+		</view>
+	</view>
+	<commentCard model:card-info="{{cardInfoArray}}">
+		
+	</commentCard>
+	<view class="no-more">
+		— 到底啦 —
+	</view>
+	<copyRight>
+		
+	</copyRight>
+	
 </view>

@@ -1,12 +1,20 @@
+.container {
+  background: #ffffff;
+}
 .container .card-container {
   height: auto;
   width: 100%;
   margin-bottom: 32rpx;
 }
+.container .card-container .split-line {
+  height: 2rpx;
+  border: 0rpx solid #000000;
+  margin-left: 32rpx;
+  margin-right: 30rpx;
+}
 .container .card-container .card-item {
   width: 750rpx;
   height: auto;
-  background: #ffffff;
   padding: 0rpx 30rpx 16rpx 32rpx;
 }
 .container .card-container .card-item .card-item-title {
@@ -40,7 +48,13 @@
   align-items: flex-start;
   margin-left: 16rpx;
 }
-.container .card-container .card-item .card-item-title .basicinfo .name {
+.container .card-container .card-item .card-item-title .basicinfo .info-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .card-container .card-item .card-item-title .basicinfo .info-display .name {
   width: auto;
   height: 34rpx;
   font-size: 24rpx;
@@ -48,36 +62,17 @@
   font-weight: 600;
   color: #000000;
   line-height: 34rpx;
-  margin: 2rpx  16rpx 2rpx 0rpx;
+  margin: 2rpx  0rpx 2rpx 0rpx;
 }
-.container .card-container .card-item .card-item-title .basicinfo .notice {
+.container .card-container .card-item .card-item-title .basicinfo .info-display .notice {
   width: auto;
   height: 34rpx;
   font-size: 24rpx;
+  margin: 0 16rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #969696;
   line-height: 34rpx;
-}
-.container .card-container .card-item .card-item-title .basicinfo .time {
-  width: auto;
-  height: 28rpx;
-  font-size: 20rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #969696;
-  line-height: 28rpx;
-  margin-right: 10rpx;
-}
-.container .card-container .card-item .card-item-title .basicinfo .star {
-  width: 20rpx;
-  height: 20rpx;
-}
-.container .card-container .card-item .card-item-title .basicinfo .star .fill {
-  color: #F96D3D;
-}
-.container .card-container .card-item .card-item-title .basicinfo .star .unfill {
-  color: #A3A3A4;
 }
 .container .card-container .card-item .content-container {
   width: auto;

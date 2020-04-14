@@ -1,0 +1,4 @@
+<!--components/copy-right/copy-right.wxml-->
+<view class="copy-right">
+		Copyright © 2019-2020 medo.com
+</view>

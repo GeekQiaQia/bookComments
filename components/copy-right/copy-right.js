@@ -1,17 +1,10 @@
-// components/commentStars/commentStars.js
+// components/copy-right/copy-right.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    maxStars:{
-      type:Number,
-      value:5
-    },
-	stars:{
-		type:Number,
-		value:0
-	}
+
   },
 
   /**

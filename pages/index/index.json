@@ -1,7 +1,8 @@
 {
 	"enablePullDownRefresh":true,
   "usingComponents": {
-	   "cardItem":"../../components/cardItem/cardItem"
+	   "cardItem":"../../components/cardItem/cardItem",
+	   "loadMore":"../../components/loading/loading"
   },
   "navigationBarTitleText": "发现"
 }
