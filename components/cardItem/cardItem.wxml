@@ -45,8 +45,8 @@
 				  <text class="releation ">{{item.forward}}转发</text>
 			  </view>
 			  <view class="book-info">
-			  				  <text class="book-name">{{item.title}}</text>
-			  				   <text class="cuIcon-right lg text-gray"></text>
+			  		<text class="book-name">{{item.title}}</text>
+			  		<text class="cuIcon-right lg text-gray" bindtap="handleBookDetail"></text>
 			  </view>
 			
 		  </view>

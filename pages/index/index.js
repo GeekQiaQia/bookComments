@@ -80,6 +80,12 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  handleCommentDetail:function(e){
+	  console.log(e);
+	  wx.navigateTo({
+	    url: '../bookCommentDetail/bookCommentDetail'
+	  })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
