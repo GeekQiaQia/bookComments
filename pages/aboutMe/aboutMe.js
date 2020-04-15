@@ -17,6 +17,11 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  handleMyRecommend:function(){
+    wx.navigateTo({
+      url: '../my-recommend/my-recommend',
+    })
+  },
 getUserInfo: function(e) {
     console.log(e)
    

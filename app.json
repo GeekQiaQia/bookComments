@@ -1,34 +1,33 @@
 {
   "pages": [
-   "pages/index/index",
-   "pages/aboutMe/aboutMe",
-   "pages/findOut/findOut",
-   "pages/hotRecommend/hotRecommend",
-   "pages/bookCommentDetail/bookCommentDetail",
-   "pages/logs/logs"
+    "pages/index/index",
+    "pages/aboutMe/aboutMe",
+    "pages/findOut/findOut",
+    "pages/hotRecommend/hotRecommend",
+    "pages/bookCommentDetail/bookCommentDetail",
+    "pages/my-recommend/my-recommend",
+    "pages/logs/logs"
   ],
   "window": {
- "backgroundTextStyle": "light",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F96D3D",
     "navigationBarTitleText": "WeChat",
-    "navigationStyle": "default", 
+    "navigationStyle": "default",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
   "tabBar": {
-      "custom": false,
-      "color": "#a9b7b7",
-      "selectedColor": "#F96D3D",
-      "borderStyle": "black",
+    "custom": false,
+    "color": "#a9b7b7",
+    "selectedColor": "#F96D3D",
+    "borderStyle": "black",
     "list": [
-    {
-        
-          "pagePath": "pages/index/index",
-           "text": "发现"  
-  
-    },
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现"
+      },
       {
         "pagePath": "pages/hotRecommend/hotRecommend",
         "text": "热门书评"
@@ -36,10 +35,8 @@
       {
         "pagePath": "pages/aboutMe/aboutMe",
         "text": "我的"
-        
       }
-  ]  
-  
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -75,6 +75,13 @@
 					"id": -1,
 					"name": "pages/bookCommentDetail/bookCommentDetail",
 					"pathName": "pages/bookCommentDetail/bookCommentDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-recommend/my-recommend",
+					"pathName": "pages/my-recommend/my-recommend",
 					"scene": null
 				}
 			]

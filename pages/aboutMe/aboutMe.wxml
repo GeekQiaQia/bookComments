@@ -92,7 +92,7 @@
 							<text class="my-info-num deepGrey">0条</text>
 						</view>
 					</view>
-					<view class="my-all">
+					<view class="my-all" bindtap="handleMyRecommend">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>

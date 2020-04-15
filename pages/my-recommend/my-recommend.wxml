@@ -1,0 +1,37 @@
+<!--pages/my-recommend/my-recommend.wxml-->
+<view class="container">
+	<view class="recommend-card">
+		<view class="recommend-book">
+			<view class="recommend-num">{{recommendInfo.bookNum}}</view>
+			<text class="recommend-type">推荐的书</text>
+		</view>
+		<view class="split-line">
+			
+		</view>
+		<view class="recommend-vedio">
+			<text class="recommend-num">{{recommendInfo.videoNum}}</text>
+			<text class="recommend-type">推荐影片</text>
+		</view>
+	</view>
+	<view class="recommend-container">
+		<block wx:if="{{recommendInfo.bookNum==0&&recommendInfo.videoNum==0}}">
+			<view class="no-recommend">
+				<view class="no-icon">
+					
+				</view>
+				<view class="no-tip">
+					暂无推荐，快去发现好书吧～
+				</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="recommend-info">
+				
+			</view>
+		</block>
+	</view>
+	<view class="foot">
+		<copy-right></copy-right>
+		<view class="bottom-line"></view>
+	</view>
+</view>
