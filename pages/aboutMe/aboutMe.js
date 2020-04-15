@@ -29,6 +29,19 @@ getUserInfo: function(e) {
 	  [name]:userInfo.nickName,
       hasUserInfo: true
     })
+    try{
+ 
+      // 同步接口立即写入
+     
+      wx.setStorageSync('userInfo',res.userInfo )
+     
+      console.log('写入value2成功')
+     
+    }catch (e) {
+     
+      console.log('写入value2发生错误')
+     
+    }   
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,6 +70,19 @@ getUserInfo: function(e) {
 		   [name]:res.userInfo.nickName,
           hasUserInfo: true
         })
+        try{
+ 
+          // 同步接口立即写入
+         
+          wx.setStorageSync('userInfo',res.userInfo )
+         
+          console.log('写入value2成功')
+         
+        }catch (e) {
+         
+          console.log('写入value2发生错误')
+         
+        }   
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -68,6 +94,19 @@ getUserInfo: function(e) {
 			 [name]:res.userInfo.nickName,
             hasUserInfo: true
           })
+          try{
+ 
+            // 同步接口立即写入
+           
+            wx.setStorageSync('userInfo',res.userInfo )
+           
+            console.log('写入value2成功')
+           
+          }catch (e) {
+           
+            console.log('写入value2发生错误')
+           
+          }   
         }
       })
     }

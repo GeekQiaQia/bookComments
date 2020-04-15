@@ -1,4 +1,6 @@
 // pages/bookCommentDetail/bookCommentDetail.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -6,6 +8,8 @@ Page({
    */
   data: {
     maxStars:5,
+	visible: true,
+	userInfo: {},
 	bookInfo:{
     url:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
     star:3
@@ -63,14 +67,48 @@ Page({
 		  	name:"林间小鹿",
 			readMore:false,
 		  	iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
-		  }
+		  },
+				canIUse: wx.canIUse('button.open-type.getUserInfo'),
+				hasUserInfo:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+		let name="loginInfo.name"
+		console.log(app.globalData.userInfo);
+		if (app.globalData.userInfo) {
+		
+      this.setData({
+        userInfo: app.globalData.userInfo,
+		 [name]:app.globalData.userInfo.nickName,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+		   [name]:res.userInfo.nickName,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+			 [name]:res.userInfo.nickName,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+	console.log(this.data.userInfo)
   },
 
   /**
@@ -118,7 +156,18 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (ops) {
+	if(ops.from==='button'){
+		// 转发事件来源。
+		console.log(ops.target);
+	}
+	  return {
+	      title: '自定义转发标题',
+	      path: '/index/index?id=123'
+	    }
+	
+  },
+  close: function() {
+    this.setData({ visible: false })
   }
 })

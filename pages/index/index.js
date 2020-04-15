@@ -93,6 +93,16 @@ Page({
     })
   },
   onLoad: function () {
+		try {
+      let userInfo = wx.getStorageSync('userInfo')
+      if (userInfo) {
+     
+        // Do something with return value
+        this.globalData.userInfo = res.userInfo
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

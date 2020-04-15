@@ -1,5 +1,6 @@
 <!--pages/bookCommentDetail/bookCommentDetail.wxml-->
 <view class="container">
+	<canvas-share bindclose="close" userInfo="{{userInfo}}" visible="{{visible}}" />
 	<view class="book-card">
 		
 			<cover-image
