@@ -22,6 +22,11 @@ Page({
       url: '../my-recommend/my-recommend',
     })
   },
+  handleMyHistory:function(){
+    wx.navigateTo({
+      url: '../my-history/my-history',
+    })
+  },
 getUserInfo: function(e) {
     console.log(e)
    

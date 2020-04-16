@@ -1,4 +1,9 @@
-.container .recommend-card {
+.container .recommend-box {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.container .recommend-box .recommend-card {
   width: 100%;
   height: 192rpx;
   background: #ffffff;
@@ -8,13 +13,13 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.container .recommend-card .recommend-book {
+.container .recommend-box .recommend-card .recommend-book {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container .recommend-card .recommend-book .recommend-num {
+.container .recommend-box .recommend-card .recommend-book .recommend-num {
   width: auto;
   height: 56rpx;
   font-size: 40rpx;
@@ -23,7 +28,7 @@
   color: #666666;
   line-height: 56rpx;
 }
-.container .recommend-card .recommend-book .recommend-type {
+.container .recommend-box .recommend-card .recommend-book .recommend-type {
   width: 112rpx;
   height: 40rpx;
   font-size: 28rpx;
@@ -32,13 +37,13 @@
   color: #666666;
   line-height: 40rpx;
 }
-.container .recommend-card .recommend-vedio {
+.container .recommend-box .recommend-card .recommend-vedio {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container .recommend-card .recommend-vedio .recommend-num {
+.container .recommend-box .recommend-card .recommend-vedio .recommend-num {
   width: auto;
   height: 56rpx;
   font-size: 40rpx;
@@ -47,7 +52,7 @@
   color: #666666;
   line-height: 56rpx;
 }
-.container .recommend-card .recommend-vedio .recommend-type {
+.container .recommend-box .recommend-card .recommend-vedio .recommend-type {
   width: 112rpx;
   height: 40rpx;
   font-size: 28rpx;
@@ -56,26 +61,26 @@
   color: #666666;
   line-height: 40rpx;
 }
-.container .recommend-card .split-line {
+.container .recommend-box .recommend-card .split-line {
   width: 2rpx;
   height: 116rpx;
   margin: 38rpx 0rpx;
   border: 1rpx solid #EFEFF4;
 }
-.container .recommend-container .no-recommend {
+.container .recommend-box .recommend-container .no-recommend {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container .recommend-container .no-recommend .no-icon {
+.container .recommend-box .recommend-container .no-recommend .no-icon {
   width: 252rpx;
   height: 252rpx;
   background-color: #efeff4;
   margin: 286rpx 248rpx 92rpx 250rpx;
 }
-.container .recommend-container .no-recommend .no-tip {
-  width: 364rpx;
+.container .recommend-box .recommend-container .no-recommend .no-tip {
+  width: auto;
   height: 40rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -83,19 +88,87 @@
   color: #b8b8b8;
   line-height: 40rpx;
 }
-.container .foot {
+.container .recommend-box .recommend-container .recommend-info .recommend-type-title {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+  margin: 32rpx 0rpx 16rpx 32rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail {
   width: 100%;
-  height: auto;
+  height: 128rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36rpx 0 32rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-resume {
+  width: 64rpx;
+  height: 64rpx;
+  background: #517da8;
+  border-radius: 10rpx;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-top: 234rpx;
+  align-items: flex-start;
+  margin-left: 32rpx;
 }
-.container .foot .bottom-line {
-  width: 268rpx;
-  height: 10rpx;
-  background: #000000;
-  border-radius: 200rpx;
-  margin: 0rpx 0rpx 18rpx 0rpx;
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-info .name {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0b0c0d;
+  line-height: 40rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-info .status {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f96d3d;
+  line-height: 28rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .recommend-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .recommend-detail .red-dot {
+  width: 12rpx;
+  height: 12rpx;
+  background: #e02020;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .recommend-detail .status {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+  margin: 0 12rpx;
 }

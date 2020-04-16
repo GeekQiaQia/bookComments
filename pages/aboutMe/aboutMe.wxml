@@ -109,7 +109,7 @@
 							<text class="my-info-num deepYellow">0条</text>
 						</view>
 					</view>
-					<view class="my-all">
+					<view class="my-all" bindtap="handleMyHistory">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>

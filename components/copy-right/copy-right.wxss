@@ -1,15 +1,29 @@
-/* components/copy-right/copy-right.wxss */
-.copy-right{
-	width:auto;
-	height:28rpx;
-	font-size:20rpx;
-	font-family:STSongti-SC-Regular,STSongti-SC;
-	font-weight:400;
-	color:rgba(178,178,178,1);
-	line-height:28rpx;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 20rpx;
+.foot {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.foot .copy-right {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #b2b2b2;
+  line-height: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.foot .bottom-line {
+  width: 268rpx;
+  height: 10rpx;
+  background: #000000;
+  border-radius: 200rpx;
+  margin: 0rpx 0rpx 18rpx 0rpx;
 }

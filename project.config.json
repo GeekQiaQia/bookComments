@@ -82,6 +82,13 @@
 					"id": -1,
 					"name": "pages/my-recommend/my-recommend",
 					"pathName": "pages/my-recommend/my-recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-history/my-history",
+					"pathName": "pages/my-history/my-history",
 					"scene": null
 				}
 			]

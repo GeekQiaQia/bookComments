@@ -6,8 +6,8 @@ Page({
    */
   data: {
 	recommendInfo:{
-		bookNum:0,
-		videoNum:0
+		bookNum:3,
+		videoNum:2
 	}
   },
 

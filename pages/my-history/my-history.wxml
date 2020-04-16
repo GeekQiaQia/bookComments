@@ -1,0 +1,50 @@
+<!--pages/my-history/my-history.wxml-->
+<view class="container">
+	
+	<view class="history-container">
+		<block wx:if="{{historyInfo.length>0}}">
+			<view class="cu-timeline time-item">
+				<block wx:for="{{historyInfo}}">
+					<view class="cu-item text-orange view-item ">
+						<view class="timeline-info">
+							<view class="timeline-date">
+								{{item.date}}
+							</view>
+							<block wx:for="{{item.todoList}}">
+								<view class="timeline-detail">
+									<view>
+										<text class="timeline-time">{{item.time}}{{item.operator}}</text>
+										<text class="timeline-title">
+											{{item.title}}
+										</text>
+									</view>
+									
+								</view>
+							</block>
+						
+						</view>
+					
+					</view>
+					
+				</block>
+			
+			
+			</view>
+			<view class="nomore-tip">
+				<text>没有更多内容</text>
+			</view>
+		</block>
+		<block wx:else>
+			
+			<view class="no-recommend">
+				<view class="no-icon">
+					
+				</view>
+				<view class="no-tip">
+					暂无浏览历史，快去享受书评吧～
+				</view>
+			</view>
+		</block>
+	</view>
+	<copy-right ></copy-right>
+</view>

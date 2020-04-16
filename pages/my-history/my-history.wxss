@@ -1,0 +1,82 @@
+.container {
+  background-color: white;
+}
+.container .history-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.container .history-container .no-recommend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .history-container .no-recommend .no-icon {
+  width: 252rpx;
+  height: 252rpx;
+  background-color: #efeff4;
+  margin: 286rpx 248rpx 92rpx 250rpx;
+}
+.container .history-container .no-recommend .no-tip {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
+}
+.container .history-container .time-item {
+  width: 100%;
+}
+.container .history-container .time-item .view-item {
+  padding-top: 40rpx;
+}
+.container .history-container .time-item .timeline-info {
+  background-color: white;
+}
+.container .history-container .time-item .timeline-info .timeline-date {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .history-container .time-item .timeline-info .timeline-detail {
+  margin-bottom: 24rpx;
+}
+.container .history-container .time-item .timeline-info .timeline-detail .timeline-time {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 28rpx;
+}
+.container .history-container .time-item .timeline-info .timeline-detail .timeline-title {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .history-container .nomore-tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 34rpx;
+  margin: 46rpx 0rpx;
+}
