@@ -22,6 +22,11 @@ Page({
       url: '../my-recommend/my-recommend',
     })
   },
+  handleMyMessage:function(){
+	  wx.navigateTo({
+	    url: '../my-message/my-message',
+	  })
+  },
   handleMyHistory:function(){
     wx.navigateTo({
       url: '../my-history/my-history',

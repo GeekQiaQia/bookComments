@@ -89,6 +89,13 @@
 					"id": -1,
 					"name": "pages/my-history/my-history",
 					"pathName": "pages/my-history/my-history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-message/my-message",
+					"pathName": "pages/my-message/my-message",
 					"scene": null
 				}
 			]

@@ -7,7 +7,8 @@
     "pages/bookCommentDetail/bookCommentDetail",
     "pages/my-recommend/my-recommend",
     "pages/logs/logs",
-    "pages/my-history/my-history"
+    "pages/my-history/my-history",
+    "pages/my-message/my-message"
   ],
   "window": {
     "backgroundTextStyle": "light",
