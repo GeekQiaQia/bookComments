@@ -26,7 +26,12 @@
 				<view class="message-info-container">
 					<block wx:for="{{messageInfo.list}}" wx:key="*this">
 						<view class="message-card">
-							<view class="date">{{item.date}}</view>
+							
+							<view class="read-info">
+								<view class="date">{{item.date}}</view>
+								<!--status==0 未读-->
+								<view class="{{item.status==0?'unread':''}}"></view>
+							</view>
 							<view class="info">
 								{{item.info}}
 							</view>

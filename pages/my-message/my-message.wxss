@@ -82,7 +82,13 @@
   align-items: flex-start;
   padding: 16rpx 54rpx 28rpx 32rpx;
 }
-.container .message-container .message-main .message-info-container .message-card .date {
+.container .message-container .message-main .message-info-container .message-card .read-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .message-container .message-main .message-info-container .message-card .read-info .date {
   width: auto;
   height: 34rpx;
   font-size: 24rpx;
@@ -90,10 +96,18 @@
   font-weight: 400;
   color: #969696;
   line-height: 34rpx;
+  margin-right: 18rpx;
+}
+.container .message-container .message-main .message-info-container .message-card .read-info .unread {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #f24343 0%, #e02020 100%);
 }
 .container .message-container .message-main .message-info-container .message-card .info {
   width: auto;
   height: auto;
+  margin-top: 14rpx;
   font-size: 24rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
