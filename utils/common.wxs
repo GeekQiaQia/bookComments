@@ -12,7 +12,17 @@ function splice(str = '', start, end) {
   return str.slice(start, end)
 }
 
+function tofiltFirstWord(text){
+	if(text!==''&&text!==undefined){
+		var  firstWord=text.split('')[0];
+		return firstWord
+	}else{
+		return ;
+	}
+}
+
 module.exports = {
   toFixed: toFixed,
+  tofiltFirstWord:tofiltFirstWord,
   splice: splice
 };

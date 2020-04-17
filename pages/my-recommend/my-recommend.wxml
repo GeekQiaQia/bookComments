@@ -1,5 +1,7 @@
 <!--pages/my-recommend/my-recommend.wxml-->
+
 <view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
     <view class="recommend-box">
 		<view class="recommend-card">
 			<view class="recommend-book">
@@ -27,25 +29,59 @@
 			</block>
 			<block wx:else>
 				<view class="recommend-info">
-					<view class="recommend-type-title">
-						文学
-					</view>
-					<view class="recommend-type-detail">
-						<view class="name-detail">
-							<view class="name-resume">
-								一
-							</view>
-							<view class="name-info">
-								<view class="name">一个人的朝圣</view>
-								<view class="status">已上线</view>
-							</view>
+					<block wx:for="{{recommendInfo.recommendDetail.recommendBookList}}" wx:key="*this">
+						<view class="recommend-type-title">
+							{{item.bookType}}
 						</view>
-						<view class="recommend-detail">
-							<view class="red-dot"></view>
-							<view class="status">已上线，前往查看吧</view>
-							<text class="cuIcon-right lg text-gray"></text>
+						<block wx:for="{{item.bookList}}" wx:key="*this">
+							<view class="recommend-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+								<view class="name-detail">
+									<view class="name-resume">
+										{{filter.tofiltFirstWord(item.name)}}
+									</view>
+									<view class="name-info">
+										<view class="name">{{item.name}}</view>
+										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+									</view>
+								</view>
+								<view class="recommend-detail">
+									<view class="red-dot"></view>
+									<view class="status">{{item.onlineTips}}</view>
+									<text class="cuIcon-right lg text-gray"></text>
+								</view>
+							</view>
+						</block>
+						
+					</block>
+					<block wx:for="{{recommendInfo.recommendDetail.recommendVideoList}}" wx:key="*this">
+						<view class="recommend-type-title">
+							{{item.videoType}}
 						</view>
-					</view>
+						<block wx:for="{{item.videoList}}" wx:key="*this">
+							<view class="recommend-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+								<view class="name-detail">
+									<view class="video-resume">
+										
+									</view>
+									<view class="name-info">
+										<view class="name">{{item.name}}</view>
+										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+									</view>
+								</view>
+								<view class="recommend-detail">
+									<view class="red-dot"></view>
+									<view class="status">{{item.onlineTips}}</view>
+									<text class="cuIcon-right lg text-gray"></text>
+								</view>
+							</view>
+						</block>
+						
+					</block>
+					
+					
+				</view>
+				<view class="nomore-tip">
+					<text>没有更多内容</text>
 				</view>
 			</block>
 		</view>

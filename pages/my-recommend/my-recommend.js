@@ -1,4 +1,5 @@
 // pages/my-recommend/my-recommend.js
+const app = getApp()
 Page({
 
   /**
@@ -7,7 +8,68 @@ Page({
   data: {
 	recommendInfo:{
 		bookNum:3,
-		videoNum:2
+		videoNum:2,
+		recommendDetail:
+			{
+				recommendBookList:[
+				{
+					bookType:"文学",
+					bookList:[
+						{
+							name:"一个人的朝圣",
+							status:"已上线",
+							statusCode:0,
+							onlineTips:"已上线，前往查看吧"
+						},
+						{
+							name:"追风筝的人",
+							status:"已上线",
+							statusCode:0,
+							onlineTips:"已上线，前往查看吧"
+						},
+					]
+				},
+				{
+					bookType:"历史",
+					bookList:[
+						{
+							name:"冈仁波济",
+							status:"待维护",
+							statusCode:1,
+							onlineTips:"尽力争取资源中…"
+						},
+						{
+							name:"仁波济",
+							status:"待维护",
+							statusCode:1,
+							onlineTips:"尽力争取资源中…"
+						},
+					]
+				}
+					
+				],
+				recommendVideoList:[
+				{
+					videoType:"影片",
+					videoList:[
+						{
+							name:"朝圣之路（The Way）",
+							status:"已上线",
+							statusCode:0,
+							onlineTips:"已上线，前往查看吧"
+						},
+						{
+							name:"Dear Dracula ",
+							status:"待维护",
+							statusCode:1,
+							onlineTips:"尽力争取资源中…"
+						},
+					]
+				},
+					
+				],
+			}
+		
 	}
   },
 

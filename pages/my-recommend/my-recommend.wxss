@@ -88,6 +88,20 @@
   color: #b8b8b8;
   line-height: 40rpx;
 }
+.container .recommend-box .recommend-container .nomore-tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 34rpx;
+  margin: 46rpx 0rpx;
+}
 .container .recommend-box .recommend-container .recommend-info .recommend-type-title {
   width: auto;
   height: 48rpx;
@@ -97,6 +111,10 @@
   color: #666666;
   line-height: 48rpx;
   margin: 32rpx 0rpx 16rpx 32rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .not-online {
+  background-color: #efeff4 !important;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #efeff4 !important;
 }
 .container .recommend-box .recommend-container .recommend-info .recommend-type-detail {
   width: 100%;
@@ -114,6 +132,11 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .video-resume {
+  width: 59rpx;
+  height: 59rpx;
+  background: #3f8ff3;
 }
 .container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-resume {
   width: 64rpx;
@@ -141,6 +164,9 @@
   font-weight: 400;
   color: #0b0c0d;
   line-height: 40rpx;
+}
+.container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-info .unactived {
+  color: #969696 !important;
 }
 .container .recommend-box .recommend-container .recommend-info .recommend-type-detail .name-detail .name-info .status {
   width: auto;

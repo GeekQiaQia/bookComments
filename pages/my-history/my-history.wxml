@@ -1,4 +1,5 @@
 <!--pages/my-history/my-history.wxml-->
+
 <view class="container">
 	
 	<view class="history-container">

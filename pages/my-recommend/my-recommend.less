@@ -91,7 +91,23 @@
 					}
 					
 				}
+				.nomore-tip{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					
+					width:auto;
+					height:34rpx;
+					font-size:24rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(184,184,184,1);
+					line-height:34rpx;
+					margin: 46rpx 0rpx;
+				}
 				.recommend-info{
+					
 					.recommend-type-title{
 						width:auto;
 						height:48rpx;
@@ -101,6 +117,10 @@
 						color:rgba(102,102,102,1);
 						line-height:48rpx;
 						margin:32rpx 0rpx 16rpx 32rpx;
+					}
+					.not-online{
+						background-color:rgba(239,239,244,1) !important;
+						box-shadow:0rpx -2rpx 0rpx 0rpx rgba(239,239,244,1) !important;
 					}
 					.recommend-type-detail{
 						width:100%;
@@ -118,6 +138,11 @@
 							flex-direction: row;
 							justify-content: flex-start;
 							align-items: center;
+							.video-resume{
+								width:59rpx;
+								height:59rpx;
+								background:rgba(63,143,243,1);
+							}
 							.name-resume{
 								width:64rpx;
 								height:64rpx;
@@ -145,7 +170,9 @@
 									line-height:40rpx;
 									
 								}
-								
+								.unactived{
+									color:rgba(150,150,150,1)!important;
+								}
 								.status{
 									width:auto;
 									height:28rpx;
