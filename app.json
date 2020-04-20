@@ -8,7 +8,8 @@
     "pages/my-recommend/my-recommend",
     "pages/logs/logs",
     "pages/my-history/my-history",
-    "pages/my-message/my-message"
+    "pages/my-message/my-message",
+    "pages/my-reply/my-reply"
   ],
   "window": {
     "backgroundTextStyle": "light",

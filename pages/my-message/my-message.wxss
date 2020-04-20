@@ -17,6 +17,7 @@
 .container .message-top .message-info .message-dot {
   width: 8rpx;
   height: 8rpx;
+  border-radius: 50%;
   background-color: #ffffff;
   margin: 0 20rpx 0 22rpx;
 }
