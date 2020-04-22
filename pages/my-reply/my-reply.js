@@ -65,9 +65,36 @@ Page({
 						top:0
 					}
 				]
-			}
+			},
+			modalName:"",
+			confirmDelete:false
   },
-
+  
+  showModal(e) {
+	  
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+	
+  },
+hideModal(e) {
+    this.setData({
+      modalName: null,
+	   confirmDelete: false
+    })
+  },
+confirmDelete(){
+	this.setData({
+	  confirmDelete: true
+	})
+},
+toDeleteConfirm(){
+	console.log("to delete comment");
+	this.setData({
+	  modalName: null,
+	   confirmDelete: false
+	})
+},
   /**
    * 生命周期函数--监听页面加载
    */

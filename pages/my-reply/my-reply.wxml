@@ -41,7 +41,7 @@
 											</view>
 										</view>
 									</view>
-									<view class="more-operator">
+									<view class="more-operator" bindtap="showModal" data-target="bottomModal">
 										...
 									</view>
 									<!-- <text class="cuIcon-more lg text-gray"></text> -->
@@ -109,5 +109,47 @@
 			</block>
 		</view>
 		<copy-right></copy-right>
+	</view>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除评论回复
+				  			  </view>
+				  </view>
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论回复？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
 	</view>
 </view>

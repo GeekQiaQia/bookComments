@@ -347,3 +347,102 @@
   color: #b8b8b8;
   line-height: 40rpx;
 }
+.container .dialog-container {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+}
+.container .dialog-container .confirm-delete-reply {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips {
+  width: 100%;
+  height: 112rpx;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete {
+  width: 100%;
+  height: 112rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete .delete-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #e02020;
+  line-height: 40rpx;
+  margin-left: 22rpx;
+}
+.container .dialog-container .delete-comment-reply {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  padding-left: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .delete-comment-reply .delete-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #e02020;
+  line-height: 40rpx;
+  margin-left: 22rpx;
+}
+.container .dialog-container .delete-cancel {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.container .dialog-container .delete-cancel .delete-cancel-text {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .dialog-container .split-bar {
+  width: 268rpx;
+  height: 10rpx;
+  background-color: #000000;
+  border-radius: 200rpx;
+  margin: 40rpx 0rpx 18rpx 0rpx;
+}
