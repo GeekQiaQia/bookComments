@@ -1,0 +1,155 @@
+<view class="container">
+	<view class="reply-top">
+		<view class="reply-info">
+			<view class="reply-title">我的回复 </view>
+			<view class="reply-dot">
+
+			</view>
+			<view class="reply-num">已回复{{replyInfo.num}}个书评</view>
+		</view>
+		<view class="reply-icon">
+
+		</view>
+	</view>
+	<view class="reply-container">
+		<view class="reply-main">
+			<block wx:if="{{replyInfo.num==0}}">
+				<view class="reply-icon">
+
+				</view>
+				<view class="no-reply">
+					你还没有回复，去发现有趣的书评吧～
+				</view>
+			</block>
+			<block wx:else>
+				<view class="reply-info-container">
+					<block wx:for="{{replyInfo.list}}" wx:key="*this">
+						<view class="reply-card">
+							<view class="content-container">
+								<view class="basic-info">
+									<view class="info-container">
+										<view class="avatar">
+											<cover-image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
+											</cover-image>
+										</view>
+										<view class="info">
+											<view class="name">
+												{{item.name}}
+											</view>
+											<view class="date">
+												{{item.date}}
+											</view>
+										</view>
+									</view>
+									<view class="more-operator" bindtap="showModal" data-target="bottomModal">
+										...
+									</view>
+									<!-- <text class="cuIcon-more lg text-gray"></text> -->
+								</view>
+								<view class="my-reply-info">
+									{{item.myReplyInfo}}
+								</view>
+								<view class="read-info">
+									<view class="date">{{item.date}}</view>
+									<!--status==0 未读-->
+									<view class="{{item.status==0?'unread':''}}"></view>
+								</view>
+								<view class="reverse-reply-info">
+									<view class="reference">@{{item.reverseName}}</view>
+									<view>回复</view>
+									<view class="reference">@我：</view>
+									<view>{{item.reverseReply}}</view>
+								</view>
+								<view class="comment-detail">
+									<view class="comment-info">
+										{{item.bookComment}}
+									</view>
+									<view class="comment-book">
+										<view class="book-url">
+											<cover-image class="cover-image" src="{{item.bookUrl}}" bindload="imageLoad" binderror="imageError">
+											</cover-image>
+										</view>
+										<view class="book-info">
+											<view class="name">{{item.bookName}}</view>
+											<view class="stars">
+												<comment-stars model:stars="{{item.stars}}"></comment-stars>
+												<view class="commentStar">{{item.commentsNum}}人评分</view>
+											</view>
+										</view>
+										<view class="book-icon">
+											
+										</view>
+									</view>
+								</view>
+								<view class="foot-container">
+									<view class="comment-refer">
+										<view>{{item.userful}}有用 </view>
+										<view class="dot"></view>
+										<view>13转发</view>
+										<view class="dot"></view>
+										<view class="reference">已回复</view>
+
+										<view class="dot" wx:if="{{item.top==1}}"></view>
+										<view class="reference" wx:if="{{item.top==1}}">已置顶</view>
+									</view>
+									<view class="comment-share">
+										<text class="cuIcon-share lg text-gray"></text>
+										<view class="share">分享</view>
+									</view>
+								</view>
+
+							</view>
+						</view>
+					</block>
+
+					<view class="nomore-tip">
+						<text>没有更多内容</text>
+					</view>
+				</view>
+			</block>
+		</view>
+		<copy-right></copy-right>
+	</view>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除评论回复
+				  			  </view>
+				  </view>
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论回复？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+</view>

@@ -17,10 +17,20 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  handleMyReply:function(){
+	  wx.navigateTo({
+	    url: '../my-reply/my-reply',
+	  })
+  },
   handleMyRecommend:function(){
     wx.navigateTo({
       url: '../my-recommend/my-recommend',
     })
+  },
+  handleMyMessage:function(){
+	  wx.navigateTo({
+	    url: '../my-message/my-message',
+	  })
   },
   handleMyHistory:function(){
     wx.navigateTo({

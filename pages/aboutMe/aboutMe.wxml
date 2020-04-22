@@ -76,7 +76,7 @@
 							<text class="my-info-num green" >0条</text>
 						</view>
 					</view>
-					<view class="my-all">
+					<view class="my-all" bindtap="handleMyReply">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
@@ -125,7 +125,7 @@
 							<text class="my-info-num deepBlue">0条</text>
 						</view>
 					</view>
-					<view class="my-all">
+					<view class="my-all" bindtap="handleMyMessage">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
