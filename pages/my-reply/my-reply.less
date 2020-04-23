@@ -384,6 +384,270 @@
 		flex-direction:column ;
 		justify-content: center;
 		align-items: center;
+		.share-container{
+			width:750rpx;
+			height:980rpx;
+			background-color:rgba(255,255,255,1);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		    .top-container{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: flex-start;
+				width:auto;
+				margin-left:152rpx ;
+				margin-right:46rpx ;
+				.close{
+					width:28rpx;
+					height:28rpx;
+					margin-left: 76rpx;
+					color:rgba(102,102,102,1);
+				}
+				.image-container{
+					width:448rpx;
+					height:736rpx;
+					
+					background:rgba(255,255,255,1);
+					box-shadow:0rpx 0rpx 16rpx 0rpx rgba(89,89,89,1);
+					border-radius:20rpx;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: center;
+					
+					.image-title{
+						width:448rpx;
+						height:192rpx;
+						background-color:rgba(249,109,61,1);
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
+						padding-top: 32rpx;
+						padding-left: 34rpx;
+						border-radius:20rpx;
+						.name-container{
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: flex-end;
+							.title-name{
+								width:102rpx;
+								height:48rpx;
+								font-size:34rpx;
+								font-family:PingFangSC-Semibold,PingFang SC;
+								font-weight:600;
+								color:rgba(247,247,247,1);
+								line-height:48rpx;
+								margin-left: -17rpx;
+				
+							}
+							.essay{
+								width:48rpx;
+								height:34rpx;
+								font-size:24rpx;
+								font-family:STSongti-SC-Regular,STSongti-SC;
+								font-weight:400;
+								color:rgba(255,255,255,1);
+								line-height:34rpx;
+								margin-left: 12rpx;
+							}
+						}
+						.chicken-soul{
+							width:196rpx;
+							height:40rpx;
+							font-size:28rpx;
+							font-family:STSongti-SC-Bold,STSongti-SC;
+							font-weight:bold;
+							color:#FFFFFF;
+							line-height:40rpx;
+							margin-top: 24rpx;
+						}
+						.book-name{
+							width:auto;
+							height:28rpx;
+							font-size:20rpx;
+							font-family:STSongti-SC-Bold,STSongti-SC;
+							font-weight:bold;
+							color:#EEEEEE;
+							line-height:28rpx;
+						}
+					}
+					.image-content{
+						
+						padding: 32rpx;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: center;
+						flex-grow: 1;
+						.image-comment-container{
+							width:384rpx;
+							height:auto;
+							font-size:24rpx;
+							font-family:STSongti-SC-Regular,STSongti-SC;
+							font-weight:400;
+							color:rgba(102,102,102,1);
+							line-height:36rpx;
+						}
+						.image-comment-byname{
+							width:100%;
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-end;
+							align-items: center;
+							margin-top: 30rpx;
+							height:34rpx;
+							font-size:24rpx;
+							font-family:STSongti-SC-Regular,STSongti-SC;
+							font-weight:400;
+							color:rgba(102,102,102,1);
+							line-height:34rpx;
+							
+						}
+						.image-qrcode-container{
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: center;
+							.qrcode-image{
+								width:96rpx;
+								height:96rpx;
+								margin: 16rpx;
+							}
+							.qrcode-tip{
+								display: flex;
+								flex-direction: column;
+								justify-content: flex-start;
+								align-items: flex-start;
+						
+								.tips{
+									width:216rpx;
+									height:34rpx;
+									font-size:24rpx;
+									font-family:STSongti-SC-Regular,STSongti-SC;
+									font-weight:400;
+									color:rgba(150,150,150,1);
+									line-height:34rpx;
+									display: flex;
+									flex-direction: row;
+									justify-content: flex-start;
+									align-items: center;
+									flex-wrap: wrap;
+								
+								}
+								.tips2{
+									display: flex;
+									flex-direction: row;
+									justify-content: flex-start;
+									align-items: center;
+									.from{
+										width:auto;
+										height:34rpx;
+										font-size:24rpx;
+										font-family:STSongti-SC-Regular,STSongti-SC;
+										font-weight:400;
+										color:rgba(150,150,150,1);
+										line-height:34rpx;
+										display: flex;
+										flex-direction: row;
+										justify-content: flex-start;
+										align-items: center;
+										flex-wrap: wrap;
+									}
+									.zhilun{
+										width:96rpx;
+										height:34rpx;
+										font-size:24rpx;
+										font-family:STSongti-SC-Bold,STSongti-SC;
+										font-weight:bold;
+										color:rgba(102,102,102,1);
+										line-height:34rpx;
+									}
+								}
+								
+								
+							}
+						}
+					}
+				}
+			}
+			.tip-container{
+				width:100%;
+				margin:24rpx 0rpx 32rpx 0rpx ;
+				
+				height:40rpx;
+				font-size:28rpx;
+				font-family:STSongti-SC-Regular,STSongti-SC;
+				font-weight:400;
+				color:rgba(150,150,150,1);
+				line-height:40rpx;
+			}
+			.button-container{
+				width:100%;
+				height: 80rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-evenly;
+					align-items: center;
+					
+					.btn-text{
+						width:auto;
+						height:40rpx;
+						font-size:28rpx;
+						font-family:STSongti-SC-Regular,STSongti-SC;
+						font-weight:400;
+						line-height:40rpx;
+						margin-left: 8rpx;
+					}
+					.size{
+						font-size: 36rpx;
+					}
+					.save-image{
+						width:240rpx;
+						height:80rpx;
+						background:rgba(249,109,61,1);
+						border-radius:20rpx;
+						border:2rpx solid rgba(255,66,2,1);
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						
+						.white{
+							color:rgba(255,255,255,1);
+						}
+					}
+					.share-friends{
+						width:240rpx;
+						height:80rpx;
+						background:rgba(251,250,252,1);
+						border-radius:20rpx;
+						border:2rpx solid rgba(0,0,0,0.15);
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						padding: 0rpx;
+						
+						
+						.black{
+							color:rgba(53,53,53,1);
+						}
+						.no-border{
+							border: transparent ! important;
+							width: auto !important;
+							background:rgba(251,250,252,1) !important;
+							padding: 0rpx;
+							margin: 0rpx;
+
+						}
+					}
+			}
+		}
 		.confirm-delete-reply{
 	
 			width:100%;
