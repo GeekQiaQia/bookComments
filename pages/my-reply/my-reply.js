@@ -95,11 +95,32 @@ toDeleteConfirm(){
 	   confirmDelete: false
 	})
 },
+toShowShareDialog(e){
+	
+	this.setData({
+	  modalName: e.currentTarget.dataset.target
+	})
+},
+imageLoad(e){
+	
+},
+imageError(e){
+	
+},
+handleColseShareDialog(){
+	this.setData({
+	  modalName: null,
+	  
+	})
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	 wx.showShareMenu({
+		  // 要求小程序返回分享目标信息
+		  withShareTicket: true
+		}); 
   },
 
   /**
@@ -141,13 +162,27 @@ toDeleteConfirm(){
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+	
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (ops) {
+	  let that=this;
+	 if (ops.from === 'button') {
+	      // 来自页面内转发按钮
+	      console.log(ops.target)
+	    }
+		this.setData({
+		  modalName: null,
+		  
+		})
+	    return {
+	      title: '我的回复',
+	      path: `pages/my-reply/my-reply`,
+	    }
+		
+		
   }
 })

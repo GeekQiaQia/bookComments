@@ -1,10 +1,10 @@
 <!--components/commentStars/commentStars.wxml-->
 <view class="container">
 	<text >
-		<block wx:for="{{stars}}" wx:key="{{index}}">
+		<block wx:for="{{stars}}" wx:key="*this">
 			<text class="cuIcon-favorfill lg text-orange"></text>
 		</block>
-		<block wx:for="{{maxStars-stars}}" wx:key="{{index}}">
+		<block wx:for="{{maxStars-stars}}" wx:key="*this">
 			<text class="cuIcon-favorfill lg text-gray"></text>
 		</block>
 	</text>
