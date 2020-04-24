@@ -1,0 +1,56 @@
+<!--pages/week-activity/week-activity.wxml-->
+<view class="container">
+	<view class="activity-container">
+		<cover-image class="cover-image" src="{{imageSrc}}" >
+		</cover-image>
+	    <block wx:for="{{recommendInfo}}" wx:key="*this">
+			<view class="activity-card">
+				<view class="activity-top">
+					
+					<view class="activity-info">
+						
+							<view class="avatar">
+											<cover-image
+															class="cover-image"
+															src="{{item.iconUrl}}"
+															bindload="imageLoad"
+															binderror="imageError">
+														</cover-image>
+							</view>
+							<view class="name">
+								{{item.name}}
+							</view>
+					</view>
+					<view class="like-info"> 
+						<text class="cuIcon-appreciate lg  text-orange size {{item.liked==true?'cuIcon-appreciatefill':''}}  " ></text> 
+						<text class="like-num {{item.liked==true?'liked':'unliked'}} ">{{item.like}}</text>
+					</view>
+				</view>
+				<view class="activity-main">
+					<view class="recommend-book">
+						<view class="title">
+							推荐书目：
+						</view>
+						<view class="name">
+							{{item.bookName}}
+						</view>
+						
+					</view>
+					<view class="recommend-reason">
+						<view class="title">
+							推荐理由：
+						</view>
+						<view class="reason">
+							{{item.reason}}
+						</view>
+					</view>
+					
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="nomore-container">
+		<view class="bottom">— 到底啦 —</view>
+	</view>
+<copy-right></copy-right>
+</view>

@@ -1,0 +1,60 @@
+.container .btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 136rpx;
+  margin-top: 32rpx;
+}
+.container .btn-container .btn {
+  width: 690rpx;
+  height: 88rpx;
+  background-color: #f96d3d;
+  border-radius: 10rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+}
+.container .recommend-container {
+  flex-grow: 1;
+}
+.container .recommend-container .cover-image {
+  width: 100%;
+  height: 384rpx;
+}
+.container .recommend-container .recommend-info .form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0rpx !important;
+}
+.container .recommend-container .recommend-info .form .title {
+  padding-left: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  height: 88rpx;
+  background: #ffffff;
+  background-color: #f7f7f7;
+}
+.container .recommend-container .recommend-info .form .recommend-book {
+  width: 100%;
+  height: 88rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e5e5e5, 0rpx 2rpx 0rpx 0rpx #e5e5e5;
+}
+.container .recommend-container .recommend-info .form .recommend-reason {
+  width: 100%;
+  height: 480rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e5e5e5, 0rpx 2rpx 0rpx 0rpx #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}

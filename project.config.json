@@ -103,6 +103,20 @@
 					"id": -1,
 					"name": "pages/my-reply/my-reply",
 					"pathName": "pages/my-reply/my-reply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/week-activity/week-activity",
+					"pathName": "pages/week-activity/week-activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity-recommend/activity-recommend",
+					"pathName": "pages/activity-recommend/activity-recommend",
 					"scene": null
 				}
 			]

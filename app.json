@@ -9,7 +9,9 @@
     "pages/logs/logs",
     "pages/my-history/my-history",
     "pages/my-message/my-message",
-    "pages/my-reply/my-reply"
+    "pages/my-reply/my-reply",
+    "pages/week-activity/week-activity",
+    "pages/activity-recommend/activity-recommend"
   ],
   "window": {
     "backgroundTextStyle": "light",
