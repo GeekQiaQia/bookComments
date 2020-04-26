@@ -20,7 +20,7 @@
 			<block wx:if="{{recommendInfo.bookNum==0&&recommendInfo.videoNum==0}}">
 				<view class="no-recommend">
 					<view class="no-icon">
-						
+						<cover-image src="../../images/bookmark.png" class="icon-tip"></cover-image>
 					</view>
 					<view class="no-tip">
 						暂无推荐，快去发现好书吧～
@@ -60,9 +60,9 @@
 						<block wx:for="{{item.videoList}}" wx:key="*this">
 							<view class="recommend-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
 								<view class="name-detail">
-									<view class="video-resume">
+									<cover-image class="video-resume" src="../../images/video.png">
 										
-									</view>
+									</cover-image>
 									<view class="name-info">
 										<view class="name">{{item.name}}</view>
 										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>

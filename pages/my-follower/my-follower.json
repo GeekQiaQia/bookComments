@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+	   "copy-right":"../../components/copy-right/copy-right"
+  },
+   "navigationBarTitleText": "关注我的人"
+}

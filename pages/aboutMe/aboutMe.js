@@ -37,32 +37,52 @@ Page({
       url: '../my-history/my-history',
     })
   },
-getUserInfo: function(e) {
-    console.log(e)
-   
-	let userInfo=e.detail.userInfo;
-	let name="loginInfo.name"
-	 app.globalData.userInfo = userInfo;
-	 console.log(userInfo.nickName);
-    this.setData({
-      userInfo: userInfo,
-	  [name]:userInfo.nickName,
-      hasUserInfo: true
-    })
-    try{
- 
-      // 同步接口立即写入
-     
-      wx.setStorageSync('userInfo',res.userInfo )
-     
-      console.log('写入value2成功')
-     
-    }catch (e) {
-     
-      console.log('写入value2发生错误')
-     
-    }   
+  handleFollowOther:function(){
+	 wx.navigateTo({
+	   url: '../follow-other/follow-other',
+	 }) 
   },
+  handleMyFollower:function(){
+  	 wx.navigateTo({
+  	   url: '../my-follower/my-follower',
+  	 }) 
+  },
+  handleMyComments:function(){
+	  wx.navigateTo({
+	    url: '../my-comments/my-comments',
+	  }) 
+  },
+  handleMyNotes:function(){
+	  wx.navigateTo({
+	    url: '../my-notes/my-notes',
+	  }) 
+  },
+	getUserInfo: function(e) {
+		console.log(e)
+	   
+		let userInfo=e.detail.userInfo;
+		let name="loginInfo.name"
+		 app.globalData.userInfo = userInfo;
+		 console.log(userInfo.nickName);
+		this.setData({
+		  userInfo: userInfo,
+		  [name]:userInfo.nickName,
+		  hasUserInfo: true
+		})
+		try{
+	 
+		  // 同步接口立即写入
+		 
+		  wx.setStorageSync('userInfo',res.userInfo )
+		 
+		  console.log('写入value2成功')
+		 
+		}catch (e) {
+		 
+		  console.log('写入value2发生错误')
+		 
+		}   
+	  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

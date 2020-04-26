@@ -15,7 +15,6 @@
 .container .history-container .no-recommend .no-icon {
   width: 252rpx;
   height: 252rpx;
-  background-color: #efeff4;
   margin: 286rpx 248rpx 92rpx 250rpx;
 }
 .container .history-container .no-recommend .no-tip {

@@ -204,6 +204,22 @@
   margin-left: 32rpx;
   margin-right: 20rpx;
 }
+.container .aboutme-container .my-block .my-left .icon .my-message-icon {
+  width: 40rpx;
+  height: 36rpx;
+}
+.container .aboutme-container .my-block .my-left .icon .my-history-icon {
+  width: 32rpx;
+  height: 40rpx;
+}
+.container .aboutme-container .my-block .my-left .icon .my-recommend-icon {
+  width: 32rpx;
+  height: 40rpx;
+}
+.container .aboutme-container .my-block .my-left .icon .my-reply-icon {
+  width: 36rpx;
+  height: 42rpx;
+}
 .container .aboutme-container .my-block .my-left .my-info {
   display: flex;
   flex-direction: column;

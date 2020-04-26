@@ -1,0 +1,90 @@
+<!--pages/my-comment/my-comment.wxml-->
+
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+    <view class="comment-box">
+		<view class="comment-card">
+			<view class="comment-book">
+				<view class="comment-num">{{commentInfo.bookNum}}</view>
+				<text class="comment-type">我的书评</text>
+			</view>
+			<view class="split-line">
+				
+			</view>
+			<view class="comment-vedio">
+				<text class="comment-num">{{commentInfo.likeNum}}</text>
+				<text class="comment-type">我点赞的书</text>
+			</view>
+		</view>
+		<view class="comment-container">
+			<block wx:if="{{commentInfo.bookNum==0&&commentInfo.likeNum==0}}">
+				<view class="no-comment">
+					<view class="no-icon">
+						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>
+					</view>
+					<view class="no-tip">
+						留下你对这本书的感悟，让Ta体味你的思想
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="comment-info">
+					<block wx:for="{{commentInfo.commentDetail.commentBookList}}" wx:key="*this">
+						<view class="comment-type-title">
+							{{item.bookType}}
+						</view>
+						<block wx:for="{{item.bookList}}" wx:key="*this">
+							<view class="comment-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+								<view class="name-detail">
+									<view class="name-resume">
+										{{filter.tofiltFirstWord(item.name)}}
+									</view>
+									<view class="name-info">
+										<view class="name">{{item.name}}</view>
+										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+									</view>
+								</view>
+								<view class="comment-detail">
+									<view class="red-dot"></view>
+									<view class="status">{{item.onlineTips}}</view>
+									<text class="cuIcon-right lg text-gray"></text>
+								</view>
+							</view>
+						</block>
+						
+					</block>
+					<block wx:for="{{commentInfo.commentDetail.commentVideoList}}" wx:key="*this">
+						<view class="comment-type-title">
+							{{item.videoType}}
+						</view>
+						<block wx:for="{{item.videoList}}" wx:key="*this">
+							<view class="comment-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+								<view class="name-detail">
+									<cover-image class="video-resume" src="../../images/video.png">
+										
+									</cover-image>
+									<view class="name-info">
+										<view class="name">{{item.name}}</view>
+										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+									</view>
+								</view>
+								<view class="comment-detail">
+									<view class="red-dot"></view>
+									<view class="status">{{item.onlineTips}}</view>
+									<text class="cuIcon-right lg text-gray"></text>
+								</view>
+							</view>
+						</block>
+						
+					</block>
+					
+					
+				</view>
+				<view class="nomore-tip">
+					<text>没有更多内容</text>
+				</view>
+			</block>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

@@ -8,14 +8,14 @@
 			<view class="reply-num">已回复{{replyInfo.num}}个书评</view>
 		</view>
 		<view class="reply-icon">
-
+			<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
 		</view>
 	</view>
 	<view class="reply-container">
 		<view class="reply-main">
 			<block wx:if="{{replyInfo.num==0}}">
 				<view class="reply-icon">
-
+						<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
 				</view>
 				<view class="no-reply">
 					你还没有回复，去发现有趣的书评吧～
@@ -158,7 +158,7 @@
 			  <view class="share-container">
 				  <view class="top-container">
 					  <view class="image-container">
-					  					  <view class="image-title">
+					  					  <view class="image-title" style="background-image: url(../../images/bookbg.png);">
 					  						  <view class="name-container">
 					  							  <view class="title-name">「知论</view>
 					  							  <view class="essay">随笔</view>

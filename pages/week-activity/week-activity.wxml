@@ -1,7 +1,7 @@
 <!--pages/week-activity/week-activity.wxml-->
 <view class="container">
 	<view class="activity-container">
-		<cover-image class="cover-image" src="{{imageSrc}}" >
+		<cover-image class="cover-image" src="{{imageSrc}}"  bindtap="handleActivityRecommend">
 		</cover-image>
 	    <block wx:for="{{recommendInfo}}" wx:key="*this">
 			<view class="activity-card">

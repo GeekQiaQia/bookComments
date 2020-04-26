@@ -34,6 +34,12 @@ Page({
 	]
   },
 
+	handleActivityRecommend:function(){
+		wx.navigateTo({
+		  url: '../activity-recommend/activity-recommend'
+		})
+	},
+
   /**
    * 生命周期函数--监听页面加载
    */

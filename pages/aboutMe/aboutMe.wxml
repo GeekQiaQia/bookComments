@@ -30,16 +30,16 @@
 		</block>
 		<block wx:else>
 			<view class="follow-container">
-					<view class="follow-info">
+					<view class="follow-info" bindtap="handleFollowOther">
 						<text>0</text><text style="margin-left: 42rpx;">我关注的人</text>
 					</view>
 					<view class="split"></view>
-					<view class="follow-info">
+					<view class="follow-info" bindtap="handleMyFollower">
 						<text>0</text><text style="margin-left: 42rpx;" >关注我的人</text>
 					</view>
 			</view>
 			<view class="bookinfo-container">
-				<view class="book-comment">
+				<view class="book-comment" bindtap="handleMyComments">
 					<cover-image 
 					                class="cover-image"
 					                src="../../images/Icon-bookComment.png"
@@ -49,10 +49,10 @@
 					<text class="comment-title">我的书评</text>
 					<text class="comment-num">0条</text>
 				</view>
-				<view class="book-record">
+				<view class="book-record" bindtap="handleMyNotes">
 					<cover-image
 					                class="cover-image"
-					                src="../../images/Icon-bookComment.png"
+					                src="../../images/Icon-bookNote.png"
 					                bindload="imageLoad"
 					                binderror="imageError">
 					            </cover-image>
@@ -69,7 +69,7 @@
 					
 					<view class="my-left">
 						<view class="icon">
-							<text class="cuIcon-message lg text-gray"></text>
+							<cover-image class="my-reply-icon" src="../../images/Icon-reply.png"></cover-image >
 						</view>
 						<view class="my-info">
 							<text>我的回复</text>
@@ -85,7 +85,7 @@
 				
 					<view class="my-left">
 						<view class="icon">
-							<text class="cuIcon-message lg text-gray"></text>
+							<cover-image class="my-recommend-icon" src="../../images/Icon-recommend.png"></cover-image >
 						</view>
 						<view class="my-info">
 							<text>我的推荐</text>
@@ -102,7 +102,7 @@
 					
 					<view class="my-left">
 						<view class="icon">
-							<text class="cuIcon-message lg text-gray"></text>
+						<cover-image class="my-history-icon" src="../../images/Icon-history.png"></cover-image >
 						</view>
 						<view class="my-info">
 							<text>我的历史</text>
@@ -114,11 +114,12 @@
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
+				
 				<view class="my-block">
 					
 					<view class="my-left">
 						<view class="icon">
-							<text class="cuIcon-message lg text-gray"></text>
+							<cover-image class="my-message-icon" src="../../images/Icon-news.png"></cover-image >
 						</view>
 						<view class="my-info">
 							<text>我的消息</text>
