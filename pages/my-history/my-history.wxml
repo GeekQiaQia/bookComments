@@ -39,7 +39,7 @@
 			
 			<view class="no-recommend">
 				<view class="no-icon">
-					
+					<cover-image src="../../images/iconhistory.png" class="icon-tip"></cover-image>
 				</view>
 				<view class="no-tip">
 					暂无浏览历史，快去享受书评吧～

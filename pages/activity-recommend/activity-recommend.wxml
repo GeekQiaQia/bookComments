@@ -1,0 +1,23 @@
+<!--pages/activity-recommend/activity-recommend.wxml-->
+<view class="container">
+	<view class="recommend-container">
+		<cover-image class="cover-image" src="{{imageSrc}}" >
+		</cover-image>
+		<view class="recommend-info">
+			<view class="cu-form-group form">
+				<view class="title">推荐书目</view>
+				<input style="padding-left: 32rpx;" class="recommend-book" value="{{recommendBookName}}" placeholder="请输入推荐书名"></input>
+				<view class="title">推荐书目</view>
+				<view class="recommend-reason">
+				<textarea style="padding-left: 32rpx;height: inherit;" maxlength="500"  value="{{descriptInput}}"  bindinput="textareaAInput" placeholder="请输入推荐理由,不超过500字"></textarea>
+				<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{descriptInputLen}}/500</view>
+				</view>
+				
+			</view>
+		</view>
+	</view>
+	<view class="btn-container">
+		<button class="btn" bindtap="handleSave">保存</button>
+	</view>
+	<copy-right></copy-right>
+</view>

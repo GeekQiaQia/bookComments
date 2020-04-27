@@ -51,31 +51,18 @@ Page({
 	swiperList: [{
 	  id: 0,
 	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+	  name:'newBook',
+	  url: '../../images/newbook.png'
 	}, {
 	  id: 1,
 	    type: 'image',
-	    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+		name:'topRecommend',
+	    url: '../../images/toprecommend.png',
 	}, {
 	  id: 2,
 	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-	}, {
-	  id: 3,
-	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-	}, {
-	  id: 4,
-	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-	}, {
-	  id: 5,
-	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-	}, {
-	  id: 6,
-	  type: 'image',
-	  url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+	  name:'weekActivity',
+	  url: '../../images/weekparty.png'
 	}],
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -85,6 +72,19 @@ Page({
 	  wx.navigateTo({
 	    url: '../bookCommentDetail/bookCommentDetail'
 	  })
+  },
+  handleImageTap:function(e){
+	  console.log(e)
+	  let tapName=e.target.dataset.itemname;
+	  if(tapName=="weekActivity"){
+		  wx.navigateTo({
+		    url: '../week-activity/week-activity'
+		  })
+	  }else if(tapName=="topRecommend"){
+		  
+	  }else if(tapName=="newBook"){
+		  
+	  }
   },
   //事件处理函数
   bindViewTap: function() {

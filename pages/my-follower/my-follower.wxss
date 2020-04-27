@@ -1,0 +1,141 @@
+.container {
+  background-color: #f7f7f7;
+}
+.container .follower-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 32rpx;
+}
+.container .follower-container .follow-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.container .follower-container .follow-main .follow-list {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 30rpx 16rpx 32rpx;
+}
+.container .follower-container .follow-main .follow-list .follow-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .follower-container .follow-main .follow-list .follow-info .follow-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #f2f2f2;
+}
+.container .follower-container .follow-main .follow-list .follow-info .follow-nickname {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 48rpx;
+  margin-left: 24rpx;
+}
+.container .follower-container .follow-main .follow-list .unfollow {
+  width: 128rpx;
+  height: 48rpx;
+  background: #666666;
+  border-radius: 10rpx;
+  border: 2rpx solid #666666;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .follower-container .follow-main .follow-list .unfollow .text {
+  width: 54rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+.container .follower-container .follow-main .follow-list .followed {
+  width: 128rpx;
+  height: 48rpx;
+  background-color: #009051;
+  border-radius: 10rpx;
+  border: 2rpx solid #008e4e;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .follower-container .follow-main .follow-list .followed .text {
+  width: 80rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+.container .follower-container .follow-main .follow-list .follow {
+  width: 128rpx;
+  height: 48rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #008e4e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .follower-container .follow-main .follow-list .follow .text {
+  width: 60rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #008d4e;
+  line-height: 28rpx;
+}
+.container .follower-container .follow-main .follow-list .follow .green {
+  color: #008d4e;
+}
+.container .follower-container .follow-main .nomore-tip {
+  display: flex;
+  flex-direction: row ;
+  justify-content: center;
+  align-items: center;
+  margin-top: 152rpx;
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 32rpx;
+}
+.container .follower-container .no-follower {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
+}
+.container .follower-container .follower-icon {
+  width: 240rpx;
+  height: 236rpx;
+  margin-bottom: 56rpx;
+}

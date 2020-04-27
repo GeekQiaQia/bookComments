@@ -9,14 +9,14 @@
 			<view class="message-num">共{{messageInfo.num}}条消息</view>
 		</view>
 		<view class="message-icon">
-			
+			<cover-image src="../../images/message.png" ></cover-image>
 		</view>
 	</view>
 	<view class="message-container">
 		<view class="message-main" >
 			<block wx:if="{{messageInfo.num==0}}">
 				<view class="message-icon">
-					
+					<cover-image src="../../images/message.png" ></cover-image>
 				</view>
 				<view class="no-message">
 					暂无消息

@@ -6,7 +6,7 @@ Page({
    */
   data: {
 	messageInfo:{
-		num:6,
+		num:3,
 		list:[
 			{	status:0,
 				date:"2020/2/20",

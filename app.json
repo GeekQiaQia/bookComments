@@ -9,7 +9,14 @@
     "pages/logs/logs",
     "pages/my-history/my-history",
     "pages/my-message/my-message",
-    "pages/my-reply/my-reply"
+    "pages/my-reply/my-reply",
+    "pages/week-activity/week-activity",
+    "pages/activity-recommend/activity-recommend",
+    "custom-tab-bar/index",
+    "pages/my-follower/my-follower",
+    "pages/follow-other/follow-other",
+    "pages/my-comments/my-comments",
+    "pages/my-notes/my-notes"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,15 +36,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "发现"
+        "text": "发现",
+        "iconPath": "images/discover-unselect.png",
+        "selectedIconPath": "images/discover-selected.png"
       },
       {
         "pagePath": "pages/hotRecommend/hotRecommend",
-        "text": "热门书评"
+        "text": "热门书评",
+        "iconPath": "images/book-unselect.png",
+        "selectedIconPath": "images/book-selected.png"
       },
       {
         "pagePath": "pages/aboutMe/aboutMe",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/my-unselect.png",
+        "selectedIconPath": "images/my-selected.png"
       }
     ]
   },
