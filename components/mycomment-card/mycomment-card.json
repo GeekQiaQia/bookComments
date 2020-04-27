@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+  	 
+  	   "comment-stars":"../../components/commentStars/commentStars"
+  }
+}

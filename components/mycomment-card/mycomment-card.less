@@ -1,114 +1,4 @@
-.container{
-		background-color:rgba(247,247,247,1);
-	.comment-box{
-			flex-grow: 1;
-			flex-shrink: 1;
-			flex-basis: 0%;
-			.comment-card{
-				width:100%;
-				height:192rpx;
-				background:rgba(255,255,255,1);
-				margin: 32rpx 0rpx;
-				
-				display: flex;
-				flex-direction: row;
-				justify-content: space-evenly;
-				align-items: center;
-				.comment-book{
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					.comment-num{
-						width:auto;
-						height:56rpx;
-						font-size:40rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:56rpx;
-					}
-					.comment-type{
-						width:auto;
-						height:40rpx;
-						font-size:28rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:40rpx;
-					}
-				}
-				.comment-vedio{
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					.comment-num{
-						width:auto;
-						height:56rpx;
-						font-size:40rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:56rpx;
-					}
-					.comment-type{
-						width:auto;
-						height:40rpx;
-						font-size:28rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:40rpx;
-					}
-				}
-				.split-line{
-					width:2rpx;
-					height:116rpx;
-					margin: 38rpx 0rpx;
-					border: 1rpx solid #EFEFF4;
-					
-				}
-			}
-			.comment-container{
-				.no-comment{
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					.no-icon{
-						width:240rpx;
-						height:288rpx;
-						// background-color:rgba(239,239,244,1);
-						margin: 286rpx 248rpx 92rpx 250rpx;
-					}
-					.no-tip{
-						width:auto;
-						height:40rpx;
-						font-size:28rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(184,184,184,1);
-						line-height:40rpx;
-					}
-					
-				}
-				.nomore-tip{
-					display: flex;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-					
-					width:auto;
-					height:34rpx;
-					font-size:24rpx;
-					font-family:PingFangSC-Regular,PingFang SC;
-					font-weight:400;
-					color:rgba(184,184,184,1);
-					line-height:34rpx;
-					margin: 46rpx 0rpx;
-				}
-				.comment-info{
+	.comment-info{
 					
 					.my-comment-card{
 						width:100%;
@@ -335,6 +225,16 @@
 									line-height:34rpx;
 									margin-left: 24rpx;
 								}
+								.shared{
+									width:auto;
+									height:34rpx;
+									font-size:24rpx;
+									font-family:PingFangSC-Regular,PingFang SC;
+									font-weight:400;
+									color:rgba(249,109,61,1);
+									line-height:34rpx;
+									margin-left: 24rpx;
+								}
 							}
 						}
 				
@@ -342,8 +242,31 @@
 					}
 
 				}
-			}
-			
-	}
-	
-}
+				
+				.cuIcon-forwardfill:before {
+					content: "\e6ea";
+				}
+				
+				.cuIcon-forward:before {
+					content: "\e6eb";
+				}
+				.cuIcon-commentfill:before {
+					content: "\e666";
+				}
+				
+				.cuIcon-comment:before {
+					content: "\e667";
+				}
+				.cuIcon-appreciatefill:before {
+					content: "\e6e3";
+				}
+				.cuIcon-appreciate:before {
+					content: "\e644";
+				}
+				.cuIcon-share:before {
+					content: "\e6f3";
+				}
+				.text-orange{
+					color: #F96D3D;
+				}
+				
