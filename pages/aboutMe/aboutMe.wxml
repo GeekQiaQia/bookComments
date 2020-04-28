@@ -3,17 +3,27 @@
 	<view class="avatar-container">
 		<view class="userinfo">
 			<block wx:if="{{!hasUserInfo && canIUse}}">
-				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-				<view class="userinfo-basic">
-					<text class="userinfo-nickname">{{loginInfo.name}}</text>
-					<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+				<view class="basic-info" bindtap="bindViewTap">
+						<view class="info">
+							<image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+							<view class="userinfo-basic">
+								<text class="userinfo-nickname">{{loginInfo.name}}</text>
+								<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+							</view>
+						</view>
+						<text class="cuIcon-right lg text-white"></text>
 				</view>
 			</block>
 			<block wx:else>
-				<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-				<view class="userinfo-basic">
-					<text class="userinfo-nickname">{{loginInfo.name}}</text>
-					<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+				<view class="basic-info" bindtap="bindViewTap">
+					<view class="info">
+						<image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+						<view class="userinfo-basic">
+							<text class="userinfo-nickname">{{loginInfo.name}}</text>
+							<text class="userinfo-signature">{{loginInfo.signatureInfo}}</text>
+						</view>
+					</view>
+					<text class="cuIcon-right lg text-white"></text>
 				</view>
 			</block>
 		</view>

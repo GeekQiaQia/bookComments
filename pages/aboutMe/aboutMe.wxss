@@ -3,27 +3,34 @@
   height: 192rpx;
   background: #f96d3d;
 }
-.container .avatar-container .userinfo {
+.container .avatar-container .userinfo .basic-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34rpx 30rpx 34rpx 34rpx ;
+}
+.container .avatar-container .userinfo .basic-info .info {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   color: #ffffff;
 }
-.container .avatar-container .userinfo .userinfo-avatar {
+.container .avatar-container .userinfo .basic-info .info .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
   border-radius: 50%;
   background-color: #EFEFF4;
 }
-.container .avatar-container .userinfo .userinfo-basic {
+.container .avatar-container .userinfo .basic-info .info .userinfo-basic {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-left: 34rpx;
 }
-.container .avatar-container .userinfo .userinfo-basic .userinfo-nickname {
+.container .avatar-container .userinfo .basic-info .info .userinfo-basic .userinfo-nickname {
   width: auto;
   height: 48rpx;
   font-size: 34rpx;
@@ -32,7 +39,7 @@
   color: #ffffff;
   line-height: 48rpx;
 }
-.container .avatar-container .userinfo .userinfo-basic .userinfo-signature {
+.container .avatar-container .userinfo .basic-info .info .userinfo-basic .userinfo-signature {
   width: auto;
   height: 28rpx;
   font-size: 20rpx;

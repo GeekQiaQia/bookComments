@@ -1,0 +1,18 @@
+<!--pages/maintenance-signature/maintenance-signature.wxml-->
+<view class="container">
+	<view class="common-container">
+		<view class="input-tip">
+			<text class="text">好的个性签名令人印象更加深刻哦～</text>
+		</view>
+		<view class="input-container">
+			<view class="recommend-reason">
+			<textarea style="padding-left: 32rpx;height: inherit; width: inherit;" maxlength="150"  value="{{signature}}"  bindinput="textareaAInput" placeholder="请输入签名,不超过150字"></textarea>
+			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{signatureLen}}/150</view>
+			</view>
+		</view>
+		<view class="btn-container">
+			<button class="btn" bindtap="handleSave" >保存</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

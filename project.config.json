@@ -138,6 +138,27 @@
 					"id": -1,
 					"name": "pages/my-comments/my-comments",
 					"pathName": "pages/my-comments/my-comments",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/info-maintenance/info-maintenance",
+					"pathName": "pages/info-maintenance/info-maintenance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/maintenance-nickname/maintenance-nickname",
+					"pathName": "pages/maintenance-nickname/maintenance-nickname",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/maintenance-signature/maintenance-signature",
+					"pathName": "pages/maintenance-signature/maintenance-signature",
 					"scene": null
 				}
 			]

@@ -16,7 +16,10 @@
     "pages/my-follower/my-follower",
     "pages/follow-other/follow-other",
     "pages/my-comments/my-comments",
-    "pages/my-notes/my-notes"
+    "pages/my-notes/my-notes",
+    "pages/info-maintenance/info-maintenance",
+    "pages/maintenance-nickname/maintenance-nickname",
+    "pages/maintenance-signature/maintenance-signature"
   ],
   "window": {
     "backgroundTextStyle": "light",

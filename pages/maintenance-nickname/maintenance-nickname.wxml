@@ -1,0 +1,16 @@
+<!--pages/maintenance-nickname/maintenance-nickname.wxml-->
+<view class="container">
+	<view class="common-container">
+		<view class="input-tip">
+			<text class="text"> 2-24个字符，一个月只能申请修改一次</text>
+		</view>
+		<view class="input-container">
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{nickname}}"  bindinput="handlNicknameInput"  placeholder="请输入昵称"></input>
+			<view class="input-len">{{nicknameLen}}</view>
+		</view>
+		<view class="btn-container">
+			<button class="btn" bindtap="handleSave" disabled="{{disabled}}">保存</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>
