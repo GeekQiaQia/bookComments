@@ -1,0 +1,184 @@
+.container{
+	background-color: #f4f4f4;
+	align-items: center;
+	.filter-container{
+		width:100%;
+		height:176rpx;
+		background-color:rgba(255,255,255,1);
+	}
+	.hot-container{
+		margin: 32rpx 30rpx 0rpx 32rpx;
+		width:688rpx;
+		height:auto;
+		background-color:rgba(255,255,255,1);
+		border-radius:20px;
+		
+		.title-container{
+			width: 100%;
+			height: 64rpx;
+			display: flex;
+			flex-direction:row;
+			justify-content:space-between;
+			align-items: center;
+			padding-left: 16rpx;
+			padding-top: 16rpx;
+			padding-right: 22rpx;
+			.type{
+				width:auto;
+				height:40rpx;
+				font-size:28rpx;
+				font-family:PingFangSC-Semibold,PingFang SC;
+				font-weight:600;
+				color:rgba(11,12,13,1);
+				line-height:39rpx;
+			}
+			
+			.book-num{
+				width:auto;
+				height:40rpx;
+				font-size:24rpx;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(150,150,150,1);
+				line-height:39rpx;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				
+			}
+		}
+		.hot-card{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			.split{
+				width:654rpx;
+				height:4rpx;
+				background-color: #E2E2E2;
+			}
+			.book-detail{
+				width:688rpx;
+				height:320rpx;
+				background:rgba(255,255,255,1);
+				border-radius:20rpx;
+				padding: 32rpx 16rpx;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				.book-info{
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					flex-grow: 1;
+					width: auto;
+					height:256rpx;
+					.reader-info{
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+						.avatar{
+							width:48rpx;
+							height:48rpx;
+							border-radius: 50%;
+						}
+						.info{
+							display: flex;
+							flex-direction: column;
+							justify-content: flex-start;
+							align-items: flex-start;
+							margin-left: 16rpx;
+							.detail{
+								display: flex;
+								flex-direction: row;
+								justify-content: flex-start;
+								align-items: center;
+								.name{
+									width:auto;
+									height:34rpx;
+									font-size:24rpx;
+									font-family:PingFangSC-Semibold,PingFang SC;
+									font-weight:600;
+									color:rgba(0,0,0,1);
+									line-height:34rpx;
+								}
+								.notice{
+									width:48rpx;
+									height:34rpx;
+									font-size:24rpx;
+									font-family:PingFangSC-Regular,PingFang SC;
+									font-weight:400;
+									color:rgba(150,150,150,1);
+									line-height:34rpx;
+									margin-left: 24rpx;
+									margin-right: 16rpx;
+								}
+							}
+							.time{
+								width:98rpx;
+								height:26rpx;
+								font-size:18rpx;
+								font-family:PingFangSC-Regular,PingFang SC;
+								font-weight:400;
+								color:rgba(150,150,150,1);
+								line-height:26rpx;
+							}
+						}
+					}
+					.comments{
+						width:464rpx;
+						height:118rpx;
+						font-size:28rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(102,102,102,1);
+						line-height:39rpx;
+						margin-top: 16rpx;
+						margin-bottom: 40rpx;
+					}
+					.read-more{
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 3;       
+					overflow: hidden;
+					text-overflow:ellipsis;
+					}
+					.releation-container{
+					
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					width: 100%;
+					height: auto;
+					.releation-info{
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+						.releation{
+							width:auto;
+							height:32rpx;
+							font-size:22rpx;
+							font-family:PingFangSC-Regular,PingFang SC;
+							font-weight:400;
+							color:rgba(150,150,150,1);
+							line-height:32rpx;
+						}
+					}
+					}
+				
+				}
+				.book-icon{
+					width:176rpx;
+					height:256rpx;
+				}
+			}
+			
+		}
+	}
+}

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+	   "copy-right":"../../components/copy-right/copy-right",
+	   "comment-stars":"../../components/commentStars/commentStars"
+  },
+     "navigationBarTitleText": "热门书评"
 }

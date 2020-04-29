@@ -161,6 +161,13 @@
 					"id": -1,
 					"name": "pages/maintenance-signature/maintenance-signature",
 					"pathName": "pages/maintenance-signature/maintenance-signature",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hotRecommend/hotRecommend",
+					"pathName": "pages/hotRecommend/hotRecommend",
 					"scene": null
 				}
 			]

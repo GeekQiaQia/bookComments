@@ -1,2 +1,62 @@
 <!--pages/hotRecommend/hotRecommend.wxml-->
-<text>pages/hotRecommend/hotRecommend.wxml</text>
+<view class="container">
+	<view class="filter-container">
+		
+	</view>
+	<view class="hot-container">
+		<view class="title-container">
+			<view class="type">
+				{{hotBook.type}}
+			</view>
+			<view class="book-num">
+				<view>全部{{hotBook.num}}本</view>
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+		<block wx:for="{{hotBook.list}}" wx:key="*this">
+			<view class="hot-card">
+				<view class="book-detail">
+					<view class="book-info">
+						<view class="reader-info">
+							<view class="avatar">
+								<cover-image src="{{item.iconUrl}}" class="avatar"></cover-image>
+							</view>
+							<view class="info">
+								<view class="detail">
+									<view class="name">
+										{{item.name}}
+									</view>
+									<view class="notice">
+										{{item.notice}}
+									</view>
+									<comment-stars model:stars="{{item.stars}}"></comment-stars>
+								</view>
+								<view class="time">
+									{{item.date}}
+								</view>
+							</view>
+						</view>
+						<view class="comments read-more">
+							{{item.bookComment}}
+						</view>
+						<view class="releation-container">
+									  <view class="releation-info">
+										  <text class="releation ">{{item.like}}有用 · </text>
+										  <text class="releation ">{{item.reply}}回复 · </text>
+										  <text class="releation ">{{item.forward}}转发</text>
+									  </view>
+						</view>
+					</view>
+					<view class="book-icon">
+						
+						<cover-image src="{{item.bookUrl}}" class="book-icon"></cover-image>
+					</view>
+				</view>
+				<view class="split">
+					
+				</view>
+			</view>
+		</block>
+
+	</view>
+</view>

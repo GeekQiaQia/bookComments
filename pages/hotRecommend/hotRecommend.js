@@ -5,7 +5,57 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+	hotBook:{
+		type:"文学",
+		num:1006,
+		list:[
+			{	status:0,
+				date:"2020/2/20",
+				info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～",
+				iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+				name:"春天来了",
+				notice:"读过",
+				forward:"9",
+				reply:"10",
+				like:"10058",
+				date:"2月25日",
+				myReplyInfo:"虽然是十年前的文章，但有很多表达用语现在看来仍不过时，牛逼",
+				reverseName:"刘十三",
+				reverseReply:"其实人就是这样",
+				bookComment:"很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对事物的发…",
+				userful:"689",
+				transmit:"22",
+				bookUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+				bookName:"一个人的朝圣",
+				stars:"5",
+				commentsNum:"30258",
+				top:1
+			},
+			{	status:0,
+				date:"2020/2/20",
+				info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～",
+				iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+				name:"春天来了",
+				notice:"读过",
+				forward:"9",
+				reply:"10",
+				like:"10058",
+				date:"2月25日",
+				myReplyInfo:"虽然是十年前的文章，但有很多表达用语现在看来仍不过时，牛逼",
+				reverseName:"刘十三",
+				reverseReply:"其实人就是这样",
+				bookComment:"很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对事物的发…",
+				userful:"689",
+				transmit:"22",
+				bookUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+				bookName:"一个人的朝圣",
+				stars:"5",
+				commentsNum:"30258",
+				top:1
+			}
+		]
+	},
+	
   },
 
   /**
