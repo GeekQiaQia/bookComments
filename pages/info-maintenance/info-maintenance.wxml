@@ -15,6 +15,7 @@
 				<text class="cuIcon-right lg text-gray"></text>
 			</view>
 		</view>
+
 		<view class="info-container">
 			<view class="basic-info">
 				<view class="info-name">
@@ -37,11 +38,11 @@
 				<view class="info-name">
 					昵称
 				</view>
-				<view class="info-detail">
+				<view class="info-detail" bindtap="showChangeNickname">
 					<view class="info">
 						{{maintenanceInfo.nickname}}
 					</view>
-					<view class="right-icon" bindtap="showChangeNickname">
+					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
@@ -54,11 +55,11 @@
 				<view class="info-name">
 					性别
 				</view>
-				<view class="info-detail">
+				<view class="info-detail" bindtap="showSexModal" data-target="bottomModalSex">
 					<view class="info">
 						{{maintenanceInfo.sex=='0'?"女":"男"}}
 					</view>
-					<view class="right-icon" bindtap="showSexModal" data-target="bottomModalSex">
+					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
@@ -71,11 +72,11 @@
 				<view class="info-name">
 					生日
 				</view>
-				<view class="info-detail">
+				<view class="info-detail" bindtap="showBirthdayModal" data-target="bottomModalBirthday">
 					<view class="info">
-						1995.02.07
+						 {{maintenanceInfo.date}}
 					</view>
-					<view class="right-icon">
+					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
@@ -88,11 +89,11 @@
 				<view class="info-name">
 					签名
 				</view>
-				<view class="info-detail">
+				<view class="info-detail" bindtap="showChangeSignature">
 					<view class="info">
 						我在人群迁徙，相聚不远万里
 					</view>
-					<view class="right-icon" bindtap="showChangeSignature">
+					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
@@ -119,6 +120,29 @@
 			  				  取消
 			  			  </view>
 			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModalBirthday'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			<van-datetime-picker
+			  type="date"
+			  class="date-picker"
+			  value="{{ currentDate }}"
+			  bind:input="onInput"
+			  bind:cancel="onCancel"
+			  bind:confirm="onConfirm"
+			  confirm-button-text="确定"
+			  min-date="{{ minDate }}"
+			  formatter="{{ formatter }}"
+			/>
+	
 			  <view class="split-bar">
 			  			  
 			  </view>

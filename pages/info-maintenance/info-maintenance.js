@@ -1,4 +1,5 @@
 // pages/info-maintenance/info-maintenance.js
+const {formatTime}=require("../../utils/util.js")
 Page({
 
   /**
@@ -9,19 +10,60 @@ Page({
 		iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
 		nickname:"灵剑",
 		sex:"0",
+		date:formatTime(new Date().getTime())
 		
 	},
-	modalName:null
+	modalName:null,
+	currentDate: new Date().getTime(),
+	    minDate: new Date(1970).getTime(),
+	    formatter(type, value) {
+	      if (type === 'year') {
+	        return `${value}年`;
+	      } else if (type === 'month') {
+	        return `${value}月`;
+	      }
+	      return value;
+	    }
+		
+	
   },
+   onInput(event) {
+      this.setData({
+        currentDate: event.detail
+      });
+    },
+	onConfirm(event){
+		console.log(event);
+		let maintenanceInfo=this.data.maintenanceInfo;
+		maintenanceInfo.date=formatTime(event.detail)
+	
+		
+		this.setData({
+		  currentDate: event.detail,
+		   maintenanceInfo: maintenanceInfo,
+		   modalName: null
+		});
+	},
+	onCancel(event){
+		this.setData({
+		  modalName: null
+		})
+	},
   hideModal:function(e){
 	  this.setData({
 	    modalName: null
 	  })
   },
+
   showSexModal:function(e){
 	this.setData({
 	  modalName: e.currentTarget.dataset.target
 	})
+  },
+  showBirthdayModal:function(e){
+	  this.setData({
+	    modalName: e.currentTarget.dataset.target
+	  })
   },
   handleSelection:function(e){
 	  

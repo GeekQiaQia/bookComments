@@ -21,11 +21,13 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": true,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
-	"appid": "wx3d242bf00c0bc844",
+	"appid": "wx1793b3f33c8e3559",
 	"projectname": "bookComments",
 	"debugOptions": {
 		"hidedInDevtools": []
