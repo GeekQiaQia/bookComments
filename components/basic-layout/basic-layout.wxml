@@ -1,0 +1,8 @@
+<!--components/basic-layout/basic-layout.wxml-->
+<view class="layout-container">
+	<view class="common-container">
+		<slot slot="main"></slot>
+		
+	</view>
+	<copy-right></copy-right>
+</view>

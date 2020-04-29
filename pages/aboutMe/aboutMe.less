@@ -4,42 +4,55 @@
 		height:192rpx;
 		background:rgba(249,109,61,1);
 		.userinfo {
-		  display: flex;
-		  flex-direction: row;
-		  justify-content: flex-start;
-		  align-items: center;
-		  color:rgba(255,255,255,1);
-		  .userinfo-avatar {
-		    width: 128rpx;
-		    height: 128rpx;
-		    margin: 20rpx;
-		    border-radius: 50%;
-			background-color: #EFEFF4;
-		  }
-		  .userinfo-basic{
+		
+		  .basic-info{
 			  display: flex;
-			  flex-direction: column;
-			  justify-content: center;
-			  align-items: flex-start;
-			  .userinfo-nickname{
-				  width:auto;
-				  height:48rpx;
-				  font-size:34rpx;
-				  font-family:PingFangSC-Semibold,PingFang SC;
-				  font-weight:600;
+			  flex-direction: row;
+			  justify-content: space-between;
+			  align-items: center;
+			  padding:34rpx 30rpx 34rpx 34rpx ;
+			  .info{
+				  display: flex;
+				  flex-direction: row;
+				  justify-content: flex-start;
+				  align-items: center;
 				  color:rgba(255,255,255,1);
-				  line-height:48rpx;
+				  .userinfo-avatar {
+				    width: 128rpx;
+				    height: 128rpx;
+				   
+				    border-radius: 50%;
+				  	background-color: #EFEFF4;
+				  }
+				  .userinfo-basic{
+				  			  display: flex;
+				  			  flex-direction: column;
+				  			  justify-content: center;
+				  			  align-items: flex-start;
+							  margin-left: 34rpx;
+				  			  .userinfo-nickname{
+				  				  width:auto;
+				  				  height:48rpx;
+				  				  font-size:34rpx;
+				  				  font-family:PingFangSC-Semibold,PingFang SC;
+				  				  font-weight:600;
+				  				  color:rgba(255,255,255,1);
+				  				  line-height:48rpx;
+				  			  }
+				  			  .userinfo-signature{
+				  				  width:auto;
+				  				  height:28rpx;
+				  				  font-size:20rpx;
+				  				  font-family:PingFangSC-Regular,PingFang SC;
+				  				  font-weight:400;
+				  				  color:rgba(239,239,244,1);
+				  				  line-height:28rpx;
+				  			  }
+				  }
 			  }
-			  .userinfo-signature{
-				  width:auto;
-				  height:28rpx;
-				  font-size:20rpx;
-				  font-family:PingFangSC-Regular,PingFang SC;
-				  font-weight:400;
-				  color:rgba(239,239,244,1);
-				  line-height:28rpx;
-			  }
+			  
 		  }
+		
 		
 		}
 		

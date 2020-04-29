@@ -1,0 +1,245 @@
+.comment-info .my-comment-card {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 34rpx 30rpx 16rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.comment-info .my-comment-card .content-container {
+  width: 100%;
+  height: inherit;
+  border-bottom: 2rpx solid #EFEFF4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .basic-info {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container .avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background-color: #f8f7ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container .avatar .cover-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container .info {
+  margin-left: 16rpx;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container .info .name {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 34rpx;
+}
+.comment-info .my-comment-card .content-container .basic-info .info-container .info .date {
+  width: auot;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.comment-info .my-comment-card .content-container .basic-info .more-operator {
+  width: 36rpx;
+  height: auto;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 41rpx;
+}
+.comment-info .my-comment-card .content-container .comment-detail {
+  width: 624rpx;
+  height: auto;
+  background-color: #efeff4;
+  border-radius: 10rpx;
+  margin-left: 64rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16rpx;
+  margin-top: 24rpx;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-info {
+  margin: 16rpx 16rpx 10rpx 16rpx;
+  width: auto;
+  height: auto;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 39rpx;
+  border-bottom: 4rpx solid #F7F7F7;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-info .read-more {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book {
+  display: flex;
+  flex: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-url {
+  width: 66rpx;
+  height: 96rpx;
+  margin: 16rpx 14rpx 16rpx 0rpx;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .name {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
+  line-height: 40rpx;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8rpx;
+  width: auto;
+  height: auto;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .stars .commentStar {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-icon {
+  width: 0rpx;
+  height: 49rpx;
+  border-width: 16rpx;
+  border-color: #FFAD91;
+  border-bottom-color: transparent;
+  margin-left: 219rpx;
+  margin-top: -53rpx;
+  border-style: solid;
+}
+.comment-info .my-comment-card .content-container .foot-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 32rpx 0rpx 24rpx 64rpx;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-refer {
+  width: auto;
+  height: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 39rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-refer .reference {
+  color: #576B95;
+  margin: 0rpx 4rpx;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-refer .dot {
+  margin: 0rpx 15rpx;
+  width: 5rpx;
+  height: 5rpx;
+  background-color: #666666;
+  border: 50%;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-share {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-share .share {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+}
+.comment-info .my-comment-card .content-container .foot-container .comment-share .shared {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f96d3d;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+}
+.cuIcon-forwardfill:before {
+  content: "\e6ea";
+}
+.cuIcon-forward:before {
+  content: "\e6eb";
+}
+.cuIcon-commentfill:before {
+  content: "\e666";
+}
+.cuIcon-comment:before {
+  content: "\e667";
+}
+.cuIcon-appreciatefill:before {
+  content: "\e6e3";
+}
+.cuIcon-appreciate:before {
+  content: "\e644";
+}
+.cuIcon-share:before {
+  content: "\e6f3";
+}
+.text-orange {
+  color: #F96D3D;
+}

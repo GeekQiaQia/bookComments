@@ -1,5 +1,7 @@
 // pages/aboutMe/aboutMe.js
 //获取应用实例
+const api = require('../../utils/request.js')
+
 const app = getApp()
 Page({
 
@@ -81,12 +83,13 @@ Page({
 		 
 		  console.log('写入value2发生错误')
 		 
-		}   
+		}  
+		
 	  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../info-maintenance/info-maintenance'
     })
   },
   /**
@@ -150,12 +153,15 @@ Page({
         }
       })
     }
+	
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+	  
+	
 
   },
 

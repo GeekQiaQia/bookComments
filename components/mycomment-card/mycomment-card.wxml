@@ -1,0 +1,88 @@
+<!--components/mycomment-card/mycomment-card.wxml-->
+<view>
+	<block wx:for="{{commentArray}}" wx:key="*this">
+		<view class="comment-info">
+		
+					<view class="my-comment-card">
+						<view class="content-container">
+							<view class="basic-info">
+								<view class="info-container">
+									<view class="avatar">
+										<cover-image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
+										</cover-image>
+									</view>
+									<view class="info">
+										<view class="name">
+											{{item.name}}
+										</view>
+										<view class="date">
+											{{item.date}}
+										</view>
+									</view>
+								</view>
+								<view class="more-operator" bindtap="showModal" data-target="bottomModal">
+									...
+								</view>
+								<!-- <text class="cuIcon-more lg text-gray"></text> -->
+							</view>
+							<view class="comment-detail">
+								<view class="comment-info">
+									<text class="resume  read-more"   >{{item.bookComment}}</text>	
+								</view>
+								<view class="comment-book">
+									<view class="book-url">
+										<cover-image class="cover-image" src="{{item.bookUrl}}" bindload="imageLoad" binderror="imageError">
+										</cover-image>
+									</view>
+									<view class="book-info">
+										<view class="name">{{item.bookName}}</view>
+										<view class="stars">
+											<comment-stars model:stars="{{item.stars}}"></comment-stars>
+											<view class="commentStar">{{item.commentsNum}}人评分</view>
+										</view>
+									</view>
+									<view class="book-icon">
+										
+									</view>
+								</view>
+							</view>
+							<view class="foot-container">
+								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
+									<text class=" lg text-gray {{item.forwarded==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}"></text>
+									<block wx:if="{{item.forwarded==true}}">
+										<view class="shared">{{item.forward}}</view>
+									</block>
+									<block wx:else>
+										<view class="share">转发</view>
+									</block>
+									
+									
+									
+								</view>
+								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
+									<text class="cuIcon-comment lg text-gray"></text>
+									<view class="share">回复</view>
+								</view>
+								<view class="comment-share" data-target="shareModal" >
+									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									
+									<block wx:if="{{item.liked==true}}">
+										<view class="shared">{{item.like}}</view>
+									</block>
+									<block wx:else>
+										<view class="share">点赞</view>
+									</block>
+								</view>
+								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
+									<text class="cuIcon-share lg text-gray"></text>
+									<view class="share">分享</view>
+								</view>
+							</view>
+						</view>
+			
+					</view>
+					
+					
+				</view>
+	</block>
+</view>

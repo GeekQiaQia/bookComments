@@ -1,0 +1,156 @@
+.container {
+  background-color: #f7f7f7;
+}
+.container .common-container {
+  flex-grow: 1;
+  padding-top: 32rpx;
+}
+.container .common-container .change-avatar {
+  width: 748rpx;
+  height: 192rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 2rpx 0rpx 0rpx #e2e2e2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 28rpx 32rpx 32rpx ;
+  border-bottom: 1rpx solid #E2E2E2;
+}
+.container .common-container .change-avatar .avatar-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: inherit;
+}
+.container .common-container .change-avatar .avatar-info .avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.container .common-container .change-avatar .avatar-info .avatar .cover-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.container .common-container .change-avatar .avatar-info .tip {
+  width: 136rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+  margin-left: 32rpx;
+}
+.container .common-container .info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.container .common-container .info-container .basic-info {
+  width: 100%;
+  height: 112rpx;
+  background: #ffffff;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 0rpx 32rpx 32rpx;
+}
+.container .common-container .info-container .basic-info .info-name {
+  width: auto;
+  height: 48rpx;
+  color: rgba(0, 0, 0, 0.9);
+}
+.container .common-container .info-container .basic-info .info-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .common-container .info-container .basic-info .info-detail .info {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+  margin-right: 20rpx;
+}
+.container .common-container .info-container .basic-info .info-detail .right-icon {
+  margin-right: 32rpx;
+}
+.container .common-container .info-container .split-line {
+  width: 716rpx;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.container .common-container .dialog-container {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+}
+.container .common-container .dialog-container .date-picker {
+  width: 100%;
+}
+.container .common-container .dialog-container .selection {
+  width: 100%;
+  height: 224rpx;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+}
+.container .common-container .dialog-container .selection .option {
+  width: 100%;
+  height: 112rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row ;
+  justify-content: center;
+  align-items: center;
+}
+.container .common-container .dialog-container .selection .option .text {
+  width: 34rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .common-container .dialog-container .delete-cancel {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.container .common-container .dialog-container .delete-cancel .delete-cancel-text {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .common-container .dialog-container .split-bar {
+  width: 268rpx;
+  height: 10rpx;
+  background-color: #000000;
+  border-radius: 200rpx;
+  margin: 40rpx 0rpx 18rpx 0rpx;
+}
+.container .van-picker__cancel {
+  color: #969696 !important;
+}
+.container .van-picker__confirm {
+  color: #f96d3d !important;
+}

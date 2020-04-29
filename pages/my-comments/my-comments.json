@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-	  "copy-right":"../../components/copy-right/copy-right"
+	   "copy-right":"../../components/copy-right/copy-right",
+	   "mycomment-card":"../../components/mycomment-card/mycomment-card",
+	   "comment-stars":"../../components/commentStars/commentStars"
   },
      "navigationBarTitleText": "我的书评"
 }

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+	   "copy-right":"../../components/copy-right/copy-right"
+	  
+  },
+     "navigationBarTitleText": "签名维护"
+}

@@ -1,0 +1,158 @@
+<!--pages/info-maintenance/info-maintenance.wxml-->
+<view class="container">
+	<view class="common-container">
+		<view class="change-avatar">
+			<view class="avatar-info">
+				<view class="avatar">
+					<cover-image class="cover-image" src="{{maintenanceInfo.iconUrl}}" bindload="imageLoad" binderror="imageError">
+					</cover-image>
+				</view>
+				<view class="tip">
+					修改头像
+				</view>
+			</view>
+			<view>
+				<text class="cuIcon-right lg text-gray"></text>
+			</view>
+		</view>
+
+		<view class="info-container">
+			<view class="basic-info">
+				<view class="info-name">
+					手机号码
+				</view>
+				<view class="info-detail">
+					<view class="info">
+						18829581109
+					</view>
+					<view class="right-icon">
+						<text class="cuIcon-right lg text-gray"></text>
+					</view>
+				</view>
+			
+			</view>
+			<view class="split-line"></view>
+		</view>
+		<view class="info-container">
+			<view class="basic-info">
+				<view class="info-name">
+					昵称
+				</view>
+				<view class="info-detail" bindtap="showChangeNickname">
+					<view class="info">
+						{{maintenanceInfo.nickname}}
+					</view>
+					<view class="right-icon" >
+						<text class="cuIcon-right lg text-gray"></text>
+					</view>
+				</view>
+			
+			</view>
+			<view class="split-line"></view>
+		</view>
+		<view class="info-container">
+			<view class="basic-info">
+				<view class="info-name">
+					性别
+				</view>
+				<view class="info-detail" bindtap="showSexModal" data-target="bottomModalSex">
+					<view class="info">
+						{{maintenanceInfo.sex=='0'?"女":"男"}}
+					</view>
+					<view class="right-icon" >
+						<text class="cuIcon-right lg text-gray"></text>
+					</view>
+				</view>
+			
+			</view>
+			<view class="split-line"></view>
+		</view>
+		<view class="info-container">
+			<view class="basic-info">
+				<view class="info-name">
+					生日
+				</view>
+				<view class="info-detail" bindtap="showBirthdayModal" data-target="bottomModalBirthday">
+					<view class="info">
+						 {{maintenanceInfo.date}}
+					</view>
+					<view class="right-icon" >
+						<text class="cuIcon-right lg text-gray"></text>
+					</view>
+				</view>
+			
+			</view>
+			<view class="split-line"></view>
+		</view>
+		<view class="info-container">
+			<view class="basic-info">
+				<view class="info-name">
+					签名
+				</view>
+				<view class="info-detail" bindtap="showChangeSignature">
+					<view class="info">
+						我在人群迁徙，相聚不远万里
+					</view>
+					<view class="right-icon" >
+						<text class="cuIcon-right lg text-gray"></text>
+					</view>
+				</view>
+			
+			</view>
+			<view class="split-line"></view>
+		</view>
+	<view class="cu-modal bottom-modal {{modalName=='bottomModalSex'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			<view class="selection" bindtap="handleSelection">
+				<view class="option">
+					<text class="text" data-sex="1">男</text>
+				</view>  
+				<view class="option">
+					<text class="text" data-sex="0">女</text>
+				</view>  
+			</view>
+	
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModalBirthday'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			<van-datetime-picker
+			  type="date"
+			  class="date-picker"
+			  value="{{ currentDate }}"
+			  bind:input="onInput"
+			  bind:cancel="onCancel"
+			  bind:confirm="onConfirm"
+			  confirm-button-text="确定"
+			  min-date="{{ minDate }}"
+			  formatter="{{ formatter }}"
+			/>
+	
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	</view>
+	<copy-right>
+
+	</copy-right>
+
+</view>

@@ -16,7 +16,10 @@
     "pages/my-follower/my-follower",
     "pages/follow-other/follow-other",
     "pages/my-comments/my-comments",
-    "pages/my-notes/my-notes"
+    "pages/my-notes/my-notes",
+    "pages/info-maintenance/info-maintenance",
+    "pages/maintenance-nickname/maintenance-nickname",
+    "pages/maintenance-signature/maintenance-signature"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,7 +29,10 @@
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom",
+    "van-button": "./miniprogram_npm/@vant/weapp/button/index",
+	"van-datetime-picker":"./miniprogram_npm/@vant/weapp/datetime-picker/index"
+    
   },
   "tabBar": {
     "custom": false,

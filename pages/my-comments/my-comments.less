@@ -8,7 +8,8 @@
 				width:100%;
 				height:192rpx;
 				background:rgba(255,255,255,1);
-				margin-top: 32rpx;
+				margin: 32rpx 0rpx;
+				
 				display: flex;
 				flex-direction: row;
 				justify-content: space-evenly;
@@ -109,106 +110,237 @@
 				}
 				.comment-info{
 					
-					.comment-type-title{
-						width:auto;
-						height:48rpx;
-						font-size:34rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:48rpx;
-						margin:32rpx 0rpx 16rpx 32rpx;
-					}
-					.not-online{
-						background-color:rgba(239,239,244,1) !important;
-						box-shadow:0rpx -2rpx 0rpx 0rpx rgba(239,239,244,1) !important;
-					}
-					.comment-type-detail{
+					.my-comment-card{
 						width:100%;
-						height:128rpx;
-						background:rgba(255,255,255,1);
-						box-shadow:0rpx -2rpx 0rpx 0rpx rgba(238,238,238,1);
+						height:auto;
+						background-color:rgba(255,255,255,1);
+						padding: 34rpx 30rpx 16rpx 32rpx;
 						display: flex;
-						flex-direction: row;
-						justify-content: space-between;
-						align-items: center;
-						padding: 0 36rpx 0 32rpx;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
 						
-						.name-detail{
+						.content-container{
+							width:100%;
+							height: inherit;
+							border-bottom: 2rpx solid #EFEFF4;
 							display: flex;
-							flex-direction: row;
+							flex-direction: column;
 							justify-content: flex-start;
 							align-items: center;
-							.video-resume{
-								width:59rpx;
-								height:59rpx;
-						
-							}
-							.name-resume{
-								width:64rpx;
-								height:64rpx;
-								background:rgba(81,125,168,1);
-								border-radius:10rpx;
-								color: white;
+							
+						.basic-info{
+							width: inherit;
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: center;
+							.info-container{
 								display: flex;
 								flex-direction: row;
-								justify-content: center;
+								justify-content: flex-start;
 								align-items: center;
-							}
-							.name-info{
-								display: flex;
-								flex-direction: column;
-								justify-content: center;
-								align-items: flex-start;
-								margin-left: 32rpx;
-								.name{
-									width:auto;
-									height:40rpx;
-									font-size:28rpx;
-									font-family:PingFangSC-Regular,PingFang SC;
-									font-weight:400;
-									color:rgba(11,12,13,1);
-									line-height:40rpx;
+								.avatar{
+									width: 64rpx;
+									height: 64rpx;
+									border-radius: 50%;
+									background-color: #f8f7ff;
+									display: flex;
+									flex-direction: row;
+									justify-content: center;
+									align-items: center;
+									.cover-image{
+										width: inherit;
+										height:inherit;
+										border-radius: 50%;
+									}
 									
 								}
-								.unactived{
-									color:rgba(150,150,150,1)!important;
+								.info{
+									margin-left: 16rpx;
+									.name{
+										width:auto;
+										height:34rpx;
+										font-size:24rpx;
+										font-family:PingFangSC-Semibold,PingFang SC;
+										font-weight:600;
+										color:rgba(0,0,0,1);
+										line-height:34rpx;
+									}
+									.date{
+										width:auot;
+										height:26rpx;
+										font-size:18rpx;
+										font-family:PingFangSC-Regular,PingFang SC;
+										font-weight:400;
+										color:rgba(150,150,150,1);
+										line-height:26rpx;
+									}
 								}
-								.status{
-									width:auto;
-									height:28rpx;
-									font-size:20rpx;
-									font-family:PingFangSC-Regular,PingFang SC;
-									font-weight:400;
-									color:rgba(249,109,61,1);
-									line-height:28rpx;
+								
+							}
+							
+								.more-operator{
+									width: 36rpx;
+									height: auto;
+									color: #666666;
+									display: flex;
+									flex-direction: column;
+									justify-content: flex-start;
+									align-items: center;
+									font-size: 41rpx;
+							
+							
+								}
+							
+							}
+						.comment-detail{
+							width:624rpx;
+							height:auto;
+							background-color:rgba(239,239,244,1);
+							border-radius:10rpx;
+							margin-left: 64rpx;
+							display: flex;
+							flex-direction: column;
+							justify-content: flex-start;
+							align-items: flex-start;
+							padding: 16rpx;
+							margin-top: 24rpx;
+							.comment-info{
+								margin: 16rpx 16rpx 10rpx 16rpx;
+								width: auto;
+								height: auto;
+								font-size: 28rpx;
+								font-family: PingFangSC-Regular, PingFang SC;
+								font-weight: 400;
+								color: #666666;
+								line-height: 39rpx;
+								border-bottom: 4rpx solid #F7F7F7;
+								.read-more{
+									display: -webkit-box;
+									-webkit-box-orient: vertical;
+									-webkit-line-clamp: 5;       
+									overflow: hidden;
+									text-overflow:ellipsis;
+								}
+
+							}
+							.comment-book{
+								display: flex;
+								flex: row;
+								justify-content: flex-start;
+								align-items: center;
+								
+								.book-url{
+									width:66rpx;
+									height:96rpx;
+									margin: 16rpx 14rpx 16rpx 0rpx;
+								}
+								.book-info{
+									display: flex;
+									flex-direction: column;
+									justify-content: flex-start;
+									align-items: flex-start;
+							
+									.name{
+										width:auto;
+										height:40rpx;
+										font-size:28rpx;
+										font-family:STSongti-SC-Bold,STSongti-SC;
+										font-weight:bold;
+										color:rgba(102,102,102,1);
+										line-height:40rpx;
+									}
+									.stars{
+										display: flex;
+										flex-direction: row;
+										justify-content: flex-start;
+										align-items: center;
+										margin-top: 8rpx;
+										width:auto;
+										height:auto;
+										.commentStar{
+											width:auto;
+											height:26rpx;
+											font-size:18rpx;
+											font-family:PingFangSC-Regular,PingFang SC;
+											font-weight:400;
+											color:rgba(150,150,150,1);
+											line-height:26rpx;
+										}
+									}
+									
+								}
+								.book-icon{
+									width: 0rpx;
+									height: 49rpx;
+									border-width: 16rpx;
+									border-color: #FFAD91;
+									border-bottom-color: transparent;
+									margin-left: 219rpx;
+									margin-top: -53rpx;
+									border-style: solid;
+							
+							
+									
 								}
 							}
 							
-						}
-						.comment-detail{
+						}	
+						
+						.foot-container{
+							width:100%;
 							display: flex;
 							flex-direction: row;
-							justify-content: flex-start;
+							justify-content: space-evenly;
 							align-items: center;
-							.red-dot{
-								width:12rpx;
-								height:12rpx;
-								background:rgba(224,32,32,1);
-								
-							}
-							.status{
+							margin: 32rpx 0rpx 24rpx 64rpx;
+							.comment-refer{
 								width:auto;
-								height:34rpx;
+								height:40rpx;
 								font-size:24rpx;
 								font-family:PingFangSC-Regular,PingFang SC;
 								font-weight:400;
 								color:rgba(102,102,102,1);
-								line-height:34rpx;
-								margin: 0 12rpx;
+								line-height:39rpx;
+								display: flex;
+								flex-direction: row;
+								justify-content: flex-start;
+								align-items: center;
+								
+								.reference{
+									color: #576B95;
+									margin: 0rpx 4rpx;
+								}
+								.dot{
+									margin: 0rpx 15rpx;
+									width:5rpx;
+									height: 5rpx;
+									background-color: #666666;
+									border: 50%;
+								}
+							}
+							.comment-share{
+								display: flex;
+								flex-direction: row;
+								justify-content: flex-end;
+								align-items: center;
+								.share{
+									width:48rpx;
+									height:34rpx;
+									font-size:24rpx;
+									font-family:PingFangSC-Regular,PingFang SC;
+									font-weight:400;
+									color:rgba(102,102,102,1);
+									line-height:34rpx;
+									margin-left: 24rpx;
+								}
 							}
 						}
+				
+						}
 					}
+
 				}
 			}
 			
