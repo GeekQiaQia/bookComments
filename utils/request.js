@@ -66,6 +66,7 @@ function getHeader(){
 	    
 		 'content-type':'application/json;charset-UTF-8'
 	}
+	console.log(wx.getStorageSync('userToken'));
     // 判断登录token是否存在
     if(wx.getStorageSync('userToken')){
         // 获取token并设置请求头
@@ -74,8 +75,9 @@ function getHeader(){
              'token': token,
 			 'content-type':'application/json;charset-UTF-8'
         }
-        return auth
+        
     }
+	return auth
 }
 // 重构请求方式
 const _fetch = (content) => {

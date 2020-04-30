@@ -4,13 +4,79 @@ let sessionKey="";
 
 
 App({
+  getSettingInfo:function(){
 	
+	// 获取用户信息
+	wx.getSetting({
+	  success: res => {
+	    if (res.authSetting['scope.userInfo']) {
+	      // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+	      wx.getUserInfo({
+	        success: res => {
+	          // 可以将 res 发送给后台解码出 unionId
+	          this.globalData.userInfo = res.userInfo
+	          console.log(res);
+	          let loginInfo=null;
+	     
+	          try {
+	            var value = wx.getStorageSync('loginInfo')
+	            if (value) {
+	              console.log(value);
+	              loginInfo=value;
+	              // Do something with return value
+	              let reqData={
+	                encryptedData:res.encryptedData,
+	                iv:res.iv,
+	                rawData:res.rawData,
+	                sessionKey:loginInfo.sessionKey,
+	                signature:res.signature
+	              }
+	              api._fetch({
+	                url: '/api/i/info',
+	                data:JSON.stringify(reqData),
+	                method:'post'
+	            }).then(function (res) {
+	                console.info(res)
+	            }).catch(function (error) {
+	                console.log(error);
+	            });
+	            }
+	          } catch (e) {
+	            // Do something when catch error
+	          }
+	
+	  
+	          try{
+	 
+	            // 同步接口立即写入
+	           
+	            wx.setStorageSync('userInfo',res.userInfo )
+	 
+	           
+	          }catch (e) {
+	           
+	            console.log('写入value2发生错误')
+	           
+	          }
+	       
+	
+	          // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+	          // 所以此处加入 callback 以防止这种情况
+	          if (this.userInfoReadyCallback) {
+	            this.userInfoReadyCallback(res)
+	          }
+	        }
+	      })
+	    }
+	  }
+	})  
+  },
   onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    
+    let that=this;
 
     // 登录
 	wx.login({
@@ -31,9 +97,10 @@ App({
 		      data:reqData,
 		      method:'get'
 		  }).then(function (res) {
-        
+          
           wx.setStorageSync('loginInfo',res.data )
-
+		  wx.setStorageSync('userToken',res.data.token )
+		  that.getSettingInfo();
 		  }).catch(function (error) {
 		      console.log(error);
 		  });
@@ -42,78 +109,7 @@ App({
 	    }
 	  }
 	})
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-              console.log(res);
-              let loginInfo=null;
-              wx.getStorage({
-                key: 'loginInfo',
-                success (res) {
-                 
-                  loginInfo=res.data;
-
-                }
-              })
-              try {
-                var value = wx.getStorageSync('loginInfo')
-                if (value) {
-                  console.log(value);
-                  loginInfo=value;
-                  // Do something with return value
-                  let reqData={
-                    encryptedData:res.encryptedData,
-                    iv:res.iv,
-                    rawData:res.rawData,
-                    sessionKey:loginInfo.sessionKey,
-                    signature:res.signature,
-                    token:loginInfo.token
-                  }
-                  api._fetch({
-                    url: '/api/i/info',
-                    data:JSON.stringify(reqData),
-                    method:'post'
-                }).then(function (res) {
-                    console.info(res)
-                }).catch(function (error) {
-                    console.log(error);
-                });
-                }
-              } catch (e) {
-                // Do something when catch error
-              }
-
-      
-              try{
  
-                // 同步接口立即写入
-               
-                wx.setStorageSync('userInfo',res.userInfo )
- 
-               
-              }catch (e) {
-               
-                console.log('写入value2发生错误')
-               
-              }
-           
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    })
   
     // 获取系统状态栏信息
     wx.getSystemInfo({
@@ -131,6 +127,7 @@ App({
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+	
   }
 })
