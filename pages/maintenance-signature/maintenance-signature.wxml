@@ -6,7 +6,7 @@
 		</view>
 		<view class="input-container">
 			<view class="recommend-reason">
-			<textarea style="padding-left: 32rpx;height: inherit; width: inherit;" maxlength="150"  value="{{signature}}"  bindinput="textareaAInput" placeholder="请输入签名,不超过150字"></textarea>
+			<textarea style="padding-left: 32rpx;height: inherit; width: inherit;" maxlength="150"  value="{{signature}}"  bindinput="handlsignatureInput" placeholder="请输入签名,不超过150字"></textarea>
 			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{signatureLen}}/150</view>
 			</view>
 		</view>

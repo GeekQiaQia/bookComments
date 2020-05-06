@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const api = require('../../utils/request.js')
 
 Page({
   data: {
@@ -92,8 +93,24 @@ Page({
       url: '../logs/logs'
     })
   },
+  getBannerList(){
+	  let reqData={
+		  page:0,
+		  size:10
+	  }
+	  api._fetch({
+	      url: '/api/banner/list',
+	      data:JSON.stringify(reqData),
+	      method:'get'
+	  }).then(function (res) {
+	      console.info(res)
+	  }).catch(function (error) {
+	      console.log(error);
+	  });
+  },
   onLoad: function () {
 		try {
+			
       let userInfo = wx.getStorageSync('userInfo')
       if (userInfo) {
      
@@ -129,6 +146,9 @@ Page({
         }
       })
     }
+	
+	this.getBannerList();
+
   },
    // 下拉刷新方法
    onPullDownRefresh: function() {

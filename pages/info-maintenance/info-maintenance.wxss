@@ -114,7 +114,7 @@
   align-items: center;
 }
 .container .common-container .dialog-container .selection .option .text {
-  width: 34rpx;
+  width: auto;
   height: 48rpx;
   font-size: 34rpx;
   font-family: PingFangSC-Regular, PingFang SC;

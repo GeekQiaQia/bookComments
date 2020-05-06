@@ -3,8 +3,9 @@ const app = getApp()
 // 定义网络请求API地址
 const baseURL = 'http://45.40.199.85:9090/book'
 // 封装网络请求开始
-const http = ({url,data,method,...other} = {}) => {
+const http = ({url,data,method,contentType,...other} = {}) => {
     // 添加请求加载等待
+	console.log(contentType);
     wx.showLoading({
         title: '加载中...'
     })
@@ -15,7 +16,7 @@ const http = ({url,data,method,...other} = {}) => {
             url: baseURL+url,
             data: data,
             // 获取请求头配置
-            header: getHeader(),
+            header: getHeader(contentType),
             method: method,
             ...other,
             // 成功或失败处理
@@ -61,20 +62,32 @@ const getUrl = url => {
   return url
 }
 //获取用户userToken
-function getHeader(){
-	let auth = {
-	    
-		 'content-type':'application/json;charset-UTF-8'
+function getHeader(contentType){
+	let auth = {}
+	console.log(contentType);
+	switch (contentType){
+	    case 1:
+	      
+			auth = {
+			    
+				 'content-type':'application/x-www-form-urlencoded'
+			}
+	        break;
+	 
+	    default:
+			 auth = {
+				 
+				 'content-type':'application/json;charset-UTF-8'
+			 }
+	        break;
 	}
+	
 	console.log(wx.getStorageSync('userToken'));
     // 判断登录token是否存在
     if(wx.getStorageSync('userToken')){
         // 获取token并设置请求头
         var token = wx.getStorageSync('userToken')
-         auth = {
-             'token': token,
-			 'content-type':'application/json;charset-UTF-8'
-        }
+         auth['token']=token;
         
     }
 	return auth
@@ -84,7 +97,8 @@ const _fetch = (content) => {
     return http({
         url:content.url,
         data:content.data,
-        method:content.method
+        method:content.method,
+		contentType:content.contentType
     })
 }
 // 添加刷新之后的操作处理方法

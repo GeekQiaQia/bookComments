@@ -9,6 +9,7 @@ App({
 	// 获取用户信息
 	wx.getSetting({
 	  success: res => {
+		  console.log(res);
 	    if (res.authSetting['scope.userInfo']) {
 	      // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
 	      wx.getUserInfo({
@@ -67,7 +68,15 @@ App({
 	          }
 	        }
 	      })
-	    }
+	    }else{
+			// 提示需要获取权限设置；
+			wx.showModal({
+				title:'提示！',
+				confirmText:'去设置',
+				showCancel:false,
+				content:'请授权'
+			})
+		}
 	  }
 	})  
   },

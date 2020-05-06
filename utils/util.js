@@ -11,7 +11,7 @@ function toFixed(num, bit = 0, isNum = false) {
 function splice(str = '', start, end) {
   return str.slice(start, end)
 }
-const formatTime = timestamp => {
+const formatTime = (timestamp,split) => {
   let date = new Date(timestamp );//时间戳为10位需*1000，时间戳为13位的话不需乘1000
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -20,7 +20,7 @@ const formatTime = timestamp => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  return [year, month, day].map(formatNumber).join('.') 
+  return [year, month, day].map(formatNumber).join(split) 
 }
 
 const formatNumber = n => {

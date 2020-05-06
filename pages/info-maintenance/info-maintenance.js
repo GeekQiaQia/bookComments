@@ -1,5 +1,7 @@
 // pages/info-maintenance/info-maintenance.js
 const {formatTime}=require("../../utils/util.js")
+
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -7,10 +9,11 @@ Page({
    */
   data: {
 	maintenanceInfo:{
-		iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-		nickname:"灵剑",
-		sex:"0",
-		date:formatTime(new Date().getTime())
+		avatarUrl:"",
+		nickName:"",
+		phoneNumber:"",
+		gender:"0",
+		birthday:formatTime(new Date().getTime(),".")
 		
 	},
 	modalName:null,
@@ -27,6 +30,61 @@ Page({
 		
 	
   },
+  /**
+   * @description  修改个人维护信息；
+   * */
+  updateInfoMaintenance(reqData){
+	
+	  api._fetch({
+	      url: '/api/me/update',
+	      data:reqData,
+	      method:'post',
+		  contentType:1
+	  }).then(function (res) {
+	      console.info(res)
+		  wx.showToast({
+		    title: '修改成功',
+		    mask:true,
+		    icon: 'success',
+		    duration: 5000
+		  })
+		
+
+	  }).catch(function (error) {
+	      console.log(error);
+	  });
+  },
+  /**
+   * @description  获取登录用户信息
+   * */
+   getLoginUserInfo(){
+	 let that=this;
+	 api._fetch({
+	     url: '/api/i/user-info',
+	     
+	     method:'get'
+	 }).then(function (res) {
+	   
+		 let {avatarUrl,phoneNumber,nickName,gender,birthday,sign}=res.data;
+		 if(birthday==null){
+			 birthday=formatTime(new Date().getTime(),".");
+		 }
+		 let maintenanceInfo={
+			 avatarUrl,
+			 phoneNumber,
+			 nickName,
+			 gender,
+			 birthday,
+			 sign
+		 }
+		 that.setData({
+			 maintenanceInfo
+		 })
+
+	 }).catch(function (error) {
+	     console.log(error);
+	 });
+   },
    onInput(event) {
       this.setData({
         currentDate: event.detail
@@ -35,14 +93,19 @@ Page({
 	onConfirm(event){
 		console.log(event);
 		let maintenanceInfo=this.data.maintenanceInfo;
-		maintenanceInfo.date=formatTime(event.detail)
-	
-		
+		maintenanceInfo.birthday=formatTime(event.detail,".")
+			
 		this.setData({
-		  currentDate: event.detail,
+		   currentDate: event.detail,
 		   maintenanceInfo: maintenanceInfo,
 		   modalName: null
 		});
+		let birthday=formatTime(event.detail,"-");
+		let reqData={
+				  birthday
+		};
+		console.log(reqData);
+		this.updateInfoMaintenance(reqData);
 	},
 	onCancel(event){
 		this.setData({
@@ -60,6 +123,11 @@ Page({
 	  modalName: e.currentTarget.dataset.target
 	})
   },
+  showAvatarModal:function(e){
+	 this.setData({
+	   modalName: e.currentTarget.dataset.target
+	 }) 
+  },
   showBirthdayModal:function(e){
 	  this.setData({
 	    modalName: e.currentTarget.dataset.target
@@ -69,14 +137,54 @@ Page({
 	  
 	  let sex=e.target.dataset.sex;
 	  let maintenanceInfo=this.data.maintenanceInfo;
-		  maintenanceInfo.sex=sex;
+		  maintenanceInfo.gender=sex;
+		 
 	  this.setData({
 	    maintenanceInfo:maintenanceInfo,
 		  modalName: null
 	  })
+	  let gender=maintenanceInfo.gender;
+	  let reqData={
+		  gender
+	  };
+	  console.log(reqData);
+	  this.updateInfoMaintenance(reqData);
 	  
   },
-  showChangeNickname:function(e){
+  handleSelectionAvatar:function(e){
+	  console.log(e);
+	  let that=this;
+	  let sourceType=[e.target.dataset.source];
+	
+	  wx.chooseImage({
+		  count:1,
+		   sizeType: ['original', 'compressed'],
+		   sourceType,
+		   success (res) {
+		      // tempFilePath可以作为img标签的src属性显示图片
+		    const tempFilePaths = res.tempFilePaths;
+			let avatar=tempFilePaths[0];
+			let reqData={
+					  avatar
+			};
+			console.log(reqData);
+			let avatarUrl=avatar;
+			let maintenanceInfo=that.data.maintenanceInfo;
+					  maintenanceInfo.avatarUrl=avatarUrl;
+					 
+			that.setData({
+			  maintenanceInfo:maintenanceInfo,
+			  modalName: null	  
+			})
+		 
+			that.updateInfoMaintenance(reqData);
+			},
+			fail(err) {
+				console.log(err);
+			}
+	  })
+  },
+  showChangenickName:function(e){
 	  wx.navigateTo({
 		    url: '../maintenance-nickname/maintenance-nickname',
 	  })
@@ -90,7 +198,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	  // 页面初始加载获取登录用户信息；
+	this.getLoginUserInfo();
   },
 
   /**

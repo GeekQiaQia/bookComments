@@ -5,7 +5,7 @@
 			<view class="reply-dot">
 
 			</view>
-			<view class="reply-num">已回复{{replyInfo.num}}个书评</view>
+			<view class="reply-num">已回复{{replyInfo.totalElements}}个书评</view>
 		</view>
 		<view class="reply-icon">
 			<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
@@ -13,7 +13,7 @@
 	</view>
 	<view class="reply-container">
 		<view class="reply-main">
-			<block wx:if="{{replyInfo.num==0}}">
+			<block wx:if="{{replyInfo.totalElements==0}}">
 				<view class="reply-icon">
 						<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
 				</view>
@@ -23,21 +23,21 @@
 			</block>
 			<block wx:else>
 				<view class="reply-info-container">
-					<block wx:for="{{replyInfo.list}}" wx:key="*this">
+					<block wx:for="{{replyInfo.content}}" wx:key="*this">
 						<view class="reply-card">
 							<view class="content-container">
 								<view class="basic-info">
 									<view class="info-container">
 										<view class="avatar">
-											<cover-image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
-											</cover-image>
+											<image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
+											</image>
 										</view>
 										<view class="info">
 											<view class="name">
 												{{item.name}}
 											</view>
 											<view class="date">
-												{{item.date}}
+												{{item.createTime}}
 											</view>
 										</view>
 									</view>

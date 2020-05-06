@@ -1,4 +1,5 @@
 // pages/my-reply/my-reply.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -83,10 +84,15 @@ hideModal(e) {
 	   confirmDelete: false
     })
   },
+  /**
+   * @description 确认删除评论
+   *  
+   * */
 confirmDelete(){
 	this.setData({
 	  confirmDelete: true
 	})
+	
 },
 toDeleteConfirm(){
 	console.log("to delete comment");
@@ -94,6 +100,7 @@ toDeleteConfirm(){
 	  modalName: null,
 	   confirmDelete: false
 	})
+	this.deleteCommentReply();
 },
 toShowShareDialog(e){
 	
@@ -113,6 +120,44 @@ handleColseShareDialog(){
 	  
 	})
 },
+/**
+ * @description  获取回复列表
+ * */
+getReplyList(){
+	let reqData={
+			  page:0,
+			  size:10
+	}
+	api._fetch({
+	    url: '/api/i/commentReply/list',
+	    data:JSON.stringify(reqData),
+	    method:'get'
+	}).then(function (res) {
+		let replyInfo=res.data;
+	    this.setData({
+			replyInfo
+		})
+	}).catch(function (error) {
+	    console.log(error);
+	});
+},
+/**
+ * @description  获取回复列表
+ * */
+ deleteCommentReply(){
+	let reqData={
+			  id:0
+	}
+	api._fetch({
+	    url: '/api/i/commentReply/delete',
+	    data:JSON.stringify(reqData),
+	    method:'post'
+	}).then(function (res) {
+	    console.info(res)
+	}).catch(function (error) {
+	    console.log(error);
+	});
+ },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -121,6 +166,7 @@ handleColseShareDialog(){
 		  // 要求小程序返回分享目标信息
 		  withShareTicket: true
 		}); 
+		this.getReplyList();
   },
 
   /**
