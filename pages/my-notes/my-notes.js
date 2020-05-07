@@ -6,7 +6,11 @@ Page({
    */
   data: {
 		notesInfo:{
-				num:0,
+				notebooknum:2,
+				empty:true,
+				notebooks:[
+					"金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
+				],
 				list:[
 					{	status:0,
 						date:"2020/2/20",

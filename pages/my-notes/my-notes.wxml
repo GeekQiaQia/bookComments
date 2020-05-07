@@ -14,12 +14,29 @@
 	</view>
 	<view class="notes-container">
 		<view class="notes-main" >
-			<block wx:if="{{notesInfo.num==0}}">
+			<view class="notebook-container">
+				
+				<view class="notebooks">
+					<view class="all">
+						全部
+					</view>
+					<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+							<view  class="bookname">
+								{{item}}
+							</view>
+					</block>
+				</view>
+				<view class="check-notebooks">
+					查看笔记本
+				</view>
+				
+			</view>
+			<block wx:if="{{notesInfo.notebooknum==0}}">
 				<view class="notes-icon">
 					<cover-image src="../../images/Icon-note.png" ></cover-image>
 				</view>
 				<view class="no-notes">
-					你好没有创建笔记本
+					你还没有创建笔记本
 				</view>
 				<view class="create-btn" bindtap="handleNewNotebook">
 					新建笔记本
@@ -27,16 +44,24 @@
 			</block>
 			<block wx:else>
 				<view class="notes-info-container">
-					<block wx:for="{{notesInfo.list}}" wx:key="*this">
-						<view class="notes-card">
-							
-							
+					<block wx:if="{{notesInfo.empty==true}}">
+						<view class="notes-empty" >
+							<view class="notes-icon">
+								<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+							</view>
+							<view class="no-notes">
+								你还没有创建笔记，去写书评吧～
+							</view>
 						</view>
 					</block>
+					<block wx:else>
+						<view class="nomore-tip">
+							<text>没有更多内容</text>
+						</view>
+					</block>
+				
 					
-					<view class="nomore-tip">
-						<text>没有更多内容</text>
-					</view>
+					
 				</view>
 			</block>
 		</view>

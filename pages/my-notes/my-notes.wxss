@@ -66,13 +66,84 @@
   align-items: center;
   width: 100vw;
 }
+.container .notes-container .notes-main .notebook-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 30rpx 24rpx 30rpx;
+}
+.container .notes-container .notes-main .notebook-container .check-notebooks {
+  width: 140rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #576b95;
+  line-height: 40rpx;
+}
+.container .notes-container .notes-main .notebook-container .notebooks {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.container .notes-container .notes-main .notebook-container .notebooks .all {
+  width: 56rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f96d3d;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+}
+.container .notes-container .notes-main .notebook-container .notebooks .bookname {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+  margin: 0rpx 20rpx 0rpx 0rpx;
+}
 .container .notes-container .notes-main .notes-info-container {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+}
+.container .notes-container .notes-main .notes-info-container .notes-empty {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: inherit;
+}
+.container .notes-container .notes-main .notes-info-container .notes-empty .notes-icon {
+  width: 167rpx;
+  height: 239rpx;
+  margin-bottom: 56rpx;
+  margin-top: 204rpx;
+}
+.container .notes-container .notes-main .notes-info-container .notes-empty .no-notes {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
 }
 .container .notes-container .notes-main .notes-info-container .notes-card {
   width: 100%;

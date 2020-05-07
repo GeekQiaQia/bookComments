@@ -64,15 +64,93 @@
 			justify-content: center;
 			align-items: center;
 			width: 100vw;
+			.notebook-container{
+				width:100%;
+				height:auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: 32rpx 30rpx 24rpx 30rpx;
+				.check-notebooks{
+					width: 140rpx;
+					height: 40rpx;
+					font-size: 28rpx;
+					font-family: PingFangSC-Regular, PingFang SC;
+					font-weight: 400;
+					color: #576b95;
+					line-height: 40rpx;
+
+					
+				}
+				.notebooks{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					width: auto;
+					height: auto;
+					flex-wrap: wrap;
+					// padding: 32rpx 30rpx 24rpx 30rpx;
+					flex: 1;
+
+
+					.all{
+						width:56rpx;
+						height:40rpx;
+						font-size:28rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(249,109,61,1);
+						line-height:40rpx;
+						 margin-right: 20rpx;
+					}
+					.bookname{
+						width: auto;
+						height: 40rpx;
+						font-size: 28rpx;
+						font-family: PingFangSC-Regular, PingFang SC;
+						font-weight: 400;
+						color: #969696;
+						line-height: 40rpx;
+						margin: 0rpx 20rpx 0rpx 0rpx;
+
+					}
+				}
+				
+			}
 
 			.notes-info-container{
 				flex-grow: 1;
 				display: flex;
 				flex-direction: column;
-				justify-content: flex-start;
+				justify-content: center;
 				align-items: center;
 				width: inherit;
-
+				.notes-empty{
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: center;
+					width: inherit;
+					.notes-icon{
+						width:167rpx;
+						height:239rpx;
+						// background-color:rgba(239,239,244,1);
+						margin-bottom: 56rpx;
+						margin-top: 204rpx;
+					}
+					.no-notes{
+						width:auto;
+						height:40rpx;
+						font-size:28rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(184,184,184,1);
+						line-height:40rpx;
+					}
+				}
 				.notes-card{
 					width:100%;
 					min-height:128rpx;
