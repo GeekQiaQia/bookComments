@@ -1,4 +1,6 @@
 // pages/maintenance-nickname/maintenance-nickname.js
+
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -12,7 +14,8 @@ Page({
   handlNicknameInput:function(e){
 	  let len=e.detail.value.length;
 	  this.setData({
-	    nicknameLen:len
+	    nicknameLen:len,
+		nickname:e.detail.value
 	  });
 	  if(this.data.nicknameLen>=2){
 		  
@@ -30,12 +33,38 @@ Page({
 		  });
 	  }
   },
+
+  
   handleSave:function(e){
 	  // 此处发送修改就要；
 	  let nicknameLen=this.data.nicknameLen;
 	  if(nicknameLen<2){
 		  
 	  }else{
+		  let nickName=this.data.nickname;
+		  console.log(nickName);
+		  let reqData={
+		  		  
+		  		  nickName
+		  }
+		  console.log(reqData);
+		  this.updateInfoMaintenance(reqData);
+
+	  }
+	
+  },
+  /**
+   * @description  修改个人维护信息；
+   * */
+  updateInfoMaintenance(reqData){
+  	
+  	  api._fetch({
+  	      url: '/api/me/update',
+  	      data:JSON.stringify(reqData),
+  	      method:'post',
+		  contentType:1
+  	  }).then(function (res) {
+  	      console.info(res)
 		  // 此处发送修改交易；
 		  wx.showToast({
 		    title: '已发送',
@@ -43,11 +72,13 @@ Page({
 		    icon: 'success',
 		    duration: 5000
 		  })
-		  wx.redirectTo({
-		    url: '../info-maintenance/info-maintenance',
-		  })
-	  }
-	
+		  
+  		  wx.redirectTo({
+  		    url: '../info-maintenance/info-maintenance',
+  		  })
+  	  }).catch(function (error) {
+  	      console.log(error);
+  	  });
   },
 
   /**

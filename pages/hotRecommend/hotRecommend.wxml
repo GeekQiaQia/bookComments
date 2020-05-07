@@ -1,7 +1,21 @@
 <!--pages/hotRecommend/hotRecommend.wxml-->
 <view class="container">
 	<view class="filter-container">
-		
+		<van-search
+		  value="{{ keyword }}"
+		  shape="round"
+		  background="#ffffff"
+		  placeholder="请输入搜索关键词"
+		  bind:change="onChange"
+		    bind:search="onSearch"
+		/>
+		<van-tabs active="{{ active }}"  bind:change="onChange">
+				
+			<block wx:for="{{tabs}}" wx:key="*this">
+				<van-tab title="{{item.tab}}"></van-tab>
+			</block>	
+		 
+		</van-tabs>
 	</view>
 	<view class="hot-container">
 		<view class="title-container">

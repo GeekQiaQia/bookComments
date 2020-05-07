@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/hotRecommend/hotRecommend",
     "pages/aboutMe/aboutMe",
     "pages/findOut/findOut",
-    "pages/hotRecommend/hotRecommend",
     "pages/bookCommentDetail/bookCommentDetail",
     "pages/my-recommend/my-recommend",
     "pages/logs/logs",
@@ -19,7 +19,8 @@
     "pages/my-notes/my-notes",
     "pages/info-maintenance/info-maintenance",
     "pages/maintenance-nickname/maintenance-nickname",
-    "pages/maintenance-signature/maintenance-signature"
+    "pages/maintenance-signature/maintenance-signature",
+    "pages/new-notebook/new-notebook"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,8 +32,10 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom",
     "van-button": "./miniprogram_npm/@vant/weapp/button/index",
-	"van-datetime-picker":"./miniprogram_npm/@vant/weapp/datetime-picker/index"
-    
+    "van-search": "./miniprogram_npm/@vant/weapp/search/index",
+    "van-tab": "./miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "./miniprogram_npm/@vant/weapp/tabs/index",
+    "van-datetime-picker": "./miniprogram_npm/@vant/weapp/datetime-picker/index"
   },
   "tabBar": {
     "custom": false,

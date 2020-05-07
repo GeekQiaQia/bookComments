@@ -5,22 +5,22 @@ Component({
     selectedColor: "#F96D3D",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "/pages/index/index",
         "text": "发现",
-        "iconPath": "images/discover-unselect.png",
-        "selectedIconPath": "images/discover-selected.png"
+        "iconPath": "/images/discover-unselect.png",
+        "selectedIconPath": "/images/discover-selected.png"
       },
       {
-        "pagePath": "pages/hotRecommend/hotRecommend",
+        "pagePath": "/pages/hotRecommend/hotRecommend",
         "text": "热门书评",
-        "iconPath": "images/book-unselect.png",
-        "selectedIconPath": "images/book-selected.png"
+        "iconPath": "/images/book-unselect.png",
+        "selectedIconPath": "/images/book-selected.png"
       },
       {
-        "pagePath": "pages/aboutMe/aboutMe",
+        "pagePath": "/pages/aboutMe/aboutMe",
         "text": "我的",
-        "iconPath": "images/my-unselect.png",
-        "selectedIconPath": "images/my-selected.png"
+        "iconPath": "/images/my-unselect.png",
+        "selectedIconPath": "/images/my-selected.png"
       }
     ]
   },

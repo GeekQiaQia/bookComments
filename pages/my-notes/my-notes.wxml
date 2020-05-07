@@ -1,46 +1,67 @@
 
 <view class="container">
-	<view class="message-top">
-		<view class="message-info">
-			<view class="message-title">我的消息 </view>
-			<view class="message-dot">
+	<view class="notes-top">
+		<view class="notes-info">
+			<view class="notes-title">我的读书笔记 </view>
+			<view class="notes-dot">
 				
 			</view>
-			<view class="message-num">共{{messageInfo.num}}条消息</view>
+			<view class="notes-num">共有笔记{{notesInfo.num}}条</view>
 		</view>
-		<view class="message-icon">
-			<cover-image src="../../images/message.png" ></cover-image>
+		<view class="notes-icon">
+			<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
 		</view>
 	</view>
-	<view class="message-container">
-		<view class="message-main" >
-			<block wx:if="{{messageInfo.num==0}}">
-				<view class="message-icon">
-					<cover-image src="../../images/message.png" ></cover-image>
+	<view class="notes-container">
+		<view class="notes-main" >
+			<view class="notebook-container">
+				
+				<view class="notebooks">
+					<view class="all">
+						全部
+					</view>
+					<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+							<view  class="bookname">
+								{{item}}
+							</view>
+					</block>
 				</view>
-				<view class="no-message">
-					暂无消息
+				<view class="check-notebooks">
+					查看笔记本
+				</view>
+				
+			</view>
+			<block wx:if="{{notesInfo.notebooknum==0}}">
+				<view class="notes-icon">
+					<cover-image src="../../images/Icon-note.png" ></cover-image>
+				</view>
+				<view class="no-notes">
+					你还没有创建笔记本
+				</view>
+				<view class="create-btn" bindtap="handleNewNotebook">
+					新建笔记本
 				</view>
 			</block>
 			<block wx:else>
-				<view class="message-info-container">
-					<block wx:for="{{messageInfo.list}}" wx:key="*this">
-						<view class="message-card">
-							
-							<view class="read-info">
-								<view class="date">{{item.date}}</view>
-								<!--status==0 未读-->
-								<view class="{{item.status==0?'unread':''}}"></view>
+				<view class="notes-info-container">
+					<block wx:if="{{notesInfo.empty==true}}">
+						<view class="notes-empty" >
+							<view class="notes-icon">
+								<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
 							</view>
-							<view class="info">
-								{{item.info}}
+							<view class="no-notes">
+								你还没有创建笔记，去写书评吧～
 							</view>
 						</view>
 					</block>
+					<block wx:else>
+						<view class="nomore-tip">
+							<text>没有更多内容</text>
+						</view>
+					</block>
+				
 					
-					<view class="nomore-tip">
-						<text>没有更多内容</text>
-					</view>
+					
 				</view>
 			</block>
 		</view>

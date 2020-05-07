@@ -26,7 +26,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.5.0",
 	"appid": "wx1793b3f33c8e3559",
 	"projectname": "bookComments",
 	"debugOptions": {
@@ -168,6 +168,20 @@
 					"id": -1,
 					"name": "pages/hotRecommend/hotRecommend",
 					"pathName": "pages/hotRecommend/hotRecommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-notes/my-notes",
+					"pathName": "pages/my-notes/my-notes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/new-notebook/new-notebook",
+					"pathName": "pages/new-notebook/new-notebook",
 					"scene": null
 				}
 			]

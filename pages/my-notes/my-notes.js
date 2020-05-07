@@ -5,8 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-		messageInfo:{
-				num:3,
+		notesInfo:{
+				notebooknum:2,
+				empty:true,
+				notebooks:[
+					"金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
+				],
 				list:[
 					{	status:0,
 						date:"2020/2/20",
@@ -24,6 +28,15 @@ Page({
 				]
 			}
   },
+  
+  /**
+   * @description 跳转到新建笔记本
+   * */
+   handleNewNotebook:function(e){
+	wx.navigateTo({
+	  url: '../new-notebook/new-notebook'
+	})
+   },
 
   /**
    * 生命周期函数--监听页面加载
@@ -77,7 +90,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppnotes: function () {
 
   }
 })

@@ -1,0 +1,19 @@
+<!--pages/new-notebook/new-notebook.wxml-->
+<view class="container">
+	<view class="note-container">
+		<view class="title-input">
+			<input style="padding-left: 32rpx;" class="input" maxlength="15" value="{{title}}"  bindinput="handlTitleInput"  placeholder="请输入标题"></input>
+			<view class="input-len">{{titleLen}}</view>
+		</view>
+		<view class="descript-container">
+			<view class="recommend-reason">
+			<textarea style="padding-left: 32rpx;padding-top:32rpx: inherit; width: inherit;" maxlength="140"  value="{{description}}"  bindinput="handlsignatureInput" placeholder="请输入描述(选填)"></textarea>
+			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{descriptionLen}}/140</view>
+			</view>
+		</view>
+		<view class="btn-container">
+			<button class="btn" bindtap="handleSave" disabled="{{disabled}}">保存</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

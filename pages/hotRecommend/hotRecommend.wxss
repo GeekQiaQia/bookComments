@@ -8,7 +8,7 @@
   background-color: #ffffff;
 }
 .container .hot-container {
-  margin: 32rpx 30rpx 0rpx 32rpx;
+  margin: 46rpx 30rpx 0rpx 32rpx;
   width: 688rpx;
   height: auto;
   background-color: #ffffff;

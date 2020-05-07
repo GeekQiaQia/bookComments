@@ -1,10 +1,21 @@
 // pages/hotRecommend/hotRecommend.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+	keyword:"",
+	active: 0,
+	tabs:[
+		{tab:"推荐"},
+		{tab:"文学"},
+		{tab:"经管"},
+		{tab:"历史"},
+		{tab:"心理"},
+		{tab:"科技"},
+	],
 	hotBook:{
 		type:"文学",
 		num:1006,
@@ -58,11 +69,48 @@ Page({
 	
   },
 
+	onChange(e) {
+	    this.setData({
+	      keyword: e.detail
+	    });
+	  },
+	onSearch() {
+	    Toast('搜索' + this.data.keyword);
+	  },
+	  /**
+	   * @description ' tab页面切换；
+	   * */
+	   onChange(event) {
+	      wx.showToast({
+	        title: `切换到标签 ${event.detail.name}`,
+	        icon: 'none'
+	      });
+	    },
+	  
+	
+	getBannerList(){
+		  let that=this;
+		  let reqData={
+			
+		  }
+		  api._fetch({
+		      url: '/api/category/list',
+		      data:reqData,
+		      method:'get',
+			  contentType:1
+		  }).then(function (res) {
+			 console.log(res);
+		      
+		  }).catch(function (error) {
+		      console.log(error);
+		  });
+	},
+	  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getBannerList();
   },
 
   /**

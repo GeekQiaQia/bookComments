@@ -1,4 +1,6 @@
 // pages/maintenance-signature/maintenance-signature.js
+
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -11,12 +13,13 @@ Page({
   handlsignatureInput:function(e){
 	  let len=e.detail.value.length;
 	  this.setData({
-	    signatureLen:len
+	    signatureLen:len,
+		signature:e.detail.value
 	  });
 
   },
   handleSave:function(e){
-	  // 此处发送修改就要；
+	 
 	  // 此处发送修改交易；
 	  wx.showToast({
 	    title: '已发送',
@@ -24,10 +27,35 @@ Page({
 	    icon: 'success',
 	    duration: 5000
 	  })
-	  wx.redirectTo({
-	    url: '../info-maintenance/info-maintenance',
-	  })
+	  let sign=this.data.signature;
+	  console.log(sign);
+	  let reqData={
+		  
+		  sign
+	  }
+	  console.log(reqData);
+	  this.updateInfoMaintenance(reqData);
 	
+	
+  },
+  /**
+   * @description  修改个人维护信息；
+   * */
+  updateInfoMaintenance(reqData){
+  	
+  	  api._fetch({
+  	      url: '/api/me/update',
+  	      data:JSON.stringify(reqData),
+  	      method:'post',
+		  contentType:1
+  	  }).then(function (res) {
+  	      console.info(res)
+		  wx.redirectTo({
+		    url: '../info-maintenance/info-maintenance',
+		  })
+  	  }).catch(function (error) {
+  	      console.log(error);
+  	  });
   },
 
   /**

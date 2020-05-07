@@ -17,7 +17,10 @@ Page({
 		
 	},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+	statistics:{
+		
+	}
   },
   handleMyReply:function(){
 	  wx.navigateTo({
@@ -75,7 +78,7 @@ Page({
 	 
 		  // 同步接口立即写入
 		 
-		  wx.setStorageSync('userInfo',res.userInfo )
+		  wx.setStorageSync('userInfo',userInfo )
 		 
 		  console.log('写入value2成功')
 		 
@@ -92,6 +95,38 @@ Page({
       url: '../info-maintenance/info-maintenance'
     })
   },
+  /**
+   * @description  获取登录用户信息
+   * */
+   getLoginUserInfo(){
+  	 let that=this;
+  	 api._fetch({
+  	     url: '/api/i/user-info',
+  	     
+  	     method:'get'
+  	 }).then(function (res) {
+  	   
+  		 let {avatarUrl,phoneNumber,nickName,gender,birthday,sign,statistics}=res.data;
+  		 if(birthday==null){
+  			 birthday=formatTime(new Date().getTime(),".");
+  		 }
+  		 let maintenanceInfo={
+  			 avatarUrl,
+  			 phoneNumber,
+  			 nickName,
+  			 gender,
+  			 birthday,
+  			 sign
+  		 }
+  		 that.setData({
+  			 maintenanceInfo,
+			 statistics
+  		 })
+  
+  	 }).catch(function (error) {
+  	     console.log(error);
+  	 });
+   },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -153,6 +188,9 @@ Page({
         }
       })
     }
+	
+	// 页面初始加载获取登录用户信息；
+	this.getLoginUserInfo();
 	
   },
 

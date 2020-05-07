@@ -1,11 +1,11 @@
 <!--pages/info-maintenance/info-maintenance.wxml-->
 <view class="container">
 	<view class="common-container">
-		<view class="change-avatar">
+		<view class="change-avatar" bindtap="showAvatarModal" data-target="bottomModalAvatar">
 			<view class="avatar-info">
 				<view class="avatar">
-					<cover-image class="cover-image" src="{{maintenanceInfo.iconUrl}}" bindload="imageLoad" binderror="imageError">
-					</cover-image>
+					<image class="cover-image" src="{{maintenanceInfo.avatarUrl}}" >
+					</image>
 				</view>
 				<view class="tip">
 					修改头像
@@ -23,7 +23,7 @@
 				</view>
 				<view class="info-detail">
 					<view class="info">
-						18829581109
+						{{maintenanceInfo.phoneNumber}}
 					</view>
 					<view class="right-icon">
 						<text class="cuIcon-right lg text-gray"></text>
@@ -38,9 +38,9 @@
 				<view class="info-name">
 					昵称
 				</view>
-				<view class="info-detail" bindtap="showChangeNickname">
+				<view class="info-detail" bindtap="showChangenickName">
 					<view class="info">
-						{{maintenanceInfo.nickname}}
+						{{maintenanceInfo.nickName}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -57,7 +57,7 @@
 				</view>
 				<view class="info-detail" bindtap="showSexModal" data-target="bottomModalSex">
 					<view class="info">
-						{{maintenanceInfo.sex=='0'?"女":"男"}}
+						{{maintenanceInfo.gender=='0'?"女":"男"}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -74,7 +74,7 @@
 				</view>
 				<view class="info-detail" bindtap="showBirthdayModal" data-target="bottomModalBirthday">
 					<view class="info">
-						 {{maintenanceInfo.date}}
+						 {{maintenanceInfo.birthday}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -91,7 +91,7 @@
 				</view>
 				<view class="info-detail" bindtap="showChangeSignature">
 					<view class="info">
-						我在人群迁徙，相聚不远万里
+						{{maintenanceInfo.sign}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -101,14 +101,43 @@
 			</view>
 			<view class="split-line"></view>
 		</view>
+		
+	<view class="cu-modal bottom-modal {{modalName=='bottomModalAvatar'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			<view class="selection" bindtap="handleSelectionAvatar">
+				<view class="option" data-source="camera">
+					<text class="text" data-source="camera">拍照</text>
+				</view>  
+				<view class="option" data-source="album">
+					<text class="text" data-source="album">从相册选择</text>
+				</view>  
+			</view>
+	
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+		
+		
 	<view class="cu-modal bottom-modal {{modalName=='bottomModalSex'?'show':''}}">
 	  <view class="cu-dialog">
 		  <view class="dialog-container">
 			<view class="selection" bindtap="handleSelection">
-				<view class="option">
+				<view class="option" data-sex="1">
 					<text class="text" data-sex="1">男</text>
 				</view>  
-				<view class="option">
+				<view class="option" data-sex="0">
 					<text class="text" data-sex="0">女</text>
 				</view>  
 			</view>
@@ -127,6 +156,8 @@
 	  
 	  </view>
 	</view>
+	
+	
 	
 	<view class="cu-modal bottom-modal {{modalName=='bottomModalBirthday'?'show':''}}">
 	  <view class="cu-dialog">
