@@ -1,40 +1,36 @@
 
 <view class="container">
-	<view class="message-top">
-		<view class="message-info">
-			<view class="message-title">我的消息 </view>
-			<view class="message-dot">
+	<view class="notes-top">
+		<view class="notes-info">
+			<view class="notes-title">我的读书笔记 </view>
+			<view class="notes-dot">
 				
 			</view>
-			<view class="message-num">共{{messageInfo.num}}条消息</view>
+			<view class="notes-num">共有笔记{{notesInfo.num}}条</view>
 		</view>
-		<view class="message-icon">
-			<cover-image src="../../images/message.png" ></cover-image>
+		<view class="notes-icon">
+			<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
 		</view>
 	</view>
-	<view class="message-container">
-		<view class="message-main" >
-			<block wx:if="{{messageInfo.num==0}}">
-				<view class="message-icon">
-					<cover-image src="../../images/message.png" ></cover-image>
+	<view class="notes-container">
+		<view class="notes-main" >
+			<block wx:if="{{notesInfo.num==0}}">
+				<view class="notes-icon">
+					<cover-image src="../../images/Icon-note.png" ></cover-image>
 				</view>
-				<view class="no-message">
-					暂无消息
+				<view class="no-notes">
+					你好没有创建笔记本
+				</view>
+				<view class="create-btn" bindtap="handleNewNotebook">
+					新建笔记本
 				</view>
 			</block>
 			<block wx:else>
-				<view class="message-info-container">
-					<block wx:for="{{messageInfo.list}}" wx:key="*this">
-						<view class="message-card">
+				<view class="notes-info-container">
+					<block wx:for="{{notesInfo.list}}" wx:key="*this">
+						<view class="notes-card">
 							
-							<view class="read-info">
-								<view class="date">{{item.date}}</view>
-								<!--status==0 未读-->
-								<view class="{{item.status==0?'unread':''}}"></view>
-							</view>
-							<view class="info">
-								{{item.info}}
-							</view>
+							
 						</view>
 					</block>
 					

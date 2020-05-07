@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-		messageInfo:{
-				num:3,
+		notesInfo:{
+				num:0,
 				list:[
 					{	status:0,
 						date:"2020/2/20",
@@ -24,6 +24,15 @@ Page({
 				]
 			}
   },
+  
+  /**
+   * @description 跳转到新建笔记本
+   * */
+   handleNewNotebook:function(e){
+	wx.navigateTo({
+	  url: '../new-notebook/new-notebook'
+	})
+   },
 
   /**
    * 生命周期函数--监听页面加载
@@ -77,7 +86,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppnotes: function () {
 
   }
 })
