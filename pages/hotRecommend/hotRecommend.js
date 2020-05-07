@@ -1,4 +1,5 @@
 // pages/hotRecommend/hotRecommend.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -86,11 +87,30 @@ Page({
 	      });
 	    },
 	  
+	
+	getBannerList(){
+		  let that=this;
+		  let reqData={
+			
+		  }
+		  api._fetch({
+		      url: '/api/category/list',
+		      data:reqData,
+		      method:'get',
+			  contentType:1
+		  }).then(function (res) {
+			 console.log(res);
+		      
+		  }).catch(function (error) {
+		      console.log(error);
+		  });
+	},
+	  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getBannerList();
   },
 
   /**

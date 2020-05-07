@@ -29,12 +29,12 @@
 								<view class="basic-info">
 									<view class="info-container">
 										<view class="avatar">
-											<image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
+											<image class="cover-image" src="{{item.userInfo.avatarUrl}}" >
 											</image>
 										</view>
 										<view class="info">
 											<view class="name">
-												{{item.name}}
+												{{item.userInfo.nickName}}
 											</view>
 											<view class="date">
 												{{item.createTime}}
@@ -47,10 +47,10 @@
 									<!-- <text class="cuIcon-more lg text-gray"></text> -->
 								</view>
 								<view class="my-reply-info">
-									{{item.myReplyInfo}}
+									{{item.content}}
 								</view>
 								<view class="read-info">
-									<view class="date">{{item.date}}</view>
+									<view class="date">{{item.createTime}}</view>
 									<!--status==0 未读-->
 									<view class="{{item.status==0?'unread':''}}"></view>
 								</view>
@@ -62,18 +62,18 @@
 								</view>
 								<view class="comment-detail">
 									<view class="comment-info">
-										{{item.bookComment}}
+										{{item.bookComment.bookInfo.describes}}
 									</view>
 									<view class="comment-book">
 										<view class="book-url">
-											<cover-image class="cover-image" src="{{item.bookUrl}}" bindload="imageLoad" binderror="imageError">
+											<cover-image class="cover-image" src="{{item.bookComment.bookInfo.picture}}" bindload="imageLoad" binderror="imageError">
 											</cover-image>
 										</view>
 										<view class="book-info">
-											<view class="name">{{item.bookName}}</view>
+											<view class="name">{{item.bookComment.bookInfo.name}}</view>
 											<view class="stars">
-												<comment-stars model:stars="{{item.stars}}"></comment-stars>
-												<view class="commentStar">{{item.commentsNum}}人评分</view>
+												<comment-stars model:stars="{{item.bookComment.bookInfo.stars}}"></comment-stars>
+												<view class="commentStar">{{item.bookComment.bookInfo.stars}}人评分</view>
 											</view>
 										</view>
 										<view class="book-icon">

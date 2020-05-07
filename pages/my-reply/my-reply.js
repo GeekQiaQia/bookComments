@@ -134,6 +134,7 @@ getReplyList(){
 	    method:'get'
 	}).then(function (res) {
 		let replyInfo=res.data;
+		console.log(replyInfo);
 	    this.setData({
 			replyInfo
 		})

@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/hotRecommend/hotRecommend",
     "pages/aboutMe/aboutMe",
     "pages/findOut/findOut",
-    "pages/hotRecommend/hotRecommend",
     "pages/bookCommentDetail/bookCommentDetail",
     "pages/my-recommend/my-recommend",
     "pages/logs/logs",

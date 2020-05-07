@@ -49,22 +49,7 @@ Page({
     motto: 'Hello World',
 	loading:false,
     userInfo: {},
-	swiperList: [{
-	  id: 0,
-	  type: 'image',
-	  name:'newBook',
-	  url: '../../images/newbook.png'
-	}, {
-	  id: 1,
-	    type: 'image',
-		name:'topRecommend',
-	    url: '../../images/toprecommend.png',
-	}, {
-	  id: 2,
-	  type: 'image',
-	  name:'weekActivity',
-	  url: '../../images/weekparty.png'
-	}],
+	swiperList: [],
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -77,7 +62,7 @@ Page({
   handleImageTap:function(e){
 	  console.log(e)
 	  let tapName=e.target.dataset.itemname;
-	  if(tapName=="weekActivity"){
+	  if(tapName=="ActivityRecommend"){
 		  wx.navigateTo({
 		    url: '../week-activity/week-activity'
 		  })
@@ -93,21 +78,62 @@ Page({
       url: '../logs/logs'
     })
   },
+  /**
+   * 
+   * @description 获取广告页
+   * */
   getBannerList(){
+	  let that=this;
 	  let reqData={
-		  page:0,
-		  size:10
+		 type:"DISCOVER"
 	  }
 	  api._fetch({
-	      url: '/api/banner/list',
-	      data:JSON.stringify(reqData),
-	      method:'get'
+	      url: '/api/banner/details/in',
+	      data:reqData,
+	      method:'get',
+		  contentType:1
 	  }).then(function (res) {
-	      console.info(res)
+		  let swiperList=res.data;
+		  that.setData({
+			 swiperList 
+		  });
+	      
 	  }).catch(function (error) {
 	      console.log(error);
 	  });
   },
+  /**
+   * @description: 获取发现页书评列表
+   * 
+   * */
+   getCommentInfo(){
+	  
+	 let that=this;
+	 let reqData={
+		 page:0,
+		 size:10,
+	 	 position :"DISCOVER"
+	 }
+	 api._fetch({
+	     url: '/api/hot-comment/list',
+	     data:reqData,
+	     method:'get',
+	 	contentType:1
+	 }).then(function (res) {
+	 	console.log(res);
+		let cardInfoArray=res.data;
+		for(let item of cardInfoArray ){
+			item['readMore']=false;
+		}
+		console.log(cardInfoArray);
+		that.setData({
+			cardInfoArray
+		});
+	     
+	 }).catch(function (error) {
+	     console.log(error);
+	 });
+   },
   onLoad: function () {
 		try {
 			
@@ -148,6 +174,7 @@ Page({
     }
 	
 	this.getBannerList();
+	this.getCommentInfo();
 
   },
    // 下拉刷新方法
