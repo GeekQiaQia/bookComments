@@ -1,5 +1,6 @@
 // pages/bookCommentDetail/bookCommentDetail.js
 //获取应用实例
+const api = require('../../utils/request.js')
 const app = getApp()
 Page({
 
@@ -8,7 +9,7 @@ Page({
    */
   data: {
     maxStars:5,
-	visible: true,
+	visible: false,
 	userInfo: {},
 	bookInfo:{
     url:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
@@ -71,6 +72,42 @@ Page({
 				canIUse: wx.canIUse('button.open-type.getUserInfo'),
 				hasUserInfo:false
   },
+  
+  
+  /**
+   * @description；获取书评详情
+   * 
+   * */
+  
+   getBookCommentDetail:function(){
+  	   let reqData={
+  		   id:1
+  	   }
+  	   let that=this;
+  	   api._fetch({
+  	       url: '/api/i/comment/detail',
+  	       data:reqData,
+  	       method:'get',
+  	   	contentType:1
+  	   }).then(function (res) {
+  	   	 console.log(res);
+  	   			 // 此处发送修改交易；
+  	   			 if(res.statusCode===200){
+  	   			
+  	   			 }else{
+  	   				 wx.showToast({
+  	   				   title: res.message,
+  	   				   mask:true,
+  	   				   icon: 'none',
+  	   				   duration: 3000
+  	   				 })
+  	   			 }
+  	   			
+  	       
+  	   }).catch(function (error) {
+  	       console.log(error);
+  	   });
+   },
 
   /**
    * 生命周期函数--监听页面加载
@@ -109,6 +146,7 @@ Page({
       })
     }
 	console.log(this.data.userInfo)
+	this.getBookCommentDetail();
   },
 
   /**

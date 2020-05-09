@@ -5,47 +5,7 @@ const api = require('../../utils/request.js')
 
 Page({
   data: {
-	  cardInfoArray:[
-		{
-			title:"《蘑菇屋》",
-			forward:"9",
-			reply:"10",
-			like:"10058",
-			resume:"看书之后，震撼人心，书中对主角阿米尔的心里描写很深刻，也揭露人性的灰色地带，小时候评判世界的标准就是好人与坏人之区别，长大了与复杂社会的碰撞，每一次碰壁也慢慢了解人性这中不仅有黑白之分，还有书中对主角阿米尔的心里描写很深刻，也揭露人性的灰色地带，小时候评判世界的标准就是好人与坏人之区别，长大了与复杂社会的碰撞，",
-			star:5,
-			time:"2020-04-13",
-			notice:"读过",
-			name:"林间小鹿",
-			readMore:false,
-			iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
-		},
-		  {
-		  	title:"《蘑菇屋》",
-		  	forward:"10",
-		  	reply:"10",
-		  	like:"10058",
-		  	resume:"看书之后，震撼人心，书中对主角阿米尔的心里描写很深刻，也揭露人性的灰色地带，小时候评判世界的标准就是好人与坏人之区别，长大了与复杂社会的碰撞，每一次碰壁也慢慢了解人性这中不仅有黑白之分，还有",
-		    star:3,
-			time:"2020-04-14",
-		  	notice:"转发",
-		  	name:"林间小鹿",
-			readMore:false,
-		  	iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
-		  } ,
-		   {
-		   	title:"《蘑菇屋》",
-		   	forward:"11",
-		   	reply:"10",
-		   	like:"10058",
-		   	resume:"看书之后，震撼人心，书中对主角阿米尔的心里描写很深刻，也揭露人性的灰色地带，小时候评判世界的标准就是好人与坏人之区别，长大了与复杂社会的碰撞，每一次碰壁也慢慢了解人性这中不仅有黑白之分，还有",
-		   	star:2,
-			time:"2020-04-15",
-		   	notice:"转发",
-		   	name:"林间小鹿",
-			readMore:false,
-		   	iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
-		   }  
-	  ],
+	  cardInfoArray:[],
     motto: 'Hello World',
 	loading:false,
     userInfo: {},

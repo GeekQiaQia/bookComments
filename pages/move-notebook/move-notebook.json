@@ -1,0 +1,6 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right"
+ },
+  "navigationBarTitleText": "移动到读书笔记"
+}

@@ -1,4 +1,5 @@
 // pages/new-notebook/new-notebook.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
 		let len=e.detail.value.length;
 		this.setData({
 		  titleLen:len,
-				title:e.detail.value
+		   title:e.detail.value
 		});
 		if(this.data.titleLen>=1){
 				  
@@ -37,28 +38,74 @@ Page({
 				  });
 		} 
 	 },
+	 handleDescriptionInput:function(e){
+		 let len=e.detail.value.length;
+		 this.setData({
+		    descriptionLen:len,
+		    description:e.detail.value
+		 });
+	 },
 	 
 	 handleSave:function(e){
 	 	  // 此处发送修改就要；
+		  let that=this;
 	 	  let titleLen=this.data.titleLen;
 	 	  if(titleLen<1){
 	 		  
 	 	  }else{
 	 		  let title=this.data.title;
 	 		  console.log(title);
-			// 此处发送修改交易；
-			wx.showToast({
-			  title: '新建成功',
-			  mask:true,
-			  icon: 'success',
-			  duration: 5000
-			})
-			wx.navigateTo({
-			  url: '../my-notes/my-notes'
-			})
+		    that.handleCreateNotebook();
+			
 	 	  }
 	 	
 	 },
+	 /**
+	  * @description:新建笔记本
+	  * 
+	  * */
+	 handleCreateNotebook:function(){
+		 let that=this;
+		 let name=that.data.title;
+		 let describes=that.data.description;
+		 let reqData={
+			 name,
+		 	 describes
+				
+		 }
+		 api._fetch({
+		     url: '/api/i/notebook/create-update',
+		     data:reqData,
+		     method:'post',
+		 	contentType:1
+		 }).then(function (res) {
+		 	 console.log(res);
+			 // 此处发送修改交易；
+			 if(res.statusCode===200){
+				 wx.showToast({
+				   title: '新建成功',
+				   mask:true,
+				   icon: 'success',
+				   duration: 5000
+				 })
+				 wx.navigateTo({
+				   url: '../my-notes/my-notes'
+				 })
+			 }else{
+				 wx.showToast({
+				   title: res.message,
+				   mask:true,
+				   icon: 'none',
+				   duration: 3000
+				 })
+			 }
+			
+		     
+		 }).catch(function (error) {
+		     console.log(error);
+		 });
+	 },
+	 
 	 
   /**
    * 生命周期函数--监听页面加载

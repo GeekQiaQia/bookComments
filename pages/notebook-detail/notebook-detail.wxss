@@ -1,0 +1,168 @@
+.container {
+  background-color: #f7f7f7;
+}
+.container .note-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 32rpx;
+}
+.container .note-container .title-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.container .note-container .title-input .input {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+}
+.container .note-container .title-input .input-len {
+  background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .note-container .descript-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0rpx !important;
+  width: 100%;
+}
+.container .note-container .descript-container .input {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+}
+.container .note-container .descript-container .recommend-reason {
+  width: 100%;
+  height: 256rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e5e5e5, 0rpx 2rpx 0rpx 0rpx #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.container .note-container .descript-container .input-len {
+  background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .note-container .btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 192rpx;
+}
+.container .note-container .btn-container .btn {
+  width: 690rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+.container .note-container .btn-container .save {
+  background-color: #f96d3d;
+  color: #ffffff;
+  margin-bottom: 30rpx;
+}
+.container .note-container .btn-container .delete {
+  background-color: #dedede;
+  color: #666666;
+}
+.container .dialog-container {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+}
+.container .dialog-container .confirm-delete-reply {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips {
+  width: 100%;
+  height: 112rpx;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete {
+  width: 100%;
+  height: 112rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete .delete-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #e02020;
+  line-height: 40rpx;
+  margin-left: 22rpx;
+}
+.container .dialog-container .delete-cancel {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.container .dialog-container .delete-cancel .delete-cancel-text {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .dialog-container .split-bar {
+  width: 268rpx;
+  height: 10rpx;
+  background-color: #000000;
+  border-radius: 200rpx;
+  margin: 40rpx 0rpx 18rpx 0rpx;
+}

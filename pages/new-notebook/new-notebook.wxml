@@ -7,7 +7,7 @@
 		</view>
 		<view class="descript-container">
 			<view class="recommend-reason">
-			<textarea style="padding-left: 32rpx;padding-top:32rpx: inherit; width: inherit;" maxlength="140"  value="{{description}}"  bindinput="handlsignatureInput" placeholder="请输入描述(选填)"></textarea>
+			<textarea style="padding-left: 32rpx;padding-top:32rpx;height: inherit; width: inherit;" maxlength="140"  value="{{description}}"  bindinput="handleDescriptionInput" placeholder="请输入描述(选填)"></textarea>
 			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{descriptionLen}}/140</view>
 			</view>
 		</view>

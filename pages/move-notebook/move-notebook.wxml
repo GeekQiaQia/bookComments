@@ -1,0 +1,51 @@
+<!--pages/my-notebooks/my-notebooks.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view class="note-container">
+		<view class="tip-container">
+			
+			<view class="create-book" bindtap="handleNewNotebook">
+				<text class="cuIcon-add lg text-oranges"></text><text class="create-notebook">新建笔记本</text>
+			</view>
+		</view>
+		<view class="book-list">
+			<view class="book-info">
+				<view class="book-title">
+					<view class="title">
+						
+						{{filter.tofiltFirstWord("金融学")}}
+					</view>
+				</view>
+				<view class="notebook-detail">
+					<view class="note-info">
+						<view class="notebook-name">
+							金融学
+							
+						</view>
+						<view class="record">
+							0条记录
+						</view>
+					</view>
+					<view class="notebook-resume">
+						金融学相关的笔记记录
+					</view>
+				</view>
+			</view>
+			
+			<view class="checkbox">
+				<van-radio-group value="{{ radio }}" bind:change="onChange">
+				 <van-radio name="1" checked-color="#F96D3D">l</van-radio>
+			
+				</van-radio-group>
+			</view>
+			
+		</view>
+		<view class="nomore-tip">
+			<text>没有更多内容</text>
+		</view>
+		<view class="btn-container">
+			<button class="btn" bindtap="handleGoBack" >返回读书笔记</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

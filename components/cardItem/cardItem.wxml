@@ -16,7 +16,13 @@
 			  </view>
 			  <view class="basicinfo">
 				  <view>
-					  <text class="name">{{item.nickname}}</text><text class="notice">{{item.notice}}</text>
+					  <text class="name">{{item.nickname}}</text>
+					  <block wx:if="{{item.forward==true}}">
+						  <text class="notice">转发</text>
+					  </block>
+					  <block  wx:if="{{item.readBook==true}}">
+					  		 <text class="notice">已读</text>
+					  </block>
 				  </view>
 				  <view>
 				  		<text class="time">{{item.createTime}}</text><text class="star fill"> 
