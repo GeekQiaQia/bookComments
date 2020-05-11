@@ -4,6 +4,7 @@
     "commentStars":"../../components/commentStars/commentStars",
 	"commentCard":"../../components/comment-card/comment-card",
 	 "canvas-share": "../../components/canvas-share/index",
+	 "book-card":"../../components/book-card/book-card",
 	"copyRight":"../../components/copy-right/copy-right"
  },
  "navigationBarTitleText": "书评"

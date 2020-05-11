@@ -36,6 +36,7 @@
 					
 				</view>
 	</view>
+	<book-card></book-card>
 	<view  class="top-comment">
 		<view class="card-item">
 			<view class="card-item-title">

@@ -85,7 +85,7 @@ Page({
   	   }
   	   let that=this;
   	   api._fetch({
-  	       url: '/api/i/comment/detail',
+  	       url: '/api/book/detail',
   	       data:reqData,
   	       method:'get',
   	   	contentType:1

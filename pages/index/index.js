@@ -26,10 +26,14 @@ Page({
 		  wx.navigateTo({
 		    url: '../week-activity/week-activity'
 		  })
-	  }else if(tapName=="topRecommend"){
-		  
-	  }else if(tapName=="newBook"){
-		  
+	  }else if(tapName=="Top10"){
+		  wx.navigateTo({
+		    url: '../top-recommend/top-recommend'
+		  })
+	  }else if(tapName=="NewBook"){
+		  wx.navigateTo({
+		    url: '../top-recommend/top-recommend'
+		  })
 	  }
   },
   //事件处理函数

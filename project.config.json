@@ -210,6 +210,20 @@
 					"id": -1,
 					"name": "pages/move-notebook/move-notebook",
 					"pathName": "pages/move-notebook/move-notebook",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bookCommentDetail/bookCommentDetail",
+					"pathName": "pages/bookCommentDetail/bookCommentDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/top-recommend/top-recommend",
+					"pathName": "pages/top-recommend/top-recommend",
 					"scene": null
 				}
 			]

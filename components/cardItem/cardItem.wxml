@@ -50,9 +50,9 @@
 				  <text class="releation ">{{item.reply}}回复 · </text>
 				  <text class="releation ">{{item.forwarding}}转发</text>
 			  </view>
-			  <view class="book-info" bindtap="handleBookDetail">
-			  		<text class="book-name">《{{item.bookInfo.name}}》</text>
-			  		<text class="cuIcon-right lg text-gray" ></text>
+			  <view class="book-info"  data-id="{{item.id}}" bindtap="handleBookDetail">
+			  		<text class="book-name" data-id="{{item.id}}">《{{item.bookInfo.name}}》</text>
+			  		<text class="cuIcon-right lg text-gray"  data-id="{{item.id}}"></text>
 			  </view>
 			
 		  </view>
