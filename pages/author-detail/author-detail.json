@@ -1,0 +1,7 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right",
+	      "book-card":"../../components/book-card/book-card"
+ },
+  "navigationBarTitleText": "作者信息"
+}

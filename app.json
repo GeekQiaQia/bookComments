@@ -24,7 +24,10 @@
     "pages/my-notebooks/my-notebooks",
     "pages/notebook-detail/notebook-detail",
     "pages/move-notebook/move-notebook",
-    "pages/top-recommend/top-recommend"
+    "pages/top-recommend/top-recommend",
+    "pages/author-detail/author-detail",
+    "pages/press-detail/press-detail",
+    "pages/book-detail/book-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

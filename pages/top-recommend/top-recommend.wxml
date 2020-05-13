@@ -5,30 +5,30 @@
 		<cover-image class="cover-image" src="{{imageSrc}}" >
 		</cover-image> 
 		<view class="list-container">
-			<block wx:for="{{bookList}}" wx:key="{{item.No}}">
+			<block wx:for="{{bookList}}" wx:key="{{item.rank}}">
 				<view class="list-card">
-					<block wx:if="{{item.No==1}}">
+					<block wx:if="{{item.rank==1}}">
 						<view class="top-num No1">
-							No.{{item.No}}
+							No.{{item.rank}}
 						</view>
 					</block>
-					<block wx:elif="{{item.No==2}}">
+					<block wx:elif="{{item.rank==2}}">
 						<view class="top-num No2">
-							No.{{item.No}}
+							No.{{item.rank}}
 						</view>
 					</block>
-					<block wx:elif="{{item.No==3}}">
+					<block wx:elif="{{item.rank==3}}">
 						<view class="top-num No3">
-							No.{{item.No}}
+							No.{{item.rank}}
 						</view>
 					</block>
 					<block wx:else>
 						<view class="top-num No">
-							No.{{item.No}}
+							No.{{item.rank}}
 						</view>
 					</block>
 					<view class="book-info">
-						<book-card>
+						<book-card model:book-info="{{item.bookInfo}}"  bind:onAuthorDetail="onAuthorDetail" bind:onPressDetail="onPressDetail">
 							
 						</book-card>
 						

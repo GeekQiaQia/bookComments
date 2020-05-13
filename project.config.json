@@ -224,6 +224,34 @@
 					"id": -1,
 					"name": "pages/top-recommend/top-recommend",
 					"pathName": "pages/top-recommend/top-recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/top-recommend/top-recommend",
+					"pathName": "pages/top-recommend/top-recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/author-detail/author-detail",
+					"pathName": "pages/author-detail/author-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/press-detail/press-detail",
+					"pathName": "pages/press-detail/press-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/book-detail/book-detail",
+					"pathName": "pages/book-detail/book-detail",
 					"scene": null
 				}
 			]

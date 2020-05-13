@@ -27,7 +27,7 @@
 					</view>
 					<view class="info-obj">
 						<text class="info-key seven-spacing">出版社：</text>
-						<text class="info-value"  data-id="{{bookInfo.press.id}}" bindtap="handlePressDetail"  >{{bookInfo.press.name}}</text>
+						<text class="info-value">{{bookInfo.press.name}}</text>
 					</view>
 					<view class="info-obj">
 						<text class="info-key one-spacing">出版年份:</text>

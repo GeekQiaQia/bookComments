@@ -1,0 +1,235 @@
+.container{
+	align-items: center;
+	background-color:rgba(255,255,255,1);
+	.top-container{
+		flex: 1;
+		.book-card{
+			width:688rpx;
+			height:288rpx;
+			background:rgba(247,247,247,1);
+			border-radius:10rpx;
+			margin: 32rpx;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			padding: 16rpx;
+			
+			.cover-image{
+				width:176rpx;
+				height:256rpx;
+				margin-right: 32rpx;
+			}
+			.info-detail{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				.name{
+					width:272rpx;
+					height:48rpx;
+					font-size:34rpx;
+					font-family:PingFangSC-Semibold,PingFang SC;
+					font-weight:600;
+					color:rgba(0,0,0,1);
+					line-height:48rpx;
+				}
+			
+				.commentsNum{
+					width:108rpx;
+					height:26rpx;
+					font-size:18rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(150,150,150,1);
+					line-height:26rpx;
+				}
+				.info-obj{
+					display:flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					.spacing{
+						letter-spacing: 20rpx;
+					}
+					.seven-spacing{
+						letter-spacing: 7rpx;
+					}
+					.one-spacing{
+						letter-spacing: 1rpx;
+		
+					}
+					.info-key{
+						width:126rpx;
+						height:32rpx;
+						font-size:22rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(102,102,102,1);
+						line-height:32rpx;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+					}
+					.info-value{
+						width:auto;
+						height:32rpx;
+						font-size:22rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(87,107,149,1);
+						text-align:left;
+						line-height:32rpx;
+					}
+				}
+			
+			}
+			
+		}
+		.tabs-container{
+			padding:32rpx 30rpx 32rpx 32rpx;
+			width:688rpx;
+			height:auto;
+			
+			.tab-container{
+				font-size:28rpx;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(102,102,102,1);
+				line-height:39rpx;
+				.editor-recommend{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					margin-bottom: 45rpx;
+					margin-top: 32rpx;
+				}
+				.catalogue{
+					
+				}
+			}
+		}
+		
+		.no-more{
+			width:100%;
+			height:32rpx;
+			font-size:22rpx;
+			display: flex;
+			margin-top: 32rpx;
+			margin-bottom: 48rpx;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:#B8B8B8;
+			line-height:32rpx;
+		}
+
+		.foot{
+				width: 100%;
+				height: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				
+		
+				.copy-right{
+					width:auto;
+					height:28rpx;
+					font-size:20rpx;
+					font-family:STSongti-SC-Regular,STSongti-SC;
+					font-weight:400;
+					color:rgba(178,178,178,1);
+					line-height:28rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					margin-bottom: 20rpx;
+				}
+
+						
+			}
+		
+	}
+
+	.bottom-contianer{
+		position: relative;
+		margin-bottom: 0px;
+		width:100%;
+		height: auto;
+		.bottom-input{
+			width:100%;
+			height:98rpx;
+			background:rgba(255,255,255,1);
+			box-shadow:0rpx 2rpx 0rpx 0rpx rgba(226,226,226,1);
+			padding: 16rpx 32rpx 18rpx  30rpx;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			.input{
+				width:608rpx;
+				height:64rpx;
+				background-color:rgba(247,247,247,1);
+				border-radius:10rpx;
+				font-size:22rpx;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(184,184,184,1);
+			}
+			.icon-input{
+				width:48rpx;
+				height:56rpx;
+				margin-left: 32rpx;
+				.icon{
+					width: inherit;
+					height: inherit;
+				}
+				
+			}
+		}
+		.bottom-line{
+			width:100%;
+			height:68rpx;
+			background-color:rgba(255,255,255,1);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 20rpx;
+			.line{
+						width:268rpx;
+						height:10rpx;
+						background:rgba(0,0,0,1);
+						border-radius:200rpx;
+						margin:0rpx 0rpx 18rpx 0rpx;
+					}
+		}
+	}
+	.cuIcon-people:before {
+			content: "\e736";
+		}
+	.cuIcon-favorfill:before {
+		content: "\e64b";
+	}
+	.cuIcon-right:before {
+		content: "\e6a3";
+	}
+	.text-gray,
+	.line-gray,
+	.lines-gray {
+		color: #aaaaaa;
+	}
+	.text-orange{
+		color: #F96D3D;
+	}
+	.lg {
+		width: 80upx;
+		height: 80upx;
+	}
+}

@@ -1,0 +1,109 @@
+.container {
+  align-items: center;
+}
+.container .split-line {
+  width: 688rpx;
+  height: 2rpx;
+  background-color: #E2E2E2;
+  margin-top: 14rpx;
+}
+.container .book-card {
+  width: 688rpx;
+  height: 288rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16rpx;
+}
+.container .book-card .cover-image {
+  width: 176rpx;
+  height: 256rpx;
+  margin-right: 32rpx;
+}
+.container .book-card .info-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+}
+.container .book-card .info-detail .name {
+  width: 272rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .book-card .info-detail .commentsNum {
+  width: 108rpx;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .book-card .info-detail .info-obj {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .book-card .info-detail .info-obj .spacing {
+  letter-spacing: 20rpx;
+}
+.container .book-card .info-detail .info-obj .seven-spacing {
+  letter-spacing: 7rpx;
+}
+.container .book-card .info-detail .info-obj .one-spacing {
+  letter-spacing: 1rpx;
+}
+.container .book-card .info-detail .info-obj .info-key {
+  width: 126rpx;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .book-card .info-detail .info-obj .info-value {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  text-align: left;
+  line-height: 32rpx;
+}
+.container .cuIcon-people:before {
+  content: "\e736";
+}
+.container .cuIcon-favorfill:before {
+  content: "\e64b";
+}
+.container .cuIcon-right:before {
+  content: "\e6a3";
+}
+.container .text-gray,
+.container .line-gray,
+.container .lines-gray {
+  color: #aaaaaa;
+}
+.container .text-orange {
+  color: #F96D3D;
+}
+.container .lg {
+  width: 80upx;
+  height: 80upx;
+}

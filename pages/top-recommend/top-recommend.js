@@ -73,6 +73,29 @@ Page({
 	
   },
   /**
+   * @description 监听点击作者详情事件；
+   * */
+   onAuthorDetail:function(e){
+	   // 组件传参过来的id;
+	   let id=e.detail.id;
+	   wx.navigateTo({
+	     url: '../author-detail/author-detail?id='+id
+	   })
+	   
+   },
+   /**
+    * @description 监听点击出版社详情事件；
+    * */
+    onPressDetail:function(e){
+   	   // 组件传参过来的id;
+   	   let id=e.detail.id;
+   	   wx.navigateTo({
+   	     url: '../press-detail/press-detail?id='+id
+   	   })
+   	   
+    },
+   
+  /**
    * @description:top10榜单信息；
    * 
    * */
@@ -93,7 +116,10 @@ Page({
 	 	 console.log(res);
 	 			 // 此处发送修改交易；
 	 			if(res.statusCode===200){
-					
+				
+					that.setData({
+						bookList:res.data.content
+					});
 				}else{
 	 				 wx.showToast({
 	 				   title: res.message,

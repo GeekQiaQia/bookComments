@@ -1,0 +1,8 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right",
+	     "commentStars":"../../components/commentStars/commentStars",
+	      "book-card":"../../components/book-card/book-card"
+ },
+  "navigationBarTitleText": "书籍信息"
+}

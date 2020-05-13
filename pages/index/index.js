@@ -15,8 +15,10 @@ Page({
   },
   handleCommentDetail:function(e){
 	  console.log(e);
+	  // 组件传参过来的id;
+	  let id=e.detail.id;
 	  wx.navigateTo({
-	    url: '../bookCommentDetail/bookCommentDetail'
+	    url: '../bookCommentDetail/bookCommentDetail?id='+id
 	  })
   },
   handleImageTap:function(e){

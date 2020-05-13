@@ -1,0 +1,87 @@
+<!--pages/bookCommentDetail/bookCommentDetail.wxml-->
+<view class="container">
+	<scroll-view scroll-y="true" style='height: {{scrollHeight + "rpx"}}'>
+		<view class="top-container">
+			<view class="book-card">
+				
+					<cover-image
+			                class="cover-image"
+			                src="{{bookInfo.url}}"
+			                bindload="imageLoad"
+			                binderror="imageError">
+			            </cover-image>
+						<view class="info-detail">
+							<text class="name">《一个人的朝圣》</text>
+					        <commentStars  model:stars="{{bookInfo.star}}"></commentStars>
+							<text class="commentsNum">30686人评分</text>
+							<view class="info-obj">
+								<text class="info-key spacing">作者：</text>
+								<text class="info-value">蕾秋·乔伊斯(Rachel Joyce)</text>
+							</view>
+							<view class="info-obj">
+								<text class="info-key spacing">译者：</text>
+								<text class="info-value">黄妙瑜</text>
+							</view>
+							<view class="info-obj">
+								<text class="info-key spacing">类别：</text>
+								<text class="info-value">文学</text>
+							</view>
+							<view class="info-obj">
+								<text class="info-key seven-spacing">出版社：</text>
+								<text class="info-value">北京联合出版公司</text>
+							</view>
+							<view class="info-obj">
+								<text class="info-key one-spacing">出版年份:</text>
+								<text class="info-value">2013年9月</text>
+							</view>
+							
+						</view>
+			</view>
+			<van-tabs class="tabs-container" animated  color="#F96D3D" active="{{ active }}"  bind:change="onChange">
+					
+				<block wx:for="{{tabs}}" wx:key="*this">
+					<van-tab  class="tab-container" title="{{item.tab}}">
+						<block wx:if="{{item.name=='bookResume'}}">
+							<view class="editor-recommend">编辑推荐：</view>
+							<view>{{item.info}}</view>
+							<view class="editor-recommend">目录</view>
+							<view class="catalogue">
+								1、哈罗德与信 2、哈罗德、加油站女孩与信仰的问题 3、莫琳与电话 4、哈罗德与客店旅人 5、哈罗德、酒保与没有孩子的女人 6、莫琳与谎言 7、哈罗德、远足的男人与喜欢简奥斯丁的女人 8、哈罗德与银发绅士 9、莫琳与戴维 10、哈罗德与提示 11、莫琳与临时医生 12、哈罗德与骑自行车的母亲 13、哈罗德与医生 14、莫琳与雷克斯 15、哈罗德与全新的开始 16、哈罗德、外科医生与著名演员 17、莫琳与花园 18、哈罗德与决定
+							</view>
+						</block>
+						<block wx:elif="{{item.name=='topComments'}}">
+							<view>{{item.info}}</view>
+						</block>
+						<block wx:else>
+							<view>{{item.info}}</view>
+						</block>
+					</van-tab>
+					
+				</block>	
+			 
+			</van-tabs>
+			<view class="no-more">
+				— 到底啦 —
+			</view>
+			<view class="foot">
+				<view class="copy-right">
+						Copyright © 2019-2020 medo.com
+				</view>
+			
+			</view>
+		</view>
+	</scroll-view>
+	<view class="bottom-contianer">
+		<view class="bottom-input">
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{nickname}}"  bindinput="handlNicknameInput"  placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></input>
+			
+			<view class="icon-input">
+				<cover-image src="../../images/Icon-bookComment-input.png" class="icon"></cover-image>
+			</view>
+		</view>
+		<view class="bottom-line">
+			<view class="line"></view>
+		</view>
+	</view>
+	
+</view>
