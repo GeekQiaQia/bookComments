@@ -1,0 +1,44 @@
+<!--pages/my-notebooks/my-notebooks.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view class="note-container">
+		<view class="tip-container">
+			<view class="tips">
+				提示：点击笔记本可编辑修改
+			</view>
+			<view class="create-book" bindtap="handleNewNotebook">
+				<text class="cuIcon-add lg text-oranges"></text><text class="create-notebook">新建笔记本</text>
+			</view>
+		</view>
+		<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+			<view class="book-list" data-id="{{item.id}}" catchtap="handleNotebookDetail">
+				<view class="book-info" data-id="{{item.id}}">
+					<view class="book-title" data-id="{{item.id}}">
+						<view class="title" data-id="{{item.id}}">
+							
+							{{filter.tofiltFirstWord(item.name)}}
+						</view>
+					</view>
+					<view class="notebook-detail" data-id="{{item.id}}">
+						<view class="notebook-name" data-id="{{item.id}}">
+							{{item.name}}
+						</view>
+						<view class="notebook-resume" data-id="{{item.id}}">
+							{{item.describes}}
+						</view>
+					</view>
+				</view>
+				<view class="record" data-id="{{item.id}}">
+					0条记录
+				</view>
+			</view>
+		</block>
+		<view class="nomore-tip">
+			<text>没有更多内容</text>
+		</view>
+		<view class="btn-container">
+			<button class="btn" bindtap="handleGoBack" >返回读书笔记</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

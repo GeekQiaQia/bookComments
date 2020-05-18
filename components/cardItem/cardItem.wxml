@@ -9,14 +9,20 @@
 			  <view class="avatar">
 				<image
 				                class="cover-image"
-				                src="{{item.avatarUrl}}"
+				                src="{{item.userInfo.avatarUrl}}"
 				                bindload="imageLoad"
 				                binderror="imageError">
 				            </image>
 			  </view>
 			  <view class="basicinfo">
 				  <view>
-					  <text class="name">{{item.nickname}}</text><text class="notice">{{item.notice}}</text>
+					  <text class="name">{{item.userInfo.nickName}}</text>
+					  <block wx:if="{{item.forward==true}}">
+						  <text class="notice">转发</text>
+					  </block>
+					  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+					  		 <text class="notice">已读</text>
+					  </block>
 				  </view>
 				  <view>
 				  		<text class="time">{{item.createTime}}</text><text class="star fill"> 
@@ -35,7 +41,7 @@
 		  </view>
 		  
 		  <view class="content-container">
-		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.bookInfo.describes}}</text>
+		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.content}}</text>
 		  </view>
 		  
 		  <view class="releation-container">
@@ -44,9 +50,9 @@
 				  <text class="releation ">{{item.reply}}回复 · </text>
 				  <text class="releation ">{{item.forwarding}}转发</text>
 			  </view>
-			  <view class="book-info" bindtap="handleBookDetail">
-			  		<text class="book-name">《{{item.bookInfo.name}}》</text>
-			  		<text class="cuIcon-right lg text-gray" ></text>
+			  <view class="book-info"  data-id="{{item.id}}" bindtap="handleBookDetail()">
+			  		<text class="book-name" data-id="{{item.id}}">《{{item.bookInfo.name}}》</text>
+			  		<text class="cuIcon-right lg text-gray"  data-id="{{item.id}}"></text>
 			  </view>
 			
 		  </view>

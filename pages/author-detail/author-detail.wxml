@@ -1,0 +1,66 @@
+<!--pages/author-detail/author-detail.wxml-->
+<!-- pages/top-recommend/top-recommend.wxml -->
+<view class="container">
+	<view class="top-container">
+		<view class="author-resume">
+			<view class="resume-container">
+				<view class="avatar">
+					<cover-image
+					        class="cover-image"
+					        src="{{authorInfo.avatar}}">
+					    </cover-image>
+				</view>
+				<view class="info">
+					<view class="name">{{authorInfo.name}}</view>
+					<block wx:if="{{authorInfo.enName!==null}}">
+						<view class="info-item">
+							<view class="info-key">外  文 名：</view>
+							<view class="info-value">{{authorInfo.enName}}</view>
+						</view>
+						
+					</block>
+					
+					<view class="info-item">
+						<view class="info-key">国际：</view>
+						<view class="info-value">{{authorInfo.nationality}}</view>
+					</view>
+					<view class="info-item">
+						<view class="info-key">出生日期：</view>
+						<view class="info-value">{{authorInfo.birthday}}</view>
+					</view>
+					<view class="info-item">
+						<view class="info-key">代表作品：</view>
+						<view class="info-value">{{authorInfo.magnumOpus}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="author-description">
+			<view class="title">
+				作者简介
+			</view>
+			<view class="description">
+				{{authorInfo.info}}
+			</view>
+			<view class="title">
+				代表作品
+			</view>
+			
+			
+		</view>
+		<view>
+			<book-card>
+				
+			</book-card>
+		</view>
+	
+		
+		<view class="bottom-tip">
+			— 到底啦 —
+		</view>
+	</view>
+
+<copy-right></copy-right>
+
+</view>
+

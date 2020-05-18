@@ -182,6 +182,76 @@
 					"id": -1,
 					"name": "pages/new-notebook/new-notebook",
 					"pathName": "pages/new-notebook/new-notebook",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-notebooks/my-notebooks",
+					"pathName": "pages/my-notebooks/my-notebooks",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-notebooks/my-notebooks",
+					"pathName": "pages/my-notebooks/my-notebooks",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notebook-detail/notebook-detail",
+					"pathName": "pages/notebook-detail/notebook-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/move-notebook/move-notebook",
+					"pathName": "pages/move-notebook/move-notebook",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bookCommentDetail/bookCommentDetail",
+					"pathName": "pages/bookCommentDetail/bookCommentDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/top-recommend/top-recommend",
+					"pathName": "pages/top-recommend/top-recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/top-recommend/top-recommend",
+					"pathName": "pages/top-recommend/top-recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/author-detail/author-detail",
+					"pathName": "pages/author-detail/author-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/press-detail/press-detail",
+					"pathName": "pages/press-detail/press-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/book-detail/book-detail",
+					"pathName": "pages/book-detail/book-detail",
 					"scene": null
 				}
 			]

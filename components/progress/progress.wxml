@@ -1,0 +1,7 @@
+<!--components/progress/progress.wxml-->
+<view class="container">
+	<view class="progress radius margin-top">
+		<view class="bg-orange bar" style='width:{{ percent}} '></view>
+	</view>
+
+</view>

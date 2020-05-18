@@ -1,0 +1,59 @@
+<!--pages/notebook-detail/notebook-detail.wxml-->
+
+<view class="container">
+	<view class="note-container">
+		<view class="title-input">
+			<input style="padding-left: 32rpx;" class="input" maxlength="15" value="{{title}}"  bindinput="handlTitleInput"  placeholder="请输入标题"></input>
+			<view class="input-len">{{titleLen}}</view>
+		</view>
+		<view class="descript-container">
+			<view class="recommend-reason">
+			<textarea style="padding-left: 32rpx;padding-top:32rpx;height: inherit; width: inherit;" maxlength="140"  value="{{description}}"  bindinput="handleDescriptionInput" placeholder="请输入描述(选填)"></textarea>
+			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{descriptionLen}}/140</view>
+			</view>
+		</view>
+		<view class="btn-container">
+			<button class="btn save" bindtap="handleSave" disabled="{{disabled}}">保存笔记本</button>
+			<button class="btn delete" bindtap="handleDelete" data-target="bottomModal">删除笔记本</button>
+		</view>
+	</view>
+	<copy-right></copy-right>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+		
+			  <block >
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除笔记本？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	
+</view>
+
+

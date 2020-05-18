@@ -1,4 +1,5 @@
 // pages/my-notes/my-notes.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -6,28 +7,64 @@ Page({
    */
   data: {
 		notesInfo:{
-				notebooknum:2,
+				notebookNum:2,
 				empty:true,
 				notebooks:[
-					"金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
-				],
-				list:[
-					{	status:0,
-						date:"2020/2/20",
-						info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～"
-					},
-					{
-						status:0,
-						date:"2020/2/20",
-						info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～"
-					},
-					{	status:1,
-						date:"2020/2/20",
-						info:"你对书籍《一个人的朝圣》推荐的影片，已被平台收录并整理，前去查看～"
-					}
+					// "金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
 				]
 			}
   },
+  
+  /**
+   * @description；获取笔记本列表
+   * 
+   * */
+  
+   getNotebookList:function(){
+	   let reqData={
+		   page:0,
+		   size:10
+	   }
+	   let that=this;
+	   api._fetch({
+	       url: '/api/i/notebook/list',
+	       data:reqData,
+	       method:'get',
+	   	contentType:1
+	   }).then(function (res) {
+	   	 console.log(res);
+	   			 // 此处发送修改交易；
+	   			 if(res.statusCode===200){
+	   				let notesInfo=that.data.notesInfo;
+					notesInfo.notebooks=res.data;
+					notesInfo.notebookNum=res.data.length;
+					that.setData({
+						notesInfo
+					});
+	   			 }else{
+	   				 wx.showToast({
+	   				   title: res.message,
+	   				   mask:true,
+	   				   icon: 'none',
+	   				   duration: 3000
+	   				 })
+	   			 }
+	   			
+	       
+	   }).catch(function (error) {
+	       console.log(error);
+	   });
+   },
+   
+  
+  /**
+   * @description 跳转到查看笔记本
+   * */
+   handleReviewNotebooks:function(e){
+	   wx.navigateTo({
+	     url: '../my-notebooks/my-notebooks'
+	   })
+   },
   
   /**
    * @description 跳转到新建笔记本
@@ -42,7 +79,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getNotebookList();
   },
 
   /**

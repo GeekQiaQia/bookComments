@@ -11,5 +11,5 @@
   </view>
   
 	  <cardItem model:card-info="{{cardInfoArray}}" bind:commentdetail="handleCommentDetail"></cardItem>
-	  <!-- <loading model:hasMore="{{false}}"></loading> -->
+	  
 </view>

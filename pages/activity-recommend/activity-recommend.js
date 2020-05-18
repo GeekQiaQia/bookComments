@@ -1,4 +1,5 @@
 // pages/activity-recommend/activity-recommend.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -10,11 +11,43 @@ Page({
 	recommendBookName:"",
 	descriptInputLen:0
   },
+  recommendBookInput:function(e){
+	  let len=e.detail.value.length;
+	  this.setData({
+	  		recommendBookName:e.detail.value
+	  });
+  },
   textareaAInput:function(e){
 	  let len=e.detail.value.length;
 	  this.setData({
-	    descriptInputLen:len
+	    descriptInputLen:len,
+		descriptInput:e.detail.value
 	  });
+  },
+
+  
+  handleActivityRecommend(){
+	  
+	  let book=this.data.recommendBookName;
+	  let reason=this.data.descriptInput;
+	  let reqData={
+		  activity:3,
+		  book,
+		  reason
+	  }
+	api._fetch({
+	    url: '/api/i/activity/recommend',
+	    data:JSON.stringify(reqData),
+	    method:'post',
+		contentType:1
+	}).then(function (res) {
+	    console.info(res)
+			  wx.redirectTo({
+			    url: '../week-activity/week-activity',
+			  })
+	}).catch(function (error) {
+	    console.log(error);
+	});  
   },
   handleSave:function(){
 	// wx.showLoading({
@@ -29,6 +62,7 @@ Page({
 	  icon: 'success',
 	  duration: 5000
 	})
+	this.handleActivityRecommend();
 	
   },
   /**

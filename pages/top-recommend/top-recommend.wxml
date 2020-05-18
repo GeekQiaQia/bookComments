@@ -1,0 +1,47 @@
+<!-- pages/top-recommend/top-recommend.wxml -->
+<view class="container">
+	<view class="top-container">
+		
+		<cover-image class="cover-image" src="{{imageSrc}}" >
+		</cover-image> 
+		<view class="list-container">
+			<block wx:for="{{bookList}}" wx:key="{{item.rank}}">
+				<view class="list-card">
+					<block wx:if="{{item.rank==1}}">
+						<view class="top-num No1">
+							No.{{item.rank}}
+						</view>
+					</block>
+					<block wx:elif="{{item.rank==2}}">
+						<view class="top-num No2">
+							No.{{item.rank}}
+						</view>
+					</block>
+					<block wx:elif="{{item.rank==3}}">
+						<view class="top-num No3">
+							No.{{item.rank}}
+						</view>
+					</block>
+					<block wx:else>
+						<view class="top-num No">
+							No.{{item.rank}}
+						</view>
+					</block>
+					<view class="book-info">
+						<book-card model:book-info="{{item.bookInfo}}"  bind:onBookDetail="onBookDetail" bind:onAuthorDetail="onAuthorDetail" bind:onPressDetail="onPressDetail">
+							
+						</book-card>
+						
+					</view>
+				</view>
+			</block>
+		
+		</view>
+		<view class="bottom-tip">
+			— 到底啦 —
+		</view>
+	</view>
+
+<copy-right></copy-right>
+
+</view>

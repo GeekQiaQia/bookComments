@@ -1,0 +1,65 @@
+<!--pages/aboutMe/aboutMe.wxml-->
+<view class="container">
+	<view wx:for="{{cardInfo}}" wx:key="index">
+		
+	
+  <view class="card-container">
+	  <view class="card-item">
+		  <view class="card-item-title">
+			  <view class="avatar">
+				<image
+				                class="cover-image"
+				                src="{{item.userInfo.avatarUrl}}"
+				                bindload="imageLoad"
+				                binderror="imageError">
+				            </image>
+			  </view>
+			  <view class="basicinfo">
+				  <view>
+					  <text class="name">{{item.userInfo.nickName}}</text>
+					  <block wx:if="{{item.forward==true}}">
+						  <text class="notice">转发</text>
+					  </block>
+					  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+					  		 <text class="notice">已读</text>
+					  </block>
+					  <text class="star fill">
+					  				
+					  				<block wx:for="{{item.bookInfo.stars}}" wx:key="index"> 
+					  					<text  class="cuIcon-favorfill lg text-orange"></text>
+					  				</block>
+					  				<block wx:for="{{starMax-item.bookInfo.stars}}" wx:key="index">
+					  					<text class="cuIcon-favorfill lg text-gray"></text>
+					  				</block>
+					  					  
+					  				</text>
+					  <view>
+					  		<text class="time">{{item.createTime}}</text>
+							
+					  </view>
+				  </view>
+				
+			  </view>
+			  
+		  </view>
+		  <view class="card-content" wx:if="{{item.title!==null}}">{{item.title}}</view>
+		  <view class="content-container">
+		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.content}}</text>
+		  </view>
+		  
+		  <view class="releation-container">
+			  <view class="releation-info">
+				  <text class="releation ">{{item.liked}}有用 · </text>
+				  <text class="releation ">{{item.reply}}回复 · </text>
+				  <text class="releation ">{{item.forwarding}}转发</text>
+			  </view>
+		
+			
+		  </view>
+		  <view class="split-line"></view>
+	  </view>
+	  
+  </view>
+	
+   </view>
+</view>

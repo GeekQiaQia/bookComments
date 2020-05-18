@@ -14,24 +14,8 @@
 	</view>
 	<view class="notes-container">
 		<view class="notes-main" >
-			<view class="notebook-container">
-				
-				<view class="notebooks">
-					<view class="all">
-						全部
-					</view>
-					<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
-							<view  class="bookname">
-								{{item}}
-							</view>
-					</block>
-				</view>
-				<view class="check-notebooks">
-					查看笔记本
-				</view>
-				
-			</view>
-			<block wx:if="{{notesInfo.notebooknum==0}}">
+		
+			<block wx:if="{{notesInfo.notebookNum==0}}">
 				<view class="notes-icon">
 					<cover-image src="../../images/Icon-note.png" ></cover-image>
 				</view>
@@ -43,11 +27,29 @@
 				</view>
 			</block>
 			<block wx:else>
+				<view class="notebook-container">
+					
+					<view class="notebooks">
+						<view class="all">
+							全部
+						</view>
+						<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+								<view  class="bookname">
+									{{item.name}}
+								</view>
+						</block>
+					</view>
+					<view class="check-notebooks" bindtap="handleReviewNotebooks">
+						查看笔记本
+					</view>
+					
+				</view>
+				
 				<view class="notes-info-container">
 					<block wx:if="{{notesInfo.empty==true}}">
 						<view class="notes-empty" >
 							<view class="notes-icon">
-								<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+								<cover-image src="../../images/Icon-no-bookNotes.png" ></cover-image>
 							</view>
 							<view class="no-notes">
 								你还没有创建笔记，去写书评吧～

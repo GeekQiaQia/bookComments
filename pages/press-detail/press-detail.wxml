@@ -1,0 +1,44 @@
+<!--pages/author-detail/author-detail.wxml-->
+<!-- pages/top-recommend/top-recommend.wxml -->
+<view class="container">
+	<view class="top-container">
+		<view class="press-title">
+			<view class="title">
+				{{pressInfo.name}}
+			</view>
+			<view class="press-icon">
+				<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+			</view>
+		</view>
+		<view class="author-description">
+			<view class="title">
+				出版社简介
+			</view>
+			<view class="description">
+				{{pressInfo.describes}}
+			</view>
+			<view class="title">
+				出版书籍
+			</view>
+			
+			
+		</view>
+		<view>
+			<block wx:for="{{pressInfo.books}}" wx:key="*this">
+				<pressbook-card model:book-info="{{item}}"  bind:onAuthorDetail="onAuthorDetail">
+					
+				</pressbook-card>
+			</block>
+			
+		</view>
+	
+		
+		<view class="bottom-tip">
+			— 到底啦 —
+		</view>
+	</view>
+
+<copy-right></copy-right>
+
+</view>
+

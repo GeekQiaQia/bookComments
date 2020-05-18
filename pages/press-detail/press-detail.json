@@ -1,0 +1,7 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right",
+	      "pressbook-card":"../../components/pressbook-card/pressbook-card"
+ },
+  "navigationBarTitleText": "出版社信息"
+}

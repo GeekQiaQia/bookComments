@@ -1,0 +1,158 @@
+{
+	"category": {
+		"name": "cate",
+		"id": 1
+	},
+	"bookComments": [{
+				"status": "release",
+				"createTime": "2020-05-10 22:10:51",
+				"liked": 0,
+				"bookInfo": {
+					"createTime": "2020-05-10 22:10:42",
+					"stars": 0.0,
+					"scorer": 0,
+					"languages": null,
+					"picture": "https://images-cn.ssl-images-amazon.com/images/I/41a7zDE7S4L._AA218_.jpg",
+					"publication": null,
+					"comments": 0,
+					"describes": "一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？ 一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？\n发售日期: 2018年8月21日",
+					"author": "author",
+					"name": "北京的海",
+					"id": 1
+				},
+				"forwarding": 0,
+				"reply": 0,
+				"forward": false,
+				"redirect": false,
+				"readBook": false,
+				"images": [],
+				"id": 1,
+				"userInfo": {
+					"status": 0,
+					"sign": "",
+					"nickName": "我与世界只差个你",
+					"gender": null,
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erpbz9lTNW5TLbN4ABibK0k0o6skLdyKzvu7OIru0RIXCJZrianlYBI5wetxvQCgjfsacpWr3JxRPFw/132",
+					"id": 19
+				},
+				"content": "content"
+			}, {
+				"status": "release",
+				"createTime": "2020-05-10 22:10:51",
+				"liked": 0,
+				"bookInfo": {
+					"createTime": "2020-05-10 22:10:42",
+					"stars": 0.0,
+					"scorer": 0,
+					"languages": null,
+					"picture": "https://images-cn.ssl-images-amazon.com/images/I/41a7zDE7S4L._AA218_.jpg",
+					"publication": null,
+					"comments": 0,
+					"describes": "一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？ 一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？\n发售日期: 2018年8月21日",
+					"author": "author",
+					"name": "北京的海",
+					"id": 1
+				},
+				"forwarding": 0,
+				"reply": 0,
+				"forward": false,
+				"redirect": false,
+				"readBook": false,
+				"images": [],
+				"id": 2,
+				"userInfo": {
+					"status": 0,
+					"sign": "",
+					"nickName": "寻鹿",
+					"gender": null,
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/R8Z1geLF49EDvaXyZ9B6mtzZOurMuldzamgU8jWvvZYV2PVluR5SJgjEAT05F7iaRVpCMuC7QDseliazMGDv1zBg/132",
+					"id": 7
+				},
+				"content": "content"
+			}, {
+				"status": "release",
+				"createTime": "2020-05-10 22:10:51",
+				"liked": 0,
+				"bookInfo": {
+					"createTime": "2020-05-10 22:10:42",
+					"stars": 0.0,
+					"scorer": 0,
+					"languages": null,
+					"picture": "https://images-cn.ssl-images-amazon.com/images/I/41a7zDE7S4L._AA218_.jpg",
+					"publication": null,
+					"comments": 0,
+					"describes": "一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？ 一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？\n发售日期: 2018年8月21日",
+					"author": "author",
+					"name": "北京的海",
+					"id": 1
+				},
+				"forwarding": 0,
+				"reply": 0,
+				"forward": false,
+				"redirect": false,
+				"readBook": false,
+				"images": [],
+				"id": 3,
+				"userInfo": {
+					"status": 0,
+					"sign": "",
+					"nickName": "昊\uD83C\uDF4E果乐园",
+					"gender": null,
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/hPJTjcbvnPdibDJBvibAicBrMNyyv81b1xiboxU6V7TCfm9KhTZj66sIjAl4HicryniaKJicIy56QfZibV5TNiccmkqHKEw/132",
+					"id": 37
+				},
+				"content": "content"
+			}, {
+				"status": "release",
+				"createTime": "2020-05-10 22:10:51",
+				"liked": 0,
+				"bookInfo": {
+					"createTime": "2020-05-10 22:10:42",
+					"stars": 0.0,
+					"scorer": 0,
+					"languages": null,
+					"picture": "https://images-cn.ssl-images-amazon.com/images/I/41a7zDE7S4L._AA218_.jpg",
+					"publication": null,
+					"comments": 0,
+					"describes": "一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？ 一、北京某企业高管辞职去海边，邂逅大三退学的咖啡店服务员。第一天见面，第二天接吻，第三天一起从卧室起床。二、我去应聘“美食专员”的工作，上岗后每天和上司躲在楼道里聊天，晚上在小区里喂猫。上司一心想要离开北京去烟台，却因为某些现实原因无法离开。三、我小时候被父母带到了北京生活，我恨北京的一切，一心想要回老家。母亲讲了三个故事，让我评判北京和老家哪个更好。第一个故事是梦起，第二个故事是梦深，第三个故事是梦落。你愿意在北京赚很多钱，还是去海边和我养条狗？小说用寓言式的三段故事，阐述一个高压环境下的人生抉择。面对高薪和传统观念，应该选择服从，还是大胆和北京说再见？\n发售日期: 2018年8月21日",
+					"author": "author",
+					"name": "北京的海",
+					"id": 1
+				},
+				"forwarding": 0,
+				"reply": 0,
+				"forward": false,
+				"redirect": false,
+				"readBook": false,
+				"images": [],
+				"id": 4,
+				"userInfo": {
+					"status": 0,
+					"sign": "",
+					"nickName": "Jack",
+					"gender": null,
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/GEl9DpSGSCWP5xH5kNgWvoelfMN6PIa5Sn4KXIiber1XHc2fG5eZJr9Zq7ribPcoPicNm4bpH3CrWN9MHTHr6tHhA/132",
+					"id": 11
+				},
+				"content": "content"
+			}, {
+				"status": "release",
+				"createTime": "2020-05-10 22:10:51",
+				"liked": 0,
+				"bookInfo": {
+					"createTime": "2020-05-10 22:10:42",
+					"stars": 0.0,
+					"scorer": 0,
+					"languages": null,
+					"picture": "https://images-cn.ssl-images-amazon.com/images/I/41a7zDE7S4L._AA218_.jpg",
+					"publication": null,
+					"comments": 0,
+					"describes": "{"
+					timestamp ":"
+					2020 - 05 - 11 17: 15: 03 ","
+					status ":200,"
+					error ":"
+					OK ","
+					message ":"
+					Could not write JSON: (was java.lang.NullPointerException);nested exception is com.fasterxml.jackson.databind.JsonMappingException: (was java.lang.NullPointerException)(through reference chain: cn.book.vo.BookInfoValue$Info[\"bookStar\"]->cn.book.vo.BookStarValue$Simple[\"people\"])", "path": "/book/api/book/detail"
+							}
