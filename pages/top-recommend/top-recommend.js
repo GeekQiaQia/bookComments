@@ -94,6 +94,18 @@ Page({
    	   })
    	   
     },
+	/**
+	 * @description 监听点击书籍详情事件；
+	 * */
+	 onBookDetail:function(e){
+		   // 组件传参过来的id;
+		   let id=e.detail.id;
+		   wx.navigateTo({
+		     url: '../book-detail/book-detail?id='+id
+		   })
+		   
+	 },
+	
    
   /**
    * @description:top10榜单信息；
@@ -116,9 +128,27 @@ Page({
 	 	 console.log(res);
 	 			 // 此处发送修改交易；
 	 			if(res.statusCode===200){
-				
+				   let content=res.data.content;
+				   
+				  for(let item of content){
+					  let author=[];
+					  let translators=[];
+					  let allAuthors=item.bookInfo.authors;
+					  if(allAuthors!==null){
+					  					  author=allAuthors.filter(item=>{
+					  						  return item.translator==false;
+					  					  });
+					  					  translators=allAuthors.filter(item=>{
+					  						  return item.translator==true;
+					  					  });
+					  }
+					  item.bookInfo.authors={
+					  					  author,
+					  					  translators
+					  }
+				  }
 					that.setData({
-						bookList:res.data.content
+						bookList:content
 					});
 				}else{
 	 				 wx.showToast({

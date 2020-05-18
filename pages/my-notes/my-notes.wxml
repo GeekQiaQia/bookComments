@@ -49,7 +49,7 @@
 					<block wx:if="{{notesInfo.empty==true}}">
 						<view class="notes-empty" >
 							<view class="notes-icon">
-								<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+								<cover-image src="../../images/Icon-no-bookNotes.png" ></cover-image>
 							</view>
 							<view class="no-notes">
 								你还没有创建笔记，去写书评吧～

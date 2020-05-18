@@ -9,7 +9,7 @@
 			<view class="message-num">共{{messageInfo.num}}条消息</view>
 		</view>
 		<view class="message-icon">
-			<cover-image src="../../images/message.png" ></cover-image>
+			<cover-image src="../../images/icon-Message.png" ></cover-image>
 		</view>
 	</view>
 	<view class="message-container">

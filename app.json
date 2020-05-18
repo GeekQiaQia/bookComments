@@ -27,7 +27,8 @@
     "pages/top-recommend/top-recommend",
     "pages/author-detail/author-detail",
     "pages/press-detail/press-detail",
-    "pages/book-detail/book-detail"
+    "pages/book-detail/book-detail",
+    "pages/score-detail/score-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

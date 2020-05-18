@@ -64,7 +64,7 @@
   letter-spacing: 1rpx;
 }
 .container .book-card .info-detail .info-obj .info-key {
-  width: 126rpx;
+  width: 110rpx;
   height: 32rpx;
   font-size: 22rpx;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -75,6 +75,18 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  display: inline-block;
+  text-align: justify;
+}
+text-align-last:justify .container .book-card .info-detail .info-obj .info-key::after {
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+.container .book-card .info-detail .info-obj .info-key text {
+  display: inline-block;
+  height: 0;
+  width: 100%;
 }
 .container .book-card .info-detail .info-obj .info-value {
   width: auto;
@@ -82,9 +94,10 @@
   font-size: 22rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #576b95;
+  color: #666666;
   text-align: left;
   line-height: 32rpx;
+  margin-left: 18rpx;
 }
 .container .cuIcon-people:before {
   content: "\e736";

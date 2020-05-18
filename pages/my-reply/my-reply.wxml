@@ -8,7 +8,7 @@
 			<view class="reply-num">已回复{{replyInfo.totalElements}}个书评</view>
 		</view>
 		<view class="reply-icon">
-			<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
+			<cover-image src="../../images/icon-replys.png" class="icon-tip"></cover-image>
 		</view>
 	</view>
 	<view class="reply-container">

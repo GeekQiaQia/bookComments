@@ -23,23 +23,26 @@
 					  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
 					  		 <text class="notice">已读</text>
 					  </block>
+					  <text class="star fill">
+					  				
+					  				<block wx:for="{{item.bookInfo.stars}}" wx:key="index"> 
+					  					<text  class="cuIcon-favorfill lg text-orange"></text>
+					  				</block>
+					  				<block wx:for="{{starMax-item.bookInfo.stars}}" wx:key="index">
+					  					<text class="cuIcon-favorfill lg text-gray"></text>
+					  				</block>
+					  					  
+					  				</text>
+					  <view>
+					  		<text class="time">{{item.createTime}}</text>
+							
+					  </view>
 				  </view>
-				  <view>
-				  		<text class="time">{{item.createTime}}</text><text class="star fill"> 
-						
-						<block wx:for="{{item.bookInfo.stars}}" wx:key="index"> 
-							<text  class="cuIcon-favorfill lg text-orange"></text>
-						</block>
-						<block wx:for="{{starMax-item.bookInfo.stars}}" wx:key="index">
-							<text class="cuIcon-favorfill lg text-gray"></text>
-						</block>
-
-						</text>
-				  </view>
+				
 			  </view>
 			  
 		  </view>
-		  
+		  <view class="card-content" wx:if="{{item.title!==null}}">{{item.title}}</view>
 		  <view class="content-container">
 		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.content}}</text>
 		  </view>
@@ -50,13 +53,12 @@
 				  <text class="releation ">{{item.reply}}回复 · </text>
 				  <text class="releation ">{{item.forwarding}}转发</text>
 			  </view>
-			  <view class="book-info"  data-id="{{item.id}}" bindtap="handleBookDetail()">
-			  		<text class="book-name" data-id="{{item.id}}">《{{item.bookInfo.name}}》</text>
-			  		<text class="cuIcon-right lg text-gray"  data-id="{{item.id}}"></text>
-			  </view>
+		
 			
 		  </view>
+		  <view class="split-line"></view>
 	  </view>
+	  
   </view>
 	
    </view>

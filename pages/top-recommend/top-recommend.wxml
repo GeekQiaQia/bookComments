@@ -28,7 +28,7 @@
 						</view>
 					</block>
 					<view class="book-info">
-						<book-card model:book-info="{{item.bookInfo}}"  bind:onAuthorDetail="onAuthorDetail" bind:onPressDetail="onPressDetail">
+						<book-card model:book-info="{{item.bookInfo}}"  bind:onBookDetail="onBookDetail" bind:onAuthorDetail="onAuthorDetail" bind:onPressDetail="onPressDetail">
 							
 						</book-card>
 						

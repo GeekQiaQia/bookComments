@@ -1,0 +1,45 @@
+.container{
+	width:100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	.perent{
+		width:auto;
+		height:32rpx;
+		font-size:22rpx;
+		font-family:PingFangSC-Regular,PingFang SC;
+		font-weight:400;
+		color:rgba(102,102,102,1);
+		line-height:32rpx;
+		margin-left: 12rpx;
+	}
+	.progress{
+		overflow: hidden;
+		height: 28rpx;
+		background-color: #ebeef5;
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+       .bar{
+		   width: 0;
+		   height: 100%;
+		   align-items: center;
+		   display: flex;
+		   justify-items: flex-end;
+		   justify-content: space-around;
+		   font-size: 20rpx;
+		   color: white;
+		   transition: width 0.6s ease;
+
+	   }
+	   .bg-orange{
+	   	background-color: #F96D3D;
+	   }
+	   
+	}
+	.radius{
+		
+		border-radius: 6rpx;
+	}
+}
