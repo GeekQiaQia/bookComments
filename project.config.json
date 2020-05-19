@@ -252,6 +252,34 @@
 					"id": -1,
 					"name": "pages/book-detail/book-detail",
 					"pathName": "pages/book-detail/book-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/catagory-detail/catagory-detail",
+					"pathName": "pages/catagory-detail/catagory-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/catagory-detail/catagory-detail",
+					"pathName": "pages/catagory-detail/catagory-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hotRecommend/hotRecommend",
+					"pathName": "pages/hotRecommend/hotRecommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hot-search/hot-search",
+					"pathName": "pages/hot-search/hot-search",
 					"scene": null
 				}
 			]

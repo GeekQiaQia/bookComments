@@ -1,6 +1,7 @@
 {
  "usingComponents": {
- 	   
+ 	   "progress":"../../components/progress/progress",
+	   "commentStars":"../../components/commentStars/commentStars"
  },
   "navigationBarTitleText": "评分"
 }

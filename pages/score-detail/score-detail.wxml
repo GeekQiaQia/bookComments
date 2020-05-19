@@ -1,2 +1,89 @@
-<!--pages/score-detail/score-detail.wxml-->
-<text>pages/score-detail/score-detail.wxml</text>
+<!--pages/bookCommentDetail/bookCommentDetail.wxml-->
+<view class="container">
+	<scroll-view scroll-y="true" style='height: {{scrollHeight + "rpx"}}'>
+		<view class="top-container">
+		  <view class="score-container">
+			  <view class="overall-scores">
+			  	<view class="top-container">
+			  		<view class="title">
+			  			书籍评分
+			  		</view>
+			  		<!-- <text class="cuIcon-right lg text-gray"  data-bookname="{{bookInfo.name}}" bindtap="goScoreDetail"></text> -->
+			  	</view>
+			  	<view class="score-container">
+			  	
+			  		<veiw class="star-progress"> 
+			  			<block >
+			  				<view class="progress-container">
+			  					<view class="star-name">五星</view>
+			  					<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fiveStar}}"></progress>
+			  					<view class="percent">{{bookInfo.bookStar.fiveStar}}</view>
+			  				</view>
+			  				<view class="progress-container">
+			  					<view class="star-name">四星</view>
+			  					<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fourStar}}"></progress>
+			  					<view class="percent">{{bookInfo.bookStar.fourStar}}</view>
+			  				</view>
+			  				<view class="progress-container">
+			  					<view class="star-name">三星</view>
+			  					<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.threeStar}}"></progress>
+			  					<view class="percent">{{bookInfo.bookStar.threeStar}}</view>
+			  				</view>
+			  				<view class="progress-container">
+			  					<view class="star-name">二星</view>
+			  					<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.twoStar}}"></progress>
+			  					<view class="percent">{{bookInfo.bookStar.twoStar}}</view>
+			  				</view>
+			  				<view class="progress-container">
+			  					<view class="star-name">一星</view>
+			  					<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.oneStar}}"></progress>
+			  					<view class="percent">{{bookInfo.bookStar.oneStar}}</view>
+			  				</view>
+			  			</block>
+			  			
+			  		</veiw>
+					<view class="scores">
+						<view class="score">{{bookInfo.bookStar.score}}</view>
+						<commentStars  model:stars="{{bookInfo.bookStar.star}}"></commentStars>
+						<view class="score-all">{{bookInfo.bookStar.people}}人评分</view>
+					</view>
+			  	</view>
+			  </view>
+		  </view>
+		 
+		  <view class="title-container">
+				  <view class="title">
+				  			  评分分析
+				  </view>
+		   </view>
+		   <view class="mention-comment">
+			   <view class="mention-title">
+				   阅读提及的评论
+			   </view>
+			   <view class="comments-list">
+					<block wx:for="{{commentsList}}" wx:key="*this">
+						<view class="list-item">
+									{{item.comment}}		   
+						</view>
+					</block>
+			   </view>
+		   </view>
+			<view class="no-more">
+				没有更多内容
+			</view>
+		</view>
+	</scroll-view>
+	<view class="bottom-contianer">
+		<view class="bottom-input">
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{nickname}}"  bindinput="handlNicknameInput"  placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></input>
+			
+			<view class="icon-input">
+				<cover-image src="../../images/Icon-bookComment-input.png" class="icon"></cover-image>
+			</view>
+		</view>
+		<view class="bottom-line">
+			<view class="line"></view>
+		</view>
+	</view>
+	
+</view>

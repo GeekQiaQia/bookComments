@@ -104,12 +104,17 @@
 }
 .container .hot-container .hot-card .book-detail .book-info .reader-info .info .detail .name {
   width: auto;
+  max-width: 192rpx;
   height: 34rpx;
   font-size: 24rpx;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #000000;
   line-height: 34rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .container .hot-container .hot-card .book-detail .book-info .reader-info .info .detail .notice {
   width: 48rpx;
@@ -123,7 +128,7 @@
   margin-right: 16rpx;
 }
 .container .hot-container .hot-card .book-detail .book-info .reader-info .info .time {
-  width: 98rpx;
+  width: auto;
   height: 26rpx;
   font-size: 18rpx;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -175,4 +180,50 @@
 .container .hot-container .hot-card .book-detail .book-icon {
   width: 176rpx;
   height: 256rpx;
+}
+.container .scroll-tab {
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 750rpx;
+  padding-right: 30rpx;
+}
+.container .scroll-tab .tabs-nav {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: 0rpx 32rpx;
+}
+.container .scroll-tab .tabs-nav .tabs {
+  flex-basis: 22%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  text-align: center;
+  margin-right: 80rpx;
+}
+.container .scroll-tab .tabs-nav .tabs .actived-tab {
+  width: 112rpx;
+  height: 48rpx;
+  background-color: #f7f7f7;
+  border-radius: 24rpx;
+  line-height: 48rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #F96D3D;
+}
+.container .scroll-tab .tabs-nav .tabs .tab {
+  width: auto;
+  height: 48rpx;
+  line-height: 48rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666666;
 }

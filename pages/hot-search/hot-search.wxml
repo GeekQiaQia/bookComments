@@ -1,0 +1,21 @@
+<!--pages/hot-search/hot-search.wxml-->
+<view class="container">
+	<view class="search-container">
+		<view class="filter-container">
+			
+			<view class="search">
+				<van-search
+				  value="{{ keyword }}"
+				  shape="round"
+				  background="#ffffff"
+				  placeholder="请输入搜索关键词"
+				  show-action
+				    bind:search="onSearch"
+				    bind:cancel="onCancel"
+				/>
+			</view>
+			
+		</view>	
+	</view>
+	<copy-right></copy-right>
+</view>

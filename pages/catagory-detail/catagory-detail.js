@@ -1,44 +1,35 @@
-// pages/follow-other/follow-other.js
+// pages/catagory-detail/catagory-detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-	follower:{
-			num:4,
-			
-			list:[
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"不如诗",
-					follow:0
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"AI鱼@UU.COM",
-					follow:1
-				
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"Sabrinatasha",
-					follow:-1
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"鱼",
-					follow:0
-				}
-			]
-		}
+	keyword:"",
+	active:0,
+	tabs:[
+		{tab:"综合"},
+		{tab:"评分最高"},
+		{tab:"评论最多"}
+	],
   },
-
+	onChange(e) {
+	    this.setData({
+	      keyword: e.detail
+	    });
+	  },
+	onSearch() {
+	    Toast('搜索' + this.data.keyword);
+	  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	      let title=options.cateName;
+		  let id=options.id;
+		 wx.setNavigationBarTitle({
+				title
+		 })
   },
 
   /**

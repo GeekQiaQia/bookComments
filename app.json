@@ -28,7 +28,9 @@
     "pages/author-detail/author-detail",
     "pages/press-detail/press-detail",
     "pages/book-detail/book-detail",
-    "pages/score-detail/score-detail"
+    "pages/score-detail/score-detail",
+    "pages/catagory-detail/catagory-detail",
+    "pages/hot-search/hot-search"
   ],
   "window": {
     "backgroundTextStyle": "light",

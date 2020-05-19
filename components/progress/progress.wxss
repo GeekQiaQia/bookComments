@@ -5,19 +5,9 @@
   justify-content: flex-start;
   align-items: center;
 }
-.container .perent {
-  width: auto;
-  height: 32rpx;
-  font-size: 22rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 32rpx;
-  margin-left: 12rpx;
-}
 .container .progress {
   overflow: hidden;
-  height: 28rpx;
+  height: 16rpx;
   background-color: #ebeef5;
   display: inline-flex;
   align-items: center;

@@ -1,39 +1,18 @@
-// pages/follow-other/follow-other.js
+// pages/hot-search/hot-search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-	follower:{
-			num:4,
-			
-			list:[
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"不如诗",
-					follow:0
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"AI鱼@UU.COM",
-					follow:1
-				
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"Sabrinatasha",
-					follow:-1
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"鱼",
-					follow:0
-				}
-			]
-		}
-  },
 
+  },
+  onSearch:function(e){
+	  
+  },
+  onCancel:function(e){
+	  
+  },
   /**
    * 生命周期函数--监听页面加载
    */

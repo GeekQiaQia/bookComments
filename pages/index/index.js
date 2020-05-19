@@ -91,7 +91,7 @@ Page({
 		for(let item of cardInfoArray ){
 			item['readMore']=false;
 		}
-		console.log(cardInfoArray);
+		
 		that.setData({
 			cardInfoArray
 		});

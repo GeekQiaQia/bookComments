@@ -290,10 +290,19 @@ Page({
 		console.log(e);
 		// 组件绑定来的bookName;
 		let bookname=e.target.dataset.bookname;
+		let id=e.target.dataset.id;
 		wx.navigateTo({
-		  url: '../score-detail/score-detail?bookName='+bookname
+		  url: '../score-detail/score-detail?bookName='+bookname+'&id='+id
 		})
 		
+	},
+	handleCategoryDetail(e){
+		// 组件绑定来的id;
+		let id=e.target.dataset.id;
+		let catename=e.target.dataset.catename;
+		wx.navigateTo({
+		  url: '../catagory-detail/catagory-detail?id='+id+'&cateName='+catename
+		})
 	},
    handleAuthorDetail(e){
 	   // 组件绑定来的id;

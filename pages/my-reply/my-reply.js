@@ -124,18 +124,19 @@ handleColseShareDialog(){
  * @description  获取回复列表
  * */
 getReplyList(){
+	let that=this;
 	let reqData={
 			  page:0,
 			  size:10
 	}
 	api._fetch({
 	    url: '/api/i/commentReply/list',
-	    data:JSON.stringify(reqData),
+	    data:reqData,
 	    method:'get'
 	}).then(function (res) {
 		let replyInfo=res.data;
 		console.log(replyInfo);
-	    this.setData({
+	    that.setData({
 			replyInfo
 		})
 	}).catch(function (error) {

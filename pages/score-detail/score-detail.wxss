@@ -1,0 +1,305 @@
+.container {
+  align-items: center;
+  background-color: #f7f7f7;
+}
+.container .top-container {
+  flex: 1;
+}
+.container .top-container .mention-comment {
+  width: 750rpx;
+  min-height: 368rpx;
+  background-color: #ffffff;
+  padding: 32rpx 48rpx 32rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .top-container .mention-comment .mention-title {
+  width: 168rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #969696;
+  line-height: 34rpx;
+  text-align: left;
+}
+.container .top-container .mention-comment .comments-list {
+  width: 100%;
+  height: auto;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.container .top-container .mention-comment .comments-list .list-item {
+  width: auto;
+  height: 48rpx;
+  background: #efeff4;
+  border-radius: 4rpx;
+  margin-right: 16rpx;
+  padding: 8rpx 16rpx 6rpx 16rpx;
+  text-align: center;
+  margin-bottom: 16rpx;
+}
+.container .top-container .title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 32rpx 0rpx 8rpx 32rpx;
+}
+.container .top-container .title-container .title {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0b0c0d;
+  line-height: 39rpx;
+}
+.container .top-container .score-container .overall-scores {
+  width: 100%;
+  height: 288rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32rpx 32rpx 38rpx 36rpx;
+}
+.container .top-container .score-container .overall-scores .top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40rpx;
+}
+.container .top-container .score-container .overall-scores .top-container .title {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 40rpx;
+}
+.container .top-container .score-container .overall-scores .score-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+}
+.container .top-container .score-container .overall-scores .score-container .scores {
+  width: 128rpx;
+  height: 128rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFk0lEQVR4XsVbCW4bMQxUerf//2uTNmmKMTyLMU1dJNdZwEjr1UGNhqfkp/Yxz9fW2ufW2tN1+n+ttdfW2tujxaEAj5oX831vrX3qTPi3tYbPw55qALgw7Kj3/Bgsnu17IJAx7601jI+/6acCAIwBSn8RaSgkae3tPBaK93gsK/gO/TCuqgunQd8/WQSyAMwo3ZPP2+UVdtjxYDNeMiBkAcDOYXf4gJoYczTuSM9HIIBVWDDUTG0IWEAmbWORAQBCQGA+2AlacbxT6lqVGAnKfmpPrIeAyuGDB6A/b6/82iEDgAqRpuLmAiD3T+nzO2oUMwAoXR/uvq6Gk+oXnj8KAGj6TXYAFOy5vs3NXW5uZYAtUPe45CZXAADK+FAnrZF7NP0VoRWjOXSVIwBWXFzKAC3vdb/hioxgAhjqMmIEwAxdWOaHhq0DwKznsOvqblQPAKtfWChdHJBc0q+CHc4MgTXAU3GN6qaPcXsAaIATtrAZ6Yv6wlAzRHfX0QNA6e8iVyTg2cNorLIFgDIgFWqevcLJ+FMm9xig1CnJuoygcKvYHbhWGCi1MZWYTZm8YgSr/bzNIbjgM4IphMtcozt+DwDVnWoG2AySAFQDjXFDKmDdR6UNsEkMw2dGmeGkpqM31p0DZKzncOPKAAgB3ddcuzrSU2ZBZoapzCvOcLke4w5WEwCLFPNsuMDKoEd1EuNix/Hwe/2u0hiqUb9ROQDgGaVqvcekFmSdQwWsVDkFUT0Pv38BADo5KF+x68wYyTD8BQCqXmqVdRN4RkDmMfSuYqKu941GaegqFrnIyvBKiu3ZlpWiKEDIJmFqiN8tAFErbI3bDDMvvAZFYbBWnoyxvGEbAKgobalxwwIsffkdi6O9IzAWXrToYtWJY9GArgCmbdQrvFI3s+UtC8AZRlR1N+ot7kp51FdlQcT3d93M7vZ02ltfHgGYbOeaL2rE/0AvMMmweLCRebFp1qtAHntsFg2ZdfePTVaLXRH/e8YQdIXR260a200BqBnj5xZHFABFKEIx7joMGSbTsQECApzV8387xm5/j6zuBquQFd6AE3t5xY7hUqMK5rDmnzEp6mYPVhIAS91oPKAC2hB7x7jqZlTWCe6MvZcLZPRMARjF/rOdPCs3sHblj5cLhE9azaqsa9wpripdM/bIA/rGG9hIcEfI2S7a4MiqFbMzWnc1kDfxuqTNszlX3/+6NrzkAmfomy4Ac6n+k3V6sQJtbLVG5aqwSWqgea/hAoBGWdEgwyLf039bbrP9YJ15P+gMO2ADq0s6bLOwijK11X8sSk+YmdBAvwGKTaEhAzaDt0Aq7IAXrj9zYq9ulmGDN5nutvU0s3Q6A4AXTkOWS+WpFwpT2CgIvdr/XVVWUOnZBjTJxAK20HITWFnqeUJEa3TR059ov5nLU/tytLUA8EXZLaxVv3RSu/DpsFJ4J4Y/aR3hYaeHvD0GqGfYieHDkp7UcXrI2wNA/XjUEJ60pq1hp+tYsQFVydGW5EWNp0xeASDjg4vWER4mzAAbHUZdYVjyYEdsKDdVk60j8LHj9hiAdt5JDev9DFXDt7SDC+x1m51KbV+Tw0TMFEcgZau+FTjMjtSGMo4WR+HgSrxfbPD9R7pJm8PoHUb+vmDI0hUAuFC2ZQbJTK2rXxXbOxjD1hxCdmoHACvLR4fL7kHHLugZAGzGV1m1WVnH9ALUyiAZADC+1v1swAS7oZciVj2H9oN8qss8XbJuOpwuZwGwpS8IiM/MaPZuocwKIzRyetMkFapnAQALevf+Rgz0PId3UWvG4rQbrgAAQnolMKUu/s2CqLpP3tnz3pElViXYn1dlUneHqgBg4ARqUm/19zsUekZxtBvFFbOf5s4Yc/e+EoDVyUcgpCm9KoQNbnb7ZdtbD0F1efhPcP4DtzewmrgcY/oAAAAASUVORK5CYII=);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 110rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .scores .score {
+  width: auto;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .scores .score-all {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .star-progress {
+  height: 128rpx;
+  width: 337rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .star-progress .progress-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .top-container .score-container .overall-scores .score-container .star-progress .progress-container .star-name {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  margin-right: 16rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .star-progress .progress-container .percent {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  margin-left: 12rpx;
+}
+.container .top-container .score-container .overall-scores .score-container .star-progress .bg-orange {
+  background-color: #F96D3D;
+}
+.container .top-container .no-more {
+  width: 100%;
+  height: 32rpx;
+  font-size: 22rpx;
+  display: flex;
+  margin-top: 32rpx;
+  margin-bottom: 48rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #B8B8B8;
+  line-height: 32rpx;
+}
+.container .bottom-contianer {
+  position: relative;
+  margin-bottom: 0px;
+  width: 100%;
+  height: auto;
+}
+.container .bottom-contianer .bottom-input {
+  width: 100%;
+  height: 98rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 2rpx 0rpx 0rpx #e2e2e2;
+  padding: 16rpx 32rpx 18rpx  30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .bottom-contianer .bottom-input .input {
+  width: 608rpx;
+  height: 64rpx;
+  background-color: #f7f7f7;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+}
+.container .bottom-contianer .bottom-input .icon-input {
+  width: 48rpx;
+  height: 56rpx;
+  margin-left: 32rpx;
+}
+.container .bottom-contianer .bottom-input .icon-input .icon {
+  width: inherit;
+  height: inherit;
+}
+.container .bottom-contianer .bottom-line {
+  width: 100%;
+  height: 68rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.container .bottom-contianer .bottom-line .line {
+  width: 268rpx;
+  height: 10rpx;
+  background: #000000;
+  border-radius: 200rpx;
+  margin: 0rpx 0rpx 18rpx 0rpx;
+}
+.container .cuIcon-people:before {
+  content: "\e736";
+}
+.container .cuIcon-favorfill:before {
+  content: "\e64b";
+}
+.container .cuIcon-right:before {
+  content: "\e6a3";
+}
+.container .text-gray,
+.container .line-gray,
+.container .lines-gray {
+  color: #aaaaaa;
+}
+.container .text-orange {
+  color: #F96D3D;
+}
+.container .lg {
+  width: 80upx;
+  height: 80upx;
+}
+.cu-progress {
+  overflow: hidden;
+  height: 28rpx;
+  background-color: #ebeef5;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.cu-progress + view,
+.cu-progress + text {
+  line-height: 1;
+}
+.cu-progress.xs {
+  height: 10rpx;
+}
+.cu-progress.sm {
+  height: 20rpx;
+}
+.cu-progress view {
+  width: 0;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-items: flex-end;
+  justify-content: space-around;
+  font-size: 20rpx;
+  color: var(--white);
+  transition: width 0.6s ease;
+}
+.cu-progress text {
+  align-items: center;
+  display: flex;
+  font-size: 20rpx;
+  color: var(--black);
+  text-indent: 10rpx;
+}
+.cu-progress.text-progress {
+  padding-right: 60rpx;
+}
+.cu-progress.striped view {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 72rpx 72rpx;
+}
+.cu-progress.active view {
+  animation: progress-stripes 2s linear infinite;
+}
+@keyframes progress-stripes {
+  from {
+    background-position: 72rpx 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
