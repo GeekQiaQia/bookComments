@@ -31,13 +31,15 @@
   flex: 1;
 }
 .container .book-card .info-detail .name {
-  width: 272rpx;
+  width: 400rpx;
   height: 48rpx;
   font-size: 34rpx;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #000000;
   line-height: 48rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .book-card .info-detail .commentsNum {
   width: 108rpx;

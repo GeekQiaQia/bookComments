@@ -30,7 +30,8 @@
     "pages/book-detail/book-detail",
     "pages/score-detail/score-detail",
     "pages/catagory-detail/catagory-detail",
-    "pages/hot-search/hot-search"
+    "pages/hot-search/hot-search",
+    "pages/choose-catagory/choose-catagory"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,7 +48,8 @@
     "van-tabs": "./miniprogram_npm/@vant/weapp/tabs/index",
     "van-datetime-picker": "./miniprogram_npm/@vant/weapp/datetime-picker/index",
     "van-radio": "@vant/weapp/radio/index",
-    "van-radio-group": "@vant/weapp/radio-group/index"
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-icon": "@vant/weapp/icon/index"
   },
   "tabBar": {
     "custom": false,

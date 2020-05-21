@@ -1,0 +1,38 @@
+.container .catagory-container {
+  flex-grow: 1;
+  padding-top: 32rpx;
+}
+.container .catagory-container .radio-group {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .catagory-container .radio-group .radio {
+  width: 750rpx;
+  height: 112rpx;
+  background-color: #ffffff;
+  padding-left: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .catagory-container .radio-group .radio .cata-name {
+  width: 638rpx;
+  height: inherit;
+  border-bottom: 1rpx solid #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 48rpx;
+  text-align: left;
+}

@@ -7,6 +7,7 @@
 		  background="#ffffff"
 		  placeholder="请输入搜索关键词"
 		  bind:change="onChange"
+		  bind:focus="onFocus"
 		    bind:search="onSearch"
 		/>
 		<scroll-view class="scroll-tab" scroll-x="true">
@@ -34,7 +35,7 @@
 					{{item.name}}
 				</view>
 				<view class="book-num">
-					<view>全部{{item.totalBooks}}本</view>
+					<view data-name="{{item.name}}" data-id="{{item.id}}" bindtap="goCatagoryDetail">全部{{item.totalBooks}}本</view>
 					<text class="cuIcon-right lg text-gray"  data-name="{{item.name}}" data-id="{{item.id}}" bindtap="goCatagoryDetail"></text>
 				</view>
 			</view>

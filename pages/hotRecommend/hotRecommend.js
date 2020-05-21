@@ -70,8 +70,13 @@ Page({
 	      keyword: e.detail
 	    });
 	  },
-	onSearch() {
+	onSearch(e) {
 	    Toast('搜索' + this.data.keyword);
+	  },
+	  onFocus(e){
+		  wx.navigateTo({
+		    url: '../hot-search/hot-search'
+		  })
 	  },
 	  /**
 	   * @description ' tab页面切换；

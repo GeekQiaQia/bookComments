@@ -1,4 +1,5 @@
 // pages/catagory-detail/catagory-detail.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -8,10 +9,13 @@ Page({
 	keyword:"",
 	active:0,
 	tabs:[
-		{tab:"综合"},
-		{tab:"评分最高"},
-		{tab:"评论最多"}
+		{tab:"综合",name:"comprehensive"},
+		{tab:"评分最高",name:"score"},
+		{tab:"评论最多",name:"comments"}
 	],
+	comprehensiveInfo:[],
+	scoreInfo:[],
+	commentsInfo:[]
   },
 	onChange(e) {
 	    this.setData({
@@ -21,6 +25,161 @@ Page({
 	onSearch() {
 	    Toast('搜索' + this.data.keyword);
 	  },
+	  onFocus(e){
+	  		  wx.navigateTo({
+	  		    url: '../hot-search/hot-search'
+	  		  })
+	  },
+	  /**
+	   * @description 监听点击书籍详情事件；
+	   * */
+	   onBookDetail:function(e){
+	  	   // 组件传参过来的id;
+	  	   let id=e.detail.id;
+	  	   wx.navigateTo({
+	  	     url: '../book-detail/book-detail?id='+id
+	  	   })
+	  	   
+	   },
+	  /**
+	   * @description:获取评论最多
+	   * 
+	   * */
+	  
+	  getCateogryByComments(category){
+	  	  
+	  	let that=this;
+	  	let reqData={
+	  		category,
+	  		page:0,
+	  		size:10
+	  	}
+	  	api._fetch({
+	  	    url: '/api/search/category/by/comments',
+	  	    data:reqData,
+	  	    method:'get',
+	  		 contentType:1
+	  	}).then(function (res) {
+	  		
+	  	     let commentsInfo=res.data.content;
+			 for(let item of commentsInfo){
+			 					  let author=[];
+			 					  let translators=[];
+			 					  let allAuthors=item.authors;
+			 					  if(allAuthors!==null){
+			 					  					  author=allAuthors.filter(item=>{
+			 					  						  return item.translator==false;
+			 					  					  });
+			 					  					  translators=allAuthors.filter(item=>{
+			 					  						  return item.translator==true;
+			 					  					  });
+			 					  }
+			 					  item.authors={
+			 					  					  author,
+			 					  					  translators
+			 					  }
+			 }
+			 that.setData({
+				 commentsInfo
+			 });
+	  	    
+	  	}).catch(function (error) {
+	  	    console.log(error);
+	  	});
+	  },
+	  /**
+	   * @description:获取评分最高
+	   * 
+	   * */
+	  
+	  getCateogryByScore(category){
+	  	  
+	  	let that=this;
+	  	let reqData={
+	  		category,
+	  		page:0,
+	  		size:10
+	  	}
+	  	api._fetch({
+	  	    url: '/api/search/category/by/score',
+	  	    data:reqData,
+	  	    method:'get',
+	  		 contentType:1
+	  	}).then(function (res) {
+	  		let scoreInfo=res.data.content;
+			for(let item of scoreInfo){
+								  let author=[];
+								  let translators=[];
+								  let allAuthors=item.authors;
+								  if(allAuthors!==null){
+								  					  author=allAuthors.filter(item=>{
+								  						  return item.translator==false;
+								  					  });
+								  					  translators=allAuthors.filter(item=>{
+								  						  return item.translator==true;
+								  					  });
+								  }
+								  item.authors={
+								  					  author,
+								  					  translators
+								  }
+			}
+	  		that.setData({
+	  			 scoreInfo
+	  		});
+	  	
+	  	    
+	  	}).catch(function (error) {
+	  	    console.log(error);
+	  	});
+	  },
+	  /**
+	   * @description:获取评分最高
+	   * 
+	   * */
+	  
+	  getCateogryByComprehensive(category){
+	  	  
+	  	let that=this;
+	  	let reqData={
+	  		category,
+	  		page:0,
+	  		size:10
+	  	}
+	  	api._fetch({
+	  	    url: '/api/search/category/comprehensive',
+	  	    data:reqData,
+	  	    method:'get',
+	  		 contentType:1
+	  	}).then(function (res) {
+	  		 let comprehensiveInfo=res.data.content;
+			 for(let item of comprehensiveInfo){
+			 					  let author=[];
+			 					  let translators=[];
+			 					  let allAuthors=item.authors;
+			 					  if(allAuthors!==null){
+			 					  					  author=allAuthors.filter(item=>{
+			 					  						  return item.translator==false;
+			 					  					  });
+			 					  					  translators=allAuthors.filter(item=>{
+			 					  						  return item.translator==true;
+			 					  					  });
+			 					  }
+			 					  item.authors={
+			 					  					  author,
+			 					  					  translators
+			 					  }
+			 }
+	  		 that.setData({
+	  		 	 comprehensiveInfo
+	  		 });
+	  	
+	  	    
+	  	}).catch(function (error) {
+	  	    console.log(error);
+	  	});
+	  },
+	  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -30,6 +189,9 @@ Page({
 		 wx.setNavigationBarTitle({
 				title
 		 })
+		 this.getCateogryByComments(id);
+		 this.getCateogryByScore(id);
+		 this.getCateogryByComprehensive(id);
   },
 
   /**

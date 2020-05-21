@@ -1,6 +1,7 @@
 // 获取小程序全局配置（变量、函数等）
 const app = getApp()
 // 定义网络请求API地址
+// const baseURL = 'https://mpapi.bookreview.com.cn//book'
 const baseURL = 'http://45.40.199.85:9090/book'
 // 封装网络请求开始
 const http = ({url,data,method,contentType,...other} = {}) => {
