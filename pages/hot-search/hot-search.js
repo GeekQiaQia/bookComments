@@ -6,8 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-	  keyword:"冈仁波齐",
+	  keyword:"",
 	hotSearchArray:[],
+	choosedCataId:"",
+	choosedCataName:"",
 	mySearchHistory:[]
   },
   onSearch:function(e){
@@ -21,10 +23,14 @@ Page({
   },
   /**
    * @description  跳e转到书籍分类选择；
+   * 
    * */
   handleChooseCatagory(e){
+	  let that=this;
+	  console.log(that.data);
+	  let keyword=that.data.keyword;
 	  wx.navigateTo({
-	    url: '../choose-catagory/choose-catagory'
+	    url: '../choose-catagory/choose-catagory?keyword='+keyword
 	  })
   },
   /**
@@ -69,18 +75,51 @@ Page({
 		 console.log(res);
 		 let mySearchHistory=res.data.content;
 		 that.setData({
-			 hotSearchArray
+			 mySearchHistory
 		 });
 	    
 	}).catch(function (error) {
 	    console.log(error);
 	});
   },
+  /**
+   * @description  取消；
+   * */
+  handleCancel(e){
+	 wx.switchTab({
+	 		  url: '../hotRecommend/hotRecommend'
+	 });
+  },
+  /**
+   * @description  完成
+   * */
+  handleComplete(e){
+	  let bookName=this.data.keyword;
+	  wx.navigateTo({
+	    url: '../recommend-result/recommend-result?bookName='+bookName
+	  })
+  },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  this.setData({
+		  keyword:"冈仁波齐"
+	  });
+	 
+	  let choosedCataId=options.id;
+	  let choosedCataName=options.name;
+	  let keyword=options.keyword;
+	  if(choosedCataId&&choosedCataName&&keyword){
+	  		this.setData({
+	  				  choosedCataId,
+	  				  choosedCataName,
+	  				  keyword
+	  		});  
+	  }
+	
+	  
 	this.getHotSearch();
 	this.getMySearchHistory();
   },

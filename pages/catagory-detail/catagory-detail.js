@@ -192,6 +192,11 @@ Page({
 		 this.getCateogryByComments(id);
 		 this.getCateogryByScore(id);
 		 this.getCateogryByComprehensive(id);
+	      let EventChannel=this.getOpenerEventChannel()
+		 // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+		     EventChannel.on('chooseCatagoryInfo', function(data) {
+		       console.log(data)
+		     })
   },
 
   /**

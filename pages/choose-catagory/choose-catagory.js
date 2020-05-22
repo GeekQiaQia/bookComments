@@ -8,13 +8,25 @@ Page({
   data: {
 	tabs:[],
 	 radio: '',
+	 keyword:""
   },
     onChange(event) {
 		console.log(event)
        this.setData({
          radio: event.detail,
        });
+	   
      },
+	 onClick(e){
+	
+		 let name=e.currentTarget.dataset.name;
+		 let id=e.currentTarget.dataset.id;
+		 let keyword=this.data.keyword;
+		 wx.navigateTo({
+		   url: '../hot-search/hot-search?id='+id+'&name='+name+'&keyword='+keyword
+		 })		
+	 },
+
 /**
 	 * @description: 获取分类列表；
 	 * 
@@ -45,6 +57,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  let keyword=options.keyword
+	  this.setData({
+		  keyword
+	  });
 	this.getBannerList();
   },
 

@@ -68,10 +68,22 @@
 				</view>
 				<view class="split-line2"></view>
 				<view class="select-cate">
-					<view class="cate-tip">
+					<view class="cate-tip" wx:if="{{choosedCataName==''}}">
 						选择类别
 					</view>
+					<view class="cate-tip" wx:else>
+						{{choosedCataName}}
+					</view>
 					<text class="cuIcon-right lg text-gray" bindtap="handleChooseCatagory"></text>
+				</view>
+				<view  style="margin-top: 36rpx;" class="split-line2" wx:if="{{choosedCataName!=''}}"></view>
+				<view class="btn-select" wx:if="{{choosedCataName!=''}}">
+					<view class="btn-cancel btn" bindtap="handleCancel">
+						<view class="font orange">取消</view>
+					</view>
+					<view class="btn-complete btn" bindtap="handleComplete">
+						<view class="font white">完成</view>
+					</view>
 				</view>
 			</view>
 		</view>

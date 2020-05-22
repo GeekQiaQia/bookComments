@@ -27,7 +27,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
+	"libVersion": "2.7.3",
 	"appid": "wx1793b3f33c8e3559",
 	"projectname": "bookComments",
 	"debugOptions": {

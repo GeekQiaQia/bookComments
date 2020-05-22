@@ -116,7 +116,8 @@
 			.add-book{
 				margin: 0rpx auto;
 				width:656rpx;
-				height:320rpx;
+				min-height:320rpx;
+				height:auto;
 				background-color:rgba(255,255,255,1);
 				border-radius:20rpx;
 				padding-top:16rpx;
@@ -145,6 +146,46 @@
 					height:4rpx;
 					background-color: #F7F7F7;
 					margin: 0rpx auto;
+				}
+				.btn-select{
+				  display:flex;
+				  flex-direction:row;
+				  justify-content:space-around;
+				  align-items:center;
+				  width:100%;
+				  padding-top: 32rpx;
+				  .btn{
+					  width:240rpx;
+					  height:80rpx;
+					  
+					  border-radius:8rpx;
+					  display:flex;
+					  flex-direction:row;
+					  justify-content:center;
+					  align-items:center;
+				  }
+				  .btn-cancel{
+					 background-color:rgba(0,0,0,0.05);
+				  }
+				  .btn-complete{
+					 background:rgba(249,109,61,1);
+				  }
+				  .font{
+					  width:72rpx;
+					  height:48rpx;
+					  font-size:34rpx;
+					  font-family:PingFangSC-Semibold,PingFang SC;
+					  font-weight:600;
+					  
+					  line-height:48rpx;
+					  letter-spacing:2rpx;
+				  }
+				  .white{
+					 color:rgba(255,255,255,1);
+				  }
+				  .orange{
+					 color:rgba(249,109,61,1);
+				  }
 				}
 				.select-cate{
 					width: 100%;

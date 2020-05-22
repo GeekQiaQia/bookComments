@@ -1,0 +1,26 @@
+<!--pages/recommend-result/recommend-result.wxml-->
+<view class="container">
+	<view class="result-container">
+		
+		<view class="icon-tip">
+		
+			<van-icon name="checked" color="#F96D3D" size="107rpx" />
+		</view>
+		<view class="text-tip">
+			<view class="font">
+				《{{bookName}}》添加成功
+			</view>
+			<view class="font">
+				可以去<text class="my-recommend"  bindtap="handleMyRecommend">#我的推荐# </text>查看更新状态哦～
+			</view>
+		</view>
+		<view class="btn-container" >
+			<view class="btn" bindtap="goBackHotRecommend">
+				<view class="text">
+					返回热门书评
+				</view>
+			</view>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>
