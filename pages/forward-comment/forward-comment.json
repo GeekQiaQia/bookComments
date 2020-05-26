@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+	   "copy-right":"../../components/copy-right/copy-right"
+  },
+   "navigationBarTitleText": "书评详细-转发评论"
+}

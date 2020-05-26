@@ -7,11 +7,7 @@ Page({
    */
   data: {
 	notesInfo:{
-				notebookNum:2,
-				empty:true,
-				notebooks:[
-					// "金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
-				]
+				
 			}
   },
   /**
@@ -34,12 +30,16 @@ Page({
   	   	 console.log(res);
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
-  	   				let notesInfo=that.data.notesInfo;
-  					notesInfo.notebooks=res.data;
-  					notesInfo.notebookNum=res.data.length;
-  					that.setData({
-  						notesInfo
-  					});
+  	   	// 			let notesInfo=that.data.notesInfo;
+  					// notesInfo.notebooks=res.data;
+  					// notesInfo.notebookNum=res.data.length;
+  					// that.setData({
+  					// 	notesInfo
+  					// });
+					let notesInfo=res.data;
+					that.setData({
+						notesInfo
+					});
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,

@@ -5,16 +5,8 @@ Component({
 	properties:{
 		
 		cardInfo:{
-			type:Array,
-			value:[]
-		},
-		starMax:{
-			type:Number,
-			value:5
-		},
-		readMore:{
-			type:Boolean,
-			value:true
+			type:Object,
+			value:{}
 		}
 		
 	},
@@ -35,11 +27,14 @@ Component({
 		imageError:()=>{
 			
 		},
+		/**
+		 * @description:readMore
+		 * */
 		handleLoadmore:function(e){
 			
 			let cardInfo=e.target.dataset.resume;
-			let itemIndex=e.target.dataset.itemindex
-			cardInfo[itemIndex].readMore=!cardInfo[itemIndex].readMore
+			
+			cardInfo.readMore=!cardInfo.readMore
 		
 			this.setData({
 				cardInfo:cardInfo
@@ -47,9 +42,12 @@ Component({
 			
 		},
 		handleBookDetail:function(e){
-			console.log(e);
+			console.log("handleBookDetail",e);
 			
-			      var myEventDetail = {} // detail对象，提供给事件监听函数
+			      var myEventDetail = {
+					  id:e.target.dataset.id,
+					  itemIndex:e.target.dataset.itemindex
+				  } // detail对象，提供给事件监听函数
 			      var myEventOption = {} // 触发事件的选项
 			 this.triggerEvent('commentdetail', myEventDetail, myEventOption)
 		}

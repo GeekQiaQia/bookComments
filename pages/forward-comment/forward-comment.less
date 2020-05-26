@@ -1,0 +1,99 @@
+.container{
+	.comment-text{
+			width:100%;
+			height:576rpx;
+			background:rgba(255,255,255,1);
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-end;
+			padding-top: 32rpx;
+			padding-left: 32rpx;
+
+		}
+		.space-line{
+			width:100%;
+			height:16rpx;
+			background-color: #F7F7F7;
+		}
+		.comment-container{
+			width:750rpx;
+			height:176rpx;
+			background-color:rgba(255,255,255,1);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			padding: 0rpx 30rpx 16rpx 32rpx;
+			.comment-info{
+				width:688rpx;
+				height:160rpx;
+				background-color:rgba(247,247,247,1);
+				border-radius:10rpx;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-content: center;
+				padding:16rpx 16rpx 18rpx 16rpx ;
+				.content{
+					width:656rpx;
+					height:78rpx;
+					font-size:24rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(102,102,102,1);
+					line-height:39rpx;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;       
+					overflow: hidden;
+					text-overflow:ellipsis;
+					::after{
+						
+					}
+					.check-more{
+						width:96rpx;
+						height:34rpx;
+						font-size:24rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(87,107,149,1);
+						line-height:34rpx;
+						float: right;
+						position: absolute;
+						margin-top: -30rpx;
+						margin-left: 30px;
+
+					}
+				}
+				.avatar-info{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					.avatar{
+						width:48rpx;
+						height:48rpx;
+						border-radius: 50%;
+						.cover-image{
+							width:inherit;
+							height:inherit;
+							border-radius: 50%;
+						}
+					}
+					.name{
+						margin-left: 16rpx;
+						width:auto;
+						height:34rpx;
+						font-size:24rpx;
+						font-family:PingFangSC-Semibold,PingFang SC;
+						font-weight:600;
+						color:rgba(0,0,0,1);
+						line-height:34rpx;
+					}
+				}
+			}
+			
+		}
+}

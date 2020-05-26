@@ -1,10 +1,12 @@
 // pages/my-history/my-history.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+	  operationInfo:[],
 	  historyInfo:[
 		  {
 		  			  date:"02月3日",
@@ -108,12 +110,56 @@ Page({
 		  }
 	  ]
   },
-
+ 
+ /**
+  * @description；获取历史操作列表
+  * 
+  * */
+ 
+  getOperationList:function(){
+ 	   let reqData={
+ 		   page:0,
+ 		   size:10
+ 	   }
+ 	   let that=this;
+ 	   api._fetch({
+ 	       url: '/api/i/operation/list',
+ 	       data:reqData,
+ 	       method:'get',
+ 	   	contentType:1
+ 	   }).then(function (res) {
+ 	   	 console.log(res);
+ 	   			 // 此处发送修改交易；
+ 	   			 if(res.statusCode===200){
+ 	   	// 			let notesInfo=that.data.notesInfo;
+ 					// notesInfo.notebooks=res.data;
+ 					// notesInfo.notebookNum=res.data.length;
+ 					// that.setData({
+ 					// 	notesInfo
+ 					// });
+ 					let operationInfo=res.data;
+ 					that.setData({
+ 						operationInfo
+ 					});
+ 	   			 }else{
+ 	   				 wx.showToast({
+ 	   				   title: res.message,
+ 	   				   mask:true,
+ 	   				   icon: 'none',
+ 	   				   duration: 3000
+ 	   				 })
+ 	   			 }
+ 	   			
+ 	       
+ 	   }).catch(function (error) {
+ 	       console.log(error);
+ 	   });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getOperationList();
   },
 
   /**

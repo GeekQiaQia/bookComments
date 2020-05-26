@@ -1,4 +1,4 @@
-// components/basic-layout/basic-layout.js
+// components/bottom-input/bottom-input.js
 Component({
   /**
    * 组件的属性列表

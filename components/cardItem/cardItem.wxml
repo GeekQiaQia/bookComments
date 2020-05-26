@@ -1,6 +1,6 @@
 <!--pages/aboutMe/aboutMe.wxml-->
 <view class="container">
-	<view wx:for="{{cardInfo}}" wx:key="index">
+	
 		
 	
   <view class="card-container">
@@ -9,55 +9,45 @@
 			  <view class="avatar">
 				<image
 				                class="cover-image"
-				                src="{{item.userInfo.avatarUrl}}"
+				                src="{{cardInfo.userInfo.avatarUrl}}"
 				                bindload="imageLoad"
 				                binderror="imageError">
 				            </image>
 			  </view>
 			  <view class="basicinfo">
 				  <view>
-					  <text class="name">{{item.userInfo.nickName}}</text>
-					  <block wx:if="{{item.forward==true}}">
+					  <text class="name">{{cardInfo.userInfo.nickName}}</text>
+					  <block wx:if="{{cardInfo.forward==true}}">
 						  <text class="notice">转发</text>
 					  </block>
-					  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+					  <block  wx:if="{{cardInfo.readBook==true&&cardInfo.forward==false}}">
 					  		 <text class="notice">已读</text>
 					  </block>
 				  </view>
-				  <view>
-				  		<text class="time">{{item.createTime}}</text><text class="star fill"> 
-						
-						<block wx:for="{{item.bookInfo.stars}}" wx:key="index"> 
-							<text  class="cuIcon-favorfill lg text-orange"></text>
-						</block>
-						<block wx:for="{{starMax-item.bookInfo.stars}}" wx:key="index">
-							<text class="cuIcon-favorfill lg text-gray"></text>
-						</block>
-
-						</text>
-				  </view>
+				  <commentStars  model:stars="{{cardInfo.bookInfo.stars}}"></commentStars>
+			
 			  </view>
 			  
 		  </view>
 		  
 		  <view class="content-container">
-		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.content}}</text>
+		  		<text class="resume  {{!cardInfo.readMore?'read-more':''}}"  data-itemIndex="{{cardInfo.id}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{cardInfo.content}}</text>
 		  </view>
 		  
 		  <view class="releation-container">
 			  <view class="releation-info">
-				  <text class="releation ">{{item.liked}}有用 · </text>
-				  <text class="releation ">{{item.reply}}回复 · </text>
-				  <text class="releation ">{{item.forwarding}}转发</text>
+				  <text class="releation ">{{cardInfo.liked}}有用 · </text>
+				  <text class="releation ">{{cardInfo.reply}}回复 · </text>
+				  <text class="releation ">{{cardInfo.forwarding}}转发</text>
 			  </view>
-			  <view class="book-info"  data-id="{{item.id}}" bindtap="handleBookDetail">
-			  		<text class="book-name" data-id="{{item.id}}">《{{item.bookInfo.name}}》</text>
-			  		<text class="cuIcon-right lg text-gray"  data-id="{{item.id}}"></text>
+			  <view class="book-info"  data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" bindtap="handleBookDetail">
+			  		<text class="book-name" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}">《{{cardInfo.bookInfo.name}}》</text>
+			  		<text class="cuIcon-right lg text-gray"  data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"></text>
 			  </view>
 			
 		  </view>
 	  </view>
   </view>
 	
-   </view>
+  
 </view>

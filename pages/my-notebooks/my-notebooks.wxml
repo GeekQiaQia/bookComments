@@ -10,7 +10,7 @@
 				<text class="cuIcon-add lg text-oranges"></text><text class="create-notebook">新建笔记本</text>
 			</view>
 		</view>
-		<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+		<block wx:for="{{notesInfo.content}}" wx:key="*this">
 			<view class="book-list" data-id="{{item.id}}" catchtap="handleNotebookDetail">
 				<view class="book-info" data-id="{{item.id}}">
 					<view class="book-title" data-id="{{item.id}}">
@@ -29,7 +29,7 @@
 					</view>
 				</view>
 				<view class="record" data-id="{{item.id}}">
-					0条记录
+					{{item.notes}}条记录
 				</view>
 			</view>
 		</block>

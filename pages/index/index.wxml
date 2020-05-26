@@ -9,7 +9,9 @@
 		</swiper-item>
 	  </swiper>
   </view>
-  
-	  <cardItem model:card-info="{{cardInfoArray}}" bind:commentdetail="handleCommentDetail"></cardItem>
+      <block wx:for="{{cardInfoArray}}" wx:key="*this">
+		  <cardItem model:card-info="{{item}}" bind:commentdetail="handleCommentDetail"></cardItem>
+	  </block>
 	  
+
 </view>

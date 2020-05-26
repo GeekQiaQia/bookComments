@@ -4,14 +4,14 @@
 .container .book-card {
   width: 688rpx;
   height: 288rpx;
-  background: #ffffff;
+  background: white;
   border-radius: 10rpx;
   margin: 32rpx;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  padding: 16rpx;
+  align-items: flex-start;
+  padding: 16rpx 32rpx 16rpx 16rpx;
 }
 .container .book-card .cover-image {
   width: 176rpx;
@@ -23,6 +23,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  flex: 1;
 }
 .container .book-card .info-detail .name {
   width: 272rpx;
@@ -65,10 +66,18 @@
   font-weight: 400;
   color: #666666;
   line-height: 32rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: inline-block;
+  text-align: justify;
+}
+text-align-last:justify .container .book-card .info-detail .info-obj .info-key::after {
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+.container .book-card .info-detail .info-obj .info-key text {
+  display: inline-block;
+  height: 0;
+  width: 100%;
 }
 .container .book-card .info-detail .info-obj .info-value {
   width: auto;
@@ -79,12 +88,49 @@
   color: #576b95;
   text-align: left;
   line-height: 32rpx;
+  margin-left: 18rpx;
+}
+.container .bottom-comment {
+  width: 750rpx;
+  height: 128rpx;
+  background-color: #ffffff;
+  padding: 0rpx 30rpx 0rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .bottom-comment .reply-container {
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .bottom-comment .reply-container .reply-title {
+  width: 68rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0b0c0d;
+  line-height: 48rpx;
+}
+.container .bottom-comment .reply-container .tip {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 32rpx;
 }
 .container .top-comment {
   width: 688rpx;
-  height: 800rpx;
+  max-height: 400px;
   background: #ffffff;
   border-radius: 10rpx;
+  margin: auto;
+  height: auto;
 }
 .container .top-comment .card-item {
   width: inherit;

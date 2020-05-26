@@ -1,95 +1,142 @@
 .container{
 	align-items: center;
-	.book-card{
-		width:688rpx;
-		height:288rpx;
-		background:rgba(255,255,255,1);
-		border-radius:10rpx;
-		margin: 32rpx;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: center;
-		padding: 16rpx;
-		
-		.cover-image{
-			width:176rpx;
-			height:256rpx;
-			margin-right: 32rpx;
-		}
-		.info-detail{
+.book-card{
+			width: 688rpx;
+			height: 288rpx;
+			background: white;
+			border-radius: 10rpx;
+			margin: 32rpx;
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			justify-content: flex-start;
 			align-items: flex-start;
-			.name{
-				width:272rpx;
+			padding: 16rpx 32rpx 16rpx 16rpx;
+			
+			.cover-image{
+				width:176rpx;
+				height:256rpx;
+				margin-right: 32rpx;
+			}
+			.info-detail{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				flex: 1;
+				.name{
+					width:272rpx;
+					height:48rpx;
+					font-size:34rpx;
+					font-family:PingFangSC-Semibold,PingFang SC;
+					font-weight:600;
+					color:rgba(0,0,0,1);
+					line-height:48rpx;
+				}
+			
+				.commentsNum{
+					width:108rpx;
+					height:26rpx;
+					font-size:18rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(150,150,150,1);
+					line-height:26rpx;
+				}
+				.info-obj{
+					display:flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					.spacing{
+						letter-spacing: 20rpx;
+					}
+					.seven-spacing{
+						letter-spacing: 7rpx;
+					}
+					.one-spacing{
+						letter-spacing: 1rpx;
+		
+					}
+					.info-key{
+						width:126rpx;
+						height:32rpx;
+						font-size:22rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(102,102,102,1);
+						line-height:32rpx;
+						display: inline-block;
+						 text-align: justify;
+						 text-align-last:justify
+						&::after{
+							width:100%;
+							display:inline-block;
+							content:'';
+						}
+						text{
+							display: inline-block;
+							height: 0;
+							width: 100%;
+						}
+					}
+					.info-value{
+						width:auto;
+						height:32rpx;
+						font-size:22rpx;
+						font-family:PingFangSC-Regular,PingFang SC;
+						font-weight:400;
+						color:rgba(87,107,149,1);
+						text-align:left;
+						line-height:32rpx;
+						margin-left: 18rpx;
+
+					}
+				}
+			
+			}
+			
+		}
+	.bottom-comment{
+		width:750rpx;
+		height:128rpx;
+		background-color:rgba(255,255,255,1);
+	    padding: 0rpx 30rpx 0rpx 32rpx;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.reply-container{
+			width:auto;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			.reply-title{
+				width:68rpx;
 				height:48rpx;
 				font-size:34rpx;
-				font-family:PingFangSC-Semibold,PingFang SC;
-				font-weight:600;
-				color:rgba(0,0,0,1);
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(11,12,13,1);
 				line-height:48rpx;
 			}
-		
-			.commentsNum{
-				width:108rpx;
-				height:26rpx;
-				font-size:18rpx;
+			.tip{
+				width:auto;
+				height:32rpx;
+				font-size:22rpx;
 				font-family:PingFangSC-Regular,PingFang SC;
 				font-weight:400;
 				color:rgba(150,150,150,1);
-				line-height:26rpx;
+				line-height:32rpx;
 			}
-			.info-obj{
-				display:flex;
-				flex-direction: row;
-				justify-content: flex-start;
-				align-items: center;
-				.spacing{
-					letter-spacing: 20rpx;
-				}
-				.seven-spacing{
-					letter-spacing: 7rpx;
-				}
-				.one-spacing{
-					letter-spacing: 1rpx;
-	
-				}
-				.info-key{
-					width:126rpx;
-					height:32rpx;
-					font-size:22rpx;
-					font-family:PingFangSC-Regular,PingFang SC;
-					font-weight:400;
-					color:rgba(102,102,102,1);
-					line-height:32rpx;
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					align-items: center;
-				}
-				.info-value{
-					width:auto;
-					height:32rpx;
-					font-size:22rpx;
-					font-family:PingFangSC-Regular,PingFang SC;
-					font-weight:400;
-					color:rgba(87,107,149,1);
-					text-align:left;
-					line-height:32rpx;
-				}
-			}
-		
 		}
-		
 	}
-	
 	.top-comment{
-		width:688rpx;
-		height:800rpx;
-		background:rgba(255,255,255,1);
-		border-radius:10rpx;
+		width: 688rpx;
+		max-height: 400px;
+		background: #ffffff;
+		border-radius: 10rpx;
+		margin: auto;
+		height: auto;
 		.card-item{
 			width:inherit;
 			// height:352rpx;
@@ -248,6 +295,7 @@
 			
 		}
 	}
+	
 	.more-comment-tip{
 		display: flex;
 		flex-direction: row;

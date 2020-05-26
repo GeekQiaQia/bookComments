@@ -91,8 +91,7 @@ Page({
 			     url: '../catagory-detail/catagory-detail?id='+id+'&cateName='+catename
 			   })
 		   }
-		  
-		   
+
 	    },
 		goCatagoryDetail(e){
 			// 组件绑定来的id;

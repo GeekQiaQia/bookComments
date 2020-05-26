@@ -1,0 +1,228 @@
+<!--pages/comment-detail/comment-detail.wxml-->
+<view class="container">
+	<view class="comment-container">
+		<view class="comment-info">
+			
+			<view class="title" wx:if="{{item.title!==null}}">
+				{{item.title}}
+			</view>
+			<view  class="top-comment">
+				<view class="card-item">
+					<view class="card-item-title">
+								  <view class="avatar">
+									<cover-image
+									                class="cover-image"
+									                src="{{item.userInfo.avatarUrl}}"
+									                bindload="imageLoad"
+									                binderror="imageError">
+									            </cover-image>
+								  </view>
+								  <view class="basicinfo">
+									  <view>
+										  <text class="name">{{item.userInfo.nickName}}</text>
+										
+										  <block wx:if="{{item.forward==true}}">
+										  		<text class="notice">转发</text>
+										  </block>
+										  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+										  		 <text class="notice">已读</text>
+										  </block>
+									  </view>
+									  <view class="time-star">
+									  		<text class="time">{{item.createTime}}</text>
+											<commentStars  model:stars="{{item.bookInfo.stars}}"></commentStars>
+									  </view>
+								  </view>
+								  
+					</view>
+					
+					<view class="content-container">
+						
+							<text class="resume "  >{{item.content}}</text>
+					</view>
+					
+					<view class="releation-container">
+								  <view class="releation-info">
+								
+									  <view class="comment-share" data-target="shareModal" >
+									  	<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									  	
+									  	<block wx:if="{{item.liked==true}}">
+									  		<view class="shared">{{item.like}}</view>
+									  	</block>
+									  	<block wx:else>
+									  		<view class="share">点赞</view>
+									  	</block>
+									  </view>
+									  
+									  <view class="comment-share" data-target="forwardModal" bindtap="toShowShareDialog">
+									  	<text class=" lg text-gray {{item.forward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-target="forwardModal"></text>
+									  	<block wx:if="{{item.forward==true}}">
+									  		<view class="shared">{{item.forwarding}}</view>
+									  	</block>
+									  	<block wx:else>
+									  		<view class="share">转发</view>
+									  	</block>
+									  </view>
+									  
+									  <view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
+									  	<text class="cuIcon-share lg text-gray"></text>
+									  	<view class="share">分享</view>
+									  </view>
+									 
+									  
+								  </view>
+								  
+								
+					</view>
+				</view>
+			</view>
+			<view class="split-line">
+				
+			</view>
+			<view class="bottom-comment">
+				<view class="reply-container">
+				 	<view class="reply-title"> 
+						回复
+					</view>
+					<view class="tip">
+						{{item.reply}}条
+					</view>
+				</view>
+				<view class="leave-message" data-target="messageModal"  bindtap="showMessageModal"> 
+					留言
+				</view>
+			</view>
+			<block wx:if="{{item.reply>0}}">
+				<view class="reply-comments">
+					<block wx:for="{{replyList}}" wx:key="*this">
+						<view class="reply-card">
+							<view class="user-info">
+								<view class="avatar-info">
+									<view class="avatar">
+										<cover-image class="cover-image"
+										                src="{{item.userInfo.avatarUrl}}">
+										                
+										            </cover-image>
+									</view>
+									<view class="name">
+										{{item.userInfo.nickName}}
+									</view>
+									
+								</view>
+								<view class="like-info">
+									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									<view class="like-num">
+										{{item.liked}}
+									</view>
+								</view>
+							</view>
+							<view class="content">
+								{{item.content}}
+							</view>
+							<view class="time">
+								{{item.createTime}}
+							</view>
+							<block wx:if="{{item.authorReply!==null}}">
+								<view class="author-title">
+									<view class="split">
+										
+									</view>
+									<view class="title">
+										作者
+									</view>
+								</view>
+								<view class="reply-content">
+									{{item.authorReply.content}}
+								</view>
+								
+							</block>
+						</view>
+						<view class="split-line">
+							
+						</view>
+					</block>
+					
+				</view>
+			</block>
+		</view>
+		
+		<block wx:if="{{item.reply<=0}}">
+			<view class="no-replay">
+				<view class="no-replay-tip">暂无回复留言，快来抢沙发～</view>
+				<view class="no-reply-btn" data-target="messageModal"  bindtap="showMessageModal">
+					<view class="text" data-target="messageModal">
+						去留言
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="no-more">
+		— 到底啦 —
+	</view>
+	<copy-right></copy-right>
+	<!--留言对话框-->
+	<view class="cu-modal bottom-modal {{modalName=='messageModal'?'show':''}}">
+	  <view class="cu-dialog" style="border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
+		  <view class="dialog-container">
+			  <view class="title">
+				 
+				 <van-icon name="cross"  size="40rpx" class="close-black" bindtap="onClose"/>
+				 <view class="tip">
+					 写评论留言
+				 </view>
+				 <view class="{{messagesLen>0?' sub-btn bg-orange':' sub-btn bg-grey'}}" bindtap="toCreateCommentPost">
+					 <view class="text">提交</view>
+				 </view>
+			  </view>
+			 <block>
+				 <view class="comment-text" style="margin-bottom: {{keyBoardHeight}};">
+				 <textarea style="height: inherit; width: inherit;text-align: left;" maxlength="500"  value="{{messages}}" hold-keyboard="{{true}}"  bindinput="handlMessagesInput"  cursor-spacing="100" adjust-position auto-focus="{{true}}"  placeholder="{{placeholder}}"></textarea>
+				 <view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{messagesLen}}/500</view>
+				 </view>
+			 </block>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	
+	<view class="cu-modal bottom-modal {{modalName=='forwardModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container" style="padding-top: 0rpx;">
+			  <view class="forward-contianer">
+				  <view class="forward-comment" bindtap="toForwardingComment">
+					  <text class=" lg text-gray cuIcon-comment text-gray" data-target="forwardModal"></text>
+					  <view class="forward-tip">
+						  转发同时评论
+					  </view>
+				  </view>
+				  <view class="forward-comment" bindtap="toForwardingNow">
+				  					  <text class=" lg text-gray cuIcon-forward text-gray" data-target="forwardModal"></text>
+				  					  <view class="forward-tip">
+				  						  快速转发
+				  					  </view>
+				  </view>
+			  </view>
+			  <view class="space-line">
+				  
+			  </view>
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+	
+
+
+</view>

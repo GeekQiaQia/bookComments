@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
@@ -281,6 +281,27 @@
 					"id": -1,
 					"name": "pages/hot-search/hot-search",
 					"pathName": "pages/hot-search/hot-search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hotRecommend/hotRecommend",
+					"pathName": "pages/hotRecommend/hotRecommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/comment-detail/comment-detail",
+					"pathName": "pages/comment-detail/comment-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forward-comment/forward-comment",
+					"pathName": "pages/forward-comment/forward-comment",
 					"scene": null
 				}
 			]

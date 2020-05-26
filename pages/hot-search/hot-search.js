@@ -94,12 +94,35 @@ Page({
    * @description  完成
    * */
   handleComplete(e){
+	  
 	  let bookName=this.data.keyword;
+	  this.handleAddBook();
 	  wx.navigateTo({
 	    url: '../recommend-result/recommend-result?bookName='+bookName
 	  })
+	  
+	  
   },
-  
+  handleAddBook(){
+	  let that=this;
+	  let choosedCataId=that.data.choosedCataId;
+	  let name=that.data.keyword;
+	  let reqData={
+	  	 category :choosedCataId,
+	  	 name
+	  }
+	  api._fetch({
+	      url: '/api/i/recommend/book',
+	      data:reqData,
+	      method:'post',
+	  	 contentType:1
+	  }).then(function (res) {
+	  	
+	      
+	  }).catch(function (error) {
+	      console.log(error);
+	  });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

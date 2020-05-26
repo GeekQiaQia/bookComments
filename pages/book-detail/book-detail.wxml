@@ -215,12 +215,9 @@
 			<view class="no-more">
 				— 到底啦 —
 			</view>
-			<view class="foot">
-				<view class="copy-right">
-						Copyright © 2019-2020 medo.com
-				</view>
-			
-			</view>
+			<copyRight model:show-line="{{false}}">
+				
+			</copyRight>
 		</view>
 	</scroll-view>
 	<view class="bottom-contianer">

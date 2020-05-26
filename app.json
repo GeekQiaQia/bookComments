@@ -32,7 +32,9 @@
     "pages/catagory-detail/catagory-detail",
     "pages/hot-search/hot-search",
     "pages/choose-catagory/choose-catagory",
-    "pages/recommend-result/recommend-result"
+    "pages/recommend-result/recommend-result",
+    "pages/comment-detail/comment-detail",
+    "pages/forward-comment/forward-comment"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,6 +53,7 @@
     "van-radio": "@vant/weapp/radio/index",
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-cell": "@vant/weapp/cell/index",
+    "van-popup": "@vant/weapp/popup/index",
     "van-icon": "@vant/weapp/icon/index"
   },
   "tabBar": {
