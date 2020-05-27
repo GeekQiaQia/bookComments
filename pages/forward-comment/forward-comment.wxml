@@ -48,7 +48,7 @@
 		</view>
 	</view>
 	
-	<van-overlay show="{{ showNoteList }}"  z-index="10000">
+	<van-overlay show="{{ showNoteList }}"   z-index="10000">
 	  <view class="wrapper">
 		<view class="card">
 			<view class="detail-info">
@@ -100,7 +100,7 @@
 		</view>
 	  </view>
 	</van-overlay>
-	<van-overlay show="{{ show }}"  z-index="10000">
+	<van-overlay show="{{ show }}"   z-index="10000">
 	  <view class="wrapper">
 		<view class="card">
 			<view class="detail-info">

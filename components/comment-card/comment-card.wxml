@@ -8,12 +8,11 @@
 	  <view class="card-item">
 		  <view class="card-item-title">
 			  <view class="avatar">
-				<cover-image
+				<image
 				                class="cover-image"
 				                src="{{item.userInfo.avatarUrl}}"
-				                bindload="imageLoad"
-				                binderror="imageError">
-				            </cover-image>
+				                >
+				            </image>
 			  </view>
 			  <view class="basicinfo">
 				  <view class="info-display">
