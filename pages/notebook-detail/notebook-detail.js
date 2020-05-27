@@ -86,9 +86,7 @@ Page({
 		 	 				   icon: 'success',
 		 	 				   duration: 5000
 		 	 				 })
-		 	 				 wx.navigateTo({
-		 	 				   url: '../my-notes/my-notes'
-		 	 				 })
+		 	 				 wx.navigateBack()
 		 	 			 }else{
 		 	 				 wx.showToast({
 		 	 				   title: res.message,

@@ -40,18 +40,19 @@ Page({
   handleImageTap:function(e){
 	  console.log(e)
 	  let tapName=e.target.dataset.itemname;
+	  let id=e.target.dataset.id;
 	  if(tapName=="ActivityRecommend"){
 		  wx.navigateTo({
-		    url: '../week-activity/week-activity'
+		    url: '../week-activity/week-activity?id='+id
 		  })
 	  }else if(tapName=="Top10"){
 		  wx.navigateTo({
 		    url: '../top-recommend/top-recommend'
 		  })
 	  }else if(tapName=="NewBook"){
-		  wx.navigateTo({
-		    url: '../top-recommend/top-recommend'
-		  })
+		  // wx.navigateTo({
+		  //   url: '../top-recommend/top-recommend'
+		  // })
 	  }
   },
   
@@ -82,6 +83,12 @@ Page({
 		  contentType:1
 	  }).then(function (res) {
 		  let swiperList=res.data;
+		  let activity=swiperList.filter(item=>{
+		  				  return item.url=="ActivityRecommend";
+		  });
+		  let imageSrcs=activity[0].describes
+		   wx.setStorageSync('imageSrcs',imageSrcs)
+		 
 		  that.setData({
 			 swiperList 
 		  });

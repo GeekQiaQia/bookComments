@@ -60,7 +60,7 @@ Page({
   	
   	  api._fetch({
   	      url: '/api/me/update',
-  	      data:JSON.stringify(reqData),
+  	      data:reqData,
   	      method:'post',
 		  contentType:1
   	  }).then(function (res) {

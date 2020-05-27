@@ -1,29 +1,32 @@
 <!--pages/week-activity/week-activity.wxml-->
 <view class="container">
 	<view class="activity-container">
-		<cover-image class="cover-image" src="{{imageSrc}}"  bindtap="handleActivityRecommend">
-		</cover-image>
-	    <block wx:for="{{recommendInfo}}" wx:key="*this">
+		<image class="banner-image" src="{{imageSrc}}"  bindtap="handleActivityRecommend">
+			<!-- <view class="btn">
+				<view class="text">立即参与活动</view>
+			</view> -->
+		</image>
+	    <block wx:for="{{recommendListInfo.content}}" wx:key="*this">
 			<view class="activity-card">
 				<view class="activity-top">
 					
 					<view class="activity-info">
 						
 							<view class="avatar">
-											<cover-image
+											<image
 															class="cover-image"
-															src="{{item.iconUrl}}"
+															src="{{item.userInfo.avatarUrl}}"
 															bindload="imageLoad"
 															binderror="imageError">
-														</cover-image>
+														</image>
 							</view>
 							<view class="name">
-								{{item.name}}
+								{{item.userInfo.nickName}}
 							</view>
 					</view>
 					<view class="like-info"> 
-						<text class="cuIcon-appreciate lg  text-orange size {{item.liked==true?'cuIcon-appreciatefill':''}}  " ></text> 
-						<text class="like-num {{item.liked==true?'liked':'unliked'}} ">{{item.like}}</text>
+						<text class="cuIcon-appreciate lg  text-orange size {{item.like==true?'cuIcon-appreciatefill':''}}  " ></text> 
+						<text class="like-num {{item.like==true?'liked':'unliked'}} ">{{item.liked}}</text>
 					</view>
 				</view>
 				<view class="activity-main">
@@ -32,7 +35,7 @@
 							推荐书目：
 						</view>
 						<view class="name">
-							{{item.bookName}}
+							《{{item.bookName}}》
 						</view>
 						
 					</view>

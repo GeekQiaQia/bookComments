@@ -92,13 +92,7 @@ App({
 	  success (res) {
 		  // 发送 res.code 到后台换取 openId, sessionKey, unionId
 	    if (res.code) {
-	      // //发起网络请求
-	      // wx.request({
-	      //   url: 'https://test.com/onLogin',
-	      //   data: {
-	      //     code: res.code
-	      //   }
-	      // })
+	     
 		  console.log(res.code);
 		  let reqData={code:res.code}
 		  api._fetch({

@@ -45,7 +45,7 @@
 						<view class="book-info">
 							<view class="reader-info">
 								<view class="avatar">
-									<cover-image src="{{item.userInfo.avatarUrl}}" class="avatar"></cover-image>
+									<image src="{{item.userInfo.avatarUrl}}" class="avatar"></image>
 								</view>
 								<view class="info">
 									<view class="detail">
@@ -79,7 +79,7 @@
 						</view>
 						<view class="book-icon">
 							
-							<cover-image src="{{item.bookInfo.picture}}" class="book-icon"></cover-image>
+							<image src="{{item.bookInfo.picture}}" class="book-icon"></image>
 						</view>
 					</view>
 					<view class="split">

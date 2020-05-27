@@ -34,7 +34,8 @@ Page({
    * @description  修改个人维护信息；
    * */
   updateInfoMaintenance(reqData){
-	
+	 
+	  
 	  api._fetch({
 	      url: '/api/me/update',
 	      data:reqData,
@@ -61,8 +62,8 @@ Page({
 	 let that=this;
 	 api._fetch({
 	     url: '/api/i/user-info',
-	     
-	     method:'get'
+	     method:'get',
+		 contentType:1
 	 }).then(function (res) {
 	   
 		 let {avatarUrl,phoneNumber,nickName,gender,birthday,sign}=res.data;

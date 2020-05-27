@@ -2,10 +2,10 @@
 <view class="container">
 	<view class="book-card">
 		
-			<cover-image
+			<image
 	                class="cover-image"
 	                src="{{bookInfo.picture}}">
-	        </cover-image>
+	        </image>
 				
 				<view class="info-detail">
 					

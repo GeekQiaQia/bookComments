@@ -4,12 +4,12 @@
 		<view class="top-container">
 			<view class="book-card">
 				
-					<cover-image
+					<image
 			                class="cover-image"
 			                src="{{bookInfo.picture}}"
 			                bindload="imageLoad"
 			                binderror="imageError">
-			            </cover-image>
+			            </image>
 						<view class="info-detail">
 							<text class="name">《{{bookInfo.name}}》</text>
 					        <commentStars  model:stars="{{bookInfo.stars}}"></commentStars>

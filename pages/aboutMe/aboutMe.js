@@ -11,6 +11,7 @@ Page({
   data: {
   motto: 'Hello World',
     userInfo: {},
+	unloginIcon:"../../images/Icon-User.png",
 	loginInfo:{
 		name:"未登录",
 		signatureInfo:"个性签名",
@@ -20,7 +21,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
 	statistics:{
 		
-	}
+	},
+	maintenanceInfo:{}
   },
   handleMyReply:function(){
 	  wx.navigateTo({
@@ -101,9 +103,9 @@ Page({
    getLoginUserInfo(){
   	 let that=this;
   	 api._fetch({
-  	     url: '/api/i/user-info',
-  	     
-  	     method:'get'
+  	     url: '/api/i/user-info', 
+  	     method:'get',
+		 contentType:1
   	 }).then(function (res) {
   	   
   		 let {avatarUrl,phoneNumber,nickName,gender,birthday,sign,statistics}=res.data;
@@ -131,6 +133,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
+	  // 页面初始加载获取登录用户信息；
+	  this.getLoginUserInfo();
+	  
 	  let name="loginInfo.name"
     if (app.globalData.userInfo) {
 		
@@ -189,8 +194,7 @@ Page({
       })
     }
 	
-	// 页面初始加载获取登录用户信息；
-	this.getLoginUserInfo();
+	
 	
   },
 
@@ -207,7 +211,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+// 页面初始加载获取登录用户信息；
+	  this.getLoginUserInfo();
   },
 
   /**

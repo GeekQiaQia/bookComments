@@ -10,8 +10,7 @@
 				<image
 				                class="cover-image"
 				                src="{{cardInfo.userInfo.avatarUrl}}"
-				                bindload="imageLoad"
-				                binderror="imageError">
+				               >
 				            </image>
 			  </view>
 			  <view class="basicinfo">

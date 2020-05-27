@@ -3,21 +3,22 @@
 	<view class="avatar-container">
 		<view class="userinfo">
 			<block wx:if="{{!hasUserInfo && canIUse}}">
-				<view class="basic-info" bindtap="bindViewTap">
+				<view class="basic-info" >
 						<view class="info">
-							<image  class="userinfo-avatar" src="{{maintenanceInfo.avatarUrl}}" mode="cover"></image>
+							
+							<cover-image  class="userinfo-avatar" src="{{unloginIcon}}" ></cover-image>
 							<view class="userinfo-basic">
-								<text class="userinfo-nickname">{{maintenanceInfo.nickName}}</text>
-								<text class="userinfo-signature">{{maintenanceInfo.sign}}</text>
+								<text class="userinfo-nickname">未登录</text>
+								<text class="userinfo-signature">个人签名</text>
 							</view>
 						</view>
-						<text class="cuIcon-right lg text-white"></text>
+						
 				</view>
 			</block>
 			<block wx:else>
 				<view class="basic-info" bindtap="bindViewTap">
 					<view class="info">
-						<image  class="userinfo-avatar" src="{{maintenanceInfo.avatarUrl}}" mode="cover"></image>
+						<cover-image  class="userinfo-avatar" src="{{maintenanceInfo.avatarUrl}}" ></cover-image>
 						<view class="userinfo-basic">
 							<text class="userinfo-nickname">{{maintenanceInfo.nickName}}</text>
 							<text class="userinfo-signature">{{maintenanceInfo.sign}}</text>

@@ -1,4 +1,5 @@
 // pages/forward-comment/forward-comment.js
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -6,12 +7,93 @@ Page({
    */
   data: {
 	  placeholder:"写下你的评论",
+	  notebook:"我的笔记本",
+	  radio:"",
+	  noteBookRadio:null,
 	  item:{},
+	  notesInfo:{},
 	  messages:"",
 	  messagesLen:0,
+	  show:false,
+	  showNoteList:false,
 	  text:"读之前以为是宗教信仰类读物，以为是一本心灵鸡汤。读完之后内心得到极大的触动，泪崩了好几次。是真真正正被震慑到的心痛。作者的手法非常细腻，许多在文学作品中会回避或者忽略的问题，她都一一直面阐述，甚至作为本书的重点，这让我很意外也很动容。我们生而为人，是带着标签来的，标签的不可选择性，令我们终其一生，都想将这些标签抹去，然而这些标签刻在肉里，不剥皮流血是抹不去的。有些人就这样带着标签过完一辈子，并且把标签又留给自己的孩子。有些人，到人生快到尽头，才想起来抗争一番。但永远不晚，我们最终将要成为的是符合我们意志的人，这个理念会随着环境的变化而调整，而最终，我们将以任何方式获得自我救赎。这也是我们人生的唯一目的。"
 	  
 
+  },
+  handleSelectNoteInfo(event){
+	  console.log(event);
+	  let noteInfo=this.data.notesInfo.content;
+	  let noteBookRadio=this.data.noteBookRadio;
+	  let note=noteInfo.filter(item=>{
+		  return item.id==noteBookRadio;
+	  });
+	  let notebook=note[0].name
+	  this.setData({
+		  notebook,
+		  showNoteList:false,
+	  });
+	
+	 
+  },
+  handleNotebookSelected(e){
+	  console.log(e);
+	  this.setData({
+	       noteBookRadio: e.target.dataset.id,
+	     });
+  },
+  /**
+   * @description；获取笔记本列表
+   * 
+   * */
+  
+   getNotebookList:function(){
+  	   let reqData={
+  		   page:0,
+  		   size:10
+  	   }
+  	   let that=this;
+  	   api._fetch({
+  	       url: '/api/i/notebook/list',
+  	       data:reqData,
+  	       method:'get',
+  	   	contentType:1
+  	   }).then(function (res) {
+  	   	 console.log(res);
+  	   			 // 此处发送修改交易；
+  	   			 if(res.statusCode===200){
+  	   	// 			let notesInfo=that.data.notesInfo;
+  					// notesInfo.notebooks=res.data;
+  					// notesInfo.notebookNum=res.data.length;
+  					// that.setData({
+  					// 	notesInfo
+  					// });
+  					let notesInfo=res.data;
+  					that.setData({
+  						notesInfo
+  					});
+  	   			 }else{
+  	   				 wx.showToast({
+  	   				   title: res.message,
+  	   				   mask:true,
+  	   				   icon: 'none',
+  	   				   duration: 3000
+  	   				 })
+  	   			 }
+  	   			
+  	       
+  	   }).catch(function (error) {
+  	       console.log(error);
+  	   });
+   },
+  showNotebookList(e){
+	  this.setData({
+	  			  showNoteList:true
+	  });
+  },
+  onChange(event){
+	   this.setData({
+	        radio: event.detail,
+	      });
   },
   /**
    * @description:处理输入中的书评详细；
@@ -23,6 +105,16 @@ Page({
 			messages:e.detail.value
 		  });
 	  },
+	  checkMore(e){
+		  this.setData({
+			  show:true
+		  });
+	  },
+	  onClickHide(e){
+		  this.setData({
+			  show:false
+		  });
+	  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -31,6 +123,7 @@ Page({
 	this.setData({
 		item
 	});
+	this.getNotebookList();
   },
 
   /**

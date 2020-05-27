@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-	   "copy-right":"../../components/copy-right/copy-right"
+	   "copy-right":"../../components/copy-right/copy-right",
+	   "comment-stars":"../../components/commentStars/commentStars"
   },
    "navigationBarTitleText": "书评详细-转发评论"
 }

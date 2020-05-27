@@ -3,7 +3,7 @@
 	<!--轮播图-->
 	<view style="width: 100%;">
 	  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-		<swiper-item wx:for="{{swiperList}}" wx:key="key" data-itemName="{{item.url}}" bindtap="handleImageTap">
+		<swiper-item wx:for="{{swiperList}}" wx:key="key"  data-id="{{item.id}}" data-itemName="{{item.url}}" bindtap="handleImageTap">
 		  <image src="{{item.image}}" mode="aspectFill"   ></image>
 		  <!-- <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
 		</swiper-item>

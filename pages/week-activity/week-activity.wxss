@@ -17,9 +17,34 @@
 .container .activity-container {
   flex-grow: 1;
 }
-.container .activity-container .cover-image {
+.container .activity-container .banner-image {
   width: 100%;
   height: 384rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.container .activity-container .banner-image .btn {
+  width: 272rpx;
+  height: 64rpx;
+  background-color: #07c160;
+  border-radius: 10rpx;
+  margin-top: -144rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .activity-container .banner-image .btn .text {
+  width: 204rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 48rpx;
 }
 .container .activity-container .activity-card {
   width: 100%;
