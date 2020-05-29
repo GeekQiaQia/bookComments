@@ -3,7 +3,7 @@
 	<wxs module="filter" src="../../utils/common.wxs"/>
 	<view>
 		<view class="comment-text" >
-		<textarea style="height: inherit; width: inherit;text-align: left;"   value="{{messages}}" hold-keyboard="{{true}}"  bindinput="handlMessagesInput"  cursor-spacing="100" adjust-position auto-focus="{{true}}"  placeholder="{{placeholder}}"></textarea>
+		<textarea style="height: inherit; width: inherit;text-align: left;"   maxlength="500" value="{{messages}}" hold-keyboard="{{true}}"  bindinput="handlMessagesInput"  cursor-spacing="100" adjust-position auto-focus="{{true}}"  placeholder="{{placeholder}}"></textarea>
 		<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{messagesLen}}/500</view>
 		</view>
 	</view>
@@ -35,13 +35,13 @@
 	</view>
 	<view class="send-container">
 		<view class="save-container">
-			<van-radio-group value="{{ radio }}" bind:change="onChange">
-			  <van-radio name="1" checked-color="#F96D3D"></van-radio>
+			<van-radio-group value="{{ note }}" bind:change="onChange">
+			  <van-radio name="{{true}}" checked-color="#F96D3D"></van-radio>
 			</van-radio-group>
 			<view class="text-tip"> 同时保存到<text class="blue" bindtap="showNotebookList">#{{notebook}}#</text></view>
 		</view>
 	
-		<view class="button">
+		<view class="button" bindtap="handleSendComment">
 			<view class="text">
 				发送
 			</view>

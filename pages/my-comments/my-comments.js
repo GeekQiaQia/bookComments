@@ -1,4 +1,5 @@
 // pages/my-comments/my-comments.js
+const api = require('../../utils/request.js')
 Page({
 
 	/**
@@ -77,6 +78,32 @@ Page({
 		},
 	
 	},
+	
+	/**
+	 * 
+	 * @description 获取我的书评
+	 * */
+	getCommentList(){
+		  let that=this;
+		  let reqData={
+				page:0,
+				size:10
+		  }
+		  api._fetch({
+		      url: '/api/i/comment/list',
+		      data:reqData,
+		      method:'get',
+			  contentType:1
+		  }).then(function (res) {
+			let commentInfo=res.data;
+			that.setData({
+				commentInfo
+			});
+		      
+		  }).catch(function (error) {
+		      console.log(error);
+		  });
+	},
 	handleLikeEvent:function(e){
 		// 自定义组件触发事件时提供的detail对象
 		let commentArray=this.data.commentInfo.commentArray;
@@ -92,7 +119,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		this.getCommentList();
 	},
 
 	/**

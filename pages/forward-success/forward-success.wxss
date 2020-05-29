@@ -1,0 +1,554 @@
+.container {
+  background: #f7f7f7;
+  height: 100%;
+}
+.container .success-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .success-container .tip-container {
+  width: 750rpx;
+  height: 290rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 18rpx;
+}
+.container .success-container .tip-container .icon-tip {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0rpx auto 28rpx auto ;
+}
+.container .success-container .tip-container .tip {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .success-container .tip-container .tip .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .success-container .tip-container .tip .text .color-orange {
+  color: #F96D3D;
+}
+.container .success-container .tip-container .tip .text .color-blue {
+  color: #576B95;
+}
+.container .success-container .comment-detail {
+  width: 528rpx;
+  height: 688rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 16rpx 0rpx 28rpx 0rpx;
+}
+.container .success-container .comment-detail .book-name {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 48rpx;
+  margin-left: 32rpx;
+}
+.container .success-container .comment-detail .book-comment {
+  width: 496rpx;
+  height: auto;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 36rpx;
+  margin: 16rpx auto;
+}
+.container .success-container .comment-detail .comment-name {
+  width: 496rpx;
+  margin: 0rpx auto;
+  text-align: right;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .success-container .comment-detail .split-line {
+  width: 498rpx;
+  height: 2rpx;
+  margin: 0rpx auto;
+  background-color: #EFEFF4;
+}
+.container .success-container .comment-detail .comment-tip {
+  width: 100%;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #b8b8b8;
+  line-height: 34rpx;
+  text-align: left;
+  padding-left: 16rpx;
+  margin: 16rpx 0rpx 30rpx 0rpx;
+}
+.container .success-container .comment-detail .all-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 18rpx;
+}
+.container .success-container .comment-detail .all-comment .text {
+  width: 96rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+  margin-bottom: 24rpx;
+  margin-right: 30rpx;
+}
+.container .success-container .comment-detail .commnts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 18rpx;
+}
+.container .success-container .comment-detail .commnts .evaluation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .success-container .comment-detail .commnts .evaluation .text {
+  width: 44rpx;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+}
+.container .success-container .button-container {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 124rpx;
+  margin-bottom: 164rpx;
+}
+.container .success-container .button-container .btn-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  margin-left: 8rpx;
+}
+.container .success-container .button-container .size {
+  font-size: 36rpx;
+}
+.container .success-container .button-container .save-image {
+  width: 240rpx;
+  height: 80rpx;
+  background: #f96d3d;
+  border-radius: 20rpx;
+  border: 2rpx solid #ff4202;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .success-container .button-container .save-image .white {
+  color: #ffffff;
+}
+.container .success-container .button-container .share-friends {
+  width: 240rpx;
+  height: 80rpx;
+  background: #fbfafc;
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0rpx;
+}
+.container .success-container .button-container .share-friends .black {
+  color: #353535;
+}
+.container .success-container .button-container .share-friends .no-border {
+  border: transparent ! important;
+  width: auto !important;
+  background: #fbfafc !important;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+.container .dialog-container {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+}
+.container .dialog-container .share-container {
+  width: 750rpx;
+  height: 980rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .dialog-container .share-container .top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: auto;
+  margin-left: 152rpx ;
+  margin-right: 46rpx ;
+}
+.container .dialog-container .share-container .top-container .close {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 76rpx;
+  color: #666666;
+}
+.container .dialog-container .share-container .top-container .image-container {
+  width: 448rpx;
+  height: 736rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 16rpx 0rpx #595959;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title {
+  width: 448rpx;
+  height: 192rpx;
+  background-color: #f96d3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 32rpx;
+  padding-left: 34rpx;
+  border-radius: 20rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title .name-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title .name-container .title-name {
+  width: 102rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #f7f7f7;
+  line-height: 48rpx;
+  margin-left: -17rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title .name-container .essay {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 34rpx;
+  margin-left: 12rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title .chicken-soul {
+  width: 196rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 40rpx;
+  margin-top: 24rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-title .book-name {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #EEEEEE;
+  line-height: 28rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content {
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-comment-container {
+  width: 384rpx;
+  height: auto;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 36rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-comment-byname {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-image {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 16rpx;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-tip .tips {
+  width: 216rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-tip .tips2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-tip .tips2 .from {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container .dialog-container .share-container .top-container .image-container .image-content .image-qrcode-container .qrcode-tip .tips2 .zhilun {
+  width: 96rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .dialog-container .share-container .tip-container {
+  width: 100%;
+  margin: 24rpx 0rpx 32rpx 0rpx ;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+}
+.container .dialog-container .share-container .button-container {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .dialog-container .share-container .button-container .btn-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  margin-left: 8rpx;
+}
+.container .dialog-container .share-container .button-container .size {
+  font-size: 36rpx;
+}
+.container .dialog-container .share-container .button-container .save-image {
+  width: 240rpx;
+  height: 80rpx;
+  background: #f96d3d;
+  border-radius: 20rpx;
+  border: 2rpx solid #ff4202;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .dialog-container .share-container .button-container .save-image .white {
+  color: #ffffff;
+}
+.container .dialog-container .share-container .button-container .share-friends {
+  width: 240rpx;
+  height: 80rpx;
+  background: #fbfafc;
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0rpx;
+}
+.container .dialog-container .share-container .button-container .share-friends .black {
+  color: #353535;
+}
+.container .dialog-container .share-container .button-container .share-friends .no-border {
+  border: transparent ! important;
+  width: auto !important;
+  background: #fbfafc !important;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+.container .dialog-container .confirm-delete-reply {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips {
+  width: 100%;
+  height: 112rpx;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete-tips .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 40rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete {
+  width: 100%;
+  height: 112rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 34rpx;
+}
+.container .dialog-container .confirm-delete-reply .confirm-delete .delete-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #e02020;
+  line-height: 40rpx;
+  margin-left: 22rpx;
+}
+.container .dialog-container .delete-comment-reply {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  padding-left: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .dialog-container .delete-comment-reply .delete-text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #e02020;
+  line-height: 40rpx;
+  margin-left: 22rpx;
+}
+.container .dialog-container .delete-cancel {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.container .dialog-container .delete-cancel .delete-cancel-text {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .dialog-container .split-bar {
+  width: 268rpx;
+  height: 10rpx;
+  background-color: #000000;
+  border-radius: 200rpx;
+  margin: 40rpx 0rpx 18rpx 0rpx;
+}

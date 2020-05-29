@@ -10,25 +10,13 @@ Page({
 	data: {
 		bookInfo: {},
 		scrollHeight:"",
+		id:null,
 		maxStars: 5,
 		visible: false,
 		userInfo: {},
 		cardInfoArray:[],
-		
 		commentNum:"",
-		item: {
-			title: "《蘑菇屋》",
-			forward: "10",
-			reply: "10",
-			like: "10058",
-			resume: "读之前以为是宗教信仰类读物，以为是一本心灵鸡汤。读完之后内心得到极大的触动，泪崩了好几次。是真真正正被震慑到的心痛。作者的手法非常细腻，许多在文学作品中会回避或者忽略的问题，她都一一直面阐述，甚至作为本书的重点，这让我很意外也很动容。我们生而为人，是带着标签来的，标签的不可选择性，令我们终其一生，都想将这些标签抹去，然而这些标签刻在肉里，不剥皮流血是抹不去的。有些人就这样带着标签过完一辈子，并且把标签又留给自己的孩子。有些人，到人生快到尽头，才想起来抗争一番。但永远不晚，我们最终将要成为的是符合我们意志的人，这个理念会随着环境的变化而调整，而最终，我们将以任何方式获得自我救赎。这也是我们人生的唯一目的。",
-			star: 3,
-			time: "2020-04-14",
-			notice: "转发",
-			name: "林间小鹿",
-			readMore: false,
-			iconUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
-		},
+		item: {},
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		hasUserInfo: false
 	},
@@ -58,7 +46,7 @@ Page({
 	 * 
 	 * */
 
-	getBookCommentDetail: function(id) {
+	getBookDetail: function(id) {
 		let reqData = {
 			id
 		}
@@ -110,6 +98,33 @@ Page({
 			console.log(error);
 		});
 	},
+	
+	/**
+	 * @description 获取当前书评详情；
+	 * @param { comment} id 
+	 * */
+	 getBookCommentDetail:function(comment){
+		   let reqData={
+		     	comment
+		   }
+		   let that=this;
+		   api._fetch({
+		       url: '/api/book/comment/detail',
+		       data:reqData,
+		       method:'get',
+			   contentType:1
+		   }).then(function (res) {
+		   	 console.log(res);
+		     let item=res.data;
+			 that.setData({
+				 item
+			 });
+		   			
+		       
+		   }).catch(function (error) {
+		       console.log(error);
+		   });
+	 }, 
 	/**
 	 * @description 获取书籍评论详情；
 	 * @param { bookId} id 
@@ -188,8 +203,9 @@ Page({
 		})
 	 },
 	 handleCommentDetail(e){
+		 let id=this.data.id;
 		 wx.navigateTo({
-		   url: '../comment-detail/comment-detail'
+		   url: '../comment-detail/comment-detail?id='+id
 		 })
 	 },
 		  
@@ -231,14 +247,14 @@ Page({
 		}
 		console.log(this.data.userInfo)
 		let id = options.id;
-		this.getBookCommentDetail(id);
-		this.getBookCommentList(id);
-		this.computeScrollViewHeight();
-		let item=wx.getStorageSync('item')
-		console.log("item is ",item)
 		this.setData({
-			item
+			id
 		});
+		this.getBookDetail(id);
+		this.getBookCommentList(id);
+		this.getBookCommentDetail(id);
+		this.computeScrollViewHeight();
+		
 	},
 
 	/**

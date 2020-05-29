@@ -6,7 +6,6 @@
     "pages/findOut/findOut",
     "pages/bookCommentDetail/bookCommentDetail",
     "pages/my-recommend/my-recommend",
-    "pages/logs/logs",
     "pages/my-history/my-history",
     "pages/my-message/my-message",
     "pages/my-reply/my-reply",
@@ -34,7 +33,8 @@
     "pages/choose-catagory/choose-catagory",
     "pages/recommend-result/recommend-result",
     "pages/comment-detail/comment-detail",
-    "pages/forward-comment/forward-comment"
+    "pages/forward-comment/forward-comment",
+    "pages/forward-success/forward-success"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -54,7 +54,8 @@
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-popup": "@vant/weapp/popup/index",
-	 "van-overlay": "@vant/weapp/overlay/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+	"van-rate": "@vant/weapp/rate/index",
     "van-icon": "@vant/weapp/icon/index"
   },
   "tabBar": {

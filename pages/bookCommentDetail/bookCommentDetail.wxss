@@ -90,40 +90,6 @@ text-align-last:justify .container .book-card .info-detail .info-obj .info-key::
   line-height: 32rpx;
   margin-left: 18rpx;
 }
-.container .bottom-comment {
-  width: 750rpx;
-  height: 128rpx;
-  background-color: #ffffff;
-  padding: 0rpx 30rpx 0rpx 32rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.container .bottom-comment .reply-container {
-  width: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.container .bottom-comment .reply-container .reply-title {
-  width: 68rpx;
-  height: 48rpx;
-  font-size: 34rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #0b0c0d;
-  line-height: 48rpx;
-}
-.container .bottom-comment .reply-container .tip {
-  width: auto;
-  height: 32rpx;
-  font-size: 22rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #969696;
-  line-height: 32rpx;
-}
 .container .top-comment {
   width: 688rpx;
   max-height: 400px;

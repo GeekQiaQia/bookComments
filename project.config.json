@@ -302,6 +302,20 @@
 					"id": -1,
 					"name": "pages/forward-comment/forward-comment",
 					"pathName": "pages/forward-comment/forward-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forward-success/forward-success",
+					"pathName": "pages/forward-success/forward-success",
 					"scene": null
 				}
 			]

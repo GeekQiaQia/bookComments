@@ -93,12 +93,13 @@ Page({
 			 console.log(res);
 					 // 此处发送修改交易；
 					 if(res.statusCode===200){
-						let item=res.data.parent;
-						that.setData({
-							item
-						});
-						wx.setStorageSync('item',item)
+						// let item=res.data.parent;
+						// that.setData({
+						// 	item
+						// });
+						// wx.setStorageSync('item',item)
 						 that.onClose();
+						 that.getBookCommentDetail(comment);
 					 }else{
 						 wx.showToast({
 						   title: res.message,
@@ -116,9 +117,8 @@ Page({
   /**
    * @description:获取书评评论列表
    * */
-  toGetCommentList(){
-	  
-	  let comment=this.data.item.id;
+  toGetCommentList(comment){
+	 
 	  let reqData={
 	    	comment,
 			page:0,
@@ -152,6 +152,33 @@ Page({
 	      console.log(error);
 	  });
   },
+  /**
+   * @description 获取当前书评详情；
+   * @param { comment} id 
+   * */
+   getBookCommentDetail:function(comment){
+  	   let reqData={
+  	     	comment
+  	   }
+  	   let that=this;
+  	   api._fetch({
+  	       url: '/api/book/comment/detail',
+  	       data:reqData,
+  	       method:'get',
+  		   contentType:1
+  	   }).then(function (res) {
+  	     let item=res.data;
+		 let name=item.userInfo.nickName;
+		 let placeholder="回复"+name+"，留言将由该评论作者筛选展示，对所有人可见";
+  		 that.setData({
+  			 item,
+			 placeholder
+  		 });
+		 
+  	   }).catch(function (error) {
+  	       console.log(error);
+  	   });
+   }, 
    /**
     * @description 创建一个书评的评论
     * @param { content} 书评内容
@@ -204,16 +231,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	let item=wx.getStorageSync('item')
-		console.log("item is ",item)
-		
-		let name=item.userInfo.nickName;
-		let placeholder="回复"+name+"，留言将由该评论作者筛选展示，对所有人可见";
+	
+		let id=options.id;
 		this.setData({
-			item,
-			placeholder
+			id
 		});
-		this.toGetCommentList();
+		this.getBookCommentDetail(id);
+		this.toGetCommentList(id);
   },
 
   /**

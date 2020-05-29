@@ -12,6 +12,7 @@
 				                src="{{cardInfo.userInfo.avatarUrl}}"
 				               >
 				            </image>
+							
 			  </view>
 			  <view class="basicinfo">
 				  <view>

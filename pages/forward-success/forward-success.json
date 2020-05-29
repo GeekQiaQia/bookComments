@@ -1,0 +1,8 @@
+{
+ "usingComponents": {
+ 	     "copy-right":"../../components/copy-right/copy-right",
+		 "share-friends":"../../components/share-friends/share-friends"
+	     
+ },
+  "navigationBarTitleText": "评论转发成功"
+}

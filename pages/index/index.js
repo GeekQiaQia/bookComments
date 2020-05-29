@@ -25,11 +25,11 @@ Page({
 	  let id=e.detail.id;
 	  let itemindex=e.detail.itemIndex;
 	  let cardInfoArray=this.data.cardInfoArray;
-	  let item=cardInfoArray.filter(item=>{
-		  return item.id==itemindex;
-	  });
-	  console.log(item);
-	  wx.setStorageSync('item',item[0])
+	  // let item=cardInfoArray.filter(item=>{
+		 //  return item.id==itemindex;
+	  // });
+	  // console.log(item);
+	  // wx.setStorageSync('item',item[0])
 	  wx.navigateTo({
 	    url: '../bookCommentDetail/bookCommentDetail?id='+id
 	  })
