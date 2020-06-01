@@ -8,6 +8,10 @@ Component({
 				type:String,
 				value:null
 			},
+			posterConfig:{
+				type:Object,
+				value:null
+			},
 	shareFriends:{
 		type:Boolean,
 		value:false
@@ -25,6 +29,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+	  onPosterSuccess(e) {
+	         const { detail } = e;
+	         wx.previewImage({
+	             current: detail,
+	             urls: [detail]
+	         })
+	     },
+	     onPosterFail(err) {
+	         console.error(err);
+	     },
 	 handleColseShareDialog(){
 		 var myEventDetail = {
 		   			   modalName: null,

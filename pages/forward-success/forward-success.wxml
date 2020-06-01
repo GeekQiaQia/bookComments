@@ -31,7 +31,7 @@
 				<view class="text">
 					整体评价 
 				</view>
-				<van-rate value="{{ allEvaluation }}" size="{{ 14 }}"  color="#F96D3D"  void-color="#B8B8B8" bind:change="onAllEvaluationChange" />
+				<van-rate value="{{ allEvaluation }}" size="{{ allEvaluationSize }}"  color="#F96D3D"  void-color="#B8B8B8" bind:change="onAllEvaluationChange" />
 			</view>
 			<view class="commnts">
 				
@@ -39,35 +39,35 @@
 					<view class="text">
 						纸张 
 					</view>
-					<van-rate value="{{ paperEvaluation }}"  size="{{ 12 }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onPaperEvaluationChange" />
+					<van-rate value="{{ paperEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onPaperEvaluationChange" />
 				</view>
 				
 				<view class="evaluation">
 					<view class="text">
 						易读
 					</view>
-					<van-rate value="{{ easyEvaluation }}"  size="{{ 12 }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onEasyEvaluationChange" />
+					<van-rate value="{{ easyEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onEasyEvaluationChange" />
 				</view>
 				
 				<view class="evaluation">
 					<view class="text">
 						深度
 					</view>
-					<van-rate value="{{ deepEvaluation }}" size="{{ 12 }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onDeepEvaluationChange" />
+					<van-rate value="{{ deepEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onDeepEvaluationChange" />
 				</view>
 				
 				<view class="evaluation">
 					<view class="text">
 						专业
 					</view>
-					<van-rate value="{{professionalEvaluation }}" size="{{ 12 }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onProfessionalEvaluationChange" />
+					<van-rate value="{{professionalEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onProfessionalEvaluationChange" />
 				</view>
 				
 			</view>
 		</view>
 		<view class="button-container">
 							  <view class="save-image" data-target="shareModal"  bindtap="toShareCircleFriend">
-								   <text class="cuIcon-share lg text-white size"  data-target="shareModal"></text>
+								   <image src="../../images/icon-friends.png" style="width: 32rpx;height:32rpx;" data-target="shareModal"></image>
 								  <view class="btn-text white" data-target="shareModal">
 									  分享朋友圈
 								  </view>
@@ -83,8 +83,9 @@
 	<copy-right>
 		
 	</copy-right>
-	<share-friends model:modal-name="{{modalName}}" bind:closeDialog="handleCloseDialog"  bind:drawCanvas="handleDrawCanvas">
+	<share-friends model:modal-name="{{modalName}}"  model:poster-config="{{posterConfig}}" bind:closeDialog="handleCloseDialog"  >
 		
 	</share-friends>
-	<canvas wx:if="{{showCanvas}}" type="2d" style="width: 448rpx;height: 736rpx;background:white;position: fixed;left:148rpx;top:196rpx; z-index: 10000;" canvas-id="shareFrends"></canvas>
+
+	
 </view>

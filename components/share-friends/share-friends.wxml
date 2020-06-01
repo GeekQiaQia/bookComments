@@ -47,11 +47,14 @@
 					  保存图片后，可分享至朋友圈
 				  </view>
 				  <view class="button-container">
-					  <view class="save-image" bindtap="saveDrawedCanvas">
+					  <view class="save-image">
 						   <text class="cuIcon-down lg text-white size" ></text>
-						  <view class="btn-text white">
-							  保存分享
-						  </view>
+						  
+						  <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+						      <view class="btn-text white">
+						      		 保存分享
+						      </view>
+						  </poster>
 					  </view>
 					  <view wx:if="{{shareFriends}}">
 						  <button open-type="share" class=" share-friends  no-border">

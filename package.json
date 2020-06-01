@@ -4,7 +4,8 @@
   "description": "[npm: wxss-cli](https://www.npmjs.com/package/wxss-cli?activeTab=dependencies) * npm或者yarn全局安装wxss-cli　     * npm install -g wxss-cli",
   "main": "app.js",
   "dependencies": {
-    "@vant/weapp": "^1.2.2"
+    "@vant/weapp": "^1.2.2",
+    "wxa-plugin-canvas": "^1.1.12"
   },
   "devDependencies": {},
   "scripts": {
