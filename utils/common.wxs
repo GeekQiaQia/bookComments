@@ -12,6 +12,29 @@ function splice(str = '', start, end) {
   return str.slice(start, end)
 }
 
+function get_len(str){
+	console.log("str is "+str);
+    var len=str.length;
+    console.log("len is "+len);
+	var realLen=len;
+    for(var i=0;i<len;i++){
+        var code=str.charCodeAt(i);
+        if(!(code>=0&&code<=128)){
+            realLen++;
+        }
+    }
+    return realLen;
+}
+function ellipsis(text, maxLength) {
+	console.log(typeof text);
+    var ret = text;
+	console.log(ret.substring(0,maxLength-3))
+    if (get_len(text) > maxLength) {
+        ret = ret.substring(0,maxLength-3) + "...";
+    }
+    return ret;
+}
+
 function tofiltFirstWord(text){
 	if(text!==''&&text!==undefined){
 		var  firstWord=text.split('')[0];
@@ -24,5 +47,6 @@ function tofiltFirstWord(text){
 module.exports = {
   toFixed: toFixed,
   tofiltFirstWord:tofiltFirstWord,
-  splice: splice
+  splice: splice,
+  ellipsis:ellipsis
 };

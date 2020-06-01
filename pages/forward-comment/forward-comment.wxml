@@ -1,0 +1,158 @@
+<!--pages/forward-comment/forward-comment.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view>
+		<view class="comment-text" >
+		<textarea style="height: inherit; width: inherit;text-align: left;"   maxlength="500" value="{{messages}}" hold-keyboard="{{true}}"  bindinput="handlMessagesInput"  cursor-spacing="100" adjust-position auto-focus="{{true}}"  placeholder="{{placeholder}}"></textarea>
+		<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{messagesLen}}/500</view>
+		</view>
+	</view>
+	<view class="space-line">
+		
+	</view>
+	<view class="comment-container">
+		<view class="comment-info">
+			<view class="avatar-info">
+				<view class="avatar">
+					<image class="cover-image"
+					                src="{{item.userInfo.avatarUrl}}">
+					                
+					            </image>
+				</view>
+				<view class="name">
+					{{item.userInfo.nickName}}
+				</view>
+				
+			</view>
+			<view class="content">
+				<text>{{filter.ellipsis(item.content,50)}}</text>
+				<!-- 读之前以为是宗教信仰类读物，以为是一本心灵鸡汤。读完之后内心得到极大的触动，泪崩了好几次。是真真正正被震慑到的心痛。作者的手法非常细腻，许多在文学作品中会回避或者忽略的问题，她都一一直面阐述，甚至作为本书的重点，这让我很意外也很动容。我们生而为人，是带着标签来的，标签的不可选择性，令我们终其一生，都想将这些标签抹去，然而这些标签刻在肉里，不剥皮流血是抹不去的。有些人就这样带着标签过完一辈子，并且把标签又留给自己的孩子。有些人，到人生快到尽头，才想起来抗争一番。但永远不晚，我们最终将要成为的是符合我们意志的人，这个理念会随着环境的变化而调整，而最终，我们将以任何方式获得自我救赎。这也是我们人生的唯一目的。 -->
+				<text class="check-more" bindtap="checkMore">
+					查看全部
+				</text>
+			</view>
+		</view>
+	</view>
+	<view class="send-container">
+		<view class="save-container">
+			<van-radio-group value="{{ note }}" bind:change="onChange">
+			  <van-radio name="{{true}}" checked-color="#F96D3D"></van-radio>
+			</van-radio-group>
+			<view class="text-tip"> 同时保存到<text class="blue" bindtap="showNotebookList">#{{notebook}}#</text></view>
+		</view>
+	
+		<view class="button" bindtap="handleSendComment">
+			<view class="text">
+				发送
+			</view>
+		</view>
+	</view>
+	
+	<van-overlay show="{{ showNoteList }}"   z-index="10000">
+	  <view class="wrapper">
+		<view class="card">
+			<view class="detail-info">
+				<view class="title">
+					<view class="text">选择一个笔记本</view>
+				</view>
+				<scroll-view  scroll-y="true" style="height: 670rpx;" >
+				<view class="list-container">
+					<van-radio-group value="{{ noteBookRadio }}" >
+					<block wx:for="{{notesInfo.content}}" wx:key="*this">
+						<view class="book-list" data-id="{{item.id}}"  bindtap="handleNotebookSelected">
+							<view class="book-info" data-id="{{item.id}}">
+								<view class="book-title" data-id="{{item.id}}">
+									<view class="title" data-id="{{item.id}}">
+										
+										{{filter.tofiltFirstWord(item.name)}}
+									</view>
+								</view>
+								<view class="notebook-detail" data-id="{{item.id}}">
+									<view class="note-info">
+										<view class="notebook-name" data-id="{{item.id}}">
+											{{item.name}}
+										</view>
+										<view class="record" data-id="{{item.id}}">
+											{{item.notes}}条记录
+										</view>
+									</view>
+									<view class="notebook-resume" data-id="{{item.id}}">
+										{{item.describes}}
+									</view>
+								</view>
+							</view>
+							
+							  
+							<van-radio name="{{item.id}}" checked-color="#F96D3D"></van-radio>
+							
+						</view>
+					</block>
+					</van-radio-group>
+					
+				</view>
+				</scroll-view>
+			</view>
+			<view class="btn" bindtap="handleSelectNoteInfo">
+				<view class="text">
+					完成
+				</view>
+			</view>
+		</view>
+	  </view>
+	</van-overlay>
+	<van-overlay show="{{ show }}"   z-index="10000">
+	  <view class="wrapper">
+		<view class="card">
+			<view class="detail-info">
+				<view class="avatar-info">
+					<view class="avatar">
+						<image class="cover-image"
+						                src="{{item.userInfo.avatarUrl}}">
+						                
+						            </image>
+					</view>
+					<view class="name">
+						{{item.userInfo.nickName}}
+					</view>
+					
+				</view>
+				<view class="comment-info">
+					<view class="comment-mask">
+						<scroll-view  scroll-y="true" style="height: 480rpx;" >
+							<view class="comment">
+								{{item.content}}
+							</view>
+						</scroll-view>
+						<view class="split">
+						
+						</view>
+						<view class="comment-book">
+							<view class="book">
+								<view class="book-url">
+									<image class="cover-image" src="{{item.bookInfo.picture}}" >
+									</image>
+								</view>
+								<view class="book-info">
+									<view class="name">{{item.bookInfo.name}}</view>
+									<view class="stars">
+										<comment-stars model:stars="{{item.bookInfo.stars}}"></comment-stars>
+										<view class="commentStar">{{item.bookInfo.comments}}人评分</view>
+									</view>
+								</view>
+							</view>
+							<view class="book-icon">
+								
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="btn" bindtap="onClickHide">
+				<view class="text">
+					完成
+				</view>
+			</view>
+		</view>
+	  </view>
+	</van-overlay>
+</view>

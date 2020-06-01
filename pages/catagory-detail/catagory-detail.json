@@ -1,0 +1,10 @@
+{
+ "usingComponents": {
+ 	     "copy-right":"../../components/copy-right/copy-right",
+	     "commentStars":"../../components/commentStars/commentStars",
+		 "progress":"../../components/progress/progress",
+		 "bookdetail-card":"../../components/bookdetail-card/bookdetail-card",
+	     "book-card":"../../components/book-card/book-card"
+ },
+  "navigationBarTitleText": "分类搜索"
+}

@@ -1,0 +1,53 @@
+.bottom-contianer {
+  position: relative;
+  margin-bottom: 0px;
+  width: 100%;
+  height: auto;
+}
+.bottom-contianer .bottom-input {
+  width: 100%;
+  height: 98rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 2rpx 0rpx 0rpx #e2e2e2;
+  padding: 16rpx 32rpx 18rpx  30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bottom-contianer .bottom-input .input {
+  width: 608rpx;
+  height: 64rpx;
+  background-color: #f7f7f7;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+}
+.bottom-contianer .bottom-input .icon-input {
+  width: 48rpx;
+  height: 56rpx;
+  margin-left: 32rpx;
+}
+.bottom-contianer .bottom-input .icon-input .icon {
+  width: inherit;
+  height: inherit;
+}
+.bottom-contianer .bottom-line {
+  width: 100%;
+  height: 68rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.bottom-contianer .bottom-line .line {
+  width: 268rpx;
+  height: 10rpx;
+  background: #000000;
+  border-radius: 200rpx;
+  margin: 0rpx 0rpx 18rpx 0rpx;
+}

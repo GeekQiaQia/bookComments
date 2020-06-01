@@ -12,6 +12,21 @@
   margin-left: 32rpx;
   margin-right: 30rpx;
 }
+.container .card-container .card-content {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0b0c0d;
+  line-height: 39rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 8rpx;
+}
 .container .card-container .card-item {
   width: 750rpx;
   height: auto;

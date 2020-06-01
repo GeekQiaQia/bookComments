@@ -3,8 +3,7 @@
   "usingComponents": {
     "commentStars":"../../components/commentStars/commentStars",
 	"commentCard":"../../components/comment-card/comment-card",
-	 "canvas-share": "../../components/canvas-share/index",
-	 
+	 "bottom-input":"../../components/bottom-input/bottom-input",
 	"copyRight":"../../components/copy-right/copy-right"
  },
  "navigationBarTitleText": "书评"

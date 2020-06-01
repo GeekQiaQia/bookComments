@@ -7,14 +7,10 @@ Page({
    */
   data: {
 	keyword:"",
-	active: 0,
+	categoryBookInfo:[],
+	active:0,
 	tabs:[
-		{tab:"推荐"},
-		{tab:"文学"},
-		{tab:"经管"},
-		{tab:"历史"},
-		{tab:"心理"},
-		{tab:"科技"},
+		
 	],
 	hotBook:{
 		type:"文学",
@@ -74,20 +70,43 @@ Page({
 	      keyword: e.detail
 	    });
 	  },
-	onSearch() {
+	onSearch(e) {
 	    Toast('搜索' + this.data.keyword);
+	  },
+	  onFocus(e){
+		  wx.navigateTo({
+		    url: '../hot-search/hot-search'
+		  })
 	  },
 	  /**
 	   * @description ' tab页面切换；
 	   * */
-	   onChange(event) {
-	      wx.showToast({
-	        title: `切换到标签 ${event.detail.name}`,
-	        icon: 'none'
-	      });
+	   onTabChange(event) {
+		  
+		   // 组件绑定来的id;
+		  let id=event.target.dataset.id;
+		  let catename=event.target.dataset.name;
+		   if(id!==null){
+			   wx.navigateTo({
+			     url: '../catagory-detail/catagory-detail?id='+id+'&cateName='+catename
+			   })
+		   }
+
 	    },
+		goCatagoryDetail(e){
+			// 组件绑定来的id;
+			let id=e.target.dataset.id;
+			let catename=e.target.dataset.name;
+			wx.navigateTo({
+			  url: '../catagory-detail/catagory-detail?id='+id+'&cateName='+catename
+			})
+		},
+
 	  
-	
+	/**
+	 * @description: 获取分类列表；
+	 * 
+	 * */
 	getBannerList(){
 		  let that=this;
 		  let reqData={
@@ -100,17 +119,50 @@ Page({
 			  contentType:1
 		  }).then(function (res) {
 			 console.log(res);
+			 let tabs=res.data;
+			 tabs.unshift({
+				 parent:null,
+				 name:"推荐",
+				 id:null,
+				 totalBooks:0
+			 });
+			 that.setData({
+				 tabs
+			 });
 		      
 		  }).catch(function (error) {
 		      console.log(error);
 		  });
 	},
+	
+	getCategoryBookInfo(){
+		  let that=this;
+		  let reqData={}
+		  api._fetch({
+		      url: '/api/category/book/hot.list',
+		      data:reqData,
+		      method:'get',
+			  contentType:1
+		  }).then(function (res) {
+			 console.log(res);
+			 let categoryBookInfo=res.data;
+			 that.setData({
+				 categoryBookInfo
+			 });
+			
+		      
+		  }).catch(function (error) {
+		      console.log(error);
+		  });
+	},
+	
 	  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 	this.getBannerList();
+	this.getCategoryBookInfo();
   },
 
   /**

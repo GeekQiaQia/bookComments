@@ -6,13 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-	notesInfo:{
-				notebookNum:2,
-				empty:true,
-				notebooks:[
-					// "金融学","逻辑思考","大国的奔溃","三国志","基因社会","逻辑思考",
-				]
-			}
+	notesInfo:{}
   },
   /**
    * @description；获取笔记本列表
@@ -34,12 +28,16 @@ Page({
   	   	 console.log(res);
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
-  	   				let notesInfo=that.data.notesInfo;
-  					notesInfo.notebooks=res.data;
-  					notesInfo.notebookNum=res.data.length;
-  					that.setData({
-  						notesInfo
-  					});
+  	   	// 			let notesInfo=that.data.notesInfo;
+  					// notesInfo.notebooks=res.data;
+  					// notesInfo.notebookNum=res.data.length;
+  					// that.setData({
+  					// 	notesInfo
+  					// });
+					let notesInfo=res.data;
+					that.setData({
+						notesInfo
+					});
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,
@@ -85,21 +83,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	this.getNotebookList();
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+	
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+	this.getNotebookList();
   },
 
   /**

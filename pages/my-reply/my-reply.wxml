@@ -187,11 +187,9 @@
 					  										<text class="from">分享自</text>
 					  										<text class="zhilun">「知论」</text>
 					  									</view>
-					  									
-					  								</view>				  
+					  								</view>	 
 					  						  </view>
 					  					  </view>
-					  					  
 					  </view>
 					  <view class="close" bindtap="handleColseShareDialog">
 						  <text class="cuIcon-close lg text-black " ></text> 

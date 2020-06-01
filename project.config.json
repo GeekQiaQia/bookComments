@@ -11,6 +11,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -23,10 +24,10 @@
 			"outputPath": ""
 		},
 		"useCompilerModule": true,
-		"nodeModules": true
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
+	"libVersion": "2.7.3",
 	"appid": "wx1793b3f33c8e3559",
 	"projectname": "bookComments",
 	"debugOptions": {
@@ -252,6 +253,69 @@
 					"id": -1,
 					"name": "pages/book-detail/book-detail",
 					"pathName": "pages/book-detail/book-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/catagory-detail/catagory-detail",
+					"pathName": "pages/catagory-detail/catagory-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/catagory-detail/catagory-detail",
+					"pathName": "pages/catagory-detail/catagory-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hotRecommend/hotRecommend",
+					"pathName": "pages/hotRecommend/hotRecommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hot-search/hot-search",
+					"pathName": "pages/hot-search/hot-search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/hotRecommend/hotRecommend",
+					"pathName": "pages/hotRecommend/hotRecommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/comment-detail/comment-detail",
+					"pathName": "pages/comment-detail/comment-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forward-comment/forward-comment",
+					"pathName": "pages/forward-comment/forward-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forward-success/forward-success",
+					"pathName": "pages/forward-success/forward-success",
 					"scene": null
 				}
 			]

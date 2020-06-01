@@ -7,7 +7,6 @@ Page({
   data: {
 	follower:{
 			num:4,
-			
 			list:[
 				{
 					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",

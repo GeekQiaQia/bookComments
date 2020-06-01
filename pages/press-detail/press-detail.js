@@ -13,12 +13,12 @@ Page({
   /**
    * @description  获取作者详情
    * */
-   getPressDetail:function(id){
+   getPressDetail:function(press){
   	   let that=this;
   	   let reqData={
   	   		 page:0,
   			 size:10,
-  			 id
+  			 press
   	   }
   	   api._fetch({
   	       url: '/api/press/detail',

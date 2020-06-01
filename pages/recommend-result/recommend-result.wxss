@@ -1,0 +1,59 @@
+.container .result-container {
+  flex-grow: 1;
+}
+.container .result-container .icon-tip {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 170rpx auto 28rpx auto ;
+}
+.container .result-container .text-tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .result-container .text-tip .font {
+  width: auto;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .result-container .text-tip .my-recommend {
+  color: #576B95;
+}
+.container .result-container .btn-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 192rpx;
+}
+.container .result-container .btn-container .btn {
+  width: 624rpx;
+  height: 100rpx;
+  background: #f96d3d;
+  border-radius: 20px;
+  border: 2rpx solid #ff4202;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .result-container .btn-container .btn .text {
+  width: 216rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 50rpx;
+}

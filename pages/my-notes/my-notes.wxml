@@ -6,7 +6,7 @@
 			<view class="notes-dot">
 				
 			</view>
-			<view class="notes-num">共有笔记{{notesInfo.num}}条</view>
+			<view class="notes-num">共有笔记{{notesInfo.notes}}条</view>
 		</view>
 		<view class="notes-icon">
 			<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
@@ -15,7 +15,7 @@
 	<view class="notes-container">
 		<view class="notes-main" >
 		
-			<block wx:if="{{notesInfo.notebookNum==0}}">
+			<block wx:if="{{notesInfo.totalElements==0}}">
 				<view class="notes-icon">
 					<cover-image src="../../images/Icon-note.png" ></cover-image>
 				</view>
@@ -33,7 +33,7 @@
 						<view class="all">
 							全部
 						</view>
-						<block wx:for="{{notesInfo.notebooks}}" wx:key="*this">
+						<block wx:for="{{notesInfo.content}}" wx:key="*this">
 								<view  class="bookname">
 									{{item.name}}
 								</view>
@@ -46,7 +46,7 @@
 				</view>
 				
 				<view class="notes-info-container">
-					<block wx:if="{{notesInfo.empty==true}}">
+					<block wx:if="{{notesInfo.notes==0}}">
 						<view class="notes-empty" >
 							<view class="notes-icon">
 								<cover-image src="../../images/Icon-no-bookNotes.png" ></cover-image>

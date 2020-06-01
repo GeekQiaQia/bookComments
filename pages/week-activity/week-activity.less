@@ -17,9 +17,36 @@
 	}
 	.activity-container{
 		flex-grow: 1;
-		.cover-image{
+		.banner-image{
 			width:100%;
 			height:384rpx;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-start;
+
+			.btn{
+				width: 272rpx;
+				height: 64rpx;
+				background-color: #07c160;
+				border-radius: 10rpx;
+				margin-top: -144rpx;
+				margin-left: 50rpx;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				
+				.text{
+					width:204rpx;
+					height:48rpx;
+					font-size:34rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(255,255,255,1);
+					line-height:48rpx;
+				}
+			}
 		}
 		.activity-card{
 			width:100%;

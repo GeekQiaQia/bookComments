@@ -1,0 +1,92 @@
+<!--pages/hot-search/hot-search.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view class="search-container">
+		<view class="filter-container">
+			
+			<view class="search">
+				<van-search
+				  value="{{ keyword }}"
+				  shape="round"
+				  background="#ffffff"
+				  placeholder="请输入书名/作者/出版社"
+				  show-action
+				    bind:search="onSearch"
+				    bind:cancel="onCancel"
+				/>
+			</view>
+			
+		</view>	
+		<view class="search-history" wx:if="{{hotSearchArray.length>0&&mySearchHistory.length>0}}">
+			<view  wx:if="{{hotSearchArray.length>0}}">
+				<view class="tip-title">
+					大家都在搜
+				</view>
+				<view class="history-tip">
+					<block wx:for="{{hotSearchArray}}" wx:key="*this">
+						<view class="tip">
+							<view class="text">{{item.keyword}}</view>
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class="tip-title" style="margin-top: 54rpx;" wx:if="{{mySearchHistory.length>0}}">
+				历史搜索
+			</view>
+			<view class="history-tip">
+				<block wx:for="{{mySearchHistory}}" wx:key="*this">
+					<view class="tip">
+						<view class="text">{item.keyword}</view>
+							<text class="cuIcon-close lg text-gray"></text>
+					</view>
+				</block>
+				
+			</view>
+			
+		</view>
+		<view class="search-no-result">
+			<view class="icon-tip">
+			
+				<van-icon name="info" color="#10AEFF"  size="107rpx"/>
+			</view>
+			<view class="text-tip">
+				<view>抱歉，您搜索的书目不存在。</view>
+<view>尝试<text style="color: #F96D3D;">添加书目</text>，我们会努力为你寻找资源！</view>
+			</view>
+			<view class="add-book">
+				<view class="title">
+					添加书目
+				</view>
+				<view class="split-line"></view>
+				<view class="book-name">
+					<view class="first-name">
+						<view class="word">{{filter.tofiltFirstWord(keyword)}}</view>
+					</view>
+					<view class="all-name">
+						{{keyword}}
+					</view>
+				</view>
+				<view class="split-line2"></view>
+				<view class="select-cate">
+					<view class="cate-tip" wx:if="{{choosedCataName==''}}">
+						选择类别
+					</view>
+					<view class="cate-tip" wx:else>
+						{{choosedCataName}}
+					</view>
+					<text class="cuIcon-right lg text-gray" bindtap="handleChooseCatagory"></text>
+				</view>
+				<view  style="margin-top: 36rpx;" class="split-line2" wx:if="{{choosedCataName!=''}}"></view>
+				<view class="btn-select" wx:if="{{choosedCataName!=''}}">
+					<view class="btn-cancel btn" bindtap="handleCancel">
+						<view class="font orange">取消</view>
+					</view>
+					<view class="btn-complete btn" bindtap="handleComplete">
+						<view class="font white">完成</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

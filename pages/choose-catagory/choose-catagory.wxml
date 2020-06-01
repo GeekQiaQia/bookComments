@@ -1,0 +1,19 @@
+<!--pages/choose-catagory/choose-catagory.wxml-->
+<view class="container">
+	<view class="catagory-container">
+		<view class="radio-group">
+			<van-radio-group value="{{ radio }}"  bind:change="onChange">
+				<block wx:for="{{tabs}}" wx:key="*this">
+					<view class="radio"   data-name="{{item.name}}"  data-id="{{item.id}}" bindtap="onClick">
+						<van-radio checked-color="#07C160"  name="{{item.id}}">
+							<view class="cata-name">
+								{{item.name}}
+							</view>
+						</van-radio>
+					</view>
+				</block>
+			</van-radio-group>
+		</view>
+	</view>
+	<copy-right></copy-right>
+</view>

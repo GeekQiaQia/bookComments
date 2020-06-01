@@ -8,32 +8,39 @@
 	  <view class="card-item">
 		  <view class="card-item-title">
 			  <view class="avatar">
-				<cover-image
+				<image
 				                class="cover-image"
-				                src="{{item.iconUrl}}"
-				                bindload="imageLoad"
-				                binderror="imageError">
-				            </cover-image>
+				                src="{{item.userInfo.avatarUrl}}"
+				                >
+				            </image>
 			  </view>
 			  <view class="basicinfo">
 				  <view class="info-display">
-					  <text class="name">{{item.name}}</text><text class="notice">{{item.notice}}</text>
-					  <commentStars model:stars="{{item.star}}"></commentStars>
+					  <text class="name">{{item.userInfo.nickName}}</text>
+					
+					
+					  <block wx:if="{{item.forward==true}}">
+					  					  						  <text class="notice">转发</text>
+					  </block>
+					  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+					  		 <text class="notice">已读</text>
+					  </block>
+					  <commentStars model:stars="{{item.bookInfo.stars}}"></commentStars>
 				  </view>
 			
 			  </view>
 			  
 		  </view>
-		  
+		  <view class="card-content" wx:if="{{item.title!==null}}">{{item.title}}</view>
 		  <view class="content-container">
-		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{index}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.resume}}</text>
+		  		<text class="resume  {{!item.readMore?'read-more':''}}"  data-itemIndex="{{item.id}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{item.content}}</text>
 		  </view>
 		  
 		  <view class="releation-container">
 			  <view class="releation-info">
-				  <text class="releation ">{{item.like}}有用 · </text>
+				  <text class="releation ">{{item.liked}}有用 · </text>
 				  <text class="releation ">{{item.reply}}回复 · </text>
-				  <text class="releation ">{{item.forward}}转发</text>
+				  <text class="releation ">{{item.forwarding}}转发</text>
 			  </view>
 			 
 			

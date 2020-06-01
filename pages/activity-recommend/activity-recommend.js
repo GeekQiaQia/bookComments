@@ -6,10 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-	imageSrc:"../../images/recommend-activity.png",
+	imageSrc:"",
 	descriptInput:'',
 	recommendBookName:"",
-	descriptInputLen:0
+	descriptInputLen:0,
+	id:""
   },
   recommendBookInput:function(e){
 	  let len=e.detail.value.length;
@@ -30,25 +31,33 @@ Page({
 	  
 	  let book=this.data.recommendBookName;
 	  let reason=this.data.descriptInput;
+	  let id=this.data.id;
 	  let reqData={
-		  activity:3,
+		  activity:id,
 		  book,
 		  reason
 	  }
 	api._fetch({
 	    url: '/api/i/activity/recommend',
-	    data:JSON.stringify(reqData),
+	    data:reqData,
 	    method:'post',
 		contentType:1
 	}).then(function (res) {
-	    console.info(res)
-			  wx.redirectTo({
-			    url: '../week-activity/week-activity',
-			  })
+	
+		wx.showToast({
+		  title: '推荐成功',
+		  mask:true,
+		  icon: 'success',
+		  duration: 5000
+		})
+		wx.redirectTo({
+			 url: '../week-activity/week-activity?id='+id,
+		})
 	}).catch(function (error) {
 	    console.log(error);
 	});  
   },
+
   handleSave:function(){
 	// wx.showLoading({
 	//   title: '加载中',
@@ -69,7 +78,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	let id=options.id;
+	this.setData({
+		id
+	});
+	let imageSrc=wx.getStorageSync('imageSrcs')
+	imageSrc=imageSrc.split(',')[1];
+	this.setData({
+			   imageSrc
+	});
   },
 
   /**

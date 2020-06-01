@@ -11,7 +11,8 @@
 		margin-bottom: 32rpx;
 		.card-item{
 			width:750rpx;
-			height:352rpx;
+			// height:352rpx;
+			height:auto;
 			background:rgba(255,255,255,1);
 			padding: 0rpx 30rpx 16rpx 32rpx;
 			.card-item-title{
@@ -30,7 +31,11 @@
 					flex-direction: row;
 					justify-content: center;
 					align-items: center;
-
+					.cover-image{
+						width: inherit;
+						height:inherit;
+						border-radius: 50%;
+					}
 					
 				}
 				.basicinfo{
@@ -40,6 +45,8 @@
 					flex-direction: column;
 					justify-content: flex-end;
 					align-items: flex-start;
+					margin-left: 16rpx;
+
 					
 					.name{
 						width:auto;
@@ -56,6 +63,7 @@
 						width:auto;
 						height:34rpx;
 						font-size:24rpx;
+					
 						font-family:PingFangSC-Regular,PingFang SC;
 						font-weight:400;
 						color:rgba(150,150,150,1);
@@ -94,12 +102,20 @@
 				margin-top: 32rpx;
 				.resume{
 					width:688rpx;
-					height:157rpx;
+					height:156rpx;
 					font-size:28rpx;
 					font-family:PingFangSC-Regular,PingFang SC;
 					font-weight:400;
 					color:rgba(102,102,102,1);
 					line-height:39rpx;
+					
+				}
+				.read-more{
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 4;       
+					overflow: hidden;
+					text-overflow:ellipsis;
 				}
 			}
 			.releation-container{
@@ -146,4 +162,25 @@
 			
 		}
 
+}
+.cuIcon-people:before {
+		content: "\e736";
+	}
+.cuIcon-favorfill:before {
+	content: "\e64b";
+}
+.cuIcon-right:before {
+	content: "\e6a3";
+}
+.text-gray,
+.line-gray,
+.lines-gray {
+	color: #aaaaaa;
+}
+.text-orange{
+	color: #F96D3D;
+}
+.lg {
+	width: 80upx;
+	height: 80upx;
 }
