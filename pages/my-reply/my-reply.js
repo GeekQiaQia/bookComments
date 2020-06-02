@@ -6,77 +6,175 @@ Page({
    * 页面的初始数据
    */
   data: {
+	    successInfo:{},
+	    deleteId:0,
 		replyInfo:{
 				num:6,
-				list:[
-					{	status:0,
-						date:"2020/2/20",
-						info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～",
-						iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						name:"春天来了",
-						date:"2月25日",
-						myReplyInfo:"虽然是十年前的文章，但有很多表达用语现在看来仍不过时，牛逼",
-						reverseName:"刘十三",
-						reverseReply:"其实人就是这样",
-						bookComment:"很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对事物的发…",
-						userful:"689",
-						transmit:"22",
-						bookUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						bookName:"一个人的朝圣",
-						stars:"5",
-						commentsNum:"30258",
-						top:1
-					},
-					{
-						status:0,
-						date:"2020/2/20",
-						info:"你的书评《一个人的朝圣》被用户 林十三 回复，快去查看吧～",
-						iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						name:"春天来了2",
-						date:"2月25日",
-						myReplyInfo:"虽然是十年前的文章，但有很多表达用语现在看来仍不过时，牛逼",
-						reverseName:"刘十三",
-						reverseReply:"其实人就是这样",
-						bookComment:"很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对事物的发…",
-						userful:"1689",
-						transmit:"23",
-						bookUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						bookName:"一个人的朝圣",
-						stars:"4",
-						commentsNum:"30258",
-						top:0
-						
-					},
-					{	status:1,
-						date:"2020/2/20",
-						info:"你对书籍《一个人的朝圣》推荐的影片，已被平台收录并整理，前去查看～",
-						iconUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						name:"春天来了3",
-						date:"2月25日",
-						myReplyInfo:"虽然是十年前的文章，但有很多表达用语现在看来仍不过时，牛逼",
-						reverseName:"刘十三",
-						reverseReply:"其实人就是这样",
-						bookComment:"很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对事物的发…",
-						userful:"680",
-						transmit:"24",
-						bookUrl:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-						bookName:"一个人的朝圣",
-						stars:"3",
-						commentsNum:"30258",
-						top:0
-					}
-				]
+				list:[]
 			},
 			modalName:"",
+			posterConfig: {
+			    width: 750,
+			    height: 982,
+			    backgroundColor: '#fff',
+			    debug: false,
+			    pixelRatio: 1,
+			    blocks: [
+			        {
+			            width: 448,
+			            height: 736,
+			            x: 152,
+			            y: 64,
+			            borderWidth: 2,
+			            borderColor: '#595959',
+			            borderRadius: 20,
+			        },
+			        {
+			            width: 634,
+			            height: 74,
+			            x: 59,
+			            y: 770,
+			            backgroundColor: '#fff',
+			            opacity: 0.5,
+			            zIndex: 100,
+			        },
+			    ],
+			    texts: [
+			        {
+			            x: 162,
+			            y:112,
+			            baseLine: 'middle',
+			            text: "「米读书评",
+			            fontSize: 34,
+			            color: '#F7F7F7',
+			        },
+			        {
+			            x: 344,
+			            y: 118,
+			            baseLine: 'middle',
+			            text: "随笔",
+			            fontSize: 24,
+			            color: '#ffffff',
+			        },
+					{
+					    x: 184,
+					    y: 180,
+					    baseLine: 'middle',
+					    text: "他不是心灵鸡汤",
+					    fontSize: 28,
+					    color: '#ffffff',
+					},
+					{
+					    x: 184,
+					    y: 216,
+					    baseLine: 'middle',
+					    text: "",
+					    fontSize: 20,
+					    color: '#eeeeee',
+					},
+					
+			        {
+			            x: 184,
+			            y: 288,
+			            fontSize: 24,
+			            baseLine: 'middle',
+			            text: "",
+			            width: 382,
+			            lineNum: 8,
+						fontWeight:400,
+						lineHeight:36,
+			            color: '#666666',
+			            zIndex: 200,
+			        },
+			        {
+			            x: 380,
+			            y: 606,
+			            baseLine: 'middle',
+			            text: [
+			                {
+			                    text: '—— ',
+			                    fontSize: 24,
+			                    color: '#666666',
+			                },
+			                {
+			                    text: '',
+			                    fontSize: 24,
+								width: 100,
+			                    color: '#666666',
+			                    marginRight: 32,
+								marginLeft: 2,
+			                }
+			            ]
+			        },
+			        {
+			            x: 344,
+			            y: 686,
+			            baseLine: 'middle',
+			            text: '长按小程序查看详情',
+						fontWeight:400,
+						lineHeight:34,
+			            fontSize: 24,
+			            color: '#969696',
+			        },
+					{
+					    x: 344,
+					    y: 720,
+					    baseLine: 'middle',
+					    text: '分享自',
+						fontWeight:400,
+						lineHeight:34,
+					    fontSize: 24,
+					    color: '#969696',
+					},
+					{
+					    x: 416,
+					    y: 720,
+					    baseLine: 'middle',
+					    text: '「米读书评」',
+						fontWeight:"bold",
+						lineHeight:34,
+					    fontSize: 24,
+					    color: '#666666',
+					},
+			     
+			    ],
+			    images: [
+			        {
+			            width: 448,
+			            height: 192,
+			            x: 152,
+			            y: 64,
+			            borderRadius: 20,
+			            url: "../../images/bookbg.png",
+			        },
+					{
+					    width:96,
+					    height: 96,
+					    x: 232,
+					    y: 658,
+					    borderRadius: 20,
+					    url: "../../images/qrcode.png",
+					},
+			   
+			    ]
+			
+			},
 			confirmDelete:false
   },
   
   showModal(e) {
-	  
+	   let deleteId=e.target.dataset.id;
     this.setData({
-      modalName: e.currentTarget.dataset.target
+      modalName: e.currentTarget.dataset.target,
+	  deleteId
     })
 	
+  },
+  handleCloseDialog(e){
+  	  let modalName=e.detail.modalName;
+  	  this.setData({
+  	    modalName
+  	  })
   },
 hideModal(e) {
     this.setData({
@@ -100,12 +198,26 @@ toDeleteConfirm(){
 	  modalName: null,
 	   confirmDelete: false
 	})
-	this.deleteCommentReply();
+	let deleteId=this.data.deleteId;
+	this.deleteCommentReply(deleteId);
 },
 toShowShareDialog(e){
+	console.log(e);
 	
+	let successInfo={},
+		posterConfig=this.data.posterConfig;
+		successInfo['nickName']=e.currentTarget.dataset.nickname;
+		successInfo['bookName']=e.currentTarget.dataset.bookname;
+		successInfo['content']=e.currentTarget.dataset.content;
+		if(successInfo){
+			posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
+			posterConfig.texts[4].text=successInfo.content;
+			posterConfig.texts[5].text[1].text=successInfo.nickName;
+		}
 	this.setData({
-	  modalName: e.currentTarget.dataset.target
+	  modalName: e.currentTarget.dataset.target,
+	  posterConfig,
+	  successInfo
 	})
 },
 imageLoad(e){
@@ -132,7 +244,8 @@ getReplyList(){
 	api._fetch({
 	    url: '/api/i/commentReply/list',
 	    data:reqData,
-	    method:'get'
+	    method:'get',
+		contentType: 1
 	}).then(function (res) {
 		let replyInfo=res.data;
 		console.log(replyInfo);
@@ -144,18 +257,26 @@ getReplyList(){
 	});
 },
 /**
- * @description  获取回复列表
+ * @description  删除回复列表
  * */
- deleteCommentReply(){
+ deleteCommentReply(id){
+	 let that=this;
 	let reqData={
-			  id:0
+			  id
 	}
 	api._fetch({
 	    url: '/api/i/commentReply/delete',
-	    data:JSON.stringify(reqData),
-	    method:'post'
+	    data:reqData,
+	    method:'post',
+		contentType: 1
 	}).then(function (res) {
-	    console.info(res)
+	   wx.showToast({
+	     title: "删除成功",
+	     mask:true,
+	     icon: 'success',
+	     duration: 3000
+	   })
+	   that.getReplyList();
 	}).catch(function (error) {
 	    console.log(error);
 	});

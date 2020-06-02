@@ -5,7 +5,7 @@
 	
   <view class="card-container">
 	  <view class="card-item">
-		  <view class="card-item-title">
+		  <view class="card-item-title" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" bindtap="handleBookDetail">
 			  <view class="avatar">
 				<image
 				                class="cover-image"

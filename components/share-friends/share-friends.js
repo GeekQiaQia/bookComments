@@ -12,6 +12,10 @@ Component({
 				type:Object,
 				value:null
 			},
+			shareInfo:{
+				type:Object,
+				value:null
+			},
 	shareFriends:{
 		type:Boolean,
 		value:false

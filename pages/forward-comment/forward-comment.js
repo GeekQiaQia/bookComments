@@ -9,7 +9,7 @@ Page({
 	  placeholder:"写下你的评论",
 	  notebook:"我的笔记本",
 	  note:false,
-	  noteBookRadio:null,
+	  noteBookRadio:"",
 	  item:{},
 	  notesInfo:{},
 	  messages:"",
@@ -24,6 +24,7 @@ Page({
    * @description:发送书评
    * */
   handleSendComment(e){
+	  let that=this;
 	  let messagesLen=this.data.messagesLen;
 	  if(messagesLen==0){
 		  wx.showToast({
@@ -36,6 +37,7 @@ Page({
 		  let comment=this.data.item.id,
 		  		  content=this.data.messages,
 		  		  note=this.data.note,
+				  userInfo=wx.getStorageSync('userInfo'),
 		  		  notebook=this.data.noteBookRadio;
 		  let reqData={
 		  		  comment,
@@ -56,7 +58,23 @@ Page({
 		  	 console.log(res);
 		  			 // 此处发送修改交易；
 		  			 if(res.statusCode===200){
-						wx.navigateBack();
+						 
+						
+						 let successInfo={
+							
+							 bookName:that.data.item.bookInfo.name,
+							 content,
+							 nickName:userInfo.nickName
+						 }
+						 if(note){
+						 	 successInfo['notebook']=that.data.notebook
+						 }else{
+							 successInfo['notebook']=null
+						 }
+						wx.setStorageSync("successInfo",successInfo)
+						wx.redirectTo({
+							 url:'../forward-success/forward-success'
+						});
 		  			 }else{
 		  				 wx.showToast({
 		  				   title: res.message,
@@ -80,6 +98,7 @@ Page({
 	  let note=noteInfo.filter(item=>{
 		  return item.id==noteBookRadio;
 	  });
+	  console.log(note);
 	  let notebook=note[0].name
 	  this.setData({
 		  notebook,
@@ -182,6 +201,7 @@ Page({
    */
   onLoad: function (options) {
 	let item=wx.getStorageSync('item')
+	
 	this.setData({
 		item
 	});

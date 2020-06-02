@@ -41,7 +41,7 @@
 											</view>
 										</view>
 									</view>
-									<view class="more-operator" bindtap="showModal" data-target="bottomModal">
+									<view class="more-operator" bindtap="showModal"  data-id="{{item.id}}"  data-target="bottomModal">
 										...
 									</view>
 									<!-- <text class="cuIcon-more lg text-gray"></text> -->
@@ -49,31 +49,38 @@
 								<view class="my-reply-info">
 									{{item.content}}
 								</view>
+									<block wx:if="{{item.authorReply!==null}}">
 								<view class="read-info">
-									<view class="date">{{item.createTime}}</view>
+									<view class="date">{{item.authorReply.createTime}}</view>
 									<!--status==0 未读-->
-									<view class="{{item.status==0?'unread':''}}"></view>
+									<!-- <view class="{{item.authorReply.reader==false?'unread':''}}"></view> -->
 								</view>
-								<view class="reverse-reply-info">
-									<view class="reference">@{{item.reverseName}}</view>
-									<view>回复</view>
-									<view class="reference">@我：</view>
-									<view>{{item.reverseReply}}</view>
-								</view>
+							
+									<view class="reverse-reply-info">
+										<view class="reference">@{{item.bookComment.userInfo.nickName}}</view>
+										<view>回复</view>
+										<view class="reference">@我：</view>
+										<view>{{item.authorReply.content}}</view>
+									</view>
+								</block>
+								
 								<view class="comment-detail">
 									<view class="comment-info">
-										{{item.bookComment.bookInfo.describes}}
+										{{item.bookComment.content}}
 									</view>
+						
 									<view class="comment-book">
-										<view class="book-url">
-											<cover-image class="cover-image" src="{{item.bookComment.bookInfo.picture}}" bindload="imageLoad" binderror="imageError">
-											</cover-image>
-										</view>
-										<view class="book-info">
-											<view class="name">{{item.bookComment.bookInfo.name}}</view>
-											<view class="stars">
-												<comment-stars model:stars="{{item.bookComment.bookInfo.stars}}"></comment-stars>
-												<view class="commentStar">{{item.bookComment.bookInfo.stars}}人评分</view>
+										<view class="book">
+											<view class="book-url">
+												<image class="cover-image" src="{{item.bookComment.bookInfo.picture}}" >
+												</image>
+											</view>
+											<view class="book-info">
+												<view class="name">{{item.bookComment.bookInfo.name}}</view>
+												<view class="stars">
+													<comment-stars model:stars="{{item.bookComment.bookInfo.stars}}"></comment-stars>
+													<view class="commentStar">{{item.bookComment.bookInfo.scorer}}人评分</view>
+												</view>
 											</view>
 										</view>
 										<view class="book-icon">
@@ -83,16 +90,19 @@
 								</view>
 								<view class="foot-container">
 									<view class="comment-refer">
-										<view>{{item.userful}}有用 </view>
+										<view>{{item.liked}}有用 </view>
 										<view class="dot"></view>
-										<view>13转发</view>
-										<view class="dot"></view>
-										<view class="reference">已回复</view>
+										<view>{{item.forwarding}}转发</view>
+										<block wx:if="{{item.authorReply!==null}}">
+											<view class="dot"></view>
+											<view class="reference">已回复</view>
+										</block>
+										
 
-										<view class="dot" wx:if="{{item.top==1}}"></view>
-										<view class="reference" wx:if="{{item.top==1}}">已置顶</view>
+										<view class="dot" wx:if="{{item.top>0}}"></view>
+										<view class="reference" wx:if="{{item.top>0}}">已置顶</view>
 									</view>
-									<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
+									<view class="comment-share" data-target="shareModal"  data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookComment.bookInfo.name}}" data-content="{{item.content}}" bindtap="toShowShareDialog">
 										<text class="cuIcon-share lg text-gray"></text>
 										<view class="share">分享</view>
 									</view>
@@ -110,7 +120,9 @@
 		</view>
 		<copy-right></copy-right>
 	</view>
-	
+	 <share-friends model:modal-name="{{modalName}}"  model:share-friends="{{true}}" model:share-info="{{successInfo}}" model:poster-config="{{posterConfig}}" bind:closeDialog="handleCloseDialog"  >
+	 	
+	 </share-friends>
 	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
 	  <view class="cu-dialog">
 		  <view class="dialog-container">
@@ -152,72 +164,5 @@
 	  
 	  </view>
 	</view>
-	<view class="cu-modal bottom-modal {{modalName=='shareModal'?'show':''}}">
-	  <view class="cu-dialog">
-		  <view class="dialog-container">
-			  <view class="share-container">
-				  <view class="top-container">
-					  <view class="image-container">
-					  					  <view class="image-title" style="background-image: url(../../images/bookbg.png);">
-					  						  <view class="name-container">
-					  							  <view class="title-name">「知论</view>
-					  							  <view class="essay">随笔</view>
-					  						  </view>
-					  						  <view class="chicken-soul">
-					  							  他不是心灵鸡汤
-					  						  </view>
-					  						  <view class="book-name">
-					  							  《一个人的朝圣》的读书笔记
-					  						  </view>
-					  					  </view>
-					  					  <view class="image-content">
-					  						  <view class="image-comment-container">
-					  						  				很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对吶~拙见，不喜勿喷本书推荐阅读。		  
-					  						  </view>
-					  						  <view class="image-comment-byname">
-					  							  —— 夏之风
-					  						  </view>
-					  						  <view class="image-qrcode-container">
-					  							  <view class="qrcode-image">
-					  								  
-					  							  </view>
-					  						  		<view  class="qrcode-tip">
-					  									<text class="tips">长按小程序查看详情</text>
-					  									<view class="tips2">
-					  										<text class="from">分享自</text>
-					  										<text class="zhilun">「知论」</text>
-					  									</view>
-					  								</view>	 
-					  						  </view>
-					  					  </view>
-					  </view>
-					  <view class="close" bindtap="handleColseShareDialog">
-						  <text class="cuIcon-close lg text-black " ></text> 
-					  </view>
-				  </view>
-				  <view class="tip-container">
-					  保存图片后，可分享至朋友圈
-				  </view>
-				  <view class="button-container">
-					  <view class="save-image">
-						   <text class="cuIcon-down lg text-white size" ></text>
-						  <view class="btn-text white">
-							  保存分享
-						  </view>
-					  </view>
-					  <view>
-						  <button open-type="share" class=" share-friends  no-border">
-						  			<text class="cuIcon-weixin lg text-orange size" ></text> 
-									<text class="btn-text black">分享给好友</text>
-						  </button>
-					  </view>
-				  </view>
-			  </view>
-			  <view class="split-bar">
-			  			  
-			  </view>
-		  </view>
-	  
-	  </view>
-	</view>
+	
 </view>

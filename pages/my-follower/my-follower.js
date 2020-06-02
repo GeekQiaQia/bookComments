@@ -1,4 +1,7 @@
 // pages/my-follower/my-follower.js
+
+const api = require('../../utils/request.js')
+
 Page({
 
   /**
@@ -8,37 +11,58 @@ Page({
 	follower:{
 			num:4,
 			
-			list:[
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"不如诗",
-					follow:0
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"AI鱼@UU.COM",
-					follow:1
-				
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"Sabrinatasha",
-					follow:-1
-				},
-				{
-					iconSrc:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-					nickname:"鱼",
-					follow:0
-				}
-			]
+			list:[]
 		}
   },
 
+
+	/**
+	 * @description；获取关注我的人
+	 * 
+	 * */
+
+	getUserRelationshipList: function(id) {
+		let reqData = {
+			action:0,
+			page:0,
+			size:10
+		},
+		that = this;
+		api._fetch({
+			url: '/api/i/userRelationship/list',
+			data: reqData,
+			method: 'get',
+			contentType: 1
+		}).then(function(res) {
+			console.log(res);
+			// 此处发送修改交易；
+			if (res.statusCode === 200) {
+				let list=res.data,
+				    follower=that.data.follower,
+				    num=list.length;
+					follower.num=num;
+					follower.list=list;
+					that.setData({
+						follower
+					});
+			} else {
+				wx.showToast({
+					title: res.message,
+					mask: true,
+					icon: 'none',
+					duration: 3000
+				})
+			}
+			
+		}).catch(function(error) {
+			console.log(error);
+		});
+	},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getUserRelationshipList();
   },
 
   /**

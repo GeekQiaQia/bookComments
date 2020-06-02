@@ -1,7 +1,8 @@
 {
  "usingComponents": {
  	   "copy-right":"../../components/copy-right/copy-right",
-	    "comment-stars":"../../components/commentStars/commentStars"
+	    "comment-stars":"../../components/commentStars/commentStars",
+		"share-friends":"../../components/share-friends/share-friends"
  },
   "navigationBarTitleText": "我的回复"
 }

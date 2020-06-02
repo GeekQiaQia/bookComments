@@ -165,8 +165,8 @@
 							
 						}
 						.my-reply-info{
-							width:auto;
-							height:80rpx;
+							width:100%;
+							height:auto;
 							font-size:28rpx;
 							margin:26rpx 0rpx 16rpx 0rpx;
 							
@@ -235,23 +235,33 @@
 								line-height:39rpx;
 								border-bottom: 4rpx solid #F7F7F7;
 							}
-							.comment-book{
+						.comment-book{
+							display: flex;
+							flex: row;
+							justify-content: space-between;
+							align-items: flex-start;
+							width: 100%;
+						
+							.book{
 								display: flex;
 								flex: row;
 								justify-content: flex-start;
 								align-items: center;
-								
 								.book-url{
 									width:66rpx;
 									height:96rpx;
-									margin: 16rpx 14rpx 16rpx 0rpx;
+									margin: 16rpx 14rpx 16rpx 16rpx;
+								   .cover-image{
+									   width:inherit;
+									   height: inherit;
+								   }
 								}
 								.book-info{
 									display: flex;
 									flex-direction: column;
 									justify-content: flex-start;
 									align-items: flex-start;
-							
+														
 									.name{
 										width:auto;
 										height:40rpx;
@@ -267,32 +277,35 @@
 										justify-content: flex-start;
 										align-items: center;
 										margin-top: 8rpx;
+										width:auto;
+										height:auto;
 										.commentStar{
 											width:auto;
-											height:26rpx;
+											height:32rpx;
 											font-size:18rpx;
 											font-family:PingFangSC-Regular,PingFang SC;
 											font-weight:400;
+											margin-left: 24rpx;
+						
 											color:rgba(150,150,150,1);
-											line-height:26rpx;
+											line-height:32rpx;
 										}
 									}
 									
 								}
-								.book-icon{
-									width: 0rpx;
-									height: 49rpx;
-									border-width: 16rpx;
-									border-color: #FFAD91;
-									border-bottom-color: transparent;
-									margin-left: 285rpx;
-									margin-top: -53rpx;
-									border-style: solid;
-
-
-									
-								}
 							}
+							.book-icon{
+								width: 0rpx;
+								height: 49rpx;
+								border-width: 16rpx;
+								border-color: #FFAD91;
+								border-bottom-color: transparent;
+								border-style: solid;
+								margin-top: 16rpx;
+								margin-right: 16rpx;
+								
+							}
+						}
 						}
 						.foot-container{
 							width:100%;

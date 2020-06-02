@@ -156,8 +156,8 @@
   font-size: 41rpx;
 }
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container .my-reply-info {
-  width: auto;
-  height: 80rpx;
+  width: 100%;
+  height: auto;
   font-size: 28rpx;
   margin: 26rpx 0rpx 16rpx 0rpx;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -227,21 +227,32 @@
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book {
   display: flex;
   flex: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book {
+  display: flex;
+  flex: row;
   justify-content: flex-start;
   align-items: center;
 }
-.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-url {
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-url {
   width: 66rpx;
   height: 96rpx;
-  margin: 16rpx 14rpx 16rpx 0rpx;
+  margin: 16rpx 14rpx 16rpx 16rpx;
 }
-.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-info {
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-url .cover-image {
+  width: inherit;
+  height: inherit;
+}
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-info .name {
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-info .name {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;
@@ -250,21 +261,24 @@
   color: #666666;
   line-height: 40rpx;
 }
-.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-info .stars {
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-info .stars {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin-top: 8rpx;
-}
-.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-info .stars .commentStar {
   width: auto;
-  height: 26rpx;
+  height: auto;
+}
+.container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book .book-info .stars .commentStar {
+  width: auto;
+  height: 32rpx;
   font-size: 18rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+  margin-left: 24rpx;
   color: #969696;
-  line-height: 26rpx;
+  line-height: 32rpx;
 }
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-icon {
   width: 0rpx;
@@ -272,9 +286,9 @@
   border-width: 16rpx;
   border-color: #FFAD91;
   border-bottom-color: transparent;
-  margin-left: 285rpx;
-  margin-top: -53rpx;
   border-style: solid;
+  margin-top: 16rpx;
+  margin-right: 16rpx;
 }
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container .foot-container {
   width: 100%;

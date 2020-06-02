@@ -55,6 +55,10 @@
   background: #ffffff;
   border-radius: 20rpx;
   padding: 16rpx 0rpx 28rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .container .success-container .comment-detail .book-name {
   width: auto;
@@ -75,6 +79,7 @@
   color: #666666;
   line-height: 36rpx;
   margin: 16rpx auto;
+  padding-left: 16rpx;
 }
 .container .success-container .comment-detail .comment-name {
   width: 496rpx;
@@ -171,9 +176,9 @@
 .container .success-container .button-container .save-image {
   width: 240rpx;
   height: 80rpx;
-  background: #f96d3d;
+  background: #fbfafc;
   border-radius: 20rpx;
-  border: 2rpx solid #ff4202;
+  border: 2rpx solid rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -426,9 +431,9 @@
 .container .dialog-container .share-container .button-container .save-image {
   width: 240rpx;
   height: 80rpx;
-  background: #f96d3d;
+  background: #fbfafc;
   border-radius: 20rpx;
-  border: 2rpx solid #ff4202;
+  border: 2rpx solid rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: row;
   justify-content: center;
