@@ -8,8 +8,8 @@
 				<van-icon name="checked" color="#F96D3D" size="107rpx" />
 			</view>
 			<view class="tip">
-				<view class="text">
-					评论已经转发并添加到<text class="color-blue" bindtap="goNotebooks">#金融学笔记本#</text>
+				<view class="text" wx:if="{{successInfo.notebook!==null}}">
+					评论已经转发并添加到<text class="color-blue" bindtap="goNotebooks">#{{successInfo.notebook}}#</text>
 				</view>
 				<view class="text">
 					去 <text class="color-orange">「发现页</text>」发现更多内容
@@ -17,58 +17,63 @@
 			</view>
 		</view>
 		<view class="comment-detail">
-			<view class="book-name">《一个人的朝圣》</view>
-			<view class="book-comment">
-				很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对吶~拙见，不喜勿喷本书推荐阅读。
+			<view>
+				<view class="book-name">《{{successInfo.bookName}}》</view>
+				<view class="book-comment">
+					{{successInfo.content}}
+				</view>
+				<view class="comment-name">
+					—— {{successInfo.nickName}}
+				</view>
 			</view>
-			<view class="comment-name">
-				—— 夏之风
-			</view>
-			<view class="comment-tip">
-				请留下你对这本书进行整体评价
-			</view>
-			<view class="all-comment">
-				<view class="text">
-					整体评价 
-				</view>
-				<van-rate value="{{ allEvaluation }}" size="{{ allEvaluationSize }}"  color="#F96D3D"  void-color="#B8B8B8" bind:change="onAllEvaluationChange" />
-			</view>
-			<view class="commnts">
+			<view>
 				
-				<view class="evaluation">
+				<view class="comment-tip">
+					请留下你对这本书进行整体评价
+				</view>
+				<view class="all-comment">
 					<view class="text">
-						纸张 
+						整体评价 
 					</view>
-					<van-rate value="{{ paperEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onPaperEvaluationChange" />
+					<van-rate value="{{ allEvaluation }}" size="{{ allEvaluationSize }}"  color="#F96D3D"  void-color="#B8B8B8" bind:change="onAllEvaluationChange" />
 				</view>
-				
-				<view class="evaluation">
-					<view class="text">
-						易读
+				<view class="commnts">
+					
+					<view class="evaluation">
+						<view class="text">
+							纸张 
+						</view>
+						<van-rate value="{{ paperEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onPaperEvaluationChange" />
 					</view>
-					<van-rate value="{{ easyEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onEasyEvaluationChange" />
-				</view>
-				
-				<view class="evaluation">
-					<view class="text">
-						深度
+					
+					<view class="evaluation">
+						<view class="text">
+							易读
+						</view>
+						<van-rate value="{{ easyEvaluation }}"  size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onEasyEvaluationChange" />
 					</view>
-					<van-rate value="{{ deepEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onDeepEvaluationChange" />
-				</view>
-				
-				<view class="evaluation">
-					<view class="text">
-						专业
+					
+					<view class="evaluation">
+						<view class="text">
+							深度
+						</view>
+						<van-rate value="{{ deepEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onDeepEvaluationChange" />
 					</view>
-					<van-rate value="{{professionalEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onProfessionalEvaluationChange" />
+					
+					<view class="evaluation">
+						<view class="text">
+							专业
+						</view>
+						<van-rate value="{{professionalEvaluation }}" size="{{ commntsSize }}" color="#F96D3D" void-color="#B8B8B8" bind:change="onProfessionalEvaluationChange" />
+					</view>
+					
 				</view>
-				
 			</view>
 		</view>
 		<view class="button-container">
 							  <view class="save-image" data-target="shareModal"  bindtap="toShareCircleFriend">
 								   <image src="../../images/icon-friends.png" style="width: 32rpx;height:32rpx;" data-target="shareModal"></image>
-								  <view class="btn-text white" data-target="shareModal">
+								  <view class="btn-text black" data-target="shareModal">
 									  分享朋友圈
 								  </view>
 							  </view>
@@ -83,7 +88,7 @@
 	<copy-right>
 		
 	</copy-right>
-	<share-friends model:modal-name="{{modalName}}"  model:poster-config="{{posterConfig}}" bind:closeDialog="handleCloseDialog"  >
+	<share-friends model:modal-name="{{modalName}}"  model:share-info="{{successInfo}}" model:poster-config="{{posterConfig}}" bind:closeDialog="handleCloseDialog"  >
 		
 	</share-friends>
 

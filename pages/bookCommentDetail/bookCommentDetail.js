@@ -40,7 +40,49 @@ Page({
         scrollHeight:scroll_height
       });
     },
-
+    
+	
+	/**
+	 * @description；关注或者取消关注
+	 * 
+	 * */
+	
+	toFocusOnUsers: function(e) {
+		let focusId=e.target.dataset.id
+		let reqData = {
+			focusId,
+			type:1
+		}
+		let that = this;
+		api._fetch({
+			url: '/api/i/userRelationship/focus',
+			data: reqData,
+			method: 'post',
+			contentType: 1
+		}).then(function(res) {
+			console.log(res);
+			// 此处发送修改交易；
+			if (res.statusCode === 200) {
+				wx.showToast({
+				  title: "关注成功",
+				  mask:true,
+				  icon: 'success',
+				  duration: 3000
+				})
+			} else {
+				wx.showToast({
+					title: res.message,
+					mask: true,
+					icon: 'none',
+					duration: 3000
+				})
+			}
+			
+		}).catch(function(error) {
+			console.log(error);
+		});
+	},
+	
 	/**
 	 * @description；获取书评详情
 	 * 

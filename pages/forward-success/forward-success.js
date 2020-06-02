@@ -7,6 +7,7 @@ Page({
    */
   data: {
 	allEvaluation:0,
+	successInfo:{},
 	showCanvas:false,
 	paperEvaluation:0,
 	deepEvaluation:0,
@@ -47,12 +48,12 @@ Page({
                 x: 162,
                 y:112,
                 baseLine: 'middle',
-                text: "「知论",
+                text: "「米读书评",
                 fontSize: 34,
                 color: '#F7F7F7',
             },
             {
-                x: 276,
+                x: 344,
                 y: 118,
                 baseLine: 'middle',
                 text: "随笔",
@@ -71,7 +72,7 @@ Page({
 			    x: 184,
 			    y: 216,
 			    baseLine: 'middle',
-			    text: "《一个人的朝圣》的读书笔记",
+			    text: "",
 			    fontSize: 20,
 			    color: '#eeeeee',
 			},
@@ -81,7 +82,7 @@ Page({
                 y: 288,
                 fontSize: 24,
                 baseLine: 'middle',
-                text: "很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对吶~拙见，不喜勿喷本书推荐阅读。",
+                text: "",
                 width: 382,
                 lineNum: 8,
 				fontWeight:400,
@@ -90,7 +91,7 @@ Page({
                 zIndex: 200,
             },
             {
-                x: 442,
+                x: 380,
                 y: 606,
                 baseLine: 'middle',
                 text: [
@@ -100,8 +101,9 @@ Page({
                         color: '#666666',
                     },
                     {
-                        text: '夏之风',
+                        text: '',
                         fontSize: 24,
+						width: 100,
                         color: '#666666',
                         marginRight: 32,
 						marginLeft: 2,
@@ -109,7 +111,7 @@ Page({
                 ]
             },
             {
-                x: 324,
+                x: 344,
                 y: 686,
                 baseLine: 'middle',
                 text: '长按小程序查看详情',
@@ -119,7 +121,7 @@ Page({
                 color: '#969696',
             },
 			{
-			    x: 324,
+			    x: 344,
 			    y: 720,
 			    baseLine: 'middle',
 			    text: '分享自',
@@ -129,10 +131,10 @@ Page({
 			    color: '#969696',
 			},
 			{
-			    x: 396,
+			    x: 416,
 			    y: 720,
 			    baseLine: 'middle',
-			    text: '「知论」',
+			    text: '「米读书评」',
 				fontWeight:"bold",
 				lineHeight:34,
 			    fontSize: 24,
@@ -152,7 +154,7 @@ Page({
 			{
 			    width:96,
 			    height: 96,
-			    x: 212,
+			    x: 232,
 			    y: 658,
 			    borderRadius: 20,
 			    url: "../../images/qrcode.png",
@@ -224,12 +226,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  
+	let successInfo=wx.getStorageSync('successInfo')
+	let posterConfig=this.data.posterConfig;
+	if(successInfo){
+		posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
+		posterConfig.texts[4].text=successInfo.content;
+		posterConfig.texts[5].text[1].text=successInfo.nickName;
+	}
+	 
 	let allEvaluationSize=this.toPx(28);
 	let commntsSize=this.toPx(24);
+	 console.log("posterConfig",posterConfig);
 	this.setData({
 		allEvaluationSize,
-		commntsSize
+		commntsSize,
+		successInfo,
+		posterConfig
 	});
   },
 

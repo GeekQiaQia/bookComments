@@ -44,9 +44,9 @@
 								  <view class="releation-info">
 								
 									  <view class="comment-share" data-target="shareModal" >
-									  	<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
 									  	
-									  	<block wx:if="{{item.liked==true}}">
+									  	<block wx:if="{{item.meLike==true}}">
 									  		<view class="shared">{{item.like}}</view>
 									  	</block>
 									  	<block wx:else>
@@ -55,8 +55,8 @@
 									  </view>
 									  
 									  <view class="comment-share" data-target="forwardModal" bindtap="toShowShareDialog">
-									  	<text class=" lg text-gray {{item.forward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-target="forwardModal"></text>
-									  	<block wx:if="{{item.forward==true}}">
+									  	<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-target="forwardModal"></text>
+									  	<block wx:if="{{item.meForward==true}}">
 									  		<view class="shared">{{item.forwarding}}</view>
 									  	</block>
 									  	<block wx:else>

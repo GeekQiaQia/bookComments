@@ -76,7 +76,7 @@
 					<view class="split"></view>
 					<text class="title">我的内容</text>
 				</view>
-				<view class="my-block">
+				<view class="my-block" catchtap="handleMyReply">
 					
 					<view class="my-left">
 						<view class="icon">
@@ -87,7 +87,7 @@
 							<text class="my-info-num green" >{{statistics.replies}}条</text>
 						</view>
 					</view>
-					<view class="my-all" bindtap="handleMyReply">
+					<view class="my-all" catchtap="handleMyReply">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>

@@ -8,22 +8,23 @@
 					  <view class="image-container">
 					  					  <view class="image-title" style="background-image: url(../../images/bookbg.png);">
 					  						  <view class="name-container">
-					  							  <view class="title-name">「知论</view>
+					  							  <view class="title-name">「米读书评</view>
 					  							  <view class="essay">随笔</view>
 					  						  </view>
 					  						  <view class="chicken-soul">
 					  							  他不是心灵鸡汤
 					  						  </view>
 					  						  <view class="book-name">
-					  							  《一个人的朝圣》的读书笔记
+					  							  《{{shareInfo.bookName}}》的读书笔记
 					  						  </view>
 					  					  </view>
 					  					  <view class="image-content">
 					  						  <view class="image-comment-container">
-					  						  				很多时候我们被很多東西束缚住了，就像那句话讲的一樣:如果你不出去走走，你就会以为這是全世界。一个人的生命历程就像是朝圣之路一樣，要虔诚的走，走的时候，别太急，别忘了生命中的感动与祝福。人生路漫漫，孤独必然存在，記得积极面对吶~拙见，不喜勿喷本书推荐阅读。		  
+					  						  				{{shareInfo.content}}	  
 					  						  </view>
+											  <view class="bottom-info">
 					  						  <view class="image-comment-byname">
-					  							  —— 夏之风
+					  							  —— {{shareInfo.nickName}}
 					  						  </view>
 					  						  <view class="image-qrcode-container">
 					  							  <view class="qrcode-image">
@@ -33,10 +34,11 @@
 					  									<text class="tips">长按小程序查看详情</text>
 					  									<view class="tips2">
 					  										<text class="from">分享自</text>
-					  										<text class="zhilun">「知论」</text>
+					  										<text class="zhilun">「米读书评」</text>
 					  									</view>
 					  								</view>	 
 					  						  </view>
+											  </view>
 					  					  </view>
 					  </view>
 					  <view class="close" bindtap="handleColseShareDialog">

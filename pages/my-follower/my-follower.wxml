@@ -14,9 +14,9 @@
 				<block wx:for="{{follower.list}}">
 					<view class="follow-list">
 						<view class="follow-info">
-							<cover-image src="{{item.iconSrc}}"  class="follow-icon"></cover-image>
+							<image src="{{item.avatarUrl}}"  class="follow-icon"></image>
 							<view class="follow-nickname">
-								{{item.nickname}}
+								{{item.nickName}}
 							</view>
 						</view>
 						<block wx:if="{{item.follow==-1}}">

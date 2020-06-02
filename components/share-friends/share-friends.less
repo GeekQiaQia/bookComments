@@ -56,7 +56,7 @@
 							justify-content: flex-start;
 							align-items: flex-end;
 							.title-name{
-								width:102rpx;
+								width:auto;
 								height:48rpx;
 								font-size:34rpx;
 								font-family:PingFangSC-Semibold,PingFang SC;
@@ -102,7 +102,7 @@
 						padding: 32rpx;
 						display: flex;
 						flex-direction: column;
-						justify-content: flex-start;
+						justify-content: space-between;
 						align-items: center;
 						flex-grow: 1;
 						.image-comment-container{
@@ -114,59 +114,40 @@
 							color:rgba(102,102,102,1);
 							line-height:36rpx;
 						}
-						.image-comment-byname{
-							width:100%;
-							display: flex;
-							flex-direction: row;
-							justify-content: flex-end;
-							align-items: center;
-							margin-top: 30rpx;
-							height:34rpx;
-							font-size:24rpx;
-							font-family:STSongti-SC-Regular,STSongti-SC;
-							font-weight:400;
-							color:rgba(102,102,102,1);
-							line-height:34rpx;
-							
-						}
-						.image-qrcode-container{
-							display: flex;
-							flex-direction: row;
-							justify-content: flex-start;
-							align-items: center;
-							.qrcode-image{
-								width:96rpx;
-								height:96rpx;
-								margin: 16rpx;
-							}
-							.qrcode-tip{
+						.bottom-info{
+							.image-comment-byname{
+								width:100%;
 								display: flex;
-								flex-direction: column;
-								justify-content: flex-start;
-								align-items: flex-start;
-						
-								.tips{
-									width:216rpx;
-									height:34rpx;
-									font-size:24rpx;
-									font-family:STSongti-SC-Regular,STSongti-SC;
-									font-weight:400;
-									color:rgba(150,150,150,1);
-									line-height:34rpx;
-									display: flex;
-									flex-direction: row;
-									justify-content: flex-start;
-									align-items: center;
-									flex-wrap: wrap;
+								flex-direction: row;
+								justify-content: flex-end;
+								align-items: center;
+								margin-top: 30rpx;
+								height:34rpx;
+								font-size:24rpx;
+								font-family:STSongti-SC-Regular,STSongti-SC;
+								font-weight:400;
+								color:rgba(102,102,102,1);
+								line-height:34rpx;
 								
+							}
+							.image-qrcode-container{
+								display: flex;
+								flex-direction: row;
+								justify-content: flex-start;
+								align-items: center;
+								.qrcode-image{
+									width:96rpx;
+									height:96rpx;
+									margin: 16rpx;
 								}
-								.tips2{
+								.qrcode-tip{
 									display: flex;
-									flex-direction: row;
+									flex-direction: column;
 									justify-content: flex-start;
-									align-items: center;
-									.from{
-										width:auto;
+									align-items: flex-start;
+							
+									.tips{
+										width:216rpx;
 										height:34rpx;
 										font-size:24rpx;
 										font-family:STSongti-SC-Regular,STSongti-SC;
@@ -178,21 +159,43 @@
 										justify-content: flex-start;
 										align-items: center;
 										flex-wrap: wrap;
+									
 									}
-									.zhilun{
-										width:96rpx;
-										height:34rpx;
-										font-size:24rpx;
-										font-family:STSongti-SC-Bold,STSongti-SC;
-										font-weight:bold;
-										color:rgba(102,102,102,1);
-										line-height:34rpx;
+									.tips2{
+										display: flex;
+										flex-direction: row;
+										justify-content: flex-start;
+										align-items: center;
+										.from{
+											width:auto;
+											height:34rpx;
+											font-size:24rpx;
+											font-family:STSongti-SC-Regular,STSongti-SC;
+											font-weight:400;
+											color:rgba(150,150,150,1);
+											line-height:34rpx;
+											display: flex;
+											flex-direction: row;
+											justify-content: flex-start;
+											align-items: center;
+											flex-wrap: wrap;
+										}
+										.zhilun{
+											width:auto;
+											height:34rpx;
+											font-size:24rpx;
+											font-family:STSongti-SC-Bold,STSongti-SC;
+											font-weight:bold;
+											color:rgba(102,102,102,1);
+											line-height:34rpx;
+										}
 									}
+									
+									
 								}
-								
-								
 							}
 						}
+						
 					}
 				}
 			}
@@ -478,6 +481,12 @@
 	}
 	.text-white{
 		color: white;
+	}
+	.cuIcon-weixin:before {
+		content: "\e612";
+	}
+	.text-orange{
+		color: #F96D3D;
 	}
 	
 }
