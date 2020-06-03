@@ -74,7 +74,7 @@ Page({
     	       method:'get',
     		   contentType:1
     	   }).then(function (res) {
-    	   	 console.log(res);
+    	   
     	   			 // 此处发送修改交易；
     	   			 if(res.statusCode===200){
     	  //  			let cardInfoArray=res.data.content;
@@ -117,12 +117,12 @@ Page({
   	       method:'get',
   		   contentType:1
   	   }).then(function (res) {
-  	   	 console.log(res);
+  
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
   	   			let filmInfo=res.data.content;
   			    that.getActorList(filmInfo[0].id);
-  			    console.log(filmInfo[0].id);
+  			   
   				that.setData({
   					filmInfo,
 					movieId:filmInfo[0].id
@@ -160,7 +160,7 @@ Page({
 		    method:'get',
 				   contentType:1
 		}).then(function (res) {
-			 console.log(res);
+		
 					 // 此处发送修改交易；
 					 if(res.statusCode===200){
 					let movieStarArray=res.data.content;
@@ -199,7 +199,7 @@ Page({
 	       method:'get',
 		   contentType:1
 	   }).then(function (res) {
-	   	 console.log(res);
+	   
 	   			 // 此处发送修改交易；
 	   			 if(res.statusCode===200){
 	   			let cardInfoArray=res.data.content;
@@ -242,7 +242,7 @@ Page({
   	       method:'get',
   	   	contentType:1
   	   }).then(function (res) {
-  	   	 console.log(res);
+  	   	
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
   	   			  let bookInfo=res.data;
@@ -287,7 +287,7 @@ Page({
 	* 
 	* */
 	goScoreDetail(e){
-		console.log(e);
+		
 		// 组件绑定来的bookName;
 		let bookname=e.target.dataset.bookname;
 		let id=e.target.dataset.id;
@@ -339,7 +339,7 @@ Page({
 	       method:'post',
 	   	contentType:1
 	   }).then(function (res) {
-	   	 console.log(res);
+	   	
 	   			 // 此处发送修改交易；
 	   			 if(res.statusCode===200){
 	   			
@@ -367,10 +367,10 @@ Page({
       // 获取到的单位px;
       let width=wx.getSystemInfoSync().windowWidth;
       let height=wx.getSystemInfoSync().windowHeight;
-	  console.log(width,height);
+	
       // rpx与px 之间的换算：750rpx /windowWidth=屏幕高度rpx/windowHeight;
       let screeHeight=750*height/width;
-	  console.log(screeHeight);
+
       // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
       let scroll_height=screeHeight-166;
   

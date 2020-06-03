@@ -57,7 +57,7 @@
 				</view>
 				<view class="info-detail" bindtap="showSexModal" data-target="bottomModalSex">
 					<view class="info">
-						{{maintenanceInfo.gender=='0'?"女":"男"}}
+						{{maintenanceInfo.gender=='FEMALE'?"女":"男"}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -101,6 +101,8 @@
 			</view>
 			<view class="split-line"></view>
 		</view>
+		
+			<!-- <button class="wechat-phone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> <text class="text">微信手机号登录</text></button> -->
 		
 	<view class="cu-modal bottom-modal {{modalName=='bottomModalAvatar'?'show':''}}">
 	  <view class="cu-dialog">

@@ -23,7 +23,7 @@
 			</block>
 			<block wx:else>
 				<view class="reply-info-container">
-					<block wx:for="{{replyInfo.content}}" wx:key="*this">
+					<block wx:for="{{replyInfo.content}}" wx:key="id">
 						<view class="reply-card">
 							<view class="content-container">
 								<view class="basic-info">

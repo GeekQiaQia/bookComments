@@ -9,20 +9,20 @@ App({
 	// 获取用户信息
 	wx.getSetting({
 	  success: res => {
-		  console.log(res);
+		
 	    if (res.authSetting['scope.userInfo']) {
 	      // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
 	      wx.getUserInfo({
 	        success: res => {
 	          // 可以将 res 发送给后台解码出 unionId
 	          this.globalData.userInfo = res.userInfo
-	          console.log(res);
+	        
 	          let loginInfo=null;
 	     
 	          try {
 	            var value = wx.getStorageSync('loginInfo')
 	            if (value) {
-	              console.log(value);
+	            
 	              loginInfo=value;
 	              // Do something with return value
 	              let reqData={
@@ -93,7 +93,7 @@ App({
 		  // 发送 res.code 到后台换取 openId, sessionKey, unionId
 	    if (res.code) {
 	     
-		  console.log(res.code);
+		
 		  let reqData={code:res.code}
 		  api._fetch({
 		      url: '/api/wx/login',

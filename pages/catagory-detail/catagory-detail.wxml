@@ -2,7 +2,7 @@
 <view class="container">
 	<view class="catagory-container">
 		<view class="search-container">
-			<van-search
+		<!-- 	<van-search
 			
 			  shape="round"
 			  background="#ffffff"
@@ -10,15 +10,23 @@
 			  bind:change="onChange"
 			   bind:focus="onFocus"
 			    bind:search="onSearch"
-			/>
+			/> -->
+			<view class="search-container" bindtap="onFocus">
+				<view class="search-input">
+					<text class="cuIcon-search lg text-gray"   ></text>
+					<view class="placeholder">
+						请输入书名/作者/出版社
+					</view>
+				</view>
+			</view>
 		</view>
 		<view class="tab-container">
 			<van-tabs animated  color="#F96D3D" active="{{ active }}"  bind:change="onChange">
 					
-				<block wx:for="{{tabs}}" wx:key="*this">
+				<block wx:for="{{tabs}}" wx:key="name">
 					<van-tab title="{{item.tab}}" style="padding-top: 36rpx;">
 						<block wx:if="{{item.name=='comprehensive'}}">
-							<block wx:for="{{comprehensiveInfo}}" wx:key="*this">
+							<block wx:for="{{comprehensiveInfo}}" wx:key="id">
 								<view class="book-info">
 									
 									<book-card model:book-info="{{item}}"  bind:onBookDetail="onBookDetail" >
@@ -30,7 +38,7 @@
 						</block>
 						<block wx:if="{{item.name=='score'}}">
 					
-							<block wx:for="{{scoreInfo}}" wx:key="*this">
+							<block wx:for="{{scoreInfo}}" wx:key="id">
 								<view class="book-info">
 									
 									<book-card model:book-info="{{item}}"  bind:onBookDetail="onBookDetail" >
@@ -42,7 +50,7 @@
 						</block>
 						<block wx:if="{{item.name=='comments'}}">
 						
-							<block wx:for="{{commentsInfo}}" wx:key="*this">
+							<block wx:for="{{commentsInfo}}" wx:key="id">
 								<view class="book-info">
 									
 									<book-card model:book-info="{{item}}"  bind:onBookDetail="onBookDetail" >

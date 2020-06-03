@@ -236,7 +236,7 @@ Page({
 	 
 	let allEvaluationSize=this.toPx(28);
 	let commntsSize=this.toPx(24);
-	 console.log("posterConfig",posterConfig);
+	
 	this.setData({
 		allEvaluationSize,
 		commntsSize,

@@ -6,7 +6,7 @@ const baseURL = 'https://mpapi.bookreview.com.cn/book'
 // 封装网络请求开始
 const http = ({url,data,method,contentType,...other} = {}) => {
     // 添加请求加载等待
-	console.log(contentType);
+
     wx.showLoading({
         title: '加载中...'
     })
@@ -65,7 +65,7 @@ const getUrl = url => {
 //获取用户userToken
 function getHeader(contentType){
 	let auth = {}
-	console.log(contentType);
+
 	switch (contentType){
 	    case 1:
 	      
@@ -83,7 +83,7 @@ function getHeader(contentType){
 	        break;
 	}
 	
-	console.log(wx.getStorageSync('userToken'));
+	
     // 判断登录token是否存在
     if(wx.getStorageSync('userToken')){
         // 获取token并设置请求头

@@ -118,7 +118,7 @@ Page({
 		      method:'get',
 			  contentType:1
 		  }).then(function (res) {
-			 console.log(res);
+			
 			 let tabs=res.data;
 			 tabs.unshift({
 				 parent:null,
@@ -144,7 +144,7 @@ Page({
 		      method:'get',
 			  contentType:1
 		  }).then(function (res) {
-			 console.log(res);
+			
 			 let categoryBookInfo=res.data;
 			 that.setData({
 				 categoryBookInfo

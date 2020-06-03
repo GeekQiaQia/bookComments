@@ -11,7 +11,7 @@ Page({
 	 keyword:""
   },
     onChange(event) {
-		console.log(event)
+		
        this.setData({
          radio: event.detail,
        });
@@ -42,7 +42,7 @@ Page({
 		      method:'get',
 			  contentType:1
 		  }).then(function (res) {
-			 console.log(res);
+			
 			 let tabs=res.data;
 			 
 			 that.setData({

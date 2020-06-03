@@ -23,7 +23,7 @@ Page({
 	  });
   },
   handleKeyboardHeight(e){
-	  console.log(e);
+
 	  let {height}=e.detail;
 	    
 	    height=height+"rpx"
@@ -90,7 +90,7 @@ Page({
 		    method:'post',
 		   contentType:1
 		}).then(function (res) {
-			 console.log(res);
+			
 					 // 此处发送修改交易；
 					 if(res.statusCode===200){
 						// let item=res.data.parent;
@@ -131,7 +131,7 @@ Page({
 	      method:'get',
 	     contentType:1
 	  }).then(function (res) {
-	  	 console.log(res);
+	  	 
 	  			 // 此处发送修改交易；
 	  			 if(res.statusCode===200){
 	  					let replyList=res.data.content;
@@ -198,7 +198,7 @@ Page({
    	       method:'post',
    		   contentType:1
    	   }).then(function (res) {
-   	   	 console.log(res);
+   	  
    	   			 // 此处发送修改交易；
    	   			 if(res.statusCode===200){
 					that.onClose();

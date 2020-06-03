@@ -7,7 +7,7 @@
 	                src="{{bookInfo.picture}}">
 	        </image>
 				
-				<view class="info-detail">
+				<view class="info-detail" >
 					
 					<text class="name">《{{bookInfo.name}}》</text>
 			        <commentStars  model:stars="{{bookInfo.stars}}"></commentStars>
@@ -44,7 +44,7 @@
 			
 				</view>
 				
-				<text class="cuIcon-right lg text-gray"  data-id="{{bookInfo.id}}"  bindtap="handleBookDetail"></text>
+				<text class="cuIcon-right lg text-gray"  data-id="{{bookInfo.id}}"  catchtap="handleBookDetail"></text>
 				
 	</view>
 	<view class="split-line">

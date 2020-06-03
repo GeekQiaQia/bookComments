@@ -8,12 +8,38 @@ Page({
   data: {
 	  keyword:"",
 	hotSearchArray:[],
+	noneResult:false,
 	choosedCataId:"",
 	choosedCataName:"",
+	searchResult:{},
 	mySearchHistory:[]
   },
   onSearch:function(e){
-	  
+	 console.log(e);
+	 let that=this;
+	 let key=e.detail;
+	 this.setData({
+		 keyword:key
+	 });
+	 let reqData={
+		 key,
+		 page:0,
+		 size:10
+	 }
+	 api._fetch({
+	     url: '/api/book/search',
+	     data:reqData,
+	     method:'get',
+	 	 contentType:1
+	 }).then(function (res) {
+	    let searchResult=res.data;
+		that.setData({
+			searchResult
+		})
+	     
+	 }).catch(function (error) {
+	     console.log(error);
+	 });
   },
   onCancel:function(e){
 	  wx.navigateBack()
@@ -27,7 +53,7 @@ Page({
    * */
   handleChooseCatagory(e){
 	  let that=this;
-	  console.log(that.data);
+
 	  let keyword=that.data.keyword;
 	  wx.navigateTo({
 	    url: '../choose-catagory/choose-catagory?keyword='+keyword
@@ -46,7 +72,7 @@ Page({
 	    method:'get',
 		 contentType:1
 	}).then(function (res) {
-		 console.log(res);
+	
 		 let hotSearchArray=res.data;
 		 that.setData({
 			 hotSearchArray
@@ -72,7 +98,7 @@ Page({
 	    method:'get',
 		 contentType:1
 	}).then(function (res) {
-		 console.log(res);
+	
 		 let mySearchHistory=res.data.content;
 		 that.setData({
 			 mySearchHistory
@@ -124,12 +150,21 @@ Page({
 	  });
   },
   /**
+   * @description 监听点击书籍详情事件；
+   * */
+   onBookDetail:function(e){
+  	   // 组件传参过来的id;
+  	   let id=e.detail.id;
+  	   wx.navigateTo({
+  	     url: '../book-detail/book-detail?id='+id
+  	   })
+  	   
+   },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  this.setData({
-		  keyword:"冈仁波齐"
-	  });
+	 
 	 
 	  let choosedCataId=options.id;
 	  let choosedCataName=options.name;
@@ -138,7 +173,8 @@ Page({
 	  		this.setData({
 	  				  choosedCataId,
 	  				  choosedCataName,
-	  				  keyword
+	  				  keyword,
+					  noneResult:true
 	  		});  
 	  }
 	

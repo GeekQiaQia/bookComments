@@ -28,12 +28,12 @@ Page({
 	    duration: 5000
 	  })
 	  let sign=this.data.signature;
-	  console.log(sign);
+	
 	  let reqData={
 		  
 		  sign
 	  }
-	  console.log(reqData);
+	
 	  this.updateInfoMaintenance(reqData);
 	
 	

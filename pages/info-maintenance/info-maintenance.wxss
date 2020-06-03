@@ -45,6 +45,27 @@
   line-height: 48rpx;
   margin-left: 32rpx;
 }
+.container .common-container .wechat-phone {
+  width: 690rpx;
+  height: 100rpx;
+  background: #07c160;
+  border-radius: 20rpx;
+  border: 2rpx solid #08954b;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .common-container .wechat-phone .text {
+  width: 252rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 50rpx;
+}
 .container .common-container .info-container {
   display: flex;
   flex-direction: column;

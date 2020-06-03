@@ -92,7 +92,7 @@ Page({
       });
     },
 	onConfirm(event){
-		console.log(event);
+	
 		let maintenanceInfo=this.data.maintenanceInfo;
 		maintenanceInfo.birthday=formatTime(event.detail,".")
 			
@@ -105,7 +105,7 @@ Page({
 		let reqData={
 				  birthday
 		};
-		console.log(reqData);
+	
 		this.updateInfoMaintenance(reqData);
 	},
 	onCancel(event){
@@ -148,12 +148,12 @@ Page({
 	  let reqData={
 		  gender
 	  };
-	  console.log(reqData);
+	 
 	  this.updateInfoMaintenance(reqData);
 	  
   },
   handleSelectionAvatar:function(e){
-	  console.log(e);
+
 	  let that=this;
 	  let sourceType=[e.target.dataset.source];
 	
@@ -168,7 +168,7 @@ Page({
 			let reqData={
 					  avatar
 			};
-			console.log(reqData);
+		
 			let avatarUrl=avatar;
 			let maintenanceInfo=that.data.maintenanceInfo;
 					  maintenanceInfo.avatarUrl=avatarUrl;
@@ -195,6 +195,13 @@ Page({
 	 		    url: '../maintenance-signature/maintenance-signature',
 	 })
   },
+  /**
+   * @description:
+   * 
+   * */
+   getPhoneNumber:function(e){
+	   console.log(e);
+   },
   /**
    * 生命周期函数--监听页面加载
    */

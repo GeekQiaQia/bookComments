@@ -125,7 +125,7 @@ Page({
 	     method:'get',
 	 	contentType:1
 	 }).then(function (res) {
-	 	 console.log(res);
+	 
 	 			 // 此处发送修改交易；
 	 			if(res.statusCode===200){
 				   let content=res.data.content;
@@ -179,7 +179,7 @@ Page({
 	      method:'get',
 	  	contentType:1
 	  }).then(function (res) {
-	  	 console.log(res);
+	 
 	  			 // 此处发送修改交易；
 	  			 if(res.statusCode===200){
 					 let images=res.data.filter(item=>{

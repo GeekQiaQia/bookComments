@@ -5,7 +5,7 @@
     <view class="comment-box">
 		<view class="comment-card">
 			<view class="comment-book">
-				<view class="comment-num">{{commentInfo.bookNum}}</view>
+				<view class="comment-num">{{commentInfo.totalElements}}</view>
 				<text class="comment-type">我的书评</text>
 			</view>
 			<view class="split-line">
@@ -17,7 +17,7 @@
 			</view>
 		</view>
 		<view class="comment-container">
-			<block wx:if="{{commentInfo.bookNum==0&&commentInfo.likeNum==0}}">                    
+			<block wx:if="{{commentInfo.totalElements==0&&commentInfo.likeNum==0}}">                    
 				<view class="no-comment">
 					<view class="no-icon">
 						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>
@@ -28,8 +28,11 @@
 				</view>
 			</block>
 			<block wx:else>
-				<mycomment-card model:commentArray="{{commentInfo.commentArray}}" bind:onLikeEvent="handleLikeEvent"></mycomment-card>
-			
+				<block wx:for="{{commentInfo.content}}" wx:key="id">
+					
+				
+				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"></mycomment-card>
+			     </block>
 				<view class="nomore-tip">
 					<text>没有更多内容</text>
 				</view>

@@ -40,7 +40,7 @@ Page({
 	  		 contentType:1
 	  	}).then(function (res) {
 			let recommendListInfo=res.data;
-			console.log(recommendListInfo);
+			
 			that.setData({
 				recommendListInfo
 			})

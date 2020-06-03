@@ -1,6 +1,6 @@
 <!--components/mycomment-card/mycomment-card.wxml-->
 <view>
-	<block wx:for="{{commentArray}}" wx:key="*this">
+	
 		<view class="comment-info">
 		
 					<view class="my-comment-card">
@@ -8,15 +8,15 @@
 							<view class="basic-info">
 								<view class="info-container">
 									<view class="avatar">
-										<cover-image class="cover-image" src="{{item.iconUrl}}" bindload="imageLoad" binderror="imageError">
-										</cover-image>
+										<image class="cover-image" src="{{item.userInfo.avatarUrl}}" >
+										</image>
 									</view>
 									<view class="info">
 										<view class="name">
-											{{item.name}}
+											{{item.userInfo.nickName}}
 										</view>
 										<view class="date">
-											{{item.date}}
+											{{item.createTime}}
 										</view>
 									</view>
 								</view>
@@ -27,30 +27,34 @@
 							</view>
 							<view class="comment-detail">
 								<view class="comment-info">
-									<text class="resume  read-more"   >{{item.bookComment}}</text>	
+									<text class="resume  read-more"   >{{item.content}}</text>	
 								</view>
+		
 								<view class="comment-book">
-									<view class="book-url">
-										<cover-image class="cover-image" src="{{item.bookUrl}}" bindload="imageLoad" binderror="imageError">
-										</cover-image>
-									</view>
-									<view class="book-info">
-										<view class="name">{{item.bookName}}</view>
-										<view class="stars">
-											<comment-stars model:stars="{{item.stars}}"></comment-stars>
-											<view class="commentStar">{{item.commentsNum}}人评分</view>
+									<view class="book">
+										<view class="book-url">
+											<image class="cover-image" src="{{item.bookInfo.picture}}" >
+											</image>
+										</view>
+										<view class="book-info">
+											<view class="name">{{item.bookInfo.name}}</view>
+											<view class="stars">
+												<comment-stars model:stars="{{item.bookInfo.stars}}"></comment-stars>
+												<view class="commentStar">{{item.bookInfo.scorer}}人评分</view>
+											</view>
 										</view>
 									</view>
 									<view class="book-icon">
 										
 									</view>
 								</view>
+								
 							</view>
 							<view class="foot-container">
 								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
-									<text class=" lg text-gray {{item.forwarded==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}"></text>
-									<block wx:if="{{item.forwarded==true}}">
-										<view class="shared">{{item.forward}}</view>
+									<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}"></text>
+									<block wx:if="{{item.meForward==true}}">
+										<view class="shared">{{item.forwarding}}</view>
 									</block>
 									<block wx:else>
 										<view class="share">转发</view>
@@ -64,10 +68,10 @@
 									<view class="share">回复</view>
 								</view>
 								<view class="comment-share" data-target="shareModal" >
-									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
 									
-									<block wx:if="{{item.liked==true}}">
-										<view class="shared">{{item.like}}</view>
+									<block wx:if="{{item.meLike==true}}">
+										<view class="shared">{{item.liked}}</view>
 									</block>
 									<block wx:else>
 										<view class="share">点赞</view>
@@ -84,5 +88,5 @@
 					
 					
 				</view>
-	</block>
+
 </view>

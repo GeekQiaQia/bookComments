@@ -202,7 +202,7 @@ toDeleteConfirm(){
 	this.deleteCommentReply(deleteId);
 },
 toShowShareDialog(e){
-	console.log(e);
+
 	
 	let successInfo={},
 		posterConfig=this.data.posterConfig;
@@ -248,7 +248,7 @@ getReplyList(){
 		contentType: 1
 	}).then(function (res) {
 		let replyInfo=res.data;
-		console.log(replyInfo);
+		
 	    that.setData({
 			replyInfo
 		})

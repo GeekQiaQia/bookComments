@@ -4,9 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-	commentArray:{
-			type:Array,
-			value:[]
+	item:{
+			type:Object,
+			value:{}
 		},
   },
 

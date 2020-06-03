@@ -44,7 +44,8 @@
 			</view>
 			
 		</view>
-		<view class="search-no-result">
+		
+		<view class="search-no-result" wx:if="{{searchResult.content.length<=0||noneResult}}">
 			<view class="icon-tip">
 			
 				<van-icon name="info" color="#10AEFF"  size="107rpx"/>
@@ -87,6 +88,16 @@
 				</view>
 			</view>
 		</view>
+		
+		<block wx:for="{{searchResult.content}}" wx:key="id">
+			<view class="list-container">
+				<book-card model:book-info="{{item}}"  bind:onBookDetail="onBookDetail" >
+					
+				</book-card>
+			</view>
+			
+		</block>
+		
 	</view>
 	<copy-right></copy-right>
 </view>

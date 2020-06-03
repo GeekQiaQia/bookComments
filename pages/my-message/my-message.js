@@ -1,4 +1,6 @@
 // pages/my-message/my-message.js
+
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -24,12 +26,35 @@ Page({
 		]
 	}
   },
+/**
+ * @description  获取消息列表
+ * */
+getMessageList(){
+	let that=this;
+	let reqData={
+			  page:0,
+			  size:10
+	}
+	api._fetch({
+	    url: '/api/i/message/list',
+	    data:reqData,
+	    method:'get',
+		contentType: 1
+	}).then(function (res) {
+		let messageInfo=res.data;
+	    that.setData({
+			messageInfo
+		})
+	}).catch(function (error) {
+	    console.log(error);
+	});
+},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	this.getMessageList();
   },
 
   /**

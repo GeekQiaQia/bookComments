@@ -55,7 +55,7 @@ Page({
 		      method:'post',
 		  	  contentType:1
 		  }).then(function (res) {
-		  	 console.log(res);
+		  	
 		  			 // 此处发送修改交易；
 		  			 if(res.statusCode===200){
 						 
@@ -92,13 +92,13 @@ Page({
 
   },
   handleSelectNoteInfo(event){
-	  console.log(event);
+	
 	  let noteInfo=this.data.notesInfo.content;
 	  let noteBookRadio=this.data.noteBookRadio;
 	  let note=noteInfo.filter(item=>{
 		  return item.id==noteBookRadio;
 	  });
-	  console.log(note);
+	
 	  let notebook=note[0].name
 	  this.setData({
 		  notebook,
@@ -108,7 +108,7 @@ Page({
 	 
   },
   handleNotebookSelected(e){
-	  console.log(e);
+	
 	  this.setData({
 	       noteBookRadio: e.target.dataset.id,
 	     });
@@ -130,7 +130,7 @@ Page({
   	       method:'get',
   	   	contentType:1
   	   }).then(function (res) {
-  	   	 console.log(res);
+  	 
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
   	   	// 			let notesInfo=that.data.notesInfo;
@@ -163,7 +163,7 @@ Page({
 	  });
   },
   onChange(event){
-	  console.log(event);
+	
 	  let note=this.data.note;
 	  if(note){
 		  this.setData({

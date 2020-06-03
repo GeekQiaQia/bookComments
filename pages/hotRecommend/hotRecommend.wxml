@@ -1,7 +1,7 @@
 <!--pages/hotRecommend/hotRecommend.wxml-->
 <view class="container">
 	<view class="filter-container">
-		<van-search
+		<!-- <van-search
 		  value="{{ keyword }}"
 		  shape="round"
 		  background="#ffffff"
@@ -9,10 +9,18 @@
 		  bind:change="onChange"
 		  bind:focus="onFocus"
 		    bind:search="onSearch"
-		/>
+		/> -->
+		<view class="search-container" bindtap="onFocus">
+			<view class="search-input">
+				<text class="cuIcon-search lg text-gray"   ></text>
+				<view class="placeholder">
+					请输入搜索关键词
+				</view>
+			</view>
+		</view>
 		<scroll-view class="scroll-tab" scroll-x="true">
 			<view class="tabs-nav">
-				<block wx:for="{{tabs}}" wx:key="*this">
+				<block wx:for="{{tabs}}" wx:key="id">
 				<view class="tabs">
 					<view  class="{{item.id==null?'actived-tab':'tab'}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onTabChange">{{item.name}}</view>
 				</view>
@@ -28,7 +36,7 @@
 		 
 		</van-tabs> -->
 	</view>
-	<block wx:for="{{categoryBookInfo}}" wx:key="*this">
+	<block wx:for="{{categoryBookInfo}}" wx:key="id">
 		<view class="hot-container">
 			<view class="title-container">
 				<view class="type">
@@ -39,7 +47,7 @@
 					<text class="cuIcon-right lg text-gray"  data-name="{{item.name}}" data-id="{{item.id}}" bindtap="goCatagoryDetail"></text>
 				</view>
 			</view>
-			<block wx:for="{{item.comments}}" wx:key="*this">
+			<block wx:for="{{item.comments}}" wx:key="id">
 				<view class="hot-card">
 					<view class="book-detail">
 						<view class="book-info">

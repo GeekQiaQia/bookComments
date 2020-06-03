@@ -77,7 +77,7 @@ Page({
 		     method:'post',
 		 	contentType:1
 		 }).then(function (res) {
-		 	 console.log(res);
+		 	
 		 	 			 // 此处发送修改交易；
 		 	 			 if(res.statusCode===200){
 		 	 				 wx.showToast({
@@ -141,7 +141,7 @@ Page({
 	 		     method:'post',
 	 		 	contentType:1
 	 		 }).then(function (res) {
-	 		 	 console.log(res);
+	 		 	 
 	 			 // 此处发送修改交易；
 	 			 if(res.statusCode===200){
 	 				 wx.showToast({
@@ -184,7 +184,7 @@ Page({
 		     method:'get',
 		 	 contentType:1
 		 }).then(function (res) {
-		 	 console.log(res);
+		 	 
 			 // 此处发送修改交易；
 			 if(res.statusCode===200){
 				let notebookInfo=res.data;
@@ -221,7 +221,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  console.log(options);
+	
 	  let id=options.id;
 	  this.setData({
 		  id

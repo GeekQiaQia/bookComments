@@ -29,10 +29,10 @@ Page({
       // 获取到的单位px;
       let width=wx.getSystemInfoSync().windowWidth;
       let height=wx.getSystemInfoSync().windowHeight;
-      console.log(width,height);
+ 
       // rpx与px 之间的换算：750rpx /windowWidth=屏幕高度rpx/windowHeight;
       let screeHeight=750*height/width;
-      console.log(screeHeight);
+    
       // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
       let scroll_height=screeHeight-166;
       
@@ -60,7 +60,7 @@ Page({
 			method: 'post',
 			contentType: 1
 		}).then(function(res) {
-			console.log(res);
+		
 			// 此处发送修改交易；
 			if (res.statusCode === 200) {
 				wx.showToast({
@@ -99,7 +99,7 @@ Page({
 			method: 'get',
 			contentType: 1
 		}).then(function(res) {
-			console.log(res);
+		
 			// 此处发送修改交易；
 			if (res.statusCode === 200) {
 				let bookInfo = res.data;
@@ -126,7 +126,7 @@ Page({
 				that.setData({
 					bookInfo
 				});
-				console.log(bookInfo);
+				
 			} else {
 				wx.showToast({
 					title: res.message,
@@ -156,7 +156,7 @@ Page({
 		       method:'get',
 			   contentType:1
 		   }).then(function (res) {
-		   	 console.log(res);
+		  
 		     let item=res.data;
 			 that.setData({
 				 item
@@ -184,7 +184,7 @@ Page({
 		       method:'get',
 			   contentType:1
 		   }).then(function (res) {
-		   	 console.log(res);
+		   	
 		   			 // 此处发送修改交易；
 		   			 if(res.statusCode===200){
 						 let commentNum=res.data.totalElements;
@@ -256,7 +256,7 @@ Page({
 	 */
 	onLoad: function(options) {
 		let name = "loginInfo.name"
-		console.log(app.globalData.userInfo);
+	
 		if (app.globalData.userInfo) {
 
 			this.setData({
@@ -287,7 +287,7 @@ Page({
 				}
 			})
 		}
-		console.log(this.data.userInfo)
+
 		let id = options.id;
 		this.setData({
 			id
