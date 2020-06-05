@@ -73,15 +73,21 @@
 					margin-left: 32rpx;
 				}
 				.book-comment{
-					width:496rpx;
-					height:auto;
-					font-size:24rpx;
-					font-family:STSongti-SC-Regular,STSongti-SC;
-					font-weight:400;
-					color:rgba(102,102,102,1);
-					line-height:36rpx;
+					width: 496rpx;
+					height: 283rpx;
+					font-size: 24rpx;
+					font-family: STSongti-SC-Regular, STSongti-SC;
+					font-weight: 400;
+					color: #666666;
+					line-height: 36rpx;
 					margin: 16rpx auto;
 					padding-left: 16rpx;
+					display: -webkit-box;
+					-webkit-line-clamp: 8;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
 				}
 				.comment-name{
 					width:496rpx;
@@ -327,13 +333,19 @@
 						align-items: center;
 						flex-grow: 1;
 						.image-comment-container{
-							width:384rpx;
-							height:auto;
-							font-size:24rpx;
-							font-family:STSongti-SC-Regular,STSongti-SC;
-							font-weight:400;
-							color:rgba(102,102,102,1);
-							line-height:36rpx;
+							width: 384rpx;
+							max-height: 162px;
+							font-size: 24rpx;
+							font-family: STSongti-SC-Regular, STSongti-SC;
+							font-weight: 400;
+							color: #666666;
+							line-height: 36rpx;
+							display: -webkit-box;
+							-webkit-line-clamp: 8;
+							-webkit-box-orient: vertical;
+							overflow: hidden;
+							text-overflow: ellipsis;
+
 						}
 						.image-comment-byname{
 							width:100%;

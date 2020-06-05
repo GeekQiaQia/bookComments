@@ -56,7 +56,7 @@
 									 </view>
 									 <view class="basicinfo">
 									 									  <view>
-									 										  <text class="name">{{item.userInfo.nickName}}</text>
+									 										  <view class="name">{{item.userInfo.nickName}}</view>
 									 										
 									 										  <block wx:if="{{item.forward==true}}">
 									 										  		<text class="notice">转发</text>
@@ -71,18 +71,24 @@
 									 									  </view>
 									 </view>
 								 </view>
-								  <view class="follow-other" data-id="{{item.userInfo.id}}" catchtap="toFocusOnUsers">
-									  <block wx:if="{{true}}">
-										  <text class="cuIcon-add lg text-orange" data-id="{{item.userInfo.id}}" ></text>
-										  <view class="text orange" data-id="{{item.userInfo.id}}">
+								  <view class="follow-other" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}" catchtap="toFocusOnUsers">
+									  <block wx:if="{{item.fans==0}}">
+										  <text class="cuIcon-add lg text-orange" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
+										  <view class="text orange" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
 										  										  关注
 										  </view>
 									  </block>
-									  <block wx:else>
-										  <text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" ></text>
-										  <view class="text green" data-id="{{item.userInfo.id}}">
+									  <block wx:elif="{{item.fans==1}}">
+										  <text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
+										  <view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
 										  										  已关注
 										  </view>
+									  </block>
+									  <block wx:elif="{{item.fans==2}}">
+									  		<text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
+									  		<view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+									  										  	 互相关注
+									  		</view>
 									  </block>
 								  </view>
 								  
@@ -113,9 +119,12 @@
 					{{commentNum}}条
 				</view>
 			</view>
-			<commentCard model:card-info="{{cardInfoArray}}">
-				
-			</commentCard>
+			<block wx:for="{{cardInfoArray}}" wx:key="id">
+				<commentCard model:card-info="{{item}}">
+					
+				</commentCard>
+			</block>
+		
 			<view class="no-more">
 				— 到底啦 —
 			</view>
@@ -123,7 +132,7 @@
 				
 			</copyRight>
 	</scroll-view>
-	<bottom-input>
+	<bottom-input bind:onFocus="handleOnFocus">
 		
 	</bottom-input>
 </view>

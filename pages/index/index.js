@@ -31,7 +31,7 @@ Page({
 	  // console.log(item);
 	  // wx.setStorageSync('item',item[0])
 	  wx.navigateTo({
-	    url: '../bookCommentDetail/bookCommentDetail?id='+id
+	    url: '../bookCommentDetail/bookCommentDetail?itemindex='+itemindex+'&id='+id
 	  })
   },
   /**

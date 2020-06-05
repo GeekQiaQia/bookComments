@@ -14,7 +14,88 @@ Page({
 			list:[]
 		}
   },
-
+  
+  
+  /**
+    * @description；去关注
+    * */
+   handleToFocus:function(e){
+  	  let that=this;
+  	  let user=e.target.dataset.id;
+  	  let reqData = {
+  	  		user
+  	  	}
+  	  	api._fetch({
+  	  		url: '/api/i/userRelationship/focus',
+  	  		data: reqData,
+  	  		method: 'post',
+  	  		contentType: 1
+  	  	})
+  	  	.then(function(res) {
+  	  	
+  	  		// 此处发送修改交易；
+  	  		if (res.statusCode === 200) {
+  	  			wx.showToast({
+  	  			  title: "关注成功",
+  	  			  mask:true,
+  	  			  icon: 'success',
+  	  			  duration: 3000
+  	  			})
+  	  			that.getUserRelationshipList();
+  	  		} else {
+  	  			wx.showToast({
+  	  				title: res.message,
+  	  				mask: true,
+  	  				icon: 'none',
+  	  				duration: 3000
+  	  			})
+  	  		}
+  	  		
+  	  
+  	  
+  	  })
+  	  .catch(function(error) {
+  	  	console.log(error);
+  	  });
+   },
+ /**
+   * @description；取消关注
+   * */
+  handleCancelFocus:function(e){
+	  
+	  let user=e.target.dataset.id;
+	  let reqData = {
+	  		user
+	  	};
+		let that=this;
+	  	api._fetch({
+	  		url: '/api/i/userRelationship/cancel.focus',
+	  		data: reqData,
+	  		method: 'post',
+	  		contentType: 1
+	  	})
+	  	.then(function(res) {
+	  	
+	  		// 此处发送修改交易；
+	  		if (res.statusCode === 200) {
+	  		
+	  			that.getUserRelationshipList();
+	  		} else {
+	  			wx.showToast({
+	  				title: res.message,
+	  				mask: true,
+	  				icon: 'none',
+	  				duration: 3000
+	  			})
+	  		}
+	  		
+	  
+	  
+	  })
+	  .catch(function(error) {
+	  	console.log(error);
+	  });
+  },
 
 	/**
 	 * @description；获取关注我的人
@@ -23,25 +104,20 @@ Page({
 
 	getUserRelationshipList: function(id) {
 		let reqData = {
-			action:0,
 			page:0,
 			size:10
 		},
 		that = this;
 		api._fetch({
-			url: '/api/i/userRelationship/list',
+			url: '/api/i/userRelationship/fans.list',
 			data: reqData,
 			method: 'get',
 			contentType: 1
 		}).then(function(res) {
-	
+
 			// 此处发送修改交易；
 			if (res.statusCode === 200) {
-				let list=res.data,
-				    follower=that.data.follower,
-				    num=list.length;
-					follower.num=num;
-					follower.list=list;
+				let  follower=res.data;
 					that.setData({
 						follower
 					});

@@ -240,9 +240,11 @@
   font-size: 20rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  letter-spacing: 14rpx;
   margin-top: 6rpx;
   line-height: 28rpx;
+}
+.container .aboutme-container .my-block .my-left .my-info .my-info-num .item {
+  margin-left: 18rpx;
 }
 .container .aboutme-container .my-block .my-left .my-info .green {
   color: #009051;

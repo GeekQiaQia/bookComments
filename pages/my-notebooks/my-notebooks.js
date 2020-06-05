@@ -74,10 +74,13 @@ Page({
 	  * @description:笔记本详情
 	  * */
 	  handleNotebookDetail:function(e){
-		
-		  wx.navigateTo({
-		    url: '../notebook-detail/notebook-detail?id='+e.target.dataset.id
-		  })
+		  let id =e.target.dataset.id;
+		  if(id!==0){
+			  wx.navigateTo({
+			    url: '../notebook-detail/notebook-detail?id='+e.target.dataset.id
+			  })
+		  }
+		 
 	  },
   /**
    * 生命周期函数--监听页面加载

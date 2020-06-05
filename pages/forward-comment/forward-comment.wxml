@@ -65,6 +65,7 @@
 									<view class="title" data-id="{{item.id}}">
 										
 										{{filter.tofiltFirstWord(item.name)}}
+										
 									</view>
 								</view>
 								<view class="notebook-detail" data-id="{{item.id}}">

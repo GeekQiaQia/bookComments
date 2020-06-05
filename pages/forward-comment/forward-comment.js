@@ -9,7 +9,7 @@ Page({
 	  placeholder:"写下你的评论",
 	  notebook:"我的笔记本",
 	  note:false,
-	  noteBookRadio:"",
+	  noteBookRadio:0,
 	  item:{},
 	  notesInfo:{},
 	  messages:"",

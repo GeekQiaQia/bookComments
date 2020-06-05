@@ -34,7 +34,8 @@
     "pages/recommend-result/recommend-result",
     "pages/comment-detail/comment-detail",
     "pages/forward-comment/forward-comment",
-    "pages/forward-success/forward-success"
+    "pages/forward-success/forward-success",
+    "pages/post-comment/post-comment" 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -55,7 +56,7 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-overlay": "@vant/weapp/overlay/index",
-	"van-rate": "@vant/weapp/rate/index",
+    "van-rate": "@vant/weapp/rate/index",
     "van-icon": "@vant/weapp/icon/index"
   },
   "tabBar": {

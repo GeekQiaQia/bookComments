@@ -72,7 +72,7 @@
 }
 .container .success-container .comment-detail .book-comment {
   width: 496rpx;
-  height: auto;
+  height: 283rpx;
   font-size: 24rpx;
   font-family: STSongti-SC-Regular, STSongti-SC;
   font-weight: 400;
@@ -80,6 +80,11 @@
   line-height: 36rpx;
   margin: 16rpx auto;
   padding-left: 16rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .success-container .comment-detail .comment-name {
   width: 496rpx;
@@ -317,12 +322,17 @@
 }
 .container .dialog-container .share-container .top-container .image-container .image-content .image-comment-container {
   width: 384rpx;
-  height: auto;
+  max-height: 162px;
   font-size: 24rpx;
   font-family: STSongti-SC-Regular, STSongti-SC;
   font-weight: 400;
   color: #666666;
   line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .dialog-container .share-container .top-container .image-container .image-content .image-comment-byname {
   width: 100%;

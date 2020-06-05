@@ -5,8 +5,8 @@ Component({
 	properties:{
 		
 		cardInfo:{
-			type:Array,
-			value:[]
+			type:Object,
+			value:{}
 		},
 		starMax:{
 			type:Number,

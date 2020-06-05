@@ -261,95 +261,159 @@
   line-height: 48rpx;
   letter-spacing: 2rpx;
 }
-.container .comment-text {
-  width: 100%;
-  height: 576rpx;
+.container .title-input {
+  width: 750rpx;
+  height: 112rpx;
   background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e2e2e2;
+}
+.container .title-input .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .title-input .input-container .input {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+}
+.container .title-input .input-container .input-len {
+  background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .notes {
+  width: 750rpx;
+  height: 496rpx;
+  background-color: #ffffff;
+}
+.container .notes .input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: inherit;
+  height: inherit;
+  padding: 0rpx !important;
+}
+.container .notes .input-container .input {
+  width: inherit;
+  height: inherit;
+  background-color: #ffffff;
+}
+.container .notes .input-container .recommend-reason {
+  width: inherit;
+  height: inherit;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e5e5e5, 0rpx 2rpx 0rpx 0rpx #e5e5e5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  padding-top: 32rpx;
-  padding-left: 32rpx;
 }
-.container .space-line {
-  width: 100%;
-  height: 16rpx;
-  background-color: #F7F7F7;
-}
-.container .comment-container {
-  width: 750rpx;
-  height: 176rpx;
+.container .notes .input-container .input-len {
   background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0rpx 30rpx 16rpx 32rpx;
 }
-.container .comment-container .comment-info {
-  width: 688rpx;
+.container .basic-info {
+  width: 750rpx;
   height: 160rpx;
+  background-color: #ffffff;
+  padding: 16rpx 30rpx 16rpx 32rpx;
+}
+.container .basic-info .bg-container {
+  width: 688rpx;
+  height: 128rpx;
   background-color: #f7f7f7;
   border-radius: 10rpx;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  padding: 16rpx 16rpx 18rpx 16rpx ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16rpx;
 }
-.container .comment-container .comment-info .content {
-  width: 656rpx;
-  height: 78rpx;
-  font-size: 24rpx;
+.container .basic-info .bg-container .grid-group {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .basic-info .bg-container .grid-group .bg-img {
+  width: 128rpx;
+  height: 96rpx;
+  margin-right: 16rpx;
+}
+.container .basic-info .bg-container .grid-group .bg-img image {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+.container .basic-info .bg-container .grid-group .cu-tag {
+  left: 78rpx;
+  top: 0;
+  border-bottom-left-radius: 6rpx;
+  padding: 6rpx 12rpx;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.container .basic-info .bg-container .grid-group .bg-red {
+  color: var(--white);
+}
+.container .basic-info .bg-container .grid-group .choose-image {
+  width: 128rpx;
+  height: 96rpx;
+  background-color: #efeff4;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .basic-info .bg-container .grid-group .choose-image .text {
+  width: 80rpx;
+  height: 28rpx;
+  font-size: 20rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #666666;
-  line-height: 39rpx;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 28rpx;
 }
-.container .comment-container .comment-info .content .check-more {
-  width: 96rpx;
-  height: 34rpx;
-  font-size: 24rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #576b95;
-  line-height: 34rpx;
-  float: right;
-  position: absolute;
-  margin-top: -30rpx;
-  margin-left: 30px;
-}
-.container .comment-container .comment-info .avatar-info {
+.container .basic-info .bg-container .info {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.container .comment-container .comment-info .avatar-info .avatar {
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 50%;
-}
-.container .comment-container .comment-info .avatar-info .avatar .cover-image {
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-}
-.container .comment-container .comment-info .avatar-info .name {
-  margin-left: 16rpx;
+.container .basic-info .bg-container .info .book-name {
   width: auto;
   height: 34rpx;
   font-size: 24rpx;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  font-weight: 600;
-  color: #000000;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
   line-height: 34rpx;
+}
+.container .basic-info .bg-container .info .book-scorer {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
 }
 .container .send-container {
   padding: 14rpx 30rpx 20rpx 32rpx;
@@ -393,7 +457,7 @@
   align-items: center;
 }
 .container .send-container .button .text {
-  width: 60rpx;
+  width: auto;
   height: 48rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Semibold, PingFang SC;

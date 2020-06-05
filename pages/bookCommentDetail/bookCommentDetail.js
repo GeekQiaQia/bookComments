@@ -48,39 +48,81 @@ Page({
 	 * */
 	
 	toFocusOnUsers: function(e) {
-		let focusId=e.target.dataset.id
-		let reqData = {
-			focusId,
-			type:1
-		}
-		let that = this;
-		api._fetch({
-			url: '/api/i/userRelationship/focus',
-			data: reqData,
-			method: 'post',
-			contentType: 1
-		}).then(function(res) {
-		
-			// 此处发送修改交易；
-			if (res.statusCode === 200) {
-				wx.showToast({
-				  title: "关注成功",
-				  mask:true,
-				  icon: 'success',
-				  duration: 3000
-				})
-			} else {
-				wx.showToast({
-					title: res.message,
-					mask: true,
-					icon: 'none',
-					duration: 3000
-				})
-			}
+		let user=e.target.dataset.id;
+		let fans=e.target.dataset.fans;
+		let id=this.data.itemindex;
+			let that = this;
+			console.log(fans);
+		if(fans==0){
 			
-		}).catch(function(error) {
+			let reqData = {
+				user
+			}
+			api._fetch({
+				url: '/api/i/userRelationship/focus',
+				data: reqData,
+				method: 'post',
+				contentType: 1
+			})
+			.then(function(res) {
+			
+				// 此处发送修改交易；
+				if (res.statusCode === 200) {
+					wx.showToast({
+					  title: "关注成功",
+					  mask:true,
+					  icon: 'success',
+					  duration: 3000
+					})
+					that.getBookCommentDetail(id);
+				} else {
+					wx.showToast({
+						title: res.message,
+						mask: true,
+						icon: 'none',
+						duration: 3000
+					})
+				}
+				
+		
+		
+		})
+		.catch(function(error) {
 			console.log(error);
 		});
+		}else if(fans==1||fans==2){
+			
+			let reqData = {
+					user
+				}
+				api._fetch({
+					url: '/api/i/userRelationship/cancel.focus',
+					data: reqData,
+					method: 'post',
+					contentType: 1
+				})
+				.then(function(res) {
+				
+					// 此处发送修改交易；
+					if (res.statusCode === 200) {
+					
+						that.getBookCommentDetail(id);
+					} else {
+						wx.showToast({
+							title: res.message,
+							mask: true,
+							icon: 'none',
+							duration: 3000
+						})
+					}
+					
+			
+			
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+		}
 	},
 	
 	/**
@@ -211,6 +253,14 @@ Page({
 		       console.log(error);
 		   });
 	 }, 
+	 handleOnFocus(e){
+	
+		 let bookInfo=this.data.bookInfo;
+		 wx.navigateTo({
+			 url: '../post-comment/post-comment'
+		 })
+		 wx.setStorageSync("postBookInfo",bookInfo)
+	 },
 	 
 	 handleCategoryDetail(e){
 	 		// 组件绑定来的id;
@@ -289,12 +339,14 @@ Page({
 		}
 
 		let id = options.id;
+		let itemindex=options.itemindex;
 		this.setData({
-			id
+			id,
+			itemindex
 		});
 		this.getBookDetail(id);
 		this.getBookCommentList(id);
-		this.getBookCommentDetail(id);
+		this.getBookCommentDetail(itemindex);
 		this.computeScrollViewHeight();
 		
 	},
