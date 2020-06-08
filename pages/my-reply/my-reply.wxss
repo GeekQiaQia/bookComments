@@ -282,8 +282,8 @@
 }
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container .comment-detail .comment-book .book-icon {
   width: 0rpx;
-  height: 49rpx;
-  border-width: 16rpx;
+  height: 48rpx;
+  border-width: 13rpx;
   border-color: #FFAD91;
   border-bottom-color: transparent;
   border-style: solid;

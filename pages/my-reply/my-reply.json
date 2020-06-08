@@ -4,5 +4,6 @@
 	    "comment-stars":"../../components/commentStars/commentStars",
 		"share-friends":"../../components/share-friends/share-friends"
  },
+ "onReachBottom": true,
   "navigationBarTitleText": "我的回复"
 }

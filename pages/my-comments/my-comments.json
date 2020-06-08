@@ -2,7 +2,9 @@
   "usingComponents": {
 	   "copy-right":"../../components/copy-right/copy-right",
 	   "mycomment-card":"../../components/mycomment-card/mycomment-card",
-	   "comment-stars":"../../components/commentStars/commentStars"
+	   "comment-stars":"../../components/commentStars/commentStars",
+	   "share-friends":"../../components/share-friends/share-friends"
   },
+     "onReachBottom": true,
      "navigationBarTitleText": "我的书评"
 }

@@ -65,6 +65,46 @@ Page({
    	       noteBookRadio: e.target.dataset.id,
    	     });
    },
+   handleSendComment(e){
+	   
+	   let reqData={
+	      		  comment,
+	      		  content
+	   }
+	   let that=this;
+	   api._fetch({
+	       url: '/api/i/reply/create',
+	       data:reqData,
+	       method:'post',
+	   	contentType:1
+	   }).then(function (res) {
+	      	 
+	   			 // 此处发送修改交易；
+	   			 if(res.statusCode===200){
+	   	// 			let notesInfo=that.data.notesInfo;
+	      					// notesInfo.notebooks=res.data;
+	      					// notesInfo.notebookNum=res.data.length;
+	      					// that.setData({
+	      					// 	notesInfo
+	      					// });
+	      					let notesInfo=res.data;
+	      					that.setData({
+	      						notesInfo
+	      					});
+	   			 }else{
+	   				 wx.showToast({
+	   				   title: res.message,
+	   				   mask:true,
+	   				   icon: 'none',
+	   				   duration: 3000
+	   				 })
+	   			 }
+	   			
+	       
+	   }).catch(function (error) {
+	       console.log(error);
+	   });
+   },
    handleSelectNoteInfo(event){
    	
    	  let noteInfo=this.data.notesInfo.content;

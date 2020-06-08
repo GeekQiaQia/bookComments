@@ -31,13 +31,101 @@
 				<block wx:for="{{commentInfo.content}}" wx:key="id">
 					
 				
-				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"></mycomment-card>
+				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"  bind:onShareEvent="handleShareEvent" bind:onForwardEvent="handleForwardEvent" bind:onShowModal="handleShowModal"></mycomment-card>
 			     </block>
-				<view class="nomore-tip">
-					<text>没有更多内容</text>
+				<view class="bottom-tip">
+					— 到底啦 —
 				</view>
 			</block>
 		</view>
 	</view>
 	<copy-right></copy-right>
+
+	<share-friends model:modal-name="{{modalName}}"  model:share-friends="{{true}}" model:share-info="{{successInfo}}" model:poster-config="{{posterConfig}}" bind:closeDialog="handleCloseDialog"  >
+		
+	</share-friends>
+     
+	 <view class="cu-modal bottom-modal {{modalName=='forwardModal'?'show':''}}">
+	   <view class="cu-dialog">
+	 	  <view class="dialog-container" style="padding-top: 0rpx;">
+	 		  <view class="forward-contianer">
+	 			  <view class="forward-comment" bindtap="toForwardingComment">
+	 				  <text class=" lg text-gray cuIcon-comment text-gray" data-target="forwardModal"></text>
+	 				  <view class="forward-tip">
+	 					  转发同时评论
+	 				  </view>
+	 			  </view>
+	 			  <view class="forward-comment" bindtap="toForwardingNow">
+	 			  					  <text class=" lg text-gray cuIcon-forward text-gray" data-target="forwardModal"></text>
+	 			  					  <view class="forward-tip">
+	 			  						  快速转发
+	 			  					  </view>
+	 			  </view>
+	 		  </view>
+	 		  <view class="space-line">
+	 			  
+	 		  </view>
+	 		  <view class="delete-cancel" bindtap="hideModal">
+	 		  			  <view class="delete-cancel-text">
+	 		  				  取消
+	 		  			  </view>
+	 		  </view>
+	 		  <view class="split-bar">
+	 		  			  
+	 		  </view>
+	 	  </view>
+	   
+	   </view>
+	 </view>
+	 
+	 
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				  <view class="add-to-booknotes" bindtap="addNoteBooks">
+				  			  <view  class="add-plus">
+								  <image class="icon" src="../../images/icon-plus.png"></image>
+							  </view>
+				  			  <view class="add-text">
+				  				  添加到读书笔记
+				  			  </view>
+				  </view>
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除当前书评
+				  			  </view>
+				  </view>
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
 </view>

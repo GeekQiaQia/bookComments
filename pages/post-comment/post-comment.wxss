@@ -232,8 +232,8 @@
 }
 .container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book-icon {
   width: 0rpx;
-  height: 49rpx;
-  border-width: 16rpx;
+  height: 48rpx;
+  border-width: 13rpx;
   border-color: #FFAD91;
   border-bottom-color: transparent;
   border-style: solid;
@@ -328,10 +328,18 @@
   align-items: center;
 }
 .container .basic-info {
+  position: relative;
   width: 750rpx;
   height: 160rpx;
   background-color: #ffffff;
   padding: 16rpx 30rpx 16rpx 32rpx;
+}
+.container .basic-info .book-shape {
+  position: absolute;
+  right: 46rpx;
+  width: 16rpx;
+  height: 24rpx;
+  top: 4rpx;
 }
 .container .basic-info .bg-container {
   width: 688rpx;

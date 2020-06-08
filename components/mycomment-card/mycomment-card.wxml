@@ -20,7 +20,7 @@
 										</view>
 									</view>
 								</view>
-								<view class="more-operator" bindtap="showModal" data-target="bottomModal">
+								<view class="more-operator" data-id="{{item.id}}" bindtap="showModal" data-target="bottomModal">
 									...
 								</view>
 								<!-- <text class="cuIcon-more lg text-gray"></text> -->
@@ -51,8 +51,8 @@
 								
 							</view>
 							<view class="foot-container">
-								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
-									<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}"></text>
+								<view class="comment-share" data-target="forwardModal" data-id="{{item.id}}"  data-item="{{item}}" bindtap="toShowForwardDialog">
+									<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-id="{{item.id}}" data-item="{{item}}" data-target="forwardModal"></text>
 									<block wx:if="{{item.meForward==true}}">
 										<view class="shared">{{item.forwarding}}</view>
 									</block>
@@ -60,26 +60,24 @@
 										<view class="share">转发</view>
 									</block>
 									
-									
-									
 								</view>
 								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
 									<text class="cuIcon-comment lg text-gray"></text>
 									<view class="share">回复</view>
 								</view>
 								<view class="comment-share" data-target="shareModal" >
-									<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeTrigger"></text>
 									
 									<block wx:if="{{item.meLike==true}}">
 										<view class="shared">{{item.liked}}</view>
 									</block>
 									<block wx:else>
-										<view class="share">点赞</view>
+										<view class="share" data-liked="{{item.meLike}}" data-id="{{item.id}}">点赞</view>
 									</block>
 								</view>
-								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
-									<text class="cuIcon-share lg text-gray"></text>
-									<view class="share">分享</view>
+								<view class="comment-share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal" bindtap="toShowShareDialog"  >
+									<text class="cuIcon-share lg text-gray" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal"></text>
+									<view class="share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal">分享</view>
 								</view>
 							</view>
 						</view>

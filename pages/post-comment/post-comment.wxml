@@ -3,7 +3,7 @@
 	<wxs module="filter" src="../../utils/common.wxs"/>
 	<view class="title-input">
 		<view class="input-container">
-			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{noteTitle}}"  bindinput="handlNicknameInput"  placeholder="笔记标题(选填)"></input>
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{noteTitle}}"  bindinput="handlNicknameInput"  placeholder="评论标题(选填)"></input>
 			<view class="input-len">{{noteTitleLen}}</view>
 		</view>
 	</view>
@@ -17,6 +17,9 @@
 	</view>
 
 	<view class="basic-info">
+		<view class="book-shape">
+			<image  class="book-shape" src="../../images/book-shape.png"></image>
+		</view>
 		<view class="bg-container">
 			<view class="grid-group">
 				<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">

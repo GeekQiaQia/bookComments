@@ -200,6 +200,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  
+	  let type=options.type;
+	  if(type=="mycomment"){
+		  let title="我的书评-转发评论";
+		  wx.setNavigationBarTitle({
+		  				title
+		  })
+	  }else{
+		  let title="书评详细-转发评论";
+		  wx.setNavigationBarTitle({
+		  				title
+		  })
+	  }
 	let item=wx.getStorageSync('item')
 	
 	this.setData({
