@@ -227,7 +227,7 @@ Page({
   handleCloseDialog(e){
   	  // let modalName=e.detail.modalName;
   	  this.setData({
-  	    modalName:null
+  	    modalName:null,
 		 showCanvas:false
   	  })
   },
