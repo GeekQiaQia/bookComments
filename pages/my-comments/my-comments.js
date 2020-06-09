@@ -365,12 +365,23 @@ Page({
 		});
 	},
 	handleCloseDialog(e){
-		  let modalName=e.detail.modalName;
+		  
 		  this.setData({
-		    modalName
+		    modalName:null
 		  })
 	},
+	onPosterSuccess(e) {
+	       const { detail } = e;
+	       wx.previewImage({
+	           current: detail,
+	           urls: [detail]
+	       })
+	   },
+	   onPosterFail(err) {
+	       console.error(err);
+	   },
 	handleShareEvent:function(e){
+		console.log("e is "+e);
 		let successInfo={},
 			posterConfig=this.data.posterConfig;
 			successInfo['nickName']=e.detail.nickName;
@@ -381,6 +392,8 @@ Page({
 				posterConfig.texts[4].text=successInfo.content;
 				posterConfig.texts[5].text[1].text=successInfo.nickName;
 			}
+			//successInfo=JSON.stringify(successInfo);
+			console.log(successInfo);
 		this.setData({
 		  modalName: e.detail.target,
 		  posterConfig,

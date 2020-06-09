@@ -2,8 +2,9 @@
  "usingComponents": {
  	   "copy-right":"../../components/copy-right/copy-right",
 	    "comment-stars":"../../components/commentStars/commentStars",
+		   "poster": "../../components/poster/index",
 		"share-friends":"../../components/share-friends/share-friends"
  },
- "onReachBottom": true,
+  "onReachBottom": true,
   "navigationBarTitleText": "我的回复"
 }

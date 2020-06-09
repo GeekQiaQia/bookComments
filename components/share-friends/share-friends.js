@@ -6,16 +6,17 @@ Component({
   properties: {
 	modalName:{
 				type:String,
-				value:null
+				value:""
 			},
 			posterConfig:{
 				type:Object,
-				value:null
+				value:{}
 			},
 			shareInfo:{
 				type:Object,
-				value:null
+				value:{}
 			},
+
 	shareFriends:{
 		type:Boolean,
 		value:false

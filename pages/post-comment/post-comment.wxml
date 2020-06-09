@@ -3,14 +3,14 @@
 	<wxs module="filter" src="../../utils/common.wxs"/>
 	<view class="title-input">
 		<view class="input-container">
-			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{noteTitle}}"  bindinput="handlNicknameInput"  placeholder="评论标题(选填)"></input>
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{noteTitle}}"  bindinput="handlNoteTitleInput"  placeholder="评论标题(选填)"></input>
 			<view class="input-len">{{noteTitleLen}}</view>
 		</view>
 	</view>
 	<view class="notes">
 		<view class="input-container">
 			<view class="recommend-reason">
-			<textarea style="padding: 32rpx 30rpx 0rpx 32rpx;height: inherit; width: inherit;"   maxlength="2000" value="{{notes}}"  bindinput="handlsignatureInput" placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></textarea>
+			<textarea style="padding: 32rpx 30rpx 0rpx 32rpx;height: inherit; width: inherit;"   maxlength="2000" value="{{notes}}"  bindinput="handlNoteInput" placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></textarea>
 			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{notesLen}}/2000</view>
 			</view>
 		</view>

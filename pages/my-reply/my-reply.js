@@ -176,9 +176,9 @@ Page({
 	
   },
   handleCloseDialog(e){
-  	  let modalName=e.detail.modalName;
+  	  // let modalName=e.detail.modalName;
   	  this.setData({
-  	    modalName
+  	    modalName:null
   	  })
   },
 hideModal(e) {
@@ -187,6 +187,16 @@ hideModal(e) {
 	   confirmDelete: false
     })
   },
+  onPosterSuccess(e) {
+         const { detail } = e;
+         wx.previewImage({
+             current: detail,
+             urls: [detail]
+         })
+     },
+     onPosterFail(err) {
+         console.error(err);
+     },
   /**
    * @description 确认删除评论
    *  

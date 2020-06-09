@@ -209,13 +209,25 @@ Page({
   toShareCircleFriend(e){
 	
 	this.setData({
-	  modalName: e.currentTarget.dataset.target
+		
+	  modalName: e.currentTarget.dataset.target,
+	  
 	})
   },
+  onPosterSuccess(e) {
+         const { detail } = e;
+         wx.previewImage({
+             current: detail,
+             urls: [detail]
+         })
+     },
+     onPosterFail(err) {
+         console.error(err);
+     },
   handleCloseDialog(e){
-  	  let modalName=e.detail.modalName;
+  	  // let modalName=e.detail.modalName;
   	  this.setData({
-  	    modalName,
+  	    modalName:null
 		 showCanvas:false
   	  })
   },
@@ -236,7 +248,13 @@ Page({
 	 
 	let allEvaluationSize=this.toPx(28);
 	let commntsSize=this.toPx(24);
-	
+	let type=options.type;
+	 if(type=="postcomment"){
+			  let title="书评发表成功";
+			  wx.setNavigationBarTitle({
+			  				title
+			  })
+	}
 	this.setData({
 		allEvaluationSize,
 		commntsSize,
