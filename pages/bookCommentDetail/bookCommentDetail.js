@@ -8,6 +8,10 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		currentPage:0,
+		totalPages:0,
+		totalElements:0,
+		pageSize:10,
 		bookInfo: {},
 		scrollHeight:"",
 		id:null,
@@ -41,7 +45,30 @@ Page({
       });
     },
     
-	
+	lower(e) {
+	    console.log(e)
+		let self = this;
+			
+		 // 显示加载图标
+				let totalElements=this.data.totalElements,
+				 page=this.data.currentPage,
+				 id=this.data.id,
+				 pageSize=this.data.pageSize;
+				if(pageSize<totalElements){
+					// page++;
+					pageSize+=10;
+					self.setData({
+						currentPage:page,
+						pageSize
+					});
+					wx.showLoading({
+						
+					  title: '更多加载中',
+						
+					})
+					this.getBookCommentList(id,page,pageSize);
+				}
+	  },
 	/**
 	 * @description；关注或者取消关注
 	 * 
@@ -213,11 +240,11 @@ Page({
 	 * @description 获取书籍评论详情；
 	 * @param { bookId} id 
 	 * */
-	 getBookCommentList:function(book){
+	 getBookCommentList:function(book,page=0,size=10){
 		   let reqData={
 		     	book,
-				page:0,
-				size:10
+				page,
+				size
 		   }
 		   let that=this;
 		   api._fetch({
@@ -235,10 +262,17 @@ Page({
 					for(let item of cardInfoArray ){
 						item['readMore']=false;
 					}
+					let totalPages=res.data.totalPages;
+					let totalElements=res.data.totalElements;
 					that.setData({
 						cardInfoArray,
-						commentNum
+						commentNum,
+						totalElements,
+						totalPages
 					});
+					wx.hideLoading();
+					
+				
 		   			 }else{
 		   				 wx.showToast({
 		   				   title: res.message,

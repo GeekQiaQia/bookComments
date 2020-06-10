@@ -35,7 +35,8 @@
     "pages/comment-detail/comment-detail",
     "pages/forward-comment/forward-comment",
     "pages/forward-success/forward-success",
-    "pages/post-comment/post-comment" 
+    "pages/post-comment/post-comment",
+    "pages/my-likedbook/my-likedbook"
   ],
   "window": {
     "backgroundTextStyle": "light",

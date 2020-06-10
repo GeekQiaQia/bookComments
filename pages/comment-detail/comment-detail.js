@@ -22,6 +22,9 @@ Page({
 	  	keyBoardHeight:"0rpx"
 	  });
   },
+  preventTouchMove(){
+	  
+  },
   handleKeyboardHeight(e){
 
 	  let {height}=e.detail;
@@ -39,6 +42,98 @@ Page({
 	  	messages:e.detail.value
 	  });
   },
+  onHandleLikeTrigger(e){
+	  // 自定义组件触发事件时提供的detail对象
+	  let id=e.target.dataset.id;
+	  let liked=e.target.dataset.liked;
+	  this.toCreateLikeComment(id,liked);
+	  // 发送一个改变like状态的交易；
+  },
+  onHandleLikeReplyTrigger(e){
+  	  // 自定义组件触发事件时提供的detail对象
+  	  let id=e.target.dataset.id;
+  	  let liked=e.target.dataset.liked;
+  	  this.toCreateLikeReplyComment(id,liked);
+  	  // 发送一个改变like状态的交易；
+  },
+  
+  /**
+   * @description: 点赞一个书评
+   * */
+   
+   toCreateLikeReplyComment(reply,liked){
+  		  // 如果已经点赞，则执行取消点赞交易
+  		  let that=this;
+  		  let reqData={
+  		  		  reply
+  		  }
+  		  if(liked){
+  				   api._fetch({
+  				       url: '/api/i/reply/like/cancel',
+  				       data:reqData,
+  				       method:'post',
+  				   	contentType: 1
+  				   }).then(function (res) {
+  				    
+  						let id=that.data.id;
+  				      	that.toGetCommentList(id);
+  				   }).catch(function (error) {
+  				       console.log(error);
+  				   });
+  		  }else{
+  			  api._fetch({
+  			      url: '/api/i/reply/like/create',
+  			      data:reqData,
+  			      method:'post',
+  			  	contentType: 1
+  			  }).then(function (res) {
+  			   
+  					 let id=that.data.id;
+  					 that.toGetCommentList(id);
+  			  }).catch(function (error) {
+  			      console.log(error);
+  			  });
+  		  }
+   },
+   
+  /**
+   * @description: 点赞一个书评
+   * */
+   
+   toCreateLikeComment(comment,liked){
+  		  // 如果已经点赞，则执行取消点赞交易
+  		  let that=this;
+  		  let reqData={
+  		  		  comment
+  		  }
+  		  if(liked){
+  				   api._fetch({
+  				       url: '/api/i/commend/like/cancel',
+  				       data:reqData,
+  				       method:'post',
+  				   	contentType: 1
+  				   }).then(function (res) {
+  				    
+						let id=that.data.id;
+  				      	that.getBookCommentDetail(id);
+  				   }).catch(function (error) {
+  				       console.log(error);
+  				   });
+  		  }else{
+  			  api._fetch({
+  			      url: '/api/i/commend/like/create',
+  			      data:reqData,
+  			      method:'post',
+  			  	contentType: 1
+  			  }).then(function (res) {
+  			   
+					 let id=that.data.id;
+					 that.getBookCommentDetail(id);
+  			  }).catch(function (error) {
+  			      console.log(error);
+  			  });
+  		  }
+   },
    onClose() {
       this.setData({
       		  modalName:null

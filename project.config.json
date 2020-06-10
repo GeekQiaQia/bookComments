@@ -323,6 +323,13 @@
 					"id": -1,
 					"name": "pages/post-comment/post-comment",
 					"pathName": "pages/post-comment/post-comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-likedbook/my-likedbook",
+					"pathName": "pages/my-likedbook/my-likedbook",
 					"scene": null
 				}
 			]

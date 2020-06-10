@@ -1,3 +1,6 @@
+.container {
+  height: 100%;
+}
 .container .comment-container {
   flex-grow: 1;
 }
@@ -85,6 +88,9 @@
 }
 .container .comment-container .comment-info .reply-comments .reply-card .user-info .like-info .like-num {
   margin-left: 24rpx;
+}
+.container .comment-container .comment-info .reply-comments .reply-card .user-info .like-info .orange {
+  color: #F96D3D;
 }
 .container .comment-container .comment-info .reply-comments .reply-card .content {
   width: 686rpx;

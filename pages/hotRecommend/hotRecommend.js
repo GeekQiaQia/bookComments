@@ -79,6 +79,21 @@ Page({
 		  })
 	  },
 	  /**
+	   * @description:处理进入书评详情；
+	   * 
+	   * */
+	  handleCommentDetail:function(e){
+	  	
+	  	  // 组件传参过来的id;
+	  	  let id=e.detail.id;
+	  	  let itemindex=e.detail.itemIndex;
+	  	  let cardInfoArray=this.data.cardInfoArray;
+	  
+	  	  wx.navigateTo({
+	  	    url: '../bookCommentDetail/bookCommentDetail?itemindex='+itemindex+'&id='+id
+	  	  })
+	  },
+	  /**
 	   * @description ' tab页面切换；
 	   * */
 	   onTabChange(event) {

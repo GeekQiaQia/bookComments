@@ -13,6 +13,8 @@ Page({
 		modalName:null,
 		currentPage:0,
 		totalPages:0,
+		totalElements:0,
+		pageSize:10,
 		posterConfig: {
 		    width: 750,
 		    height: 982,
@@ -160,8 +162,6 @@ Page({
 		
 		},
 		successInfo:{},
-		totalElements:0,
-		pageSize:10,
 		commentInfo: {
 			bookNum: 3,
 			likeNum: 2,
@@ -472,6 +472,11 @@ Page({
 		let liked=e.detail.liked
 		this.toCreateLikeComment(id,liked);
 		// 发送一个改变like状态的交易；
+	},
+	handleMyLikedbook:function(e){
+		wx.navigateTo({
+			 url: '../my-likedbook/my-likedbook',
+		})
 	},
 	/**
 	 * 生命周期函数--监听页面加载

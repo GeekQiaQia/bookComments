@@ -1,218 +1,126 @@
 .container {
-  background: #f7f7f7;
-  height: 100%;
+  background-color: #f7f7f7;
 }
-.container .success-container {
+.container .liked-top {
+  width: 100%;
+  height: 176rpx;
+  background-color: #f96d3d;
+  padding: 24rpx 30rpx 40rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .liked-top .liked-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .liked-top .liked-info .liked-dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin: 0 20rpx 0 22rpx;
+}
+.container .liked-top .liked-info .liked-title {
+  width: auto;
+  height: 56rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #efeff4;
+  line-height: 56rpx;
+}
+.container .liked-top .liked-info .liked-num {
+  width: auto;
+  height: 56rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #efeff4;
+  line-height: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .liked-top .liked-icon {
+  width: 121rpx;
+  height: 112rpx;
+  background-color: rgba(229, 228, 229, 0.09);
+}
+.container .liked-top .liked-icon .icon-tip {
+  color: rgba(229, 228, 229, 0.09);
+}
+.container .liked-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+}
+.container .liked-container .liked-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.container .liked-container .liked-main .liked-info-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: inherit;
+  padding-top: 32rpx;
 }
-.container .success-container .tip-container {
-  width: 750rpx;
-  height: 290rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 18rpx;
-}
-.container .success-container .tip-container .icon-tip {
-  width: 100%;
+.container .liked-container .liked-main .liked-info-container .hot-card-container {
+  width: auto;
   height: auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.container .liked-container .liked-main .nomore-tip {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0rpx auto 28rpx auto ;
-}
-.container .success-container .tip-container .tip {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-.container .success-container .tip-container .tip .text {
   width: auto;
-  height: 40rpx;
-  font-size: 28rpx;
-  font-family: STSongti-SC-Regular, STSongti-SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 40rpx;
-}
-.container .success-container .tip-container .tip .text .color-orange {
-  color: #F96D3D;
-}
-.container .success-container .tip-container .tip .text .color-blue {
-  color: #576B95;
-}
-.container .success-container .comment-detail {
-  width: 528rpx;
-  height: 688rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  padding: 16rpx 0rpx 28rpx 0rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.container .success-container .comment-detail .book-name {
-  width: auto;
-  height: 48rpx;
-  font-size: 34rpx;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  font-weight: 600;
-  color: #000000;
-  line-height: 48rpx;
-  margin-left: 32rpx;
-}
-.container .success-container .comment-detail .book-comment {
-  width: 496rpx;
-  height: 283rpx;
-  font-size: 24rpx;
-  font-family: STSongti-SC-Regular, STSongti-SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 36rpx;
-  margin: 16rpx auto;
-  padding-left: 16rpx;
-  display: -webkit-box;
-  -webkit-line-clamp: 8;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.container .success-container .comment-detail .comment-name {
-  width: 496rpx;
-  margin: 0rpx auto;
-  text-align: right;
   height: 34rpx;
   font-size: 24rpx;
-  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #666666;
-  line-height: 34rpx;
-}
-.container .success-container .comment-detail .split-line {
-  width: 498rpx;
-  height: 2rpx;
-  margin: 0rpx auto;
-  background-color: #EFEFF4;
-}
-.container .success-container .comment-detail .comment-tip {
-  width: 100%;
-  height: 34rpx;
-  font-size: 24rpx;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  font-weight: 600;
   color: #b8b8b8;
   line-height: 34rpx;
-  text-align: left;
-  padding-left: 16rpx;
-  margin: 16rpx 0rpx 30rpx 0rpx;
+  margin: 46rpx 0rpx;
 }
-.container .success-container .comment-detail .all-comment {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 18rpx;
+.container .liked-container .liked-main .liked-icon {
+  width: 312rpx;
+  height: 288rpx;
+  margin-bottom: 56rpx;
 }
-.container .success-container .comment-detail .all-comment .text {
-  width: 96rpx;
-  height: 34rpx;
-  font-size: 24rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 34rpx;
-  margin-bottom: 24rpx;
-  margin-right: 30rpx;
+.container .liked-container .liked-main .liked-icon .icon-tip {
+  width: 312rpx;
+  height: 288rpx;
 }
-.container .success-container .comment-detail .commnts {
+.container .liked-container .liked-main .no-liked-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 18rpx;
-}
-.container .success-container .comment-detail .commnts .evaluation {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.container .success-container .comment-detail .commnts .evaluation .text {
-  width: 44rpx;
-  height: 32rpx;
-  font-size: 22rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 32rpx;
-  margin-right: 10rpx;
-}
-.container .success-container .button-container {
-  width: 100%;
-  height: 80rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  margin-top: 124rpx;
-  margin-bottom: 164rpx;
 }
-.container .success-container .button-container .btn-text {
+.container .liked-container .liked-main .no-liked-container .no-liked {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;
-  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+  color: #b8b8b8;
   line-height: 40rpx;
-  margin-left: 8rpx;
-}
-.container .success-container .button-container .size {
-  font-size: 36rpx;
-}
-.container .success-container .button-container .save-image {
-  width: 240rpx;
-  height: 80rpx;
-  background: #fbfafc;
-  border-radius: 20rpx;
-  border: 2rpx solid rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.container .success-container .button-container .save-image .white {
-  color: #ffffff;
-}
-.container .success-container .button-container .share-friends {
-  width: 240rpx;
-  height: 80rpx;
-  background: #fbfafc;
-  border-radius: 20rpx;
-  border: 2rpx solid rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0rpx;
-}
-.container .success-container .button-container .share-friends .black {
-  color: #353535;
-}
-.container .success-container .button-container .share-friends .no-border {
-  border: transparent ! important;
-  width: auto !important;
-  background: #fbfafc !important;
-  padding: 0rpx;
-  margin: 0rpx;
 }
 .container .dialog-container {
   display: flex;
@@ -474,7 +382,7 @@
   padding: 0rpx;
   margin: 0rpx;
 }
-.container .dialog-container .confirm-delete-reply {
+.container .dialog-container .confirm-delete-liked {
   width: 100%;
   height: auto;
   display: flex;
@@ -482,7 +390,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.container .dialog-container .confirm-delete-reply .confirm-delete-tips {
+.container .dialog-container .confirm-delete-liked .confirm-delete-tips {
   width: 100%;
   height: 112rpx;
   background: #f2f2f2;
@@ -492,7 +400,7 @@
   align-items: center;
   padding-left: 34rpx;
 }
-.container .dialog-container .confirm-delete-reply .confirm-delete-tips .text {
+.container .dialog-container .confirm-delete-liked .confirm-delete-tips .text {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;
@@ -501,7 +409,7 @@
   color: #969696;
   line-height: 40rpx;
 }
-.container .dialog-container .confirm-delete-reply .confirm-delete {
+.container .dialog-container .confirm-delete-liked .confirm-delete {
   width: 100%;
   height: 112rpx;
   background: #ffffff;
@@ -511,7 +419,7 @@
   align-items: center;
   padding-left: 34rpx;
 }
-.container .dialog-container .confirm-delete-reply .confirm-delete .delete-text {
+.container .dialog-container .confirm-delete-liked .confirm-delete .delete-text {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;
@@ -521,7 +429,7 @@
   line-height: 40rpx;
   margin-left: 22rpx;
 }
-.container .dialog-container .delete-comment-reply {
+.container .dialog-container .delete-comment-liked {
   width: 100%;
   height: 112rpx;
   background-color: #ffffff;
@@ -531,7 +439,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.container .dialog-container .delete-comment-reply .delete-text {
+.container .dialog-container .delete-comment-liked .delete-text {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;

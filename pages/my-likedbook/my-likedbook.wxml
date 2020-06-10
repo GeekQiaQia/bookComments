@@ -1,0 +1,46 @@
+<!--pages/my-likedbook/my-likedbook.wxml-->
+<view class="container">
+	<view class="liked-top">
+		<view class="liked-info">
+			<view class="liked-title">我点赞的书 </view>
+			<view class="liked-dot">
+
+			</view>
+			<view class="liked-num">已点赞{{likedInfo.totalElements}}本</view>
+		</view>
+		<view class="liked-icon">
+			<cover-image src="../../images/icon-likeds.png" class="icon-tip"></cover-image>
+		</view>
+	</view>
+	<view class="liked-container">
+		<view class="liked-main">
+			<block wx:if="{{likedInfo.totalElements==0}}">
+				<view class="liked-icon">
+						<cover-image src="../../images/icon-liked-no.png" class="icon-tip"></cover-image>
+				</view>
+				<view class="no-liked-container">
+					<view class="no-liked">喜欢，就不要吝啬你的手指</view>
+					<view class="no-liked">给Ta的书评点个赞吧～</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="liked-info-container">
+					<view class="hot-card-container">
+						<block wx:for="{{likedInfo.content}}" wx:key="id">
+							<hot-card model:item="{{item}}" bind:commentdetail="handleCommentDetail">
+								
+							</hot-card>
+						</block>
+						
+					</view>
+					<view class="nomore-tip">
+						<text>没有更多内容</text>
+					</view>
+				</view>
+			</block>
+		</view>
+		<copy-right></copy-right>
+	</view>
+
+</view>
+

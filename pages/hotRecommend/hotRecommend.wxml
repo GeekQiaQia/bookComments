@@ -48,52 +48,9 @@
 				</view>
 			</view>
 			<block wx:for="{{item.comments}}" wx:key="id">
-				<view class="hot-card">
-					<view class="book-detail">
-						<view class="book-info">
-							<view class="reader-info">
-								<view class="avatar">
-									<image src="{{item.userInfo.avatarUrl}}" class="avatar"></image>
-								</view>
-								<view class="info">
-									<view class="detail">
-										<view class="name">
-											{{item.userInfo.nickName}}
-										</view>
-									
-										<block wx:if="{{item.forward==true}}">
-																  <view class="notice">转发</view>
-										</block>
-										<block  wx:if="{{item.readBook==true&&item.forward==false}}">
-												 <view class="notice">已读</view>
-										</block>
-										<comment-stars model:stars="{{item.stars}}"></comment-stars>
-									</view>
-									<view class="time">
-										{{item.createTime}}
-									</view>
-								</view>
-							</view>
-							<view class="comments read-more">
-								{{item.content}}
-							</view>
-							<view class="releation-container">
-										  <view class="releation-info">
-											  <text class="releation ">{{item.liked}}有用 · </text>
-											  <text class="releation ">{{item.reply}}回复 · </text>
-											  <text class="releation ">{{item.forwarding}}转发</text>
-										  </view>
-							</view>
-						</view>
-						<view class="book-icon">
-							
-							<image src="{{item.bookInfo.picture}}" class="book-icon"></image>
-						</view>
-					</view>
-					<view class="split">
-						
-					</view>
-				</view>
+				<hot-card model:item="{{item}}" bind:commentdetail="handleCommentDetail">
+					
+				</hot-card>
 			</block>
 		
 		</view>

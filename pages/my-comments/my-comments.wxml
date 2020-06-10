@@ -11,7 +11,7 @@
 			<view class="split-line">
 				
 			</view>
-			<view class="comment-vedio">
+			<view class="comment-vedio" bindtap="handleMyLikedbook">
 				<text class="comment-num">{{commentInfo.likeNum}}</text>
 				<text class="comment-type">我点赞的书</text>
 			</view>

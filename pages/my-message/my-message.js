@@ -7,6 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+	  currentPage:0,
+	  totalPages:0,
+	  totalElements:0,
+	  pageSize:10,
 	messageInfo:{
 		num:3,
 		list:[
@@ -29,11 +33,11 @@ Page({
 /**
  * @description  获取消息列表
  * */
-getMessageList(){
+getMessageList(page=0,pageSize=10){
 	let that=this;
 	let reqData={
-			  page:0,
-			  size:10
+			  page,
+			  size:pageSize
 	}
 	api._fetch({
 	    url: '/api/i/message/list',
@@ -42,9 +46,14 @@ getMessageList(){
 		contentType: 1
 	}).then(function (res) {
 		let messageInfo=res.data;
-	    that.setData({
-			messageInfo
-		})
+		let totalPages=res.data.totalPages;
+		let totalElements=res.data.totalElements;
+		that.setData({
+			messageInfo,
+			totalElements,
+			totalPages
+		});
+		wx.hideLoading();
 	}).catch(function (error) {
 	    console.log(error);
 	});
@@ -92,12 +101,33 @@ getMessageList(){
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
+ 
+ /**
+  * 页面上拉触底事件的处理函数
+  */
+ onReachBottom: function() {
+    let self = this;
+     // 显示加载图标
+ 	let totalElements=this.data.totalElements;
+ 	let page=this.data.currentPage;
+ 	let pageSize=this.data.pageSize;
+ 	if(pageSize<totalElements){
+ 		// page++;
+ 		pageSize+=10;
+ 		self.setData({
+ 			currentPage:page,
+ 			pageSize
+ 		});
+ 		wx.showLoading({
+ 			
+ 		  title: '更多加载中',
+ 			
+ 		})
+ 		this.getMessageList(page,pageSize);
+ 	}
+ 	
+ 
+ },
 
   /**
    * 用户点击右上角分享

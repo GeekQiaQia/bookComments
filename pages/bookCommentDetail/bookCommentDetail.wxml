@@ -2,7 +2,7 @@
 <view class="container">
 	
 
-	<scroll-view scroll-y="true" style='height: {{scrollHeight + "rpx"}}'>
+	<scroll-view scroll-y="true" bindscrolltolower="lower" enable-back-to-top="{{true}}" style='height: {{scrollHeight + "rpx"}}'>
 		<view class="book-card">
 						
 							<image
@@ -55,7 +55,7 @@
 									 									            </image>
 									 </view>
 									 <view class="basicinfo">
-									 									  <view>
+									 									  <view style="display: flex;">
 									 										  <view class="name">{{item.userInfo.nickName}}</view>
 									 										
 									 										  <block wx:if="{{item.forward==true}}">
