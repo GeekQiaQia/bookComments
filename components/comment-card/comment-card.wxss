@@ -96,7 +96,7 @@
 }
 .container .card-container .card-item .content-container .resume {
   width: 688rpx;
-  height: 156rpx;
+  height: auto;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
