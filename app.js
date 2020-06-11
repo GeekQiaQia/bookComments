@@ -20,6 +20,7 @@ App({
 	          let loginInfo=null;
 	     
 	          try {
+				
 	            var value = wx.getStorageSync('loginInfo')
 	            if (value) {
 	            
@@ -93,14 +94,14 @@ App({
 		  // 发送 res.code 到后台换取 openId, sessionKey, unionId
 	    if (res.code) {
 	     
-		
+		  let code=res.code;
 		  let reqData={code:res.code}
 		  api._fetch({
 		      url: '/api/wx/login',
 		      data:reqData,
 		      method:'get'
 		  }).then(function (res) {
-          
+          wx.setStorageSync('code',code )
           wx.setStorageSync('loginInfo',res.data )
 		  wx.setStorageSync('userToken',res.data.token )
 		  that.getSettingInfo();

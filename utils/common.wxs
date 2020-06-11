@@ -44,7 +44,16 @@ function tofiltFirstWord(text){
 	}
 }
 
+function tofiltPhoneNum(num){
+	// 18655858555
+	var temp=num.split("");
+		temp.splice(3,4,"*","*","*","*");
+	return temp.join("");   
+	
+}
+
 module.exports = {
+  tofiltPhoneNum:tofiltPhoneNum,
   toFixed: toFixed,
   tofiltFirstWord:tofiltFirstWord,
   splice: splice,

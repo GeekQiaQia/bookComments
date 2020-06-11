@@ -330,6 +330,13 @@
 					"id": -1,
 					"name": "pages/my-likedbook/my-likedbook",
 					"pathName": "pages/my-likedbook/my-likedbook",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/maintenance-phone/maintenance-phone",
+					"pathName": "pages/maintenance-phone/maintenance-phone",
 					"scene": null
 				}
 			]
