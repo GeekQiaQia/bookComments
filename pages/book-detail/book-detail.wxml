@@ -16,13 +16,13 @@
 							<text class="commentsNum">{{bookInfo.scorer}}人评分</text>
 							<view class="info-obj" wx:if="{{bookInfo.authors.author.length>0}}">
 								<view class="info-key ">作者<text></text></view>:
-								<block wx:for="{{bookInfo.authors.author}}" wx:key="*this">
+								<block wx:for="{{bookInfo.authors.author}}" wx:key="id">
 									<text class="info-value" style="margin-right: 5rpx;" data-id="{{item.author.id}}" bindtap="handleAuthorDetail" >{{item.author.name}} </text>
 								</block>
 							</view>
 							<view class="info-obj" wx:if="{{bookInfo.authors.translators.length>0}}">
 								<view class="info-key ">译者<text></text></view>:
-								<block wx:for="{{bookInfo.authors.translators}}" wx:key="*this">
+								<block wx:for="{{bookInfo.authors.translators}}" wx:key="id">
 									<text class="info-value"  style="margin-right: 5rpx;" data-id="{{item.author.id}}" bindtap="handleAuthorDetail" >{{item.author.name}} </text>
 								</block>
 							</view>
@@ -43,7 +43,7 @@
 			</view>
 			<van-tabs class="tabs-container" animated  color="#F96D3D" active="{{ active }}"  bind:change="onChange">
 					
-				<block wx:for="{{tabs}}" wx:key="*this">
+				<block wx:for="{{tabs}}" wx:key="name">
 					<van-tab  class="tab-container" title="{{item.tab}}">
 						<block wx:if="{{item.name=='bookResume'}}">
 							<view class="bookresum-container">
@@ -136,7 +136,7 @@
 							</block>
 							<block wx:else>
 								<view class="recommend-container">
-									<block wx:for="{{filmInfo}}" wx:key="*this">
+									<block wx:for="{{filmInfo}}" wx:key="id">
 										<view class="film-card">
 											<view class="film-pic">
 												<cover-image src="{{item.image}}"></cover-image>
@@ -185,7 +185,7 @@
 											</view>
 										</view>
 										<view class="star-pic">
-											<block wx:for="{{movieStarArray}}" wx:key="*this">
+											<block wx:for="{{movieStarArray}}" wx:key="id">
 												<view class="star-item">
 													<view class="star-avatar">
 														<cover-image src="{{item.actor.avatar}}"></cover-image>

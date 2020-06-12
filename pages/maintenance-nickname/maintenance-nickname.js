@@ -42,12 +42,12 @@ Page({
 		  
 	  }else{
 		  let nickName=this.data.nickname;
-		  console.log(nickName);
+		
 		  let reqData={
 		  		  
 		  		  nickName
 		  }
-		  console.log(reqData);
+		
 		  this.updateInfoMaintenance(reqData);
 
 	  }

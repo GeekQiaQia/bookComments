@@ -25,7 +25,7 @@ Page({
   	       method:'get',
   	   	contentType:1
   	   }).then(function (res) {
-  	   	 console.log(res);
+  	   
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
   	   	// 			let notesInfo=that.data.notesInfo;
@@ -74,10 +74,13 @@ Page({
 	  * @description:笔记本详情
 	  * */
 	  handleNotebookDetail:function(e){
-		
-		  wx.navigateTo({
-		    url: '../notebook-detail/notebook-detail?id='+e.target.dataset.id
-		  })
+		  let id =e.target.dataset.id;
+		  if(id!==0){
+			  wx.navigateTo({
+			    url: '../notebook-detail/notebook-detail?id='+e.target.dataset.id
+			  })
+		  }
+		 
 	  },
   /**
    * 生命周期函数--监听页面加载

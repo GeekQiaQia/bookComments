@@ -15,6 +15,35 @@
   height: auto;
   background-color: #ffffff;
 }
+.container .catagory-container .search-container .search-container {
+  width: 750rpx;
+  height: 128rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32rpx 30rpx 32rpx 32rpx;
+}
+.container .catagory-container .search-container .search-container .search-input {
+  width: 688rpx;
+  height: 64rpx;
+  background-color: #efeff4;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16rpx;
+}
+.container .catagory-container .search-container .search-container .search-input .placeholder {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 34rpx;
+  margin-left: 16rpx;
+}
 .container .catagory-container .tab-container {
   width: 100%;
   height: auto;

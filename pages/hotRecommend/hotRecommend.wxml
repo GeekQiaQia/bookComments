@@ -1,7 +1,7 @@
 <!--pages/hotRecommend/hotRecommend.wxml-->
 <view class="container">
 	<view class="filter-container">
-		<van-search
+		<!-- <van-search
 		  value="{{ keyword }}"
 		  shape="round"
 		  background="#ffffff"
@@ -9,10 +9,18 @@
 		  bind:change="onChange"
 		  bind:focus="onFocus"
 		    bind:search="onSearch"
-		/>
+		/> -->
+		<view class="search-container" bindtap="onFocus">
+			<view class="search-input">
+				<text class="cuIcon-search lg text-gray"   ></text>
+				<view class="placeholder">
+					请输入搜索关键词
+				</view>
+			</view>
+		</view>
 		<scroll-view class="scroll-tab" scroll-x="true">
 			<view class="tabs-nav">
-				<block wx:for="{{tabs}}" wx:key="*this">
+				<block wx:for="{{tabs}}" wx:key="id">
 				<view class="tabs">
 					<view  class="{{item.id==null?'actived-tab':'tab'}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onTabChange">{{item.name}}</view>
 				</view>
@@ -28,7 +36,7 @@
 		 
 		</van-tabs> -->
 	</view>
-	<block wx:for="{{categoryBookInfo}}" wx:key="*this">
+	<block wx:for="{{categoryBookInfo}}" wx:key="id">
 		<view class="hot-container">
 			<view class="title-container">
 				<view class="type">
@@ -39,53 +47,10 @@
 					<text class="cuIcon-right lg text-gray"  data-name="{{item.name}}" data-id="{{item.id}}" bindtap="goCatagoryDetail"></text>
 				</view>
 			</view>
-			<block wx:for="{{item.comments}}" wx:key="*this">
-				<view class="hot-card">
-					<view class="book-detail">
-						<view class="book-info">
-							<view class="reader-info">
-								<view class="avatar">
-									<image src="{{item.userInfo.avatarUrl}}" class="avatar"></image>
-								</view>
-								<view class="info">
-									<view class="detail">
-										<view class="name">
-											{{item.userInfo.nickName}}
-										</view>
-									
-										<block wx:if="{{item.forward==true}}">
-																  <view class="notice">转发</view>
-										</block>
-										<block  wx:if="{{item.readBook==true&&item.forward==false}}">
-												 <view class="notice">已读</view>
-										</block>
-										<comment-stars model:stars="{{item.stars}}"></comment-stars>
-									</view>
-									<view class="time">
-										{{item.createTime}}
-									</view>
-								</view>
-							</view>
-							<view class="comments read-more">
-								{{item.content}}
-							</view>
-							<view class="releation-container">
-										  <view class="releation-info">
-											  <text class="releation ">{{item.liked}}有用 · </text>
-											  <text class="releation ">{{item.reply}}回复 · </text>
-											  <text class="releation ">{{item.forwarding}}转发</text>
-										  </view>
-							</view>
-						</view>
-						<view class="book-icon">
-							
-							<image src="{{item.bookInfo.picture}}" class="book-icon"></image>
-						</view>
-					</view>
-					<view class="split">
-						
-					</view>
-				</view>
+			<block wx:for="{{item.comments}}" wx:key="id">
+				<hot-card model:item="{{item}}" bind:commentdetail="handleCommentDetail">
+					
+				</hot-card>
 			</block>
 		
 		</view>

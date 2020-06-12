@@ -42,7 +42,7 @@ Component({
 			
 		},
 		handleBookDetail:function(e){
-			console.log("handleBookDetail",e);
+			
 			
 			      var myEventDetail = {
 					  id:e.target.dataset.id,

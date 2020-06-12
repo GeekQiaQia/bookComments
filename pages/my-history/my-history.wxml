@@ -5,7 +5,7 @@
 	<view class="history-container">
 		<block wx:if="{{historyInfo.length>0}}">
 			<view class="cu-timeline time-item">
-				<block wx:for="{{historyInfo}}">
+				<block wx:for="{{historyInfo}}" wx:key="id">
 					<view class="cu-item text-orange view-item ">
 						<view class="timeline-info">
 							<view class="timeline-date">

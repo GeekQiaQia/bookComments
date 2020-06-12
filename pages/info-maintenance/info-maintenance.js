@@ -11,8 +11,8 @@ Page({
 	maintenanceInfo:{
 		avatarUrl:"",
 		nickName:"",
-		phoneNumber:"",
-		gender:"0",
+		phoneNumber:null,
+		gender:"FEMALE",
 		birthday:formatTime(new Date().getTime(),".")
 		
 	},
@@ -92,7 +92,7 @@ Page({
       });
     },
 	onConfirm(event){
-		console.log(event);
+	
 		let maintenanceInfo=this.data.maintenanceInfo;
 		maintenanceInfo.birthday=formatTime(event.detail,".")
 			
@@ -105,7 +105,7 @@ Page({
 		let reqData={
 				  birthday
 		};
-		console.log(reqData);
+	
 		this.updateInfoMaintenance(reqData);
 	},
 	onCancel(event){
@@ -148,12 +148,12 @@ Page({
 	  let reqData={
 		  gender
 	  };
-	  console.log(reqData);
+	 
 	  this.updateInfoMaintenance(reqData);
 	  
   },
   handleSelectionAvatar:function(e){
-	  console.log(e);
+
 	  let that=this;
 	  let sourceType=[e.target.dataset.source];
 	
@@ -168,7 +168,7 @@ Page({
 			let reqData={
 					  avatar
 			};
-			console.log(reqData);
+		
 			let avatarUrl=avatar;
 			let maintenanceInfo=that.data.maintenanceInfo;
 					  maintenanceInfo.avatarUrl=avatarUrl;
@@ -185,6 +185,12 @@ Page({
 			}
 	  })
   },
+  showChangePhoneNumber:function(e){
+	  wx.navigateTo({
+		  
+	  		url: '../maintenance-phone/maintenance-phone',
+	  })
+  },
   showChangenickName:function(e){
 	  wx.navigateTo({
 		    url: '../maintenance-nickname/maintenance-nickname',
@@ -195,6 +201,56 @@ Page({
 	 		    url: '../maintenance-signature/maintenance-signature',
 	 })
   },
+  handleOtherPhoneLogin:function(e){
+	  wx.navigateTo({
+	  		    url: '../maintenance-phone/maintenance-phone',
+	  })
+  },
+  /**
+   * @description:
+   * 
+   * */
+   getPhoneNumber:function(e){
+	   console.log(e);
+	   let that = this;
+	   let rawData="";
+	   let signature="";
+	   let  loginInfo = wx.getStorageSync('loginInfo')
+	   let iv = e.detail.iv,
+	       encryptedData = e.detail.encryptedData;
+		   wx.getUserInfo({
+		     success: res => {
+				 console.log(res);
+				 signature=res.signature;
+				 rawData=res.rawData;
+				 
+				 let reqData={
+				 	 rawData,
+				 	 encryptedData,
+				 	 iv,
+				 	 sessionKey:loginInfo.sessionKey,
+				 	 signature
+				  }
+				 api._fetch({
+				     url: '/api/i/phone',
+				     data:reqData,
+				     method:'post',
+				 	
+				 }).then(function (res) {
+				     
+				     that.getLoginUserInfo();
+				 }).catch(function (error) {
+				     console.log(error);
+				 });
+				 
+				 }
+				 
+		})
+	   
+			 
+		
+			
+   },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -13,9 +13,9 @@ function splice(str = '', start, end) {
 }
 
 function get_len(str){
-	console.log("str is "+str);
+	
     var len=str.length;
-    console.log("len is "+len);
+  
 	var realLen=len;
     for(var i=0;i<len;i++){
         var code=str.charCodeAt(i);
@@ -26,9 +26,9 @@ function get_len(str){
     return realLen;
 }
 function ellipsis(text, maxLength) {
-	console.log(typeof text);
+	
     var ret = text;
-	console.log(ret.substring(0,maxLength-3))
+	
     if (get_len(text) > maxLength) {
         ret = ret.substring(0,maxLength-3) + "...";
     }
@@ -44,7 +44,16 @@ function tofiltFirstWord(text){
 	}
 }
 
+function tofiltPhoneNum(num){
+	// 18655858555
+	var temp=num.split("");
+		temp.splice(3,4,"*","*","*","*");
+	return temp.join("");   
+	
+}
+
 module.exports = {
+  tofiltPhoneNum:tofiltPhoneNum,
   toFixed: toFixed,
   tofiltFirstWord:tofiltFirstWord,
   splice: splice,

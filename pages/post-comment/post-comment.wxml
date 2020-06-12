@@ -1,0 +1,112 @@
+<!--pages/post-comment/post-comment.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view class="title-input">
+		<view class="input-container">
+			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{noteTitle}}"  bindinput="handlNoteTitleInput"  placeholder="评论标题(选填)"></input>
+			<view class="input-len">{{noteTitleLen}}</view>
+		</view>
+	</view>
+	<view class="notes">
+		<view class="input-container">
+			<view class="recommend-reason">
+			<textarea style="padding: 32rpx 30rpx 0rpx 32rpx;height: inherit; width: inherit;"   maxlength="2000" value="{{notes}}"  bindinput="handlNoteInput" placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></textarea>
+			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{notesLen}}/2000</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="basic-info">
+		<view class="book-shape">
+			<image  class="book-shape" src="../../images/book-shape.png"></image>
+		</view>
+		<view class="bg-container">
+			<view class="grid-group">
+				<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+					<image src='{{imgList[index]}}' mode='aspectFill'></image>
+					<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+						<text class="cuIcon-close"></text>
+					</view>
+				</view>
+				<view class="choose-image" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
+					<text class="cuIcon-cameraadd lg text-gray"></text>
+					<text class="text">上传图片</text>
+				</view>
+			</view>
+			<view class="info">
+				<view class="book-name">
+					{{postBookInfo.name}}
+				</view>
+				<comment-stars model:stars="{{postBookInfo.stars}}"></comment-stars>
+				<view class="book-scorer">
+					{{postBookInfo.scorer}}人评分
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="send-container">
+		<view class="save-container">
+			<van-radio-group value="{{ note }}" bind:change="onChange">
+			  <van-radio name="{{true}}" checked-color="#F96D3D"></van-radio>
+			</van-radio-group>
+			<view class="text-tip"> 同时保存到<text class="blue" bindtap="showNotebookList">#{{notebook}}#</text></view>
+		</view>
+	
+		<view class="button" bindtap="handleSendComment">
+			<view class="text">
+				发表书评
+			</view>
+		</view>
+	</view>
+	<van-overlay show="{{ showNoteList }}"   z-index="10000">
+	  <view class="wrapper">
+		<view class="card">
+			<view class="detail-info">
+				<view class="title">
+					<view class="text">选择一个笔记本</view>
+				</view>
+				<scroll-view  scroll-y="true" style="height: 670rpx;" >
+				<view class="list-container">
+					<van-radio-group value="{{ noteBookRadio }}" >
+					<block wx:for="{{notesInfo.content}}" wx:key="id">
+						<view class="book-list" data-id="{{item.id}}"  bindtap="handleNotebookSelected">
+							<view class="book-info" data-id="{{item.id}}">
+								<view class="book-title" data-id="{{item.id}}">
+									<view class="title" data-id="{{item.id}}">
+										{{filter.tofiltFirstWord(item.name)}}
+									</view>
+								</view>
+								<view class="notebook-detail" data-id="{{item.id}}">
+									<view class="note-info">
+										<view class="notebook-name" data-id="{{item.id}}">
+											{{item.name}}
+										</view>
+										<view class="record" data-id="{{item.id}}">
+											{{item.notes}}条记录
+										</view>
+									</view>
+									<view class="notebook-resume" data-id="{{item.id}}">
+										{{item.describes}}
+									</view>
+								</view>
+							</view>
+							
+							  
+							<van-radio name="{{item.id}}" checked-color="#F96D3D"></van-radio>
+							
+						</view>
+					</block>
+					</van-radio-group>
+					
+				</view>
+				</scroll-view>
+			</view>
+			<view class="btn" bindtap="handleSelectNoteInfo">
+				<view class="text">
+					完成
+				</view>
+			</view>
+		</view>
+	  </view>
+	</van-overlay>
+</view>

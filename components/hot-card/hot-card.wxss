@@ -1,0 +1,133 @@
+.container .hot-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .hot-card .split {
+  width: 654rpx;
+  height: 4rpx;
+  background-color: #E2E2E2;
+}
+.container .hot-card .book-detail {
+  width: 688rpx;
+  height: 320rpx;
+  background: #ffffff;
+  padding: 32rpx 16rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .hot-card .book-detail .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: auto;
+  height: 256rpx;
+}
+.container .hot-card .book-detail .book-info .reader-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .hot-card .book-detail .book-info .reader-info .avatar {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+.container .hot-card .book-detail .book-info .reader-info .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 16rpx;
+}
+.container .hot-card .book-detail .book-info .reader-info .info .detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .hot-card .book-detail .book-info .reader-info .info .detail .name {
+  width: auto;
+  max-width: 192rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 34rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.container .hot-card .book-detail .book-info .reader-info .info .detail .notice {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+  margin-right: 16rpx;
+}
+.container .hot-card .book-detail .book-info .reader-info .info .time {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .hot-card .book-detail .book-info .comments {
+  width: 464rpx;
+  height: 118rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 39rpx;
+  margin-top: 16rpx;
+  margin-bottom: 40rpx;
+}
+.container .hot-card .book-detail .book-info .read-more {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .hot-card .book-detail .book-info .releation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.container .hot-card .book-detail .book-info .releation-container .releation-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .hot-card .book-detail .book-info .releation-container .releation-info .releation {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 32rpx;
+}
+.container .hot-card .book-detail .book-icon {
+  width: 176rpx;
+  height: 256rpx;
+}

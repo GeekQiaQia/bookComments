@@ -1,0 +1,115 @@
+.container .common-container {
+  flex-grow: 1;
+  margin-top: 32rpx;
+}
+.container .common-container .input-tip {
+  width: 100%;
+  height: 92rpx;
+  padding: 32rpx 0rpx 24rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .common-container .input-tip .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
+}
+.container .common-container .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 112rpx;
+  margin-bottom: 1rpx;
+}
+.container .common-container .input-container .prefix {
+  width: 180rpx;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 22rpx;
+  background-color: white;
+  border-right: 1rpx solid #F7F7F7;
+}
+.container .common-container .input-container .prefix .text {
+  width: 62rpx;
+  height: inherit;
+  font-size: 34rpx;
+  font-family: Helvetica;
+  color: #000000;
+  line-height: inherit;
+}
+.container .common-container .input-container .suffix {
+  width: 200rpx;
+  height: inherit;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 30rpx;
+}
+.container .common-container .input-container .suffix .text {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #576b95;
+  line-height: inherit;
+  cursor: pointer;
+}
+.container .common-container .input-container .counter-container {
+  width: 94rpx;
+  height: inherit;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 30rpx;
+}
+.container .common-container .input-container .counter-container .counter {
+  background-color: white;
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
+}
+.container .common-container .input-container .input {
+  flex-grow: 1;
+  width: auto;
+  height: inherit;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+}
+.container .common-container .btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 378rpx;
+}
+.container .common-container .btn-container .btn {
+  width: 690rpx;
+  height: 88rpx;
+  background-color: #f96d3d;
+  border-radius: 10rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+}

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
 	   "copy-right":"../../components/copy-right/copy-right",
-	   "comment-stars":"../../components/commentStars/commentStars"
+	   "comment-stars":"../../components/commentStars/commentStars",
+	   "book-card":"../../components/book-card/book-card"
   },
      "navigationBarTitleText": "热门书评搜索"
 }

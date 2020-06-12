@@ -20,7 +20,7 @@ Page({
    * 
    * */
   handleCommentDetail:function(e){
-	  console.log(e);
+	
 	  // 组件传参过来的id;
 	  let id=e.detail.id;
 	  let itemindex=e.detail.itemIndex;
@@ -31,14 +31,14 @@ Page({
 	  // console.log(item);
 	  // wx.setStorageSync('item',item[0])
 	  wx.navigateTo({
-	    url: '../bookCommentDetail/bookCommentDetail?id='+id
+	    url: '../bookCommentDetail/bookCommentDetail?itemindex='+itemindex+'&id='+id
 	  })
   },
   /**
    * @description:处理点击banner图片进入活动页面
    * */
   handleImageTap:function(e){
-	  console.log(e)
+	  
 	  let tapName=e.target.dataset.itemname;
 	  let id=e.target.dataset.id;
 	  if(tapName=="ActivityRecommend"){
@@ -115,7 +115,7 @@ Page({
 	     method:'get',
 	 	contentType:1
 	 }).then(function (res) {
-	 	console.log(res);
+	 
 		let cardInfoArray=res.data;
 		for(let item of cardInfoArray ){
 			item['readMore']=false;

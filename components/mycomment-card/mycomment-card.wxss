@@ -110,21 +110,32 @@
 .comment-info .my-comment-card .content-container .comment-detail .comment-book {
   display: flex;
   flex: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book {
+  display: flex;
+  flex: row;
   justify-content: flex-start;
   align-items: center;
 }
-.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-url {
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-url {
   width: 66rpx;
   height: 96rpx;
-  margin: 16rpx 14rpx 16rpx 0rpx;
+  margin: 16rpx 14rpx 16rpx 16rpx;
 }
-.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info {
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-url .cover-image {
+  width: inherit;
+  height: inherit;
+}
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .name {
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-info .name {
   width: auto;
   height: 40rpx;
   font-size: 28rpx;
@@ -133,7 +144,7 @@
   color: #666666;
   line-height: 40rpx;
 }
-.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .stars {
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-info .stars {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -142,24 +153,25 @@
   width: auto;
   height: auto;
 }
-.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-info .stars .commentStar {
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book .book-info .stars .commentStar {
   width: auto;
-  height: 26rpx;
+  height: 32rpx;
   font-size: 18rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+  margin-left: 24rpx;
   color: #969696;
-  line-height: 26rpx;
+  line-height: 32rpx;
 }
 .comment-info .my-comment-card .content-container .comment-detail .comment-book .book-icon {
   width: 0rpx;
-  height: 49rpx;
-  border-width: 16rpx;
+  height: 48rpx;
+  border-width: 13rpx;
   border-color: #FFAD91;
   border-bottom-color: transparent;
-  margin-left: 219rpx;
-  margin-top: -53rpx;
   border-style: solid;
+  margin-top: 16rpx;
+  margin-right: 16rpx;
 }
 .comment-info .my-comment-card .content-container .foot-container {
   width: 100%;

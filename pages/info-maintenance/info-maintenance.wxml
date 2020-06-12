@@ -1,6 +1,38 @@
 <!--pages/info-maintenance/info-maintenance.wxml-->
 <view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
 	<view class="common-container">
+
+	
+	<view class="wx-logined" wx:if="{{maintenanceInfo.phoneNumber==null}}">
+		<view class="login-tip">
+			<text class="text">当前登录账号</text>
+		</view>
+		<view class="wx-login">
+			<view class="avatar-info">
+				<view class="avatar">
+					<image class="cover-image" src="{{maintenanceInfo.avatarUrl}}" >
+					</image>
+				</view>
+				<view class="tip">
+					<text class="name">	{{maintenanceInfo.nickName}}</text>
+					<view class="wx-quick-login">
+						<text class="cuIcon-weixin lg text-green"></text>
+						<view class="text">微信快捷登录账号</view>
+					</view>
+				</view>
+			</view>
+			<view class="logined-tip">
+				<text class="cuIcon-check lg text-gray"></text>
+				<text class="text">已登录</text>
+			</view>
+		</view>
+
+		<button class="wechat-phone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> <text class="text">微信手机号登录</text></button>
+		<button class="other-phone"  bandtap="handleOtherPhoneLogin"> <text class="text">其他手机号登录</text></button>
+	</view>	
+	
+	<view class="main-info" wx:else>
 		<view class="change-avatar" bindtap="showAvatarModal" data-target="bottomModalAvatar">
 			<view class="avatar-info">
 				<view class="avatar">
@@ -15,15 +47,15 @@
 				<text class="cuIcon-right lg text-gray"></text>
 			</view>
 		</view>
-
+	
 		<view class="info-container">
 			<view class="basic-info">
 				<view class="info-name">
 					手机号码
 				</view>
-				<view class="info-detail">
+				<view class="info-detail" bindtap="showChangePhoneNumber">
 					<view class="info">
-						{{maintenanceInfo.phoneNumber}}
+						  {{ filter.tofiltPhoneNum(maintenanceInfo.phoneNumber)}}
 					</view>
 					<view class="right-icon">
 						<text class="cuIcon-right lg text-gray"></text>
@@ -57,7 +89,7 @@
 				</view>
 				<view class="info-detail" bindtap="showSexModal" data-target="bottomModalSex">
 					<view class="info">
-						{{maintenanceInfo.gender=='0'?"女":"男"}}
+						{{maintenanceInfo.gender=='FEMALE'?"女":"男"}}
 					</view>
 					<view class="right-icon" >
 						<text class="cuIcon-right lg text-gray"></text>
@@ -101,6 +133,9 @@
 			</view>
 			<view class="split-line"></view>
 		</view>
+	</view>		
+			
+			
 		
 	<view class="cu-modal bottom-modal {{modalName=='bottomModalAvatar'?'show':''}}">
 	  <view class="cu-dialog">

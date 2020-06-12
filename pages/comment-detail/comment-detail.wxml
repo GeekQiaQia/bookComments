@@ -43,11 +43,11 @@
 					<view class="releation-container">
 								  <view class="releation-info">
 								
-									  <view class="comment-share" data-target="shareModal" >
-									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
+									  <view class="comment-share"  >
+									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeTrigger"></text>
 									  	
 									  	<block wx:if="{{item.meLike==true}}">
-									  		<view class="shared">{{item.like}}</view>
+									  		<view class="shared">{{item.liked}}</view>
 									  	</block>
 									  	<block wx:else>
 									  		<view class="share">点赞</view>
@@ -94,7 +94,7 @@
 			</view>
 			<block wx:if="{{item.reply>0}}">
 				<view class="reply-comments">
-					<block wx:for="{{replyList}}" wx:key="*this">
+					<block wx:for="{{replyList}}" wx:key="id">
 						<view class="reply-card">
 							<view class="user-info">
 								<view class="avatar-info">
@@ -110,8 +110,8 @@
 									
 								</view>
 								<view class="like-info">
-									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-index="{{index}}" bindtap="onHandleLikeTrigger"></text>
-									<view class="like-num">
+									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeReplyTrigger"></text>
+									<view class="like-num {{item.liked?'orange':''}}" >
 										{{item.liked}}
 									</view>
 								</view>
@@ -162,7 +162,7 @@
 	</view>
 	<copy-right></copy-right>
 	<!--留言对话框-->
-	<view class="cu-modal bottom-modal {{modalName=='messageModal'?'show':''}}">
+	<view class="cu-modal bottom-modal {{modalName=='messageModal'?'show':''}}" style="z-index: 1000;">
 	  <view class="cu-dialog" style="border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
 		  <view class="dialog-container">
 			  <view class="title">
@@ -176,8 +176,8 @@
 				 </view>
 			  </view>
 			 <block>
-				 <view class="comment-text" style="margin-bottom: {{keyBoardHeight}};">
-				 <textarea style="height: inherit; width: inherit;text-align: left;" maxlength="500"  value="{{messages}}" hold-keyboard="{{true}}"  bindinput="handlMessagesInput"  cursor-spacing="100" adjust-position auto-focus="{{true}}"  placeholder="{{placeholder}}"></textarea>
+				 <view class="comment-text" >
+				 <textarea style="height: inherit; width: inherit;text-align: left;" maxlength="500"  value="{{messages}}"   bindinput="handlMessagesInput"   placeholder="{{placeholder}}"></textarea>
 				 <view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{messagesLen}}/500</view>
 				 </view>
 			 </block>
@@ -189,7 +189,7 @@
 	  </view>
 	</view>
 	
-	<view class="cu-modal bottom-modal {{modalName=='forwardModal'?'show':''}}">
+	<view class="cu-modal bottom-modal {{modalName=='forwardModal'?'show':''}}" catchtouchmove="preventTouchMove">
 	  <view class="cu-dialog">
 		  <view class="dialog-container" style="padding-top: 0rpx;">
 			  <view class="forward-contianer">

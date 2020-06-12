@@ -1,0 +1,475 @@
+.container .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .wrapper .card {
+  width: 624rpx;
+  height: 928rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .wrapper .card .detail-info {
+  flex-grow: 1;
+  padding: 64rpx 32rpx 32rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.container .wrapper .card .detail-info .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container .wrapper .card .detail-info .title .text {
+  width: 238rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 48rpx;
+}
+.container .wrapper .card .detail-info .list-container {
+  margin-top: 32rpx;
+  padding: 0rpx 32rpx 32rpx 32rpx;
+  width: 100%;
+}
+.container .wrapper .card .detail-info .list-container .book-list {
+  width: 100%;
+  height: 128rpx;
+  background: #ffffff;
+  border-bottom: 1px solid #EFEFF4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 0rpx 32rpx 0rpx;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .book-title {
+  width: 64rpx;
+  height: 64rpx;
+  background-color: #9ba7b1;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .book-title .title {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 48rpx;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .notebook-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+  margin-left: 32rpx;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .notebook-detail .note-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .notebook-detail .note-info .notebook-name {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0b0c0d;
+  line-height: 40rpx;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .notebook-detail .note-info .record {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 28rpx;
+  margin-left: 8rpx;
+}
+.container .wrapper .card .detail-info .list-container .book-list .book-info .notebook-detail .notebook-resume {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 28rpx;
+}
+.container .wrapper .card .detail-info .avatar-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.container .wrapper .card .detail-info .avatar-info .avatar {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+.container .wrapper .card .detail-info .avatar-info .avatar .cover-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.container .wrapper .card .detail-info .avatar-info .name {
+  margin-left: 16rpx;
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 34rpx;
+}
+.container .wrapper .card .detail-info .comment-info {
+  margin-top: 32rpx;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask {
+  width: 560rpx;
+  height: 640rpx;
+  background-color: #f7f7f7;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment {
+  flex-grow: 1;
+  margin: 16rpx;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .split {
+  width: 530rpx;
+  height: 2rpx;
+  background-color: #EFEFF4;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book {
+  display: flex;
+  flex: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-url {
+  width: 66rpx;
+  height: 96rpx;
+  margin: 16rpx 14rpx 16rpx 16rpx;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-url .cover-image {
+  width: inherit;
+  height: inherit;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-info .name {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-info .stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8rpx;
+  width: auto;
+  height: auto;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book .book-info .stars .commentStar {
+  width: auto;
+  height: 32rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  margin-left: 24rpx;
+  color: #969696;
+  line-height: 32rpx;
+}
+.container .wrapper .card .detail-info .comment-info .comment-mask .comment-book .book-icon {
+  width: 0rpx;
+  height: 48rpx;
+  border-width: 13rpx;
+  border-color: #FFAD91;
+  border-bottom-color: transparent;
+  border-style: solid;
+  margin-top: 16rpx;
+  margin-right: 16rpx;
+}
+.container .wrapper .card .btn {
+  width: 624rpx;
+  height: 112rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e2e2e2;
+  border-radius: 0rpx 0rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .wrapper .card .btn .text {
+  width: 72rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f96d3d;
+  line-height: 48rpx;
+  letter-spacing: 2rpx;
+}
+.container .title-input {
+  width: 750rpx;
+  height: 112rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e2e2e2;
+}
+.container .title-input .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .title-input .input-container .input {
+  width: 100%;
+  height: 112rpx;
+  background-color: #ffffff;
+}
+.container .title-input .input-container .input-len {
+  background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .notes {
+  width: 750rpx;
+  height: 496rpx;
+  background-color: #ffffff;
+}
+.container .notes .input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: inherit;
+  height: inherit;
+  padding: 0rpx !important;
+}
+.container .notes .input-container .input {
+  width: inherit;
+  height: inherit;
+  background-color: #ffffff;
+}
+.container .notes .input-container .recommend-reason {
+  width: inherit;
+  height: inherit;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e5e5e5, 0rpx 2rpx 0rpx 0rpx #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.container .notes .input-container .input-len {
+  background-color: #ffffff;
+  padding-right: 30rpx;
+  width: auto;
+  height: 112rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .basic-info {
+  position: relative;
+  width: 750rpx;
+  height: 160rpx;
+  background-color: #ffffff;
+  padding: 16rpx 30rpx 16rpx 32rpx;
+}
+.container .basic-info .book-shape {
+  position: absolute;
+  right: 46rpx;
+  width: 16rpx;
+  height: 24rpx;
+  top: 4rpx;
+}
+.container .basic-info .bg-container {
+  width: 688rpx;
+  height: 128rpx;
+  background-color: #f7f7f7;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16rpx;
+}
+.container .basic-info .bg-container .grid-group {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .basic-info .bg-container .grid-group .bg-img {
+  width: 128rpx;
+  height: 96rpx;
+  margin-right: 16rpx;
+}
+.container .basic-info .bg-container .grid-group .bg-img image {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+.container .basic-info .bg-container .grid-group .cu-tag {
+  left: 78rpx;
+  top: 0;
+  border-bottom-left-radius: 6rpx;
+  padding: 6rpx 12rpx;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.container .basic-info .bg-container .grid-group .bg-red {
+  color: var(--white);
+}
+.container .basic-info .bg-container .grid-group .choose-image {
+  width: 128rpx;
+  height: 96rpx;
+  background-color: #efeff4;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .basic-info .bg-container .grid-group .choose-image .text {
+  width: 80rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 28rpx;
+}
+.container .basic-info .bg-container .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .basic-info .bg-container .info .book-name {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .basic-info .bg-container .info .book-scorer {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .send-container {
+  padding: 14rpx 30rpx 20rpx 32rpx;
+  width: 750rpx;
+  height: 98rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #e2e2e2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .send-container .save-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .send-container .save-container .text-tip {
+  margin-left: 16rpx;
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 34rpx;
+}
+.container .send-container .save-container .text-tip .blue {
+  color: #576B95;
+}
+.container .send-container .button {
+  width: 192rpx;
+  height: 64rpx;
+  background-color: #f96d3d;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .send-container .button .text {
+  width: auto;
+  height: 48rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 48rpx;
+}

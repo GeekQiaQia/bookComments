@@ -5,19 +5,19 @@
     <view class="comment-box">
 		<view class="comment-card">
 			<view class="comment-book">
-				<view class="comment-num">{{commentInfo.bookNum}}</view>
+				<view class="comment-num">{{commentInfo.totalElements}}</view>
 				<text class="comment-type">我的书评</text>
 			</view>
 			<view class="split-line">
 				
 			</view>
-			<view class="comment-vedio">
+			<view class="comment-vedio" bindtap="handleMyLikedbook">
 				<text class="comment-num">{{commentInfo.likeNum}}</text>
 				<text class="comment-type">我点赞的书</text>
 			</view>
 		</view>
 		<view class="comment-container">
-			<block wx:if="{{commentInfo.bookNum==0&&commentInfo.likeNum==0}}">                    
+			<block wx:if="{{commentInfo.totalElements==0&&commentInfo.likeNum==0}}">                    
 				<view class="no-comment">
 					<view class="no-icon">
 						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>
@@ -28,13 +28,177 @@
 				</view>
 			</block>
 			<block wx:else>
-				<mycomment-card model:commentArray="{{commentInfo.commentArray}}" bind:onLikeEvent="handleLikeEvent"></mycomment-card>
-			
-				<view class="nomore-tip">
-					<text>没有更多内容</text>
+				<block wx:for="{{commentInfo.content}}" wx:key="id">
+					
+				
+				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"  bind:onShareEvent="handleShareEvent" bind:onForwardEvent="handleForwardEvent" bind:onShowModal="handleShowModal"></mycomment-card>
+			     </block>
+				<view class="bottom-tip">
+					— 到底啦 —
 				</view>
 			</block>
 		</view>
 	</view>
 	<copy-right></copy-right>
+
+	<!-- <share-friends model:modal-name="{{modalName}}"  model:share-friends="{{true}}" model:share-info="{{successInfo}}"  bind:closeDialog="handleCloseDialog"  >
+		
+	</share-friends> -->
+     <view class="cu-modal bottom-modal {{modalName=='shareModal'?'show':''}}">
+       <view class="cu-dialog">
+     	  <view class="dialog-container">
+     		  <view class="share-container">
+     			  <view class="top-container">
+     				  <view class="image-container">
+     				  					  <view class="image-title" style="background-image: url(../../images/bookbg.png);">
+     				  						  <view class="name-container">
+     				  							  <view class="title-name">「米读书评</view>
+     				  							  <view class="essay">随笔</view>
+     				  						  </view>
+     				  						  <view class="chicken-soul">
+     				  							  他不是心灵鸡汤
+     				  						  </view>
+     				  						  <view class="book-name">
+     				  							  《{{successInfo.bookName}}》的读书笔记
+     				  						  </view>
+     				  					  </view>
+     				  					  <view class="image-content">
+     				  						  <view class="image-comment-container">
+     				  						  				{{successInfo.content}}	  
+     				  						  </view>
+     										  <view class="bottom-info">
+     				  						  <view class="image-comment-byname">
+     				  							  —— {{successInfo.nickName}}
+     				  						  </view>
+     				  						  <view class="image-qrcode-container">
+     				  							  <view class="qrcode-image">
+     				  								  
+     				  							  </view>
+     				  						  		<view  class="qrcode-tip">
+     				  									<text class="tips">长按小程序查看详情</text>
+     				  									<view class="tips2">
+     				  										<text class="from">分享自</text>
+     				  										<text class="zhilun">「米读书评」</text>
+     				  									</view>
+     				  								</view>	 
+     				  						  </view>
+     										  </view>
+     				  					  </view>
+     				  </view>
+     				  <view class="close" bindtap="handleCloseDialog">
+     					  <text class="cuIcon-close lg text-black " ></text> 
+     				  </view>
+     			  </view>
+     			  <view class="tip-container">
+     				  保存图片后，可分享至朋友圈
+     			  </view>
+     			  <view class="button-container">
+     				  <view class="save-image">
+     					   <text class="cuIcon-down lg text-white size" ></text>
+     					  
+     					  <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+     					      <view class="btn-text white">
+     					      		 保存分享
+     					      </view>
+     					  </poster>
+     				  </view>
+     				  <view >
+     					  <button open-type="share" class=" share-friends  no-border">
+     					  			<text class="cuIcon-weixin lg text-orange size" ></text> 
+     								<text class="btn-text black">分享给好友</text>
+     					  </button>
+     				  </view>
+     			  </view>
+     		  </view>
+     		  <view class="split-bar">
+     		  			  
+     		  </view>
+     	  </view>
+       
+       </view>
+     </view>
+	 
+	 <view class="cu-modal bottom-modal {{modalName=='forwardModal'?'show':''}}">
+	   <view class="cu-dialog">
+	 	  <view class="dialog-container" style="padding-top: 0rpx;">
+	 		  <view class="forward-contianer">
+	 			  <view class="forward-comment" bindtap="toForwardingComment">
+	 				  <text class=" lg text-gray cuIcon-comment text-gray" data-target="forwardModal"></text>
+	 				  <view class="forward-tip">
+	 					  转发同时评论
+	 				  </view>
+	 			  </view>
+	 			  <view class="forward-comment" bindtap="toForwardingNow">
+	 			  					  <text class=" lg text-gray cuIcon-forward text-gray" data-target="forwardModal"></text>
+	 			  					  <view class="forward-tip">
+	 			  						  快速转发
+	 			  					  </view>
+	 			  </view>
+	 		  </view>
+	 		  <view class="space-line">
+	 			  
+	 		  </view>
+	 		  <view class="delete-cancel" bindtap="hideModal">
+	 		  			  <view class="delete-cancel-text">
+	 		  				  取消
+	 		  			  </view>
+	 		  </view>
+	 		  <view class="split-bar">
+	 		  			  
+	 		  </view>
+	 	  </view>
+	   
+	   </view>
+	 </view>
+	 
+	 
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				  <view class="add-to-booknotes" bindtap="addNoteBooks">
+				  			  <view  class="add-plus">
+								  <image class="icon" src="../../images/icon-plus.png"></image>
+							  </view>
+				  			  <view class="add-text">
+				  				  添加到读书笔记
+				  			  </view>
+				  </view>
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除当前书评
+				  			  </view>
+				  </view>
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
 </view>

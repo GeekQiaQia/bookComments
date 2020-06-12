@@ -25,7 +25,7 @@ Component({
 	   * @description  查询作者详细信息；
 	   * */
 	handleAuthorDetail(e){
-		console.log(e);
+		
 		
 		      var myEventDetail = {
 				  id:e.target.dataset.id

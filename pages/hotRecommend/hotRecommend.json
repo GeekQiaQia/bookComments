@@ -1,6 +1,7 @@
 {
   "usingComponents": {
 	   "copy-right":"../../components/copy-right/copy-right",
+	   "hot-card":"../../components/hot-card/hot-card",
 	   "comment-stars":"../../components/commentStars/commentStars"
   },
      "navigationBarTitleText": "热门书评"

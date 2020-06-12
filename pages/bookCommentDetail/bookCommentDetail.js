@@ -8,6 +8,10 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		currentPage:0,
+		totalPages:0,
+		totalElements:0,
+		pageSize:10,
 		bookInfo: {},
 		scrollHeight:"",
 		id:null,
@@ -29,10 +33,10 @@ Page({
       // 获取到的单位px;
       let width=wx.getSystemInfoSync().windowWidth;
       let height=wx.getSystemInfoSync().windowHeight;
-      console.log(width,height);
+ 
       // rpx与px 之间的换算：750rpx /windowWidth=屏幕高度rpx/windowHeight;
       let screeHeight=750*height/width;
-      console.log(screeHeight);
+    
       // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
       let scroll_height=screeHeight-166;
       
@@ -41,46 +45,111 @@ Page({
       });
     },
     
-	
+	lower(e) {
+	    console.log(e)
+		let self = this;
+			
+		 // 显示加载图标
+				let totalElements=this.data.totalElements,
+				 page=this.data.currentPage,
+				 id=this.data.id,
+				 pageSize=this.data.pageSize;
+				if(pageSize<totalElements){
+					// page++;
+					pageSize+=10;
+					self.setData({
+						currentPage:page,
+						pageSize
+					});
+					wx.showLoading({
+						
+					  title: '更多加载中',
+						
+					})
+					this.getBookCommentList(id,page,pageSize);
+				}
+	  },
 	/**
 	 * @description；关注或者取消关注
 	 * 
 	 * */
 	
 	toFocusOnUsers: function(e) {
-		let focusId=e.target.dataset.id
-		let reqData = {
-			focusId,
-			type:1
-		}
-		let that = this;
-		api._fetch({
-			url: '/api/i/userRelationship/focus',
-			data: reqData,
-			method: 'post',
-			contentType: 1
-		}).then(function(res) {
-			console.log(res);
-			// 此处发送修改交易；
-			if (res.statusCode === 200) {
-				wx.showToast({
-				  title: "关注成功",
-				  mask:true,
-				  icon: 'success',
-				  duration: 3000
-				})
-			} else {
-				wx.showToast({
-					title: res.message,
-					mask: true,
-					icon: 'none',
-					duration: 3000
-				})
-			}
+		let user=e.target.dataset.id;
+		let fans=e.target.dataset.fans;
+		let id=this.data.itemindex;
+			let that = this;
+			console.log(fans);
+		if(fans==0){
 			
-		}).catch(function(error) {
+			let reqData = {
+				user
+			}
+			api._fetch({
+				url: '/api/i/userRelationship/focus',
+				data: reqData,
+				method: 'post',
+				contentType: 1
+			})
+			.then(function(res) {
+			
+				// 此处发送修改交易；
+				if (res.statusCode === 200) {
+					wx.showToast({
+					  title: "关注成功",
+					  mask:true,
+					  icon: 'success',
+					  duration: 3000
+					})
+					that.getBookCommentDetail(id);
+				} else {
+					wx.showToast({
+						title: res.message,
+						mask: true,
+						icon: 'none',
+						duration: 3000
+					})
+				}
+				
+		
+		
+		})
+		.catch(function(error) {
 			console.log(error);
 		});
+		}else if(fans==1||fans==2){
+			
+			let reqData = {
+					user
+				}
+				api._fetch({
+					url: '/api/i/userRelationship/cancel.focus',
+					data: reqData,
+					method: 'post',
+					contentType: 1
+				})
+				.then(function(res) {
+				
+					// 此处发送修改交易；
+					if (res.statusCode === 200) {
+					
+						that.getBookCommentDetail(id);
+					} else {
+						wx.showToast({
+							title: res.message,
+							mask: true,
+							icon: 'none',
+							duration: 3000
+						})
+					}
+					
+			
+			
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+		}
 	},
 	
 	/**
@@ -99,7 +168,7 @@ Page({
 			method: 'get',
 			contentType: 1
 		}).then(function(res) {
-			console.log(res);
+		
 			// 此处发送修改交易；
 			if (res.statusCode === 200) {
 				let bookInfo = res.data;
@@ -126,7 +195,7 @@ Page({
 				that.setData({
 					bookInfo
 				});
-				console.log(bookInfo);
+				
 			} else {
 				wx.showToast({
 					title: res.message,
@@ -156,7 +225,7 @@ Page({
 		       method:'get',
 			   contentType:1
 		   }).then(function (res) {
-		   	 console.log(res);
+		  
 		     let item=res.data;
 			 that.setData({
 				 item
@@ -171,11 +240,11 @@ Page({
 	 * @description 获取书籍评论详情；
 	 * @param { bookId} id 
 	 * */
-	 getBookCommentList:function(book){
+	 getBookCommentList:function(book,page=0,size=10){
 		   let reqData={
 		     	book,
-				page:0,
-				size:10
+				page,
+				size
 		   }
 		   let that=this;
 		   api._fetch({
@@ -184,7 +253,7 @@ Page({
 		       method:'get',
 			   contentType:1
 		   }).then(function (res) {
-		   	 console.log(res);
+		   	
 		   			 // 此处发送修改交易；
 		   			 if(res.statusCode===200){
 						 let commentNum=res.data.totalElements;
@@ -193,10 +262,17 @@ Page({
 					for(let item of cardInfoArray ){
 						item['readMore']=false;
 					}
+					let totalPages=res.data.totalPages;
+					let totalElements=res.data.totalElements;
 					that.setData({
 						cardInfoArray,
-						commentNum
+						commentNum,
+						totalElements,
+						totalPages
 					});
+					wx.hideLoading();
+					
+				
 		   			 }else{
 		   				 wx.showToast({
 		   				   title: res.message,
@@ -211,6 +287,14 @@ Page({
 		       console.log(error);
 		   });
 	 }, 
+	 handleOnFocus(e){
+	
+		 let bookInfo=this.data.bookInfo;
+		 wx.navigateTo({
+			 url: '../post-comment/post-comment'
+		 })
+		 wx.setStorageSync("postBookInfo",bookInfo)
+	 },
 	 
 	 handleCategoryDetail(e){
 	 		// 组件绑定来的id;
@@ -256,7 +340,7 @@ Page({
 	 */
 	onLoad: function(options) {
 		let name = "loginInfo.name"
-		console.log(app.globalData.userInfo);
+	
 		if (app.globalData.userInfo) {
 
 			this.setData({
@@ -287,14 +371,16 @@ Page({
 				}
 			})
 		}
-		console.log(this.data.userInfo)
+
 		let id = options.id;
+		let itemindex=options.itemindex;
 		this.setData({
-			id
+			id,
+			itemindex
 		});
 		this.getBookDetail(id);
 		this.getBookCommentList(id);
-		this.getBookCommentDetail(id);
+		this.getBookCommentDetail(itemindex);
 		this.computeScrollViewHeight();
 		
 	},

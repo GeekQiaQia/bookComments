@@ -84,7 +84,7 @@
 						</view>
 						<view class="my-info">
 							<text>我的回复</text>
-							<text class="my-info-num green" >{{statistics.replies}}条</text>
+							<text class="my-info-num green" >{{statistics.replies}}<text class="item">条</text></text>
 						</view>
 					</view>
 					<view class="my-all" catchtap="handleMyReply">
@@ -92,7 +92,7 @@
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
-				<view class="my-block">
+				<view class="my-block" catchtap="handleMyRecommend">
 				
 					<view class="my-left">
 						<view class="icon">
@@ -100,33 +100,33 @@
 						</view>
 						<view class="my-info">
 							<text>我的推荐</text>
-							<text class="my-info-num deepGrey">{{statistics.recommends}}条</text>
+							<text class="my-info-num deepGrey">{{statistics.recommends}}<text class="item">条</text></text>
 						</view>
 					</view>
-					<view class="my-all" bindtap="handleMyRecommend">
+					<view class="my-all" catchtap="handleMyRecommend">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
-				<view class="my-block">
+				<view class="my-block" catchtap="handleMyHistory">
 					
 					
-					<view class="my-left">
+					<view class="my-left" >
 						<view class="icon">
 						<cover-image class="my-history-icon" src="../../images/Icon-history.png"></cover-image >
 						</view>
 						<view class="my-info">
 							<text>我的历史</text>
-							<text class="my-info-num deepYellow">{{statistics.history}}条</text>
+							<text class="my-info-num deepYellow">{{statistics.history}}<text class="item">条</text></text>
 						</view>
 					</view>
-					<view class="my-all" bindtap="handleMyHistory">
+					<view class="my-all" catchtap="handleMyHistory">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>
 				</view>
 				
-				<view class="my-block">
+				<view class="my-block" catchtap="handleMyMessage">
 					
 					<view class="my-left">
 						<view class="icon">
@@ -134,10 +134,10 @@
 						</view>
 						<view class="my-info">
 							<text>我的消息</text>
-							<text class="my-info-num deepBlue">{{statistics.messages}}条</text>
+							<text class="my-info-num deepBlue">{{statistics.messages}}<text class="item">条</text></text>
 						</view>
 					</view>
-					<view class="my-all" bindtap="handleMyMessage">
+					<view class="my-all" catchtap="handleMyMessage">
 						全部
 						<text class="cuIcon-right lg text-gray"></text>
 					</view>

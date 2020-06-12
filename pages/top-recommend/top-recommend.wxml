@@ -5,7 +5,7 @@
 		<cover-image class="cover-image" src="{{imageSrc}}" >
 		</cover-image> 
 		<view class="list-container">
-			<block wx:for="{{bookList}}" wx:key="{{item.rank}}">
+			<block wx:for="{{bookList}}" wx:key="id">
 				<view class="list-card">
 					<block wx:if="{{item.rank==1}}">
 						<view class="top-num No1">
@@ -28,7 +28,7 @@
 						</view>
 					</block>
 					<view class="book-info">
-						<book-card model:book-info="{{item.bookInfo}}"  bind:onBookDetail="onBookDetail" bind:onAuthorDetail="onAuthorDetail" bind:onPressDetail="onPressDetail">
+						<book-card model:book-info="{{item.bookInfo}}"  bind:onBookDetail="onBookDetail" >
 							
 						</book-card>
 						

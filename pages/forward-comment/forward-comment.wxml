@@ -65,6 +65,7 @@
 									<view class="title" data-id="{{item.id}}">
 										
 										{{filter.tofiltFirstWord(item.name)}}
+										
 									</view>
 								</view>
 								<view class="notebook-detail" data-id="{{item.id}}">
@@ -136,7 +137,7 @@
 									<view class="name">{{item.bookInfo.name}}</view>
 									<view class="stars">
 										<comment-stars model:stars="{{item.bookInfo.stars}}"></comment-stars>
-										<view class="commentStar">{{item.bookInfo.comments}}人评分</view>
+										<view class="commentStar">{{item.bookInfo.scorer}}人评分</view>
 									</view>
 								</view>
 							</view>

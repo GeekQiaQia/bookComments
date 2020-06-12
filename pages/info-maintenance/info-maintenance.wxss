@@ -5,7 +5,7 @@
   flex-grow: 1;
   padding-top: 32rpx;
 }
-.container .common-container .change-avatar {
+.container .common-container .main-info .change-avatar {
   width: 748rpx;
   height: 192rpx;
   background: #ffffff;
@@ -17,7 +17,7 @@
   padding: 32rpx 28rpx 32rpx 32rpx ;
   border-bottom: 1rpx solid #E2E2E2;
 }
-.container .common-container .change-avatar .avatar-info {
+.container .common-container .main-info .change-avatar .avatar-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -25,17 +25,17 @@
   width: auto;
   height: inherit;
 }
-.container .common-container .change-avatar .avatar-info .avatar {
+.container .common-container .main-info .change-avatar .avatar-info .avatar {
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
 }
-.container .common-container .change-avatar .avatar-info .avatar .cover-image {
+.container .common-container .main-info .change-avatar .avatar-info .avatar .cover-image {
   width: inherit;
   height: inherit;
   border-radius: 50%;
 }
-.container .common-container .change-avatar .avatar-info .tip {
+.container .common-container .main-info .change-avatar .avatar-info .tip {
   width: 136rpx;
   height: 48rpx;
   font-size: 34rpx;
@@ -45,13 +45,13 @@
   line-height: 48rpx;
   margin-left: 32rpx;
 }
-.container .common-container .info-container {
+.container .common-container .main-info .info-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
 }
-.container .common-container .info-container .basic-info {
+.container .common-container .main-info .info-container .basic-info {
   width: 100%;
   height: 112rpx;
   background: #ffffff;
@@ -61,18 +61,18 @@
   align-items: center;
   padding: 32rpx 0rpx 32rpx 32rpx;
 }
-.container .common-container .info-container .basic-info .info-name {
+.container .common-container .main-info .info-container .basic-info .info-name {
   width: auto;
   height: 48rpx;
   color: rgba(0, 0, 0, 0.9);
 }
-.container .common-container .info-container .basic-info .info-detail {
+.container .common-container .main-info .info-container .basic-info .info-detail {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-.container .common-container .info-container .basic-info .info-detail .info {
+.container .common-container .main-info .info-container .basic-info .info-detail .info {
   width: auto;
   height: 48rpx;
   font-size: 34rpx;
@@ -81,14 +81,148 @@
   color: #000000;
   line-height: 48rpx;
   margin-right: 20rpx;
+  opacity: 0.5;
 }
-.container .common-container .info-container .basic-info .info-detail .right-icon {
+.container .common-container .main-info .info-container .basic-info .info-detail .right-icon {
   margin-right: 32rpx;
 }
-.container .common-container .info-container .split-line {
+.container .common-container .main-info .info-container .split-line {
   width: 716rpx;
   height: 2rpx;
   background-color: rgba(0, 0, 0, 0.1);
+}
+.container .common-container .wx-logined .login-tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-left: 32rpx;
+}
+.container .common-container .wx-logined .login-tip .text {
+  width: 168rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .common-container .wx-logined .wx-login {
+  margin-top: 16rpx;
+  width: 750rpx;
+  height: 176rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34rpx 30rpx 34rpx 34rpx;
+  margin-bottom: 266rpx;
+}
+.container .common-container .wx-logined .wx-login .avatar-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: inherit;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .avatar .cover-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 34rpx;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .tip .name {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .tip .wx-quick-login {
+  width: 224rpx;
+  height: 48rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #85c610;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .common-container .wx-logined .wx-login .avatar-info .tip .wx-quick-login .text {
+  width: 160rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #82c400;
+  line-height: 28rpx;
+}
+.container .common-container .wx-logined .wx-login .logined-tip {
+  width: 128rpx;
+  height: 48rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #b8b8b8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .common-container .wx-logined .wx-login .logined-tip .text {
+  width: 60rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 28rpx;
+}
+.container .common-container .wx-logined .wechat-phone {
+  width: 690rpx;
+  height: 100rpx;
+  background: #07c160;
+  border-radius: 20rpx;
+  border: 2rpx solid #08954b;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .common-container .wx-logined .wechat-phone .text {
+  color: #FFFFFF;
+}
+.container .common-container .wx-logined .other-phone {
+  width: 690rpx;
+  height: 100rpx;
+  background: #fbfafc;
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28rpx;
+}
+.container .common-container .wx-logined .other-phone .text {
+  color: #353535;
 }
 .container .common-container .dialog-container {
   display: flex;

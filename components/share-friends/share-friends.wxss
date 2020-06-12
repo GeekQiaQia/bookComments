@@ -111,12 +111,17 @@
 }
 .container .dialog-container .share-container .top-container .image-container .image-content .image-comment-container {
   width: 384rpx;
-  height: auto;
+  max-height: 162px;
   font-size: 24rpx;
   font-family: STSongti-SC-Regular, STSongti-SC;
   font-weight: 400;
   color: #666666;
   line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .dialog-container .share-container .top-container .image-container .image-content .bottom-info .image-comment-byname {
   width: 100%;

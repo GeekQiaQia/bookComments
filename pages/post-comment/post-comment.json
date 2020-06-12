@@ -1,0 +1,6 @@
+{
+ "usingComponents": {
+ 	  "comment-stars":"../../components/commentStars/commentStars"
+ },
+  "navigationBarTitleText": "发表书评"
+}
