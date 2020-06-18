@@ -157,6 +157,276 @@
   align-items: flex-start;
   padding: 16rpx 54rpx 28rpx 32rpx;
 }
+.container .notes-container .notes-main .note-list {
+  width: 688rpx;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 32rpx 16rpx 16rpx 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 32rpx 30rpx 0rpx 30rpx;
+}
+.container .notes-container .notes-main .note-list .note-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: auto;
+}
+.container .notes-container .notes-main .note-list .note-title .book-name {
+  width: 64rpx;
+  height: 64rpx;
+  background: #9ba7b1;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16rpx;
+}
+.container .notes-container .notes-main .note-list .note-title .book-name .text {
+  width: 29rpx;
+  height: 41rpx;
+  font-size: 29rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+.container .notes-container .notes-main .note-list .note-title .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 528rpx;
+  height: 64rpx;
+}
+.container .notes-container .notes-main .note-list .note-title .title-container .title {
+  width: inherit;
+  height: 40rpx;
+  font-size: 29rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0b0c0d;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .notes-container .notes-main .note-list .note-title .title-container .time {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .notes-container .notes-main .note-list .note-title .more-operator {
+  width: 36rpx;
+  height: auto;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 41rpx;
+}
+.container .notes-container .notes-main .note-list .note-content {
+  width: 658rpx;
+  height: auto;
+  font-size: 29rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+  margin-top: 16rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .notes-container .notes-main .note-list .oprator-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 36rpx;
+}
+.container .notes-container .notes-main .note-list .oprator-container .share-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .notes-container .notes-main .note-list .oprator-container .share-list .comment-share {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .notes-container .notes-main .note-list .oprator-container .share-list .comment-share .share {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+}
+.container .notes-container .notes-main .note-list .oprator-container .share-list .comment-share .shared {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f96d3d;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+}
+.container .notes-container .notes-main .note-list .oprator-container .opr-btn {
+  width: 113rpx;
+  height: 48rpx;
+  background: #efeff4;
+  border-radius: 24rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .notes-container .notes-main .note-list .oprator-container .opr-btn .text {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container {
+  margin-top: 32rpx;
+  width: 656rpx;
+  height: 304rpx;
+  background-color: #efeff4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo .avatar {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo .avatar .cover-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo .info .name {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  line-height: 34rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .userInfo .info .time {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: auto;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .book-info .book-name {
+  width: auto;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: STSongti-SC-Bold, STSongti-SC;
+  font-weight: bold;
+  color: #666666;
+  line-height: 34rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .top-container .book-info .scorer {
+  width: auto;
+  height: 26rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 26rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .content {
+  width: 624rpx;
+  height: 118rpx;
+  font-size: 29rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 26rpx;
+}
+.container .notes-container .notes-main .note-list .comment-container .releation-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.container .notes-container .notes-main .note-list .comment-container .releation-info .releation {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #969696;
+  line-height: 32rpx;
+}
 .container .notes-container .notes-main .nomore-tip {
   display: flex;
   flex-direction: row;

@@ -47,7 +47,7 @@ Page({
 		    title: '修改成功',
 		    mask:true,
 		    icon: 'success',
-		    duration: 5000
+		    duration: 3000
 		  })
 		
 
@@ -81,6 +81,7 @@ Page({
 		 that.setData({
 			 maintenanceInfo
 		 })
+		 wx.setStorageSync('maintenanceInfo',maintenanceInfo);
 
 	 }).catch(function (error) {
 	     console.log(error);

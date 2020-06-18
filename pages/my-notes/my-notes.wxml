@@ -1,12 +1,13 @@
 
 <view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
 	<view class="notes-top">
 		<view class="notes-info">
 			<view class="notes-title">我的读书笔记 </view>
 			<view class="notes-dot">
 				
 			</view>
-			<view class="notes-num">共有笔记{{notesInfo.notes}}条</view>
+			<view class="notes-num">共有笔记{{notesList.totalElements}}条</view>
 		</view>
 		<view class="notes-icon">
 			<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
@@ -33,7 +34,7 @@
 						<view class="all">
 							全部
 						</view>
-						<block wx:for="{{notesInfo.content}}" wx:key="*this">
+						<block wx:for="{{notesInfo.content}}" wx:key="id">
 								<view  class="bookname">
 									{{item.name}}
 								</view>
@@ -57,6 +58,90 @@
 						</view>
 					</block>
 					<block wx:else>
+						<block wx:for="{{notesList.content}}" wx:key="id">
+							<view class="note-list">
+								<view class="note-title">
+									<view class="book-name">
+										<view class="text">{{filter.tofiltFirstWord(item.userNotebook.name)}} </view>
+									</view>
+									<view class="title-container">
+										<view class="title" wx:if="{{item.title!==null}}">{{item.title}}</view>
+										<view class="time">{{item.createTime}}</view>
+									</view>
+									<view class="more-operator" data-id="{{item.id}}" bindtap="showModal" data-target="bottomModal">
+										...
+									</view>
+								</view>
+								<view class="note-content">
+									{{item.content}}
+								</view>
+								<view class="oprator-container">
+									<view class="share-list">
+										<view class="comment-share" style="margin-right: 56rpx;" data-target="forwardModal" data-id="{{item.id}}"  data-item="{{item}}" bindtap="toShowForwardDialog">
+											<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-id="{{item.id}}" data-item="{{item}}" data-target="forwardModal"></text>
+											<block wx:if="{{item.meForward==true}}">
+												<view class="shared">{{item.forwarding}}</view>
+											</block>
+											<block wx:else>
+												<view class="share">转发</view>
+											</block>
+											
+										</view>
+										
+										<view class="comment-share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal" bindtap="toShowShareDialog"  >
+											<text class="cuIcon-share lg text-gray" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal"></text>
+											<view class="share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal">分享</view>
+										</view>
+										
+										
+									</view>
+									<view class="opr-btn"> 
+										<view class="text">
+											私有
+										</view>
+									</view>
+								</view>
+								<view class="comment-container">
+									<view class="top-container">
+										<view class="userInfo">
+											<view class="avatar">
+												<image
+												                class="cover-image"
+												                src="{{item.bookComment.userInfo.avatarUrl}}"
+												               >
+												            </image>
+											</view>
+											<view class="info">
+												<view class="name">
+													{{item.bookComment.userInfo.nickName}}
+												</view>
+												<view class="time">
+													{{item.bookComment.createTime}}
+												</view>
+											</view>
+										</view>
+										<view class="book-info">
+											<view class="book-name">
+												{{item.bookComment.bookInfo.name}}
+											</view>
+											<comment-stars model:stars="{{item.bookComment.bookInfo.stars}}"></comment-stars>
+											<view class="scorer">
+												{{item.bookComment.bookInfo.scorer}}人评分
+											</view>
+										</view>
+									</view>
+									<view class="content"> 
+										{{item.bookComment.content}}
+									</view>
+									<view class="releation-info">
+												<text class="releation ">{{item.bookComment.liked}}有用 · </text>
+												<text class="releation ">{{item.bookComment.reply}}回复 · </text>
+												<text class="releation ">{{item.bookComment.forwarding}}转发</text>
+									</view>
+								</view>
+							</view>
+						</block>
+					
 						<view class="nomore-tip">
 							<text>没有更多内容</text>
 						</view>
