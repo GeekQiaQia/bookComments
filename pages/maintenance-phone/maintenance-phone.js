@@ -9,6 +9,7 @@ Page({
 	phoneNumber:"",
 	validCode:"",
 	disabled:false,
+	checkValid:false,
 	start:false,
 	counter:60
   },
@@ -72,7 +73,7 @@ Page({
 			 			    title: '发送成功',
 			 			    mask:true,
 			 			    icon: 'success',
-			 			    duration: 5000
+			 			    duration: 2000
 			 			  })
 			 		  }
 			 		  // 开始倒计时；
@@ -104,7 +105,7 @@ Page({
   		    title: '已发送',
   		    mask:true,
   		    icon: 'success',
-  		    duration: 5000
+  		    duration: 3000
   		  })
   		  
   		  wx.redirectTo({
@@ -120,6 +121,30 @@ Page({
 	  });
 	  
   },
+  handlePhoneInputBlur:function(e){
+	  let phoneNumber=e.detail.value;
+	  let reg = /^[1][0-9][0-9]{9}$/;
+	  if (phoneNumber == "" || phoneNumber == 'undefined' || phoneNumber == null) {
+	  	wx.showToast({
+	  					title: '请输入正确的手机号',
+	  					mask:true,
+	  					icon:'none',
+	  					duration: 2000
+	  	})
+	  	return;
+	  } else if (reg.test(phoneNumber)) {
+	  	
+	  } else {
+	  	wx.showToast({
+	  					title: '手机号码格式错误',
+	  					mask:true,
+	  					icon:'none',
+	  					duration: 2000
+	  	})
+	  	return;
+	  }
+	  
+  },
   handlvalidCodeInput:function(e){
 	  this.setData({
 	  		validCode:e.detail.value
@@ -129,9 +154,20 @@ Page({
 		let code=this.data.validCode,
 		    reqData={},
 		    phoneNumber=this.data.phoneNumber;
-			if(phoneNumber==''){
+			let reg = /^[1][0-9][0-9]{9}$/;
+			if (phoneNumber == "" || phoneNumber == 'undefined' || phoneNumber == null) {
 				wx.showToast({
-								title: '手机号输入不可为空',
+								title: '请输入正确的手机号',
+								mask:true,
+								icon:'none',
+								duration: 2000
+				})
+				return;
+			} else if (reg.test(phoneNumber)) {
+				
+			} else {
+				wx.showToast({
+								title: '手机号码格式错误',
 								mask:true,
 								icon:'none',
 								duration: 2000
@@ -164,7 +200,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	let maintenanceInfo=wx.getStorageSync('maintenanceInfo');
+	let {phoneNumber}=maintenanceInfo;
+	this.setData({
+		phoneNumber:phoneNumber
+	});
   },
 
   /**

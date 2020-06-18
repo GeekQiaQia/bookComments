@@ -29,12 +29,18 @@
   width: 100%;
   height: 112rpx;
   background-color: #ffffff;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #B8B8B8;
+  line-height: 48rpssx;
 }
 .container .common-container .input-container .input-len {
   background-color: #ffffff;
   padding-right: 30rpx;
   width: auto;
   height: 112rpx;
+  color: #B8B8B8;
   display: flex;
   flex-direction: column;
   justify-content: center;

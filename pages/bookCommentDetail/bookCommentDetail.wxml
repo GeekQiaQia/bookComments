@@ -3,17 +3,20 @@
 	
 
 	<scroll-view scroll-y="true" bindscrolltolower="lower" enable-back-to-top="{{true}}" style='height: {{scrollHeight + "rpx"}}'>
+		
 		<view class="book-card">
-						
+						   <van-skeleton title avatar avatar-shape="squares"  animate="{{true}}" loading="{{ loading}}">	
 							<image
 					                class="cover-image"
 					                src="{{bookInfo.picture}}"
 					               >
 					            </image>
+							</van-skeleton>
+							
 								<view class="info-detail" data-id="{{bookInfo.id}}"  bindtap="handleBookDetail">
-									<text class="name">《{{bookInfo.name}}》</text>
-							        <commentStars  model:stars="{{bookInfo.stars}}"></commentStars>
-									<text class="commentsNum">{{bookInfo.scorer}}人评分</text>
+									<text class="name" data-id="{{bookInfo.id}}" >《{{bookInfo.name}}》</text>
+							        <commentStars  data-id="{{bookInfo.id}}"  model:stars="{{bookInfo.stars}}"></commentStars>
+									<text class="commentsNum" data-id="{{bookInfo.id}}" >{{bookInfo.scorer}}人评分</text>
 									<view class="info-obj" wx:if="{{bookInfo.authors.author.length>0}}">
 										<view class="info-key ">作者<text></text></view>:
 										<block wx:for="{{bookInfo.authors.author}}" wx:key="*this">
@@ -40,11 +43,13 @@
 									</view>
 									
 								</view>
+								
 								<text class="cuIcon-right lg text-gray"  data-id="{{bookInfo.id}}"  bindtap="handleBookDetail"></text>
 					</view>
 			
 			<view  class="top-comment">
-				<view class="card-item" bindtap="handleCommentDetail">
+				<van-skeleton title avatar row="3" loading="{{ loading}}">	
+					<view class="card-item" bindtap="handleCommentDetail">
 					<view class="card-item-title">
 								 <view class="info">
 									 <view class="avatar">
@@ -110,6 +115,7 @@
 								
 					</view>
 				</view>
+				</van-skeleton>
 			</view>
 			<view class="more-comment-tip">
 				<view class="more-comment">

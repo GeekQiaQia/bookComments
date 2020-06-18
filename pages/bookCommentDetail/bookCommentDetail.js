@@ -20,6 +20,7 @@ Page({
 		userInfo: {},
 		cardInfoArray:[],
 		commentNum:"",
+		loading:true,
 		item: {},
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		hasUserInfo: false
@@ -175,6 +176,7 @@ Page({
 				wx.setNavigationBarTitle({
 				     title: bookInfo.name+"的书评"
 				   })
+				   wx.setStorageSync("bookTitle",bookInfo.name)
 				let author = [];
 				let translators = [];
 				let allAuthors = bookInfo.authors;
@@ -219,16 +221,18 @@ Page({
 		     	comment
 		   }
 		   let that=this;
+		  
 		   api._fetch({
 		       url: '/api/book/comment/detail',
 		       data:reqData,
 		       method:'get',
 			   contentType:1
 		   }).then(function (res) {
-		  
+		      
 		     let item=res.data;
 			 that.setData({
-				 item
+				 item,
+				 loading:false
 			 });
 		   			
 		       
@@ -330,8 +334,10 @@ Page({
 	 },
 	 handleCommentDetail(e){
 		 let id=this.data.id;
+		 let itemindex=this.data.itemindex;
+		 
 		 wx.navigateTo({
-		   url: '../comment-detail/comment-detail?id='+id
+		   url: '../comment-detail/comment-detail?id='+id+'&itemindex='+itemindex
 		 })
 	 },
 		  

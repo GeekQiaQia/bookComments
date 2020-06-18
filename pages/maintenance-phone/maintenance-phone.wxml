@@ -9,7 +9,7 @@
 				</text>
 				<text class="cuIcon-right lg text-gray"></text>
 			</view>
-			<input style="padding-left: 32rpx;" class="input" maxlength="11" value="{{phoneNumber}}"  auto-focus="{{true}}" bindinput="handlPhoneNumberInput"  placeholder="请输入手机号码"></input>
+			<input style="padding-left: 32rpx;" class="input" maxlength="11" value="{{phoneNumber}}"  auto-focus="{{true}}" bindinput="handlPhoneNumberInput"  bindblur="handlePhoneInputBlur" placeholder="请输入手机号码"></input>
 			
 		</view>
 		<view class="input-container">

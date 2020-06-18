@@ -6,9 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-		notesInfo:{
-				
-			}
+	  currentPage:0,
+	  totalPages:0,
+	  totalElements:0,
+	  pageSize:10,
+		notesInfo:{},
+		notesList:{}
   },
   
   /**
@@ -65,7 +68,48 @@ Page({
 	     url: '../my-notebooks/my-notebooks'
 	   })
    },
-  
+   /**
+	* @description 获取笔记列表；
+	* */
+	handleGetNoteList:function(page=0,size=10){
+		let reqData={
+				   page,
+				   size
+		}
+		let that=this;
+		api._fetch({
+		    url: '/api/i/note/list',
+		    data:reqData,
+		    method:'get',
+			contentType:1
+		}).then(function (res) {
+		
+					 // 此处发送修改交易；
+					 if(res.statusCode===200){
+						 
+						 let notesList=res.data;
+						 let totalPages=res.data.totalPages;
+						 let totalElements=res.data.totalElements;
+						 that.setData({
+						 	notesList,
+						 	totalElements,
+						 	totalPages
+						 });
+					
+					 }else{
+						 wx.showToast({
+						   title: res.message,
+						   mask:true,
+						   icon: 'none',
+						   duration: 3000
+						 })
+					 }
+					
+		    
+		}).catch(function (error) {
+		    console.log(error);
+		});
+	},
   /**
    * @description 跳转到新建笔记本
    * */
@@ -80,6 +124,7 @@ Page({
    */
   onLoad: function (options) {
 	this.getNotebookList();
+	this.handleGetNoteList();
   },
 
   /**
@@ -117,12 +162,33 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
+ /**
+  * 页面上拉触底事件的处理函数
+  */
+ onReachBottom: function() {
+    let self = this;
+ 
+     // 显示加载图标
+ 	let totalElements=this.data.totalElements;
+ 	let page=this.data.currentPage;
+ 	let pageSize=this.data.pageSize;
+ 	if(pageSize<totalElements){
+ 		// page++;
+ 		pageSize+=10;
+ 		self.setData({
+ 			currentPage:page,
+ 			pageSize
+ 		});
+ 		wx.showLoading({
+ 			
+ 		  title: '更多加载中',
+ 			
+ 		})
+ 		this.handleGetNoteList(page,pageSize);
+ 	}
+ 	
+ 
+ },
 
   /**
    * 用户点击右上角分享

@@ -94,7 +94,7 @@
   font-size: 34rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
-  color: #000000;
+  color: #B8B8B8;
   background-color: #ffffff;
 }
 .container .common-container .btn-container {

@@ -62,7 +62,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	let maintenanceInfo=wx.getStorageSync('maintenanceInfo');
+	let {sign}=maintenanceInfo;
+	this.setData({
+		signature:sign,
+		signatureLen:sign.length
+	});
   },
 
   /**
