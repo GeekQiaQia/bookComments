@@ -10,8 +10,11 @@ Page({
 	  totalPages:0,
 	  totalElements:0,
 	  pageSize:10,
-		notesInfo:{},
-		notesList:{}
+	  modalName:null,
+	  deleteId:null,
+	  confirmDelete:false,
+	  notesInfo:{},
+	  notesList:{}
   },
   
   /**
@@ -58,8 +61,84 @@ Page({
 	       console.log(error);
 	   });
    },
-   
-  
+   handleShowModal(e){
+	  let deleteId=e.target.dataset.id;
+	  let target=e.target.dataset.target;
+   	this.setData({
+   		modalName:target,
+   		deleteId
+   	});
+   },
+   hideModal(e) {
+       this.setData({
+         modalName: null,
+   	   confirmDelete: false
+       })
+     },
+  /**
+     * @description 确认删除评论
+     *  
+     * */
+  confirmDelete(){
+  	this.setData({
+  	  confirmDelete: true
+  	})
+  	
+  },
+  /**
+   * @description 确认删除评论；
+   *  
+   * */
+  toDeleteConfirm(){
+  	console.log("to delete comment");
+  	this.setData({
+  	  modalName: null,
+  	   confirmDelete: false
+  	})
+  	let deleteId=this.data.deleteId;
+  	this.deleteNoteList(deleteId);
+  },
+  /**
+   * @description  删除笔记列表
+   * */
+   deleteNoteList(id){
+  	 let that=this;
+  	let reqData={
+  			  id
+  	}
+  	api._fetch({
+  	    url: '/api/i/note/delete',
+  	    data:reqData,
+  	    method:'get',
+  		contentType: 1
+  	}).then(function (res) {
+  	   wx.showToast({
+  	     title: "删除成功",
+  	     mask:true,
+  	     icon: 'success',
+  	     duration: 3000
+  	   })
+  	   let page=that.data.currentPage;
+  	    let pageSize=that.data.pageSize;
+  	   that.handleGetNoteList(page,pageSize);
+  	}).catch(function (error) {
+  	    console.log(error);
+  	});
+   },
+   handleNoteDetail:function(e){
+	   let noteId=e.target.dataset.id;
+	   wx.navigateTo({
+	     url: '../note-detail/note-detail?noteId='+noteId
+	   })
+   },
+   handleBookDetail:function(e){
+		let id=e.target.dataset.id;
+		let itemIndex=e.target.dataset.itemindex;
+		wx.navigateTo({
+		  url: '../bookCommentDetail/bookCommentDetail?itemindex='+itemIndex+'&id='+id
+		})
+   	 
+   },
   /**
    * @description 跳转到查看笔记本
    * */

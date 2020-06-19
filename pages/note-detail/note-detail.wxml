@@ -1,0 +1,103 @@
+<!--pages/note-detail/note-detail.wxml-->
+<view class="container">
+	<scroll-view scroll-y="true" bindscrolltolower="lower" enable-back-to-top="{{true}}" style='height: {{scrollHeight + "rpx"}}'>
+	<view class="detail-container">
+		<view class="title"  wx:if="{{noteDetail.title!==null}}">
+			{{noteDetail.title}}
+		</view>
+		<view class="type-info">
+			<view class="info">
+				<view class="type">
+					{{noteDetail.userNotebook.name}}
+				</view>
+				<view class="time">
+					{{noteDetail.createTime}}
+				</view>
+			</view>
+			<view class="opr-btn">
+			<image
+			                class="cover-image"
+			               src="../../images/icon-lock.png"
+			               >
+			            </image>
+				<view class="text">
+					私有
+				</view>
+			</view>
+		</view>
+		<view class="comment">
+			{{noteDetail.content}}
+		</view>
+		<view class="basic-info" wx:if="{{noteDetail.bookComment!==null}}">
+			<view class="book-shape">
+				<image  class="book-shape" src="../../images/book-shape.png"></image>
+			</view>
+			<view class="comment-container" >
+				<view class="top-container">
+					<view class="userInfo">
+						<view class="avatar">
+							<image
+							                class="cover-image"
+							                src="{{noteDetail.bookComment.userInfo.avatarUrl}}"
+							               >
+							            </image>
+						</view>
+						<view class="info">
+							<view class="name">
+								{{noteDetail.bookComment.userInfo.nickName}}
+							</view>
+							<view class="time">
+								{{noteDetail.bookComment.createTime}}
+							</view>
+						</view>
+					</view>
+					<view class="book-info">
+						<view class="book-name">
+							{{noteDetail.book.name}}
+						</view>
+						<comment-stars model:stars="{{noteDetail.book.stars}}"></comment-stars>
+						<view class="scorer">
+							{{noteDetail.book.scorer}}人评分
+						</view>
+					</view>
+				</view>
+				<view class="content" data-id="{{noteDetail.bookComment.bookInfo.id}}" data-itemIndex="{{noteDetail.bookComment.id}}" bindtap="handleBookDetail"> 
+					{{noteDetail.bookComment.content}}
+				</view>
+				<view class="releation-info">
+							<text class="releation ">{{noteDetail.bookComment.liked}}有用 · </text>
+							<text class="releation ">{{noteDetail.bookComment.reply}}回复 · </text>
+							<text class="releation ">{{noteDetail.bookComment.forwarding}}转发</text>
+				</view>
+			</view>
+										
+		</view>
+									
+	</view>
+	<view class="nomore-tip">
+		<text>没有更多内容</text>
+	</view>
+	<copy-right model:show-line="{{false}}"></copy-right>
+    </scroll-view>
+	<view class="bottom-btn">
+		<view class="btn-list">
+			<view class="btn">
+				<text class=" cuIcon-forward lg text-gray" data-id="{{item.id}}" data-item="{{item}}" data-target="forwardModal"></text>
+				<view class="share">转发</view>
+			</view>
+			<view class="btn">
+				<text class=" cuIcon-share lg text-gray" data-id="{{item.id}}" data-item="{{item}}" data-target="forwardModal"></text>
+				<view class="share">分享</view>
+			</view>
+			<view class="btn">
+				<image class="icon" src="../../images/icon-edit.png"></image>
+				<view class="edit">编辑</view>
+			</view>
+		</view>
+		<view class="btn-bar">
+			<view class="bar">
+				
+			</view>
+		</view>
+	</view>
+</view>

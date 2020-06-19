@@ -37,7 +37,8 @@
     "pages/forward-success/forward-success",
     "pages/post-comment/post-comment",
     "pages/my-likedbook/my-likedbook",
-    "pages/maintenance-phone/maintenance-phone"
+    "pages/maintenance-phone/maintenance-phone",
+    "pages/note-detail/note-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -59,7 +60,7 @@
     "van-popup": "@vant/weapp/popup/index",
     "van-overlay": "@vant/weapp/overlay/index",
     "van-rate": "@vant/weapp/rate/index",
-	"van-skeleton": "@vant/weapp/skeleton/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
     "van-icon": "@vant/weapp/icon/index"
   },
   "tabBar": {
