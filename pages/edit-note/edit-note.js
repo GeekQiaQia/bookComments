@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+	  type:"",
 	noteTitle:"",
 	postBookInfo:{},
 	noteTitleLen:0,
@@ -17,7 +18,7 @@ Page({
 	realImageList:[],
 	images:"",
 	notebook:"我的笔记本",
-	note:false,
+	note:null,
 	showNoteList:false,
   },
    
@@ -42,11 +43,11 @@ Page({
    ChooseImage() {
 	   let that=this;
      wx.chooseImage({
-       count: 4, //默认9
+       count: 3, //默认9
        sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
        sourceType: ['album'], //从相册选择
        success: (res) => {
-		   console.log(res);
+		   
          if (this.data.imgList.length != 0) {
            this.setData({
              imgList: this.data.imgList.concat(res.tempFilePaths)
@@ -72,14 +73,14 @@ Page({
 		       name: 'file',
 		       header:header,
 		       success (res){
-		         
+				   
 			     let data=res.data;
-				let realImageList=that.data.realImageList.slice(0);
-				realImageList.push(JSON.parse(data).url);
-
-				that.setData({
-					realImageList
-				});
+				 let realImageList=that.data.realImageList.slice(0);
+				 realImageList.push(JSON.parse(data).url);
+				  
+				 that.setData({
+					 realImageList
+				 });
 		         //do something
 		       }
 		     })
@@ -94,22 +95,24 @@ Page({
    },
    DelImg(e) {
      wx.showModal({
-     content: '确定要删除这张图片吗？',
-     cancelText: '取消',
-     confirmText: '删除',
+       
+       content: '确定要删除这张图片吗？',
+       cancelText: '取消',
+       confirmText: '删除',
        success: res => {
          if (res.confirm) {
-          
-          let imgList=this.data.imgList.slice(0);
-          
-              imgList.splice(e.currentTarget.dataset.index, 1);
-          			   
-          let realImageList=this.data.realImageList;
-          			   realImageList.splice(e.currentTarget.dataset.index, 1);
-          this.setData({
-                imgList,
-          		realImageList
-          })
+			 
+			 
+           let imgList=this.data.imgList.slice(0);
+		   
+		       imgList.splice(e.currentTarget.dataset.index, 1);
+			   
+		   let realImageList=this.data.realImageList;
+			   realImageList.splice(e.currentTarget.dataset.index, 1);
+           this.setData({
+             imgList,
+			 realImageList
+           })
          }
        }
      })
@@ -120,12 +123,91 @@ Page({
    	       noteBookRadio: e.target.dataset.id,
    	     });
    },
+   /**
+	* @description  转发笔记
+	* */
+   handleForwardComment(e){
+	   let that=this;
+	   let notesLen=this.data.notesLen;
+	   if(notesLen==0){
+	   		  wx.showToast({
+	   		    title: '笔记内容不可为空哦',
+	   		    mask:true,
+	   		    icon: 'none',
+	   		    duration: 3000
+	   		  })
+	   }else{
+	   		   let postBookInfo=this.data.postBookInfo;
+	   		   let userInfo=wx.getStorageSync('userInfo');
+	   		   let content=this.data.notes,
+	   		   	   noteTitle=this.data.noteTitle,
+	   			   noteId=this.data.note;
+	   		   		 
+	   		   let reqData={
+	   		   		    content,
+	   		   			noteId
+	   		      		 
+	   		   }
+	   		   if(noteTitle.length>0){
+	   		   			 reqData['title']=that.data.noteTitle;
+	   		   }
+	   		   let realImageList=this.data.realImageList;
+	   		
+	   		   if(realImageList.length>0){
+	   			    let images="",len=realImageList.length;
+	   				if(len>1){
+	   					for(let i=0;i<len;i++){
+	   						images+=realImageList[i]+";"
+	   					}
+	   				}else{
+	   					images=realImageList[0];
+	   				}
+	   				
+	   			    reqData['images']=images
+	   		   }
+	   		   
+	   		   	  
+	   		   api._fetch({
+	   		       url: '/api/i/note/forwarding',
+	   		       data:reqData,
+	   		       method:'post',
+	   			   contentType:1
+	   		   }).then(function (res) {
+	   		      	 
+	   		   			 // 此处发送修改交易；
+	   		   			 if(res.statusCode===200){
+	   						//  // 返回到上个页面
+	   						let pages=getCurrentPages();
+	   						
+	   						let beforePage=pages[pages.length-2];
+	   						
+	   						beforePage.getNoteDetail(noteId);
+	   						wx.navigateBack({
+	   							delta:1,
+	   						})
+	   		  
+	   		   			 }else{
+	   		   				 wx.showToast({
+	   		   				   title: res.message,
+	   		   				   mask:true,
+	   		   				   icon: 'none',
+	   		   				   duration: 3000
+	   		   				 })
+	   		   			 }
+	   		   			
+	   		       
+	   		   }).catch(function (error) {
+	   		       console.log(error);
+	   		   });
+	   }
+	   
+   },
    handleSendComment(e){
 	    let that=this;
 	   let notesLen=this.data.notesLen;
 	   if(notesLen==0){
 	   		  wx.showToast({
-	   		    title: '书评内容不可为空哦',
+	   		    title: '笔记内容不可为空哦',
 	   		    mask:true,
 	   		    icon: 'none',
 	   		    duration: 3000
@@ -134,38 +216,37 @@ Page({
 		   let postBookInfo=this.data.postBookInfo;
 		   let userInfo=wx.getStorageSync('userInfo');
 		   let content=this.data.notes,
-		       note=this.data.note,
-		   		   noteTitle=this.data.noteTitle,
-		   		   notebook=this.data.noteBookRadio;
+		   	   noteTitle=this.data.noteTitle,
+			   note=this.data.note,
+		   	   noteBook=this.data.noteBookRadio;
 		   		 
 		   let reqData={
-		   		    book:postBookInfo.id,
 		   		    content,
 		   			note,
-		   			notebook
+		   			noteBook
 		      		 
 		   }
 		   if(noteTitle.length>0){
 		   			 reqData['title']=that.data.noteTitle;
 		   }
 		   let realImageList=this.data.realImageList;
-		   		
+		
 		   if(realImageList.length>0){
-		   			    let images="",len=realImageList.length;
-		   				if(len>1){
-		   					for(let i=0;i<len;i++){
-		   						images+=realImageList[i]+";"
-		   					}
-		   				}else{
-		   					images=realImageList[0];
-		   				}
-		   				
-		   			    reqData['images']=images
+			    let images="",len=realImageList.length;
+				if(len>1){
+					for(let i=0;i<len;i++){
+						images+=realImageList[i]+";"
+					}
+				}else{
+					images=realImageList[0];
+				}
+				
+			    reqData['images']=images
 		   }
 		   
 		   	  
 		   api._fetch({
-		       url: '/api/i/comment/create.more',
+		       url: '/api/i/note/edit',
 		       data:reqData,
 		       method:'post',
 			   contentType:1
@@ -173,22 +254,15 @@ Page({
 		      	 
 		   			 // 此处发送修改交易；
 		   			 if(res.statusCode===200){
-						 
-						let successInfo={
-							
-							 bookName:that.data.postBookInfo.name,
-							 content,
-							 nickName:userInfo.nickName
-						 }
-						 if(note){
-							 successInfo['notebook']=that.data.notebook
-						 }else{
-							 successInfo['notebook']=null
-						 }
-						wx.setStorageSync("successInfo",successInfo)
-						wx.redirectTo({
-							 url:'../forward-success/forward-success?type=postcomment'
-						});
+						//  // 返回到上个页面
+						let pages=getCurrentPages();
+						
+						let beforePage=pages[pages.length-2];
+						
+						beforePage.getNoteDetail(note);
+						wx.navigateBack({
+							delta:1,
+						})
 		  
 		   			 }else{
 		   				 wx.showToast({
@@ -291,14 +365,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	let postBookInfo=wx.getStorageSync("postBookInfo");
-	console.log("postBookInfo is =",postBookInfo)
-	if(postBookInfo){
+	let type=options.type;
+	if(type="forward"){
+		wx.setNavigationBarTitle({
+			title:"转发读书笔记"
+		})
 		this.setData({
-			postBookInfo
+			type:"forward"
 		});
 	}
 	this.getNotebookList();
+	
+	let noteDetail=wx.getStorageSync("noteDetail");
+	let noteTitle=noteDetail.title;
+	let noteTitleLen=0
+	if(noteTitle==null||noteTitle==''){
+		noteTitleLen=0
+	}else{
+		noteTitleLen=noteTitle.length;
+	}
+	let notebook=noteDetail.userNotebook.name;
+	let noteBookRadio=noteDetail.userNotebook.id;
+	let note=noteDetail.id;
+	let images=noteDetail.images;
+	
+	if(noteDetail){
+		this.setData({
+			postBookInfo:noteDetail.book,
+			notes:noteDetail.content,
+			notesLen:noteDetail.content.length,
+			noteTitle,
+			noteTitleLen,
+			notebook,
+			note,
+			noteBookRadio,
+			realImageList:images,
+			imgList:images
+			
+		});
+	}
+	
 	
   },
 
@@ -306,7 +412,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+	
+	
   },
 
   /**

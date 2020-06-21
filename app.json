@@ -38,7 +38,8 @@
     "pages/post-comment/post-comment",
     "pages/my-likedbook/my-likedbook",
     "pages/maintenance-phone/maintenance-phone",
-    "pages/note-detail/note-detail"
+    "pages/note-detail/note-detail",
+    "pages/edit-note/edit-note"
   ],
   "window": {
     "backgroundTextStyle": "light",

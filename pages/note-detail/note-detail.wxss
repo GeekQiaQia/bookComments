@@ -213,6 +213,19 @@
   color: #969696;
   line-height: 32rpx;
 }
+.container .detail-container .note-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20rpx 0rpx;
+}
+.container .detail-container .note-images .note-image {
+  width: 219rpx;
+  height: 176rpx;
+  margin: 0rpx 10rpx 10rpx 0rpx;
+}
 .container .nomore-tip {
   display: flex;
   flex-direction: row;

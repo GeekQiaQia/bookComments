@@ -7,8 +7,25 @@ Page({
    */
   data: {
 	scrollHeight:"",
+	noteId:"",
 	noteDetail:{}
   },
+  handleForwardNote:function(e){
+	  wx.setStorageSync("noteDetail",this.data.noteDetail)
+	  wx.navigateTo({
+	    url: '../edit-note/edit-note?type=forward',
+	  }) 
+  },
+  /**
+   * @description 编辑读书笔记； 
+   * 
+   * */
+   handleEditNote:function(e){
+	   wx.setStorageSync("noteDetail",this.data.noteDetail)
+	   wx.navigateTo({
+	     url: '../edit-note/edit-note',
+	   }) 
+   },
   /**
    *动态计算scrollview 高度；
    *  
@@ -70,23 +87,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  let id=options.noteId;
-	  this.getNoteDetail(id);
+	  console.log("into onLoad");
+	  let noteId=options.noteId;
+	  this.setData({
+		  noteId
+	  });
+	  this.getNoteDetail(noteId);
 	  this.computeScrollViewHeight();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function (options) {
+	console.log("into onReady");
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  console.log("into onShow");
   },
 
   /**
