@@ -366,7 +366,8 @@ Page({
    */
   onLoad: function (options) {
 	let type=options.type;
-	if(type="forward"){
+	console.log(options);
+	if(type=="forward"){
 		wx.setNavigationBarTitle({
 			title:"转发读书笔记"
 		})
