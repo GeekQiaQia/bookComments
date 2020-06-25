@@ -1,0 +1,186 @@
+<!--pages/note-detail/note-detail.wxml-->
+<view class="container">
+	<scroll-view scroll-y="true"  enable-back-to-top="{{true}}" style='height: {{scrollHeight + "rpx"}}'>
+	  <view style="height: initial;display: flex;flex-direction: column;">
+		  <view class="detail-container">
+		  	<view class="title"  wx:if="{{noteDetail.title!==null}}">
+		  		{{noteDetail.title}}
+		  	</view>
+		  	<view class="type-info">
+		  		<view class="info">
+		  			<view class="type">
+		  				{{noteDetail.userNotebook.name}}
+		  			</view>
+		  			<view class="time">
+		  				{{noteDetail.createTime}}
+		  			</view>
+		  		</view>
+		  		<view class="opr-btn">
+		  		<image
+		  		                class="cover-image"
+		  		               src="../../images/icon-lock.png"
+		  		               >
+		  		            </image>
+		  			<view class="text">
+		  				私有
+		  			</view>
+		  		</view>
+		  	</view>
+		  	<view class="comment">
+		  		{{noteDetail.content}}
+		  	</view>
+			<view class="note-images" wx:if="{{noteDetail.images.length>0}}">
+				<block wx:for="{{noteDetail.images}}" wx:key="index">
+					<image class="note-image"   src="{{item}}">
+						
+					</image>
+				</block>
+				
+			</view>
+		  	<view class="basic-info" wx:if="{{noteDetail.bookComment!==null}}">
+		  		<view class="book-shape">
+		  			<image  class="book-shape" src="../../images/book-shape.png"></image>
+		  		</view>
+		  		<view class="comment-container" >
+		  			<view class="top-container">
+		  				<view class="userInfo">
+		  					<view class="avatar">
+		  						<image
+		  						                class="cover-image"
+		  						                src="{{noteDetail.bookComment.userInfo.avatarUrl}}"
+		  						               >
+		  						            </image>
+		  					</view>
+		  					<view class="info">
+		  						<view class="name">
+		  							{{noteDetail.bookComment.userInfo.nickName}}
+		  						</view>
+		  						<view class="time">
+		  							{{noteDetail.bookComment.createTime}}
+		  						</view>
+		  					</view>
+		  				</view>
+		  				<view class="book-info">
+		  					<view class="book-name">
+		  						{{noteDetail.book.name}}
+		  					</view>
+		  					<comment-stars model:stars="{{noteDetail.book.stars}}"></comment-stars>
+		  					<view class="scorer">
+		  						{{noteDetail.book.scorer}}人评分
+		  					</view>
+		  				</view>
+		  			</view>
+		  			<view class="content" data-id="{{noteDetail.bookComment.bookInfo.id}}" data-itemIndex="{{noteDetail.bookComment.id}}" bindtap="handleBookDetail"> 
+		  				{{noteDetail.bookComment.content}}
+		  			</view>
+		  			<view class="releation-info">
+		  						<text class="releation ">{{noteDetail.bookComment.liked}}有用 · </text>
+		  						<text class="releation ">{{noteDetail.bookComment.reply}}回复 · </text>
+		  						<text class="releation ">{{noteDetail.bookComment.forwarding}}转发</text>
+		  			</view>
+		  		</view>
+		  									
+		  	</view>
+							
+		  </view>
+		  <view class="nomore-tip">
+		  	<text>没有更多内容</text>
+		  </view>
+		  <copy-right model:show-line="{{false}}"></copy-right>
+	  </view>
+    </scroll-view>
+	<view class="bottom-btn">
+		<view class="btn-list">
+			<view class="btn" bindtap="handleForwardNote">
+				<text class=" cuIcon-forward lg text-gray" ></text>
+				<view class="share">转发</view>
+			</view>
+			<view class="btn" data-target="shareModal" data-title="{{noteDetail.title}}" data-bookName="{{noteDetail.book.name}}" data-content="{{noteDetail.content}}" bindtap="toShowShareDialog">
+				<text class=" cuIcon-share lg text-gray"  data-target="shareModal"  data-title="{{noteDetail.title}}" data-bookName="{{noteDetail.book.name}}" data-content="{{noteDetail.content}}"  ></text>
+				<view class="share" data-target="shareModal"  data-title="{{noteDetail.title}}" data-bookName="{{noteDetail.book.name}}" data-content="{{noteDetail.content}}" >分享</view>
+			</view>
+			<view class="btn" bindtap="handleEditNote">
+				<image class="icon" src="../../images/icon-edit2.png"></image>
+				<view class="edit">编辑</view>
+			</view>
+		</view>
+		<view class="btn-bar">
+			<view class="bar">
+				
+			</view>
+		</view>
+	</view>
+	<view class="cu-modal bottom-modal {{modalName=='shareModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  <view class="share-container">
+				  <view class="top-container">
+					  <view class="image-container">
+					  					  <view class="image-title" style="background-image: url(../../images/bookbg.png);">
+					  						  <view class="name-container">
+					  							  <view class="title-name">「米读书评</view>
+					  							  <view class="essay">随笔</view>
+					  						  </view>
+					  						  <view class="chicken-soul" wx:if="{{successInfo.title!==null||successInfo.title!==''}}">
+					  							  {{successInfo.title}}
+					  						  </view>
+					  						  <view class="book-name">
+					  							  《{{successInfo.bookName}}》的读书笔记
+					  						  </view>
+					  					  </view>
+					  					  <view class="image-content">
+					  						  <view class="image-comment-container">
+					  						  				{{successInfo.content}}	  
+					  						  </view>
+											  <view class="bottom-info">
+					  						  <view class="image-comment-byname">
+					  							  —— {{successInfo.nickName}}
+					  						  </view>
+					  						  <view class="image-qrcode-container">
+					  							  <view class="qrcode-image">
+					  								  
+					  							  </view>
+					  						  		<view  class="qrcode-tip">
+					  									<text class="tips">长按小程序查看详情</text>
+					  									<view class="tips2">
+					  										<text class="from">分享自</text>
+					  										<text class="zhilun">「米读书评」</text>
+					  									</view>
+					  								</view>	 
+					  						  </view>
+											  </view>
+					  					  </view>
+					  </view>
+					  <view class="close" bindtap="handleCloseDialog">
+						  <text class="cuIcon-close lg text-black " ></text> 
+					  </view>
+				  </view>
+				  <view class="tip-container">
+					  保存图片后，可分享至朋友圈
+				  </view>
+				  <view class="button-container">
+					  <view class="save-image">
+						   <text class="cuIcon-down lg text-white size" ></text>
+						  
+						  <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+						      <view class="btn-text white">
+						      		 保存分享
+						      </view>
+						  </poster>
+					  </view>
+					  <view >
+						  <button open-type="share" class=" share-friends  no-border">
+						  			<text class="cuIcon-weixin lg text-orange size" ></text> 
+									<text class="btn-text black">分享给好友</text>
+						  </button>
+					  </view>
+				  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+</view>

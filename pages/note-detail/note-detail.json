@@ -1,0 +1,8 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right",
+	   "comment-stars":"../../components/commentStars/commentStars",
+	   "poster": "../../components/poster/index"
+ },
+  "navigationBarTitleText": "读书笔记"
+}

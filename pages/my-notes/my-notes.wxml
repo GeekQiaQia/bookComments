@@ -68,11 +68,11 @@
 										<view class="title" wx:if="{{item.title!==null}}">{{item.title}}</view>
 										<view class="time">{{item.createTime}}</view>
 									</view>
-									<view class="more-operator" data-id="{{item.id}}" bindtap="showModal" data-target="bottomModal">
+									<view class="more-operator" data-id="{{item.id}}" bindtap="handleShowModal" data-target="bottomModal">
 										...
 									</view>
 								</view>
-								<view class="note-content">
+								<view class="note-content" data-id="{{item.id}}" bindtap="handleNoteDetail">
 									{{item.content}}
 								</view>
 								<view class="oprator-container">
@@ -96,49 +96,61 @@
 										
 									</view>
 									<view class="opr-btn"> 
+									<image
+									                class="cover-image"
+									               src="../../images/icon-lock.png"
+									               >
+									            </image>
 										<view class="text">
 											私有
 										</view>
 									</view>
 								</view>
-								<view class="comment-container">
-									<view class="top-container">
-										<view class="userInfo">
-											<view class="avatar">
-												<image
-												                class="cover-image"
-												                src="{{item.bookComment.userInfo.avatarUrl}}"
-												               >
-												            </image>
-											</view>
-											<view class="info">
-												<view class="name">
-													{{item.bookComment.userInfo.nickName}}
+								<view class="basic-info" wx:if="{{item.bookComment!==null}}">
+									<view class="book-shape">
+										<image  class="book-shape" src="../../images/book-shape.png"></image>
+									</view>
+									<view class="comment-container" >
+										<view class="top-container">
+											<view class="userInfo">
+												<view class="avatar">
+													<image
+													                class="cover-image"
+													                src="{{item.bookComment.userInfo.avatarUrl}}"
+													               >
+													            </image>
 												</view>
-												<view class="time">
-													{{item.bookComment.createTime}}
+												<view class="info">
+													<view class="name">
+														{{item.bookComment.userInfo.nickName}}
+													</view>
+													<view class="time">
+														{{item.bookComment.createTime}}
+													</view>
+												</view>
+											</view>
+											<view class="book-info">
+												<view class="book-name">
+													{{item.book.name}}
+												</view>
+												<comment-stars model:stars="{{item.book.stars}}"></comment-stars>
+												<view class="scorer">
+													{{item.book.scorer}}人评分
 												</view>
 											</view>
 										</view>
-										<view class="book-info">
-											<view class="book-name">
-												{{item.bookComment.bookInfo.name}}
-											</view>
-											<comment-stars model:stars="{{item.bookComment.bookInfo.stars}}"></comment-stars>
-											<view class="scorer">
-												{{item.bookComment.bookInfo.scorer}}人评分
-											</view>
+										<view class="content" data-id="{{item.bookComment.bookInfo.id}}" data-itemIndex="{{item.bookComment.id}}" bindtap="handleBookDetail"> 
+											{{item.bookComment.content}}
+										</view>
+										<view class="releation-info">
+													<text class="releation ">{{item.bookComment.liked}}有用 · </text>
+													<text class="releation ">{{item.bookComment.reply}}回复 · </text>
+													<text class="releation ">{{item.bookComment.forwarding}}转发</text>
 										</view>
 									</view>
-									<view class="content"> 
-										{{item.bookComment.content}}
-									</view>
-									<view class="releation-info">
-												<text class="releation ">{{item.bookComment.liked}}有用 · </text>
-												<text class="releation ">{{item.bookComment.reply}}回复 · </text>
-												<text class="releation ">{{item.bookComment.forwarding}}转发</text>
-									</view>
+																
 								</view>
+							
 							</view>
 						</block>
 					
@@ -153,5 +165,65 @@
 			</block>
 		</view>
 		<copy-right ></copy-right>
+	</view>
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				  <view class="add-to-booknotes" bindtap="addNoteBooks">
+				  			  <view  class="add-plus">
+				  								  <image class="icon" src="../../images/icon-move.png"></image>
+				  							  </view>
+				  			  <view class="add-text">
+				  				移动到笔记本
+				  			  </view>
+				  </view>
+				  
+				  <view class="add-to-booknotes" bindtap="addNoteBooks">
+				  			  <view  class="add-plus">
+								  <image class="icon" src="../../images/icon-edit.png"></image>
+							  </view>
+				  			  <view class="add-text">
+				  				编辑读书笔记
+				  			  </view>
+				  </view>
+				  
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除当前读书笔记
+				  			  </view>
+				  </view>
+				  
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
 	</view>
 </view>

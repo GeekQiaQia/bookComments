@@ -337,6 +337,13 @@
 					"id": -1,
 					"name": "pages/maintenance-phone/maintenance-phone",
 					"pathName": "pages/maintenance-phone/maintenance-phone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/edit-note/edit-note",
+					"pathName": "pages/edit-note/edit-note",
 					"scene": null
 				}
 			]
