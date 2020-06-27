@@ -344,6 +344,13 @@
 					"id": -1,
 					"name": "pages/edit-note/edit-note",
 					"pathName": "pages/edit-note/edit-note",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my-comment-reply/my-comment-reply",
+					"pathName": "pages/my-comment-reply/my-comment-reply",
 					"scene": null
 				}
 			]

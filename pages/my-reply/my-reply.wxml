@@ -65,7 +65,7 @@
 								</block>
 								
 								<view class="comment-detail">
-									<view class="comment-info">
+									<view class="comment-info" data-id="{{item.bookComment.bookInfo.id}}" data-itemIndex="{{item.bookComment.id}}" bindtap="handleBookDetail">
 										{{item.bookComment.content}}
 									</view>
 						
@@ -102,9 +102,9 @@
 										<view class="dot" wx:if="{{item.top>0}}"></view>
 										<view class="reference" wx:if="{{item.top>0}}">已置顶</view>
 									</view>
-									<view class="comment-share" data-target="shareModal"  data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookComment.bookInfo.name}}" data-content="{{item.content}}" bindtap="toShowShareDialog">
-										<text class="cuIcon-share lg text-gray"></text>
-										<view class="share">分享</view>
+									<view class="comment-share" data-target="shareModal"   data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookComment.bookInfo.name}}" data-content="{{item.content}}" bindtap="toShowShareDialog">
+										<text class="cuIcon-share lg text-gray" data-target="shareModal"   data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookComment.bookInfo.name}}" data-content="{{item.content}}" ></text>
+										<view class="share" data-target="shareModal"   data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookComment.bookInfo.name}}" data-content="{{item.content}}"  >分享</view>
 									</view>
 								</view>
 
@@ -135,7 +135,7 @@
 	 				  							  <view class="essay">随笔</view>
 	 				  						  </view>
 	 				  						  <view class="chicken-soul">
-	 				  							  他不是心灵鸡汤
+	 				  							  <!-- 他不是心灵鸡汤 -->
 	 				  						  </view>
 	 				  						  <view class="book-name">
 	 				  							  《{{successInfo.bookName}}》的读书笔记

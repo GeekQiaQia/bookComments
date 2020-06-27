@@ -31,7 +31,7 @@
 				<block wx:for="{{commentInfo.content}}" wx:key="id">
 					
 				
-				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"  bind:onShareEvent="handleShareEvent" bind:onForwardEvent="handleForwardEvent" bind:onShowModal="handleShowModal"></mycomment-card>
+				<mycomment-card model:item="{{item}}" bind:onLikeEvent="handleLikeEvent"  bind:onCommentReply="handleReplyEvent" bind:onCommentDetail="handleCommentDetailEvent" bind:onShareEvent="handleShareEvent" bind:onForwardEvent="handleForwardEvent" bind:onShowModal="handleShowModal"></mycomment-card>
 			     </block>
 				<view class="bottom-tip">
 					— 到底啦 —
@@ -55,8 +55,8 @@
      				  							  <view class="title-name">「米读书评</view>
      				  							  <view class="essay">随笔</view>
      				  						  </view>
-     				  						  <view class="chicken-soul">
-     				  							  他不是心灵鸡汤
+     				  						  <view class="chicken-soul" wx:if="{{successInfo.title!==null}}">  
+     				  							  {{successInfo.title}}
      				  						  </view>
      				  						  <view class="book-name">
      				  							  《{{successInfo.bookName}}》的读书笔记

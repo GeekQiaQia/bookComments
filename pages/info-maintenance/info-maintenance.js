@@ -165,21 +165,43 @@ Page({
 		   success (res) {
 		      // tempFilePath可以作为img标签的src属性显示图片
 		    const tempFilePaths = res.tempFilePaths;
-			let avatar=tempFilePaths[0];
-			let reqData={
-					  avatar
+			let avatar="";
+			// 获取token并设置请求头
+			let token = wx.getStorageSync('userToken')
+			let header={
+						  'content-type':'application/x-www-form-urlencoded',
 			};
-		
-			let avatarUrl=avatar;
-			let maintenanceInfo=that.data.maintenanceInfo;
-					  maintenanceInfo.avatarUrl=avatarUrl;
-					 
-			that.setData({
-			  maintenanceInfo:maintenanceInfo,
-			  modalName: null	  
-			})
-		 
-			that.updateInfoMaintenance(reqData);
+			if(token){
+						 header['token']=token;
+			}
+			wx.uploadFile({
+			     url: 'https://mpapi.bookreview.com.cn/book/api/upload', //仅为示例，非真实的接口地址
+			     filePath: res.tempFilePaths[0],
+			     name: 'file',
+			     header:header,
+			     success (res){
+							   
+						     let data=res.data;
+							 avatar=JSON.parse(data).url;
+							 let reqData={
+							 		  avatar
+							 };
+							 		
+							 let avatarUrl=avatar;
+							 let maintenanceInfo=that.data.maintenanceInfo;
+							 		  maintenanceInfo.avatarUrl=avatarUrl;
+							 		 
+							 that.setData({
+							   maintenanceInfo:maintenanceInfo,
+							   modalName: null	  
+							 })
+							 		 
+							 that.updateInfoMaintenance(reqData);
+			       //do something
+			     }
+			   })
+			   
+			
 			},
 			fail(err) {
 				console.log(err);

@@ -1,0 +1,195 @@
+<!--pages/my-comment-reply/my-comme[]nt-reply.wxml-->
+<view class="container">
+	<wxs module="filter" src="../../utils/common.wxs"/>
+	<view class="reply-container">
+		<view class="comment-info">
+			<view class="info">
+				<view class="pic">
+					<image class="pic" src="{{commentInfo.bookInfo.picture}}">
+						
+					</image>
+				</view>
+				<view class="detail">
+					<view class="name">
+						{{commentInfo.bookInfo.name}}
+					</view>
+					<view class="content">
+						<text>{{filter.ellipsis(commentInfo.content,42)}}</text>
+						<!-- 读之前以为是宗教信仰类读物，以为是一本心灵鸡汤。读完之后内心得到极大的触动，泪崩了好几次。是真真正正被震慑到的心痛。作者的手法非常细腻，许多在文学作品中会回避或者忽略的问题，她都一一直面阐述，甚至作为本书的重点，这让我很意外也很动容。我们生而为人，是带着标签来的，标签的不可选择性，令我们终其一生，都想将这些标签抹去，然而这些标签刻在肉里，不剥皮流血是抹不去的。有些人就这样带着标签过完一辈子，并且把标签又留给自己的孩子。有些人，到人生快到尽头，才想起来抗争一番。但永远不晚，我们最终将要成为的是符合我们意志的人，这个理念会随着环境的变化而调整，而最终，我们将以任何方式获得自我救赎。这也是我们人生的唯一目的。 -->
+						<text class="check-more" data-itemIndex="{{commentInfo.id}}" bindtap="checkMore">
+							查看全部
+						</text>
+						
+					</view>
+				</view>
+			</view>
+			<view class="relation">
+				<view class="relation-item">
+					<text class=" lg    cuIcon-appreciatefill text-gray" ></text>
+					
+					<view class="shared">{{commentInfo.liked}}</view>
+				</view>
+				<view class="relation-item">
+					<text class=" lg    cuIcon-comment lg text-gray" ></text>
+					
+					<view class="shared">{{commentInfo.reply}}</view>
+				</view>
+				<view class="relation-item">
+					<text class=" lg    cuIcon-forwardfill text-gray" ></text>
+					
+					<view class="shared">{{commentInfo.forwarding}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="comment-container">
+			<block wx:if="{{commentList.content.length<=0}}">                    
+				<view class="no-comment">
+					<view class="no-icon">
+						<image src="../../images/icon-noreply.png" class="icon-tip"></image>
+					</view>
+					<view class="no-tip">
+						你还没有收到评论回复，去参与互动吧
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<block wx:for="{{commentList.content}}" wx:key="id" >
+					<view class="reply-container">
+						<view class="basic-info">
+							<view class="info">
+								<image class="avatar" src="{{item.userInfo.avatarUrl}}"> 
+									
+								</image>
+								<view class="nickname">
+									{{item.userInfo.nickName}}
+								</view>
+							</view>
+							<view class="like-info">
+								<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="handleLikeReply"></text>
+								<view class="like-num {{item.meLike?'orange':''}}" >
+									{{item.liked}}
+								</view>
+								
+							</view>
+						</view>
+						<view class="comment" data-id="{{item.id}}" data-name="{{item.userInfo.nickName}}" bindtap="handleSendComment">
+							{{item.content}}
+						</view>
+						<view class="operation">
+							<view class="time">
+								{{item.createTime}}
+							</view>
+							<block wx:if="{{item.status=='release'}}">
+								<view class="show" data-id="{{item.id}}" data-status="{{item.status}}" bindtap="handleShowComment">
+									<view class="text" data-id="{{item.id}}" data-status="{{item.status}}">
+										可见
+									</view>
+									<view class="round" data-id="{{item.id}}" data-status="{{item.status}}">
+										
+									</view>
+								</view>
+							</block>
+							<block wx:else>
+								<view class="hidden" data-id="{{item.id}}" data-status="{{item.status}}" bindtap="handleShowComment">
+									<view class="round" data-id="{{item.id}}" data-status="{{item.status}}">
+										
+									</view>
+									<view class="text" data-id="{{item.id}}" data-status="{{item.status}}">
+											隐藏
+									</view>
+								</view>
+							</block>
+							
+						    <block wx:if="{{item.top==0}}">
+								<view class="up-top" data-id="{{item.id}}" data-top="{{item.top}}" bindtap="handleUptop">
+									置顶
+								</view>
+							</block>
+							<block wx:else>
+								<view class="cancel-uptop" data-id="{{item.id}}" data-top="{{item.top}}" bindtap="handleUptop">
+									取消置顶
+								</view>
+							</block>
+						</view>
+						<view class="reply" wx:if="{{item.authorReply!==null}}">
+							<view class="triangle-up">
+								
+							</view>
+							<view class="reply-bg">
+								<view class="text">{{item.authorReply.content}}</view>
+								<view class="info">
+									<view class="time">{{item.authorReply.createTime}}</view>
+									<view class="delete" data-id="{{item.authorReply.id}}" data-target="bottomModal" bindtap="handleDeleteReply">
+										删除
+									</view>
+								</view>
+							</view>
+						</view>
+						<view class="split-line">
+							
+						</view>
+					</view>
+				
+				
+			     </block>
+				 <view wx:if='{{showInput}}' class="input-container">
+					 <input class="input"  bindinput="handlCommentReplyInput" 
+					  value="{{replyComment}}" adjust-position="{{true}}" 
+					  placeholder="{{placeholder}}" focus="{{true}}"  cursor-spacing="{{16}}"/>
+					 <view class="send-btn"  bindtap="toHandleAuthorReply">
+						 <view class="text"  >
+							 回复
+						 </view>
+					 </view>
+				 </view>
+				<view class="bottom-tip">
+					— 到底啦 —
+				</view>
+			</block>
+		</view>
+	</view>
+	<copy-right></copy-right>
+	
+	<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+	  <view class="cu-dialog">
+		  <view class="dialog-container">
+			  
+			  <block wx:if="{{!confirmDelete}}">
+				
+				  <view class="delete-comment-reply" bindtap="confirmDelete">
+				  			  <text class="cuIcon-delete lg text-red"></text>
+				  			  <view class="delete-text">
+				  				  删除当前书评
+				  			  </view>
+				  </view>
+			  </block>
+			  <block wx:else>
+				  <view class="confirm-delete-reply">
+				  				  <view class="confirm-delete-tips">
+				  					  <view class="text">
+				  						  确认删除评论？
+				  					  </view>
+				  				  </view>
+				  				  <view class="confirm-delete" bindtap="toDeleteConfirm"> 
+				  				  		<text class="cuIcon-delete lg text-red"></text>
+				  				  		<view class="delete-text">
+				  				  				  删除
+				  				  		</view>  
+				  				  </view>
+				   </view>
+			  </block>
+			
+			 
+			  <view class="delete-cancel" bindtap="hideModal">
+			  			  <view class="delete-cancel-text">
+			  				  取消
+			  			  </view>
+			  </view>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
+	</view>
+</view>

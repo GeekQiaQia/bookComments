@@ -132,6 +132,7 @@ App({
 
   globalData: {
     userInfo: null,
+	likedNum:null
 	
   }
 })

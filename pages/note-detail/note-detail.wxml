@@ -121,7 +121,7 @@
 					  							  <view class="title-name">「米读书评</view>
 					  							  <view class="essay">随笔</view>
 					  						  </view>
-					  						  <view class="chicken-soul" wx:if="{{successInfo.title!==null||successInfo.title!==''}}">
+					  						  <view class="chicken-soul" wx:if="{{successInfo.title!==null}}">
 					  							  {{successInfo.title}}
 					  						  </view>
 					  						  <view class="book-name">
@@ -183,4 +183,5 @@
 	  
 	  </view>
 	</view>
+
 </view>

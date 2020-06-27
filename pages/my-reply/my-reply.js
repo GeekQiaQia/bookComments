@@ -65,7 +65,7 @@ Page({
 					    x: 184,
 					    y: 180,
 					    baseLine: 'middle',
-					    text: "他不是心灵鸡汤",
+					    text: "",
 					    fontSize: 28,
 					    color: '#ffffff',
 					},
@@ -174,6 +174,14 @@ Page({
 	  deleteId
     })
 	
+  },
+  handleBookDetail:function(e){
+  		let id=e.target.dataset.id;
+  		let itemIndex=e.target.dataset.itemindex;
+  		wx.navigateTo({
+  		  url: '../bookCommentDetail/bookCommentDetail?itemindex='+itemIndex+'&id='+id
+  		})
+  	 
   },
   handleCloseDialog(e){
   	  // let modalName=e.detail.modalName;

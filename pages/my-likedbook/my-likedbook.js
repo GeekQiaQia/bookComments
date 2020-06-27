@@ -1,5 +1,6 @@
 // pages/my-likedbook/my-likedbook.js
 const api = require('../../utils/request.js')
+const app = getApp();
 Page({
 
   /**
@@ -50,6 +51,7 @@ Page({
   		let likedInfo=res.data;
   		let totalPages=res.data.totalPages;
   		let totalElements=res.data.totalElements;
+		app.globalData.likeNum=totalElements;
   		that.setData({
   			likedInfo,
   			totalElements,

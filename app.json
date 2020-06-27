@@ -39,7 +39,8 @@
     "pages/my-likedbook/my-likedbook",
     "pages/maintenance-phone/maintenance-phone",
     "pages/note-detail/note-detail",
-    "pages/edit-note/edit-note"
+    "pages/edit-note/edit-note",
+    "pages/my-comment-reply/my-comment-reply"
   ],
   "window": {
     "backgroundTextStyle": "light",

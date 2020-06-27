@@ -58,7 +58,7 @@ Page({
 				    x: 184,
 				    y: 180,
 				    baseLine: 'middle',
-				    text: "他不是心灵鸡汤",
+				    text: "",
 				    fontSize: 28,
 				    color: '#ffffff',
 				},
@@ -203,6 +203,7 @@ Page({
      },
   
   handleForwardNote:function(e){
+	  
 	  wx.setStorageSync("noteDetail",this.data.noteDetail)
 	  wx.navigateTo({
 	    url: '../edit-note/edit-note?type=forward',

@@ -39,6 +39,14 @@
 						
 							<text class="resume "  >{{item.content}}</text>
 					</view>
+					<view class="note-images" wx:if="{{item.images.length>0}}">
+						<block wx:for="{{item.images}}" wx:key="index">
+							<image class="note-image"   src="{{item}}">
+								
+							</image>
+						</block>
+						
+					</view>
 					
 					<view class="releation-container">
 								  <view class="releation-info">
@@ -64,7 +72,7 @@
 									  	</block>
 									  </view>
 									  
-									  <view class="comment-share"data-target="shareModal"  data-nickName="{{item.userInfo.nickName}}" data-bookName="{{bookTitle}}" data-content="{{item.content}}" bindtap="toShowShareDialog">
+									  <view class="comment-share" data-title="{{item.title}}" data-target="shareModal"  data-nickName="{{item.userInfo.nickName}}" data-bookName="{{bookTitle}}" data-content="{{item.content}}" bindtap="toShowShareDialog">
 									  	<text class="cuIcon-share lg text-gray"></text>
 									  	<view class="share">分享</view>
 									  </view>
@@ -200,7 +208,7 @@
 					  							  <view class="essay">随笔</view>
 					  						  </view>
 					  						  <view class="chicken-soul">
-					  							  他不是心灵鸡汤
+					  							  {{successInfo.title}}
 					  						  </view>
 					  						  <view class="book-name">
 					  							  《{{successInfo.bookName}}》的读书笔记

@@ -187,6 +187,7 @@
 .container .recommend-box .recommend-container .recommend-info .recommend-type-detail .recommend-detail .red-dot {
   width: 12rpx;
   height: 12rpx;
+  border-radius: 50%;
   background: #e02020;
 }
 .container .recommend-box .recommend-container .recommend-info .recommend-type-detail .recommend-detail .status {

@@ -15,13 +15,12 @@
 }
 .container .comment-container .comment-info .title {
   width: 688rpx;
-  height: 118rpx;
+  height: auto;
   font-size: 34rpx;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #0b0c0d;
   line-height: 39rpx;
-  margin-bottom: 42rpx;
 }
 .container .comment-container .comment-info .split-line {
   width: 690rpx;
@@ -204,7 +203,6 @@
 }
 .container .comment-container .comment-info .top-comment {
   width: 688rpx;
-  max-height: 400px;
   background: #ffffff;
   border-radius: 10rpx;
   margin: auto;
@@ -353,6 +351,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.container .comment-container .comment-info .top-comment .card-item .note-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20rpx 0rpx;
+}
+.container .comment-container .comment-info .top-comment .card-item .note-images .note-image {
+  width: 219rpx;
+  height: 176rpx;
+  margin: 0rpx 10rpx 10rpx 0rpx;
+}
 .container .comment-container .comment-info .top-comment .card-item .releation-container {
   display: flex;
   flex-direction: row;
@@ -496,7 +507,7 @@
   margin-left: 12rpx;
 }
 .container .dialog-container .share-container .top-container .image-container .image-title .chicken-soul {
-  width: 196rpx;
+  width: auto;
   height: 40rpx;
   font-size: 28rpx;
   font-family: STSongti-SC-Bold, STSongti-SC;

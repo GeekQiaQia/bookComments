@@ -384,10 +384,14 @@ Page({
 		console.log("e is "+e);
 		let successInfo={},
 			posterConfig=this.data.posterConfig;
+			successInfo['title']=e.detail.title;
 			successInfo['nickName']=e.detail.nickName;
 			successInfo['bookName']=e.detail.bookName;
 			successInfo['content']=e.detail.content;
 			if(successInfo){
+				if(successInfo['title']!==null){
+					posterConfig.texts[2].text=successInfo['title'];
+				}
 				posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
 				posterConfig.texts[4].text=successInfo.content;
 				posterConfig.texts[5].text[1].text=successInfo.nickName;
@@ -466,12 +470,27 @@ Page({
 		  commentId
 		})
 	},
+	handleReplyEvent:function(e){
+	 
+	let id=e.detail.id;
+	let item=e.detail.item;
+	wx.setStorageSync("item",item)
+	wx.navigateTo({
+	  url: '../my-comment-reply/my-comment-reply?id='+id
+	})
+	},
 	handleLikeEvent:function(e){
 		// 自定义组件触发事件时提供的detail对象
 		let id=e.detail.id;
-		let liked=e.detail.liked
+		let liked=e.detail.liked;
 		this.toCreateLikeComment(id,liked);
 		// 发送一个改变like状态的交易；
+	},
+	handleCommentDetailEvent:function(e){
+		let itemindex=e.detail.itemIndex;
+		wx.navigateTo({
+		  url: '../comment-detail/comment-detail?itemindex='+itemindex
+		})
 	},
 	handleMyLikedbook:function(e){
 		wx.navigateTo({

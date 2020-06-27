@@ -26,8 +26,8 @@
 								<!-- <text class="cuIcon-more lg text-gray"></text> -->
 							</view>
 							<view class="comment-detail">
-								<view class="comment-info">
-									<text class="resume  read-more"   >{{item.content}}</text>	
+								<view class="comment-info"  data-itemIndex="{{item.id}}" bindtap="handleCommentDetail">
+									<text class="resume  read-more"   data-itemIndex="{{item.id}}" >{{item.content}}</text>	
 								</view>
 		
 								<view class="comment-book">
@@ -61,9 +61,9 @@
 									</block>
 									
 								</view>
-								<view class="comment-share" data-target="shareModal" bindtap="toShowShareDialog">
-									<text class="cuIcon-comment lg text-gray"></text>
-									<view class="share">回复</view>
+								<view class="comment-share"  data-id="{{item.id}}"  data-item="{{item}}"  bindtap="toShowReplyPage">
+									<text class="cuIcon-comment lg text-gray" data-id="{{item.id}}"  data-item="{{item}}"  ></text>
+									<view class="share" data-id="{{item.id}}"  data-item="{{item}}" >回复</view>
 								</view>
 								<view class="comment-share" data-target="shareModal" >
 									<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeTrigger"></text>
@@ -75,9 +75,9 @@
 										<view class="share" data-liked="{{item.meLike}}" data-id="{{item.id}}">点赞</view>
 									</block>
 								</view>
-								<view class="comment-share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal" bindtap="toShowShareDialog"  >
-									<text class="cuIcon-share lg text-gray" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal"></text>
-									<view class="share" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal">分享</view>
+								<view class="comment-share" data-title="{{item.title}}" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal" bindtap="toShowShareDialog"  >
+									<text class="cuIcon-share lg text-gray"  data-title="{{item.title}}" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal"></text>
+									<view class="share"  data-title="{{item.title}}" data-nickName="{{item.userInfo.nickName}}" data-bookName="{{item.bookInfo.name}}" data-content="{{item.content}}" data-target="shareModal">分享</view>
 								</view>
 							</view>
 						</view>

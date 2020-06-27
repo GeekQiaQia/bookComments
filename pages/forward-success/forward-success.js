@@ -64,7 +64,7 @@ Page({
 			    x: 184,
 			    y: 180,
 			    baseLine: 'middle',
-			    text: "他不是心灵鸡汤",
+			    text: "",
 			    fontSize: 28,
 			    color: '#ffffff',
 			},

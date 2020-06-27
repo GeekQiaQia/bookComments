@@ -34,20 +34,31 @@
 							{{item.bookType}}
 						</view>
 						<block wx:for="{{item.bookList}}" wx:key="*this">
-							<view class="recommend-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+							<view class="recommend-type-detail {{item.status!==2 ? 'not-online' :''}}">
 								<view class="name-detail">
 									<view class="name-resume">
 										{{filter.tofiltFirstWord(item.name)}}
 									</view>
 									<view class="name-info">
 										<view class="name">{{item.name}}</view>
-										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+										<view  wx:if="{{item.status===2}}" class="status ">已上线</view>
+										<view  wx:else class="status unactived">待维护</view>
+										
 									</view>
 								</view>
 								<view class="recommend-detail">
-									<view class="red-dot"></view>
-									<view class="status">{{item.onlineTips}}</view>
-									<text class="cuIcon-right lg text-gray"></text>
+									<block wx:if="{{item.status===2}}">
+										<view class="red-dot"></view>
+										<view  class="status">已上线，前往查看吧</view>
+										<text class="cuIcon-right lg text-gray"></text>
+									</block>
+									<block wx:else >
+										
+										<view class="status">尽力争取资源中…</view>
+									</block>
+								
+									
+									
 								</view>
 							</view>
 						</block>
@@ -58,20 +69,28 @@
 							{{item.videoType}}
 						</view>
 						<block wx:for="{{item.videoList}}" wx:key="*this">
-							<view class="recommend-type-detail {{item.statusCode===1 ? 'not-online' :''}}">
+							<view class="recommend-type-detail {{item.status!==2 ? 'not-online' :''}}">
 								<view class="name-detail">
 									<cover-image class="video-resume" src="../../images/video.png">
 										
 									</cover-image>
 									<view class="name-info">
 										<view class="name">{{item.name}}</view>
-										<view class="status {{ item.statusCode===1  ?'unactived':''}}">{{item.status}}</view>
+									
+										<view  wx:if="{{item.status===2}}" class="status ">已上线</view>
+										<view  wx:else class="status unactived">待维护</view>
 									</view>
 								</view>
 								<view class="recommend-detail">
+								<block wx:if="{{item.status===2}}">
 									<view class="red-dot"></view>
-									<view class="status">{{item.onlineTips}}</view>
+									<view  class="status">已上线，前往查看吧</view>
 									<text class="cuIcon-right lg text-gray"></text>
+								</block>
+								<block wx:else >
+									
+									<view class="status">尽力争取资源中…</view>
+								</block>
 								</view>
 							</view>
 						</block>

@@ -6,17 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-	notesInfo:{}
+	notesInfo:{},
+	currentPage:0,
+	totalPages:0,
+	totalElements:0,
+	pageSize:10,
   },
   /**
    * @description；获取笔记本列表
    * 
    * */
   
-   getNotebookList:function(){
+   getNotebookList:function(page=0,size=10){
   	   let reqData={
-  		   page:0,
-  		   size:10
+  		   page,
+  		   size
   	   }
   	   let that=this;
   	   api._fetch({
@@ -28,16 +32,17 @@ Page({
   	   
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
-  	   	// 			let notesInfo=that.data.notesInfo;
-  					// notesInfo.notebooks=res.data;
-  					// notesInfo.notebookNum=res.data.length;
-  					// that.setData({
-  					// 	notesInfo
-  					// });
-					let notesInfo=res.data;
-					that.setData({
-						notesInfo
-					});
+  	   
+					   let notesInfo=res.data;
+					   let totalPages=res.data.totalPages;
+					   let totalElements=res.data.totalElements;
+					   that.setData({
+						notesInfo,
+						totalElements,
+						totalPages
+					   });
+					   
+					   wx.hideLoading();
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,
@@ -128,7 +133,28 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+		let self = this;
+			
+		 // 显示加载图标
+			
+		
+				let totalElements=this.data.totalElements;
+				let page=this.data.currentPage;
+				let pageSize=this.data.pageSize;
+				if(pageSize<totalElements){
+					// page++;
+					pageSize+=10;
+					self.setData({
+						currentPage:page,
+						pageSize
+					});
+					wx.showLoading({
+						
+					  title: '更多加载中',
+						
+					})
+					this.getNotebookList(page,pageSize);
+				}
   },
 
   /**

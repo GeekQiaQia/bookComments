@@ -192,13 +192,17 @@ Page({
 	  
   },
   toShowShareDialog(e){
-  	
+  	 console.log(e);
   	let successInfo={},
   		posterConfig=this.data.posterConfig;
+		successInfo['title']=e.currentTarget.dataset.title;
   		successInfo['nickName']=e.currentTarget.dataset.nickname;
   		successInfo['bookName']=e.currentTarget.dataset.bookname;
   		successInfo['content']=e.currentTarget.dataset.content;
   		if(successInfo){
+			if(successInfo['title']!==null){
+				posterConfig.texts[2].text=successInfo['title'];
+			}
   			posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
   			posterConfig.texts[4].text=successInfo.content;
   			posterConfig.texts[5].text[1].text=successInfo.nickName;
@@ -520,7 +524,7 @@ Page({
 			itemindex
 		});
 		this.getBookCommentDetail(itemindex);
-		this.toGetCommentList(id);
+		this.toGetCommentList(itemindex);
 		let bookTitle =wx.getStorageSync("bookTitle")
 		wx.setNavigationBarTitle({
 		     title: bookTitle+"的评论"

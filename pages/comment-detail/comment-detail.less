@@ -12,13 +12,13 @@
 			align-items: center;
 			.title{
 				width:688rpx;
-				height:118rpx;
+				height:auto;
 				font-size:34rpx;
 				font-family:PingFangSC-Semibold,PingFang SC;
 				font-weight:600;
 				color:rgba(11,12,13,1);
 				line-height:39rpx;
-				margin-bottom:42rpx;
+				
 			}
 			.split-line{
 				width:690rpx;
@@ -204,7 +204,7 @@
 			}
 			.top-comment{
 				width: 688rpx;
-				max-height: 400px;
+				
 				background: #ffffff;
 				border-radius: 10rpx;
 				margin: auto;
@@ -366,6 +366,19 @@
 							text-overflow:ellipsis;
 						}
 					}
+					.note-images{
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+						flex-wrap: wrap;
+						margin: 20rpx 0rpx;
+						.note-image{
+							width: 219rpx;
+							height: 176rpx;
+							margin:0rpx 10rpx 10rpx 0rpx;
+						}
+					}
 					.releation-container{
 						display: flex;
 						flex-direction: row;
@@ -522,7 +535,7 @@
 							}
 						}
 						.chicken-soul{
-							width:196rpx;
+							width:auto;
 							height:40rpx;
 							font-size:28rpx;
 							font-family:STSongti-SC-Bold,STSongti-SC;
