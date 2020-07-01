@@ -114,6 +114,13 @@
   align-items: flex-start;
   width: 100%;
 }
+.comment-info .my-comment-card .content-container .comment-detail .comment-book .book-shape {
+  position: absolute;
+  right: 8rpx;
+  width: 16rpx;
+  height: 24rpx;
+  top: 4rpx;
+}
 .comment-info .my-comment-card .content-container .comment-detail .comment-book .book {
   display: flex;
   flex: row;
