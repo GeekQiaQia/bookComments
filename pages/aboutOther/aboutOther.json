@@ -1,0 +1,7 @@
+{
+ "usingComponents": {
+ 	   "copy-right":"../../components/copy-right/copy-right",
+	   "hot-card":"../../components/hot-card/hot-card"
+ },
+  "navigationBarTitleText": "用户信息"
+}

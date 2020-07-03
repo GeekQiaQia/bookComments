@@ -40,7 +40,8 @@
     "pages/maintenance-phone/maintenance-phone",
     "pages/note-detail/note-detail",
     "pages/edit-note/edit-note",
-    "pages/my-comment-reply/my-comment-reply"
+    "pages/my-comment-reply/my-comment-reply",
+    "pages/aboutOther/aboutOther"
   ],
   "window": {
     "backgroundTextStyle": "light",

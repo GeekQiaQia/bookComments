@@ -241,6 +241,9 @@ Page({
 	let successInfo=wx.getStorageSync('successInfo')
 	let posterConfig=this.data.posterConfig;
 	if(successInfo){
+		if(successInfo['title']!==null&&successInfo['title']!==undefined){
+			posterConfig.texts[2].text=successInfo['title'];
+		}
 		posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
 		posterConfig.texts[4].text=successInfo.content;
 		posterConfig.texts[5].text[1].text=successInfo.nickName;
