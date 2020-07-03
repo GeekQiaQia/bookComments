@@ -57,7 +57,7 @@
 								</view>
 							
 									<view class="reverse-reply-info">
-										<view class="reference">@{{item.bookComment.userInfo.nickName}}</view>
+										<view class="reference" data-id="{{item.bookComment.userInfo.id}}" bindtap="handleAboutOther">@{{item.bookComment.userInfo.nickName}}</view>
 										<view>回复</view>
 										<view class="reference">@我：</view>
 										<view>{{item.authorReply.content}}</view>

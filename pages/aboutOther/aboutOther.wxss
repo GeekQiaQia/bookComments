@@ -1,0 +1,188 @@
+.container .about-container {
+  flex-grow: 1;
+}
+.container .about-container .about-info {
+  width: 750rpx;
+  height: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32rpx 0rpx 0rpx 0rpx;
+}
+.container .about-container .about-info .avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin-bottom: 16rpx;
+}
+.container .about-container .about-info .name-info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.container .about-container .about-info .name-info .name {
+  width: auto;
+  height: 48rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 48rpx;
+  margin-right: 48rpx;
+}
+.container .about-container .about-info .name-info .focus-btn {
+  width: auto;
+  height: 48rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #008e4e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .about-container .about-info .name-info .focus-btn .text {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #008d4e;
+  line-height: 28rpx;
+}
+.container .about-container .about-info .name-info .unfocus-btn {
+  width: 128rpx;
+  height: 48rpx;
+  background: #666666;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .about-container .about-info .name-info .unfocus-btn .text {
+  width: 53rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+.container .about-container .about-info .signature {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 28rpx;
+}
+.container .about-container .about-info .operation-info {
+  width: 750rpx;
+  height: 112rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -2rpx 0rpx 0rpx #efeff4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 36rpx;
+}
+.container .about-container .about-info .operation-info .item-focus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250rpx;
+  height: 58rpx;
+  border-right: 2rpx solid #EFEFF4;
+}
+.container .about-container .about-info .operation-info .item-focus .num {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+}
+.container .about-container .about-info .operation-info .item-focus .text {
+  width: auto;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 28rpx;
+}
+.container .about-container .comment-info {
+  width: 750rpx;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 32rpx;
+}
+.container .about-container .comment-info .no-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .about-container .comment-info .no-comment .no-icon {
+  width: 240rpx;
+  height: 288rpx;
+  margin: 56rpx 248rpx 92rpx 250rpx;
+}
+.container .about-container .comment-info .no-comment .no-tip {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 40rpx;
+  margin-bottom: 56rpx;
+}
+.container .about-container .comment-info .tip {
+  width: 750rpx;
+  height: 96rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .about-container .comment-info .tip .text {
+  width: auto;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 40rpx;
+  border-bottom: 2rpx solid #F96D3D;
+}
+.container .bottom-tip {
+  width: auto;
+  height: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #b8b8b8;
+  line-height: 32rpx;
+  margin: 32rpx auto 48rpx auto;
+  text-align: center;
+}

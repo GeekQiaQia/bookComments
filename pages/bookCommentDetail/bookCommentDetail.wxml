@@ -52,8 +52,8 @@
 					<view class="card-item" bindtap="handleCommentDetail">
 					<view class="card-item-title">
 								 <view class="info">
-									 <view class="avatar">
-									 									<image
+									 <view class="avatar" data-id="{{item.userInfo.id}}" catchtap="handleAboutOther">
+									 									<image          data-id="{{item.userInfo.id}}"
 									 									                class="cover-image"
 									 									                src="{{item.userInfo.avatarUrl}}"
 									 									               >

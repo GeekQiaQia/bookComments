@@ -1,0 +1,94 @@
+<!--pages/aboutOther/aboutOther.wxml-->
+<view class="container">
+	<view class="about-container">
+		<view class="about-info">
+			<view class="avatar">
+				<image style="width:inherit;height: inherit;border-radius: inherit;" src="{{aboutInfo.avatarUrl}}"></image>
+			</view>
+			<view class="name-info">
+				<view class="name">{{aboutInfo.nickName}}</view>
+				<block wx:if="{{aboutInfo.focus==0}}">
+				<view class="unfocus-btn">
+					<text class="cuIcon-add lg text-white" ></text>
+					<view class="text">关注</view>
+				</view>
+				</block>
+				
+				<block wx:elif="{{aboutInfo.focus==1}}">
+					<view class="focus-btn">
+						<text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
+						<view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+													  										  已关注
+						</view>
+					</view>
+							
+				</block>
+				<block wx:elif="{{aboutInfo.focus==3}}">
+					<view class="focus-btn">
+						<text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
+						<view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+														  	 互相关注
+						</view>
+					</view>	
+				</block>
+			</view>
+			<view class="signature">{{aboutInfo.sign}}</view>
+				
+			<view class="operation-info">
+				<view class="item-focus">
+					<view class="num">
+						{{aboutInfo.statistics.fans}}
+					</view>
+					<view class="text">
+						关注Ta
+					</view>
+				</view>
+				<view class="item-focus">
+					<view class="num">
+						{{aboutInfo.statistics.followers}}
+					</view>
+					<view class="text">
+						Ta关注
+					</view>
+				</view>
+				<view class="item-focus">
+					<view class="num">
+						{{aboutInfo.statistics.comments}}
+					</view>
+					<view class="text">
+						书评
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="comment-info">
+			<view class="tip">
+				<view class="text">Ta的书评</view>
+			</view>
+			<block wx:if="{{commentsList.totalElements==0}}">
+				<view class="no-comment">
+					<view class="no-icon">
+						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>
+					</view>
+					<view class="no-tip">
+						ta未留下对这本书的感悟
+					</view>
+				</view>
+			</block>
+			<block wx:else >
+				<block wx:for="{{commentsList.content}}" wx:key="id">
+					<hot-card model:item="{{item}}" bind:commentdetail="handleCommentDetail">
+						
+					</hot-card>
+				</block>
+			</block>
+			
+		</view>
+	</view>
+	<view class="bottom-tip">
+		— 到底啦 —
+	</view>
+	<copy-right>
+		
+	</copy-right> 
+</view>
