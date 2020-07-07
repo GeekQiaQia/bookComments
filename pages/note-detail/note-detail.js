@@ -264,7 +264,7 @@ Page({
 	  			 }else{
 	  				 wx.showToast({
 	  				   title: res.message,
-	  				   mask:true,
+	  				   mask:false,
 	  				   icon: 'none',
 	  				   duration: 3000
 	  				 })

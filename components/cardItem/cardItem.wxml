@@ -6,25 +6,25 @@
   <view class="card-container">
 	  <view class="card-item">
 		  <view class="card-item-title" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" bindtap="handleBookDetail">
-			  <view class="avatar">
-				<image
+			  <view class="avatar" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" >
+				<image data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" 
 				                class="cover-image"
 				                src="{{cardInfo.userInfo.avatarUrl}}"
 				               >
 				            </image>
 							
 			  </view>
-			  <view class="basicinfo">
-				  <view>
-					  <text class="name">{{cardInfo.userInfo.nickName}}</text>
+			  <view class="basicinfo" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" >
+				  <view data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" >
+					  <text class="name" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" >{{cardInfo.userInfo.nickName}}</text>
 					  <block wx:if="{{cardInfo.forward==true}}">
-						  <text class="notice">转发</text>
+						  <text class="notice" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"  >转发</text>
 					  </block>
 					  <block  wx:if="{{cardInfo.readBook==true&&cardInfo.forward==false}}">
-					  		 <text class="notice">已读</text>
+					  		 <text class="notice"data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"  >已读</text>
 					  </block>
 				  </view>
-				  <commentStars  model:stars="{{cardInfo.bookInfo.stars}}"></commentStars>
+				  <commentStars  model:stars="{{cardInfo.bookInfo.stars}}" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"  ></commentStars>
 			
 			  </view>
 			  

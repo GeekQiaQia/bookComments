@@ -23,7 +23,7 @@ Page({
 	  // 此处发送修改交易；
 	  wx.showToast({
 	    title: '已发送',
-	    mask:true,
+	    mask:false,
 	    icon: 'success',
 	    duration: 5000
 	  })

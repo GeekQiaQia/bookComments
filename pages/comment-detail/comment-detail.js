@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-		
+		currentPage:0,
+		totalPages:0,
+		totalElements:0,
+		pageSize:10,
 		item:{},
 		placeholder:"回复夏之风，留言将由该评论作者筛选展示，对所有人可见",
 		focus:true,
@@ -65,7 +68,7 @@ Page({
 					    x: 184,
 					    y: 180,
 					    baseLine: 'middle',
-					    text: "他不是心灵鸡汤",
+					    text: "",
 					    fontSize: 28,
 					    color: '#ffffff',
 					},
@@ -386,7 +389,7 @@ Page({
 					 }else{
 						 wx.showToast({
 						   title: res.message,
-						   mask:true,
+						   mask:false,
 						   icon: 'none',
 						   duration: 3000
 						 })
@@ -400,12 +403,12 @@ Page({
   /**
    * @description:获取书评评论列表
    * */
-  toGetCommentList(comment){
+  toGetCommentList(comment,page=0,size=10){
 	 
 	  let reqData={
 	    	comment,
-			page:0,
-			size:10
+			page,
+			size
 	  }
 	  let that=this;
 	  api._fetch({
@@ -418,13 +421,18 @@ Page({
 	  			 // 此处发送修改交易；
 	  			 if(res.statusCode===200){
 	  					let replyList=res.data.content;
+						let totalPages=res.data.totalPages;
+						let totalElements=res.data.totalElements;
 						that.setData({
-							replyList
+							replyList,
+							totalElements,
+							totalPages
 						});
+						wx.hideLoading();
 	  			 }else{
 	  				 wx.showToast({
 	  				   title: res.message,
-	  				   mask:true,
+	  				   mask:false,
 	  				   icon: 'none',
 	  				   duration: 3000
 	  				 })
@@ -491,14 +499,14 @@ Page({
 					});
 					wx.showToast({
 					  title: '已提交',
-					  mask:true,
+					  mask:false,
 					  icon: 'success',
-					  duration: 5000
+					  duration: 3000
 					})
    	   			 }else{
    	   				 wx.showToast({
    	   				   title: res.message,
-   	   				   mask:true,
+   	   				   mask:false,
    	   				   icon: 'none',
    	   				   duration: 3000
    	   				 })
@@ -576,7 +584,29 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+	let self = this;
+	 
+	 // 显示加载图标
+	 
+	
+	let totalElements=this.data.totalElements;
+	let page=this.data.currentPage;
+	let pageSize=this.data.pageSize;
+	let itemindex=this.data.itemindex
+	if(pageSize<totalElements){
+		// page++;
+		pageSize+=10;
+		self.setData({
+			currentPage:page,
+			pageSize
+		});
+		wx.showLoading({
+			
+		  title: '更多加载中',
+			
+		})
+		this.toGetCommentList(itemindex,paeg,pageSize);
+	}
   },
 
   /**

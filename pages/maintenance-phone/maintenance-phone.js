@@ -52,7 +52,7 @@ Page({
 	  if (!reg.test(phone)) {
 			  wx.showToast({
 				title: '手机号格式校验错误',
-				mask:true,
+				mask:false,
 				icon:'none',
 				duration: 2000
 			  })
@@ -71,7 +71,7 @@ Page({
 			 		  if(res.data.success){
 			 			  wx.showToast({
 			 			    title: '发送成功',
-			 			    mask:true,
+			 			    mask:false,
 			 			    icon: 'success',
 			 			    duration: 2000
 			 			  })
@@ -103,7 +103,7 @@ Page({
   		  // 此处发送修改交易；
   		  wx.showToast({
   		    title: '已发送',
-  		    mask:true,
+  		    mask:false,
   		    icon: 'success',
   		    duration: 3000
   		  })
@@ -127,7 +127,7 @@ Page({
 	  if (phoneNumber == "" || phoneNumber == 'undefined' || phoneNumber == null) {
 	  	wx.showToast({
 	  					title: '请输入正确的手机号',
-	  					mask:true,
+	  					mask:false,
 	  					icon:'none',
 	  					duration: 2000
 	  	})
@@ -137,7 +137,7 @@ Page({
 	  } else {
 	  	wx.showToast({
 	  					title: '手机号码格式错误',
-	  					mask:true,
+	  					mask:false,
 	  					icon:'none',
 	  					duration: 2000
 	  	})
@@ -158,7 +158,7 @@ Page({
 			if (phoneNumber == "" || phoneNumber == 'undefined' || phoneNumber == null) {
 				wx.showToast({
 								title: '请输入正确的手机号',
-								mask:true,
+								mask:false,
 								icon:'none',
 								duration: 2000
 				})
@@ -168,7 +168,7 @@ Page({
 			} else {
 				wx.showToast({
 								title: '手机号码格式错误',
-								mask:true,
+								mask:false,
 								icon:'none',
 								duration: 2000
 				})
@@ -178,7 +178,7 @@ Page({
 			if(code==''){
 				wx.showToast({
 								title: '验证码输入不可为空',
-								mask:true,
+								mask:false,
 								icon:'none',
 								duration: 2000
 				})

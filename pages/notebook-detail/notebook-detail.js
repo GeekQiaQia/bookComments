@@ -82,7 +82,7 @@ Page({
 		 	 			 if(res.statusCode===200){
 		 	 				 wx.showToast({
 		 	 				   title: '删除成功',
-		 	 				   mask:true,
+		 	 				   mask:false,
 		 	 				   icon: 'success',
 		 	 				   duration: 5000
 		 	 				 })
@@ -90,7 +90,7 @@ Page({
 		 	 			 }else{
 		 	 				 wx.showToast({
 		 	 				   title: res.message,
-		 	 				   mask:true,
+		 	 				   mask:false,
 		 	 				   icon: 'none',
 		 	 				   duration: 3000
 		 	 				 })
@@ -146,7 +146,7 @@ Page({
 	 			 if(res.statusCode===200){
 	 				 wx.showToast({
 	 				   title: '新建成功',
-	 				   mask:true,
+	 				   mask:false,
 	 				   icon: 'success',
 	 				   duration: 5000
 	 				 })
@@ -156,7 +156,7 @@ Page({
 	 			 }else{
 	 				 wx.showToast({
 	 				   title: res.message,
-	 				   mask:true,
+	 				   mask:false,
 	 				   icon: 'none',
 	 				   duration: 3000
 	 				 })
@@ -204,7 +204,7 @@ Page({
 			 }else{
 				 wx.showToast({
 				   title: res.message,
-				   mask:true,
+				   mask:false,
 				   icon: 'none',
 				   duration: 3000
 				 })

@@ -45,7 +45,7 @@ Page({
 	      console.info(res)
 		  wx.showToast({
 		    title: '修改成功',
-		    mask:true,
+		    mask:false,
 		    icon: 'success',
 		    duration: 3000
 		  })

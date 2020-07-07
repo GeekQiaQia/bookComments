@@ -48,10 +48,12 @@
 			
 			
 		</view>
-		<view>
-			<book-card>
+		<view style="background-color: white;width:100%;">
+			<block wx:for="{{bookInfo.content}}" wx:key="id">
+			<book-card  model:book-info="{{item.bookInfo}}" bind:onBookDetail="onBookDetail">
 				
 			</book-card>
+			</block>
 		</view>
 	
 		

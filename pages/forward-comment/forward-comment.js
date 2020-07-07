@@ -29,7 +29,7 @@ Page({
 	  if(messagesLen==0){
 		  wx.showToast({
 		    title: '评论内容不可为空哦',
-		    mask:true,
+		    mask:false,
 		    icon: 'none',
 		    duration: 3000
 		  })
@@ -78,7 +78,7 @@ Page({
 		  			 }else{
 		  				 wx.showToast({
 		  				   title: res.message,
-		  				   mask:true,
+		  				   mask:false,
 		  				   icon: 'none',
 		  				   duration: 3000
 		  				 })
@@ -146,7 +146,7 @@ Page({
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,
-  	   				   mask:true,
+  	   				   mask:false,
   	   				   icon: 'none',
   	   				   duration: 3000
   	   				 })

@@ -81,7 +81,7 @@ Page({
 	  if(content==""){
 		 wx.showToast({
 		 				title: '回复内容不可为空哦',
-		 				mask:true,
+		 				mask:false,
 		 				icon:'none',
 		 				duration: 2000
 		 })

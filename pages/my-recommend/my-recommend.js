@@ -22,27 +22,14 @@ Page({
 	  movieInfo:null,
 	recommendInfo:{
 		bookNum:3,
-		videoNum:2,
+		videoNum:0,
 		recommendDetail:
 			{
 				recommendBookList:[],
 				recommendVideoList:[
 				{
 					videoType:"影片",
-					videoList:[
-						{
-							name:"朝圣之路（The Way）",
-							status:"已上线",
-							status:2,
-							onlineTips:"已上线，前往查看吧"
-						},
-						{
-							name:"Dear Dracula ",
-							status:"待维护",
-							statusCode:1,
-							onlineTips:"尽力争取资源中…"
-						},
-					]
+					videoList:[]
 				},
 					
 				],
@@ -128,27 +115,13 @@ Page({
   		let movieInfo=res.data;
   		let movieTotalPages=res.data.totalPages;
   		let movieTotalElements=res.data.totalElements;
+		console.log(movieInfo);
 		recommendInfo.videoNum=movieInfo.content.length;
-		let typeMap=new Map();
 				
 						let content=movieInfo.content;
 						for(let i=0;i<content.length;i++){
-							let videoType=content[i].category.name;
-							if(!typeMap.has(videoType)){
-								typeMap.set(videoType,i);
-								let catInfo={
-										bookType:"",
-										bookList:[]
-												};
-								catInfo['videoType']=bookType;
-								catInfo['videoList']=[];
-								let result=content.filter(item=>{
-									return item.category.name==videoType;
-								});
-								catInfo.videoList=result;
-								console.log('catInfo is:',catInfo);
-								recommendInfo.recommendDetail.recommendVideoList.push(catInfo);
-							}
+							recommendInfo.recommendDetail.recommendVideoList[0].videoList.push(content[i]);
+							
 							
 						}
   		that.setData({
