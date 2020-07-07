@@ -44,8 +44,8 @@
 											</view>
 										</view>
 									</view>
-									<view class="book-icon">
-										
+									<view class="book-shape">
+										<image  class="book-shape" src="../../images/book-shape.png"></image>
 									</view>
 								</view>
 								

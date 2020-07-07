@@ -224,7 +224,7 @@
 					  						  </view>
 					  						  <view class="image-qrcode-container">
 					  							  <view class="qrcode-image">
-					  								  
+					  								  <image src="../../images/qrcode.png" style="width: inherit;height: inherit;"></image>
 					  							  </view>
 					  						  		<view  class="qrcode-tip">
 					  									<text class="tips">长按小程序查看详情</text>

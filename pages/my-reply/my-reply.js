@@ -183,6 +183,12 @@ Page({
   		})
   	 
   },
+  handleAboutOther(e){
+	  let id=e.target.dataset.id;
+	  wx.navigateTo({
+	    url: '../aboutOther/aboutOther?id='+id
+	  })
+  },
   handleCloseDialog(e){
   	  // let modalName=e.detail.modalName;
   	  this.setData({

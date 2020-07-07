@@ -57,7 +57,7 @@
 								</view>
 							
 									<view class="reverse-reply-info">
-										<view class="reference">@{{item.bookComment.userInfo.nickName}}</view>
+										<view class="reference" data-id="{{item.bookComment.userInfo.id}}" bindtap="handleAboutOther">@{{item.bookComment.userInfo.nickName}}</view>
 										<view>回复</view>
 										<view class="reference">@我：</view>
 										<view>{{item.authorReply.content}}</view>
@@ -83,8 +83,8 @@
 												</view>
 											</view>
 										</view>
-										<view class="book-icon">
-											
+										<view class="book-shape">
+											<image  class="book-shape" src="../../images/book-shape.png"></image>
 										</view>
 									</view>
 								</view>
@@ -151,7 +151,7 @@
 	 				  						  </view>
 	 				  						  <view class="image-qrcode-container">
 	 				  							  <view class="qrcode-image">
-	 				  								  
+	 				  								  <image src="../../images/qrcode.png" style="width: inherit;height: inherit;"></image>
 	 				  							  </view>
 	 				  						  		<view  class="qrcode-tip">
 	 				  									<text class="tips">长按小程序查看详情</text>

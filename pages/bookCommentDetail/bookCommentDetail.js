@@ -152,7 +152,12 @@ Page({
 			});
 		}
 	},
-	
+	handleAboutOther(e){
+		  let id=e.target.dataset.id;
+		  wx.navigateTo({
+		    url: '../aboutOther/aboutOther?id='+id
+		  })
+	},
 	/**
 	 * @description；获取书评详情
 	 * 
