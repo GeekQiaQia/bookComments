@@ -62,7 +62,7 @@ Page({
 				    x: 184,
 				    y: 180,
 				    baseLine: 'middle',
-				    text: "他不是心灵鸡汤",
+				    text: "",
 				    fontSize: 28,
 				    color: '#ffffff',
 				},
@@ -259,7 +259,7 @@ Page({
 		}).then(function (res) {
 		   wx.showToast({
 		     title: "删除成功",
-		     mask:true,
+		     mask:false,
 		     icon: 'success',
 		     duration: 3000
 		   })
@@ -452,7 +452,7 @@ Page({
 						 }else{
 							 wx.showToast({
 							   title: res.message,
-							   mask:true,
+							   mask:false,
 							   icon: 'none',
 							   duration: 3000
 							 })

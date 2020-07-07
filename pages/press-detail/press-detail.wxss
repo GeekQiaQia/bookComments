@@ -19,7 +19,7 @@
   padding: 32rpx 30rpx 32rpx 32rpx;
 }
 .container .top-container .press-title .title {
-  width: 320rpx;
+  width: auto;
   height: 56rpx;
   font-size: 40rpx;
   font-family: PingFangSC-Regular, PingFang SC;

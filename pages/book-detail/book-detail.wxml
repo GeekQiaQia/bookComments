@@ -61,7 +61,7 @@
 									<view class="tip">
 										暂无评论，快来发布第一条评论吧～
 									</view>
-									<view class="comment-btn" bindtap="goCommentBook">
+									<view class="comment-btn" bindtap="handleOnFocus">
 										去评论
 									</view>
 								</view>
@@ -129,7 +129,7 @@
 									<view class="tip">
 										暂无影片，快来推荐一部影片吧～
 									</view>
-									<view class="recommend-btn" bindtap="goRecommendFilm">
+									<view class="recommend-btn" data-target="messageModal"  bindtap="showMessageModal" >
 										去推荐
 									</view>
 								</view>
@@ -220,17 +220,37 @@
 			</copyRight>
 		</view>
 	</scroll-view>
-	<view class="bottom-contianer">
-		<view class="bottom-input">
-			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{nickname}}"  bindinput="handlNicknameInput"  placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></input>
-			
-			<view class="icon-input">
-				<cover-image src="../../images/Icon-bookComment-input.png" class="icon"></cover-image>
-			</view>
-		</view>
-		<view class="bottom-line">
-			<view class="line"></view>
-		</view>
+	<bottom-input bind:onFocus="handleOnFocus">
+		
+	</bottom-input>
+	
+	<!--留言对话框-->
+	<view class="cu-modal bottom-modal {{modalName=='messageModal'?'show':''}}" style="z-index: 1000;">
+	  <view class="cu-dialog" style="border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
+		  <view class="dialog-container">
+			  <view class="title">
+				 
+				 <van-icon name="cross"  size="40rpx" class="close-black" bindtap="onClose"/>
+				 <view class="tip">
+					 推荐影片
+				 </view>
+				 <view class="{{messagesLen>0?' sub-btn bg-orange':' sub-btn bg-grey'}}" bindtap="toCreateCommentPost">
+					 <view class="text">提交</view>
+				 </view>
+			  </view>
+			 <block>
+				 <view class="comment-text" >
+				 <textarea style="height: inherit; width: inherit;text-align: left;" maxlength="500"  value="{{messages}}"  
+					  focus="{{false}}"   fixed="{{true}}" placeholder="{{placeholder}}"  cursor-spacing="{{161}}"  bindinput="handlMessagesInput"  ></textarea>
+				 <view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{messagesLen}}/500</view>
+				 </view>
+			 </block>
+			  <view class="split-bar">
+			  			  
+			  </view>
+		  </view>
+	  
+	  </view>
 	</view>
 	
 </view>

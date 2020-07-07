@@ -3,8 +3,8 @@
 	   "copy-right":"../../components/copy-right/copy-right",
 	   "mycomment-card":"../../components/mycomment-card/mycomment-card",
 	   "comment-stars":"../../components/commentStars/commentStars",
-	   "poster": "../../components/poster/index",
-	   "share-friends":"../../components/share-friends/share-friends"
+	   "poster": "../../components/poster/index"
+	   
   },
      "navigationBarTitleText": "我的书评"
 } 

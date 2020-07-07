@@ -51,7 +51,7 @@ const showToast = title =>{
         title: title,
         icon: 'none',
         duration: 1500,
-        mask:true
+        mask:false
     });
 }
 

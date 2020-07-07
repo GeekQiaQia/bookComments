@@ -1,10 +1,12 @@
 <!--components/bottom-input/bottom-input.wxml-->
 	<view class="bottom-contianer">
 		<view class="bottom-input">
-			<input style="padding-left: 32rpx;" class="input" maxlength="24"  bindfocus="handleOnFocus"  placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></input>
+			<view style="padding-left: 32rpx;"  class="input"  bindtap="handleOnFocus" >
+				留下你对这本书的感悟，让Ta体味你的思想之旅～
+			</view>
 			
 			<view class="icon-input">
-				<cover-image src="../../images/Icon-bookComment-input.png" class="icon"></cover-image>
+				<image src="../../images/Icon-bookComment-input.png" class="icon"></image>
 			</view>
 		</view>
 		<view class="bottom-line">

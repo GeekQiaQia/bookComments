@@ -305,7 +305,7 @@ getReplyList(page,size){
 	}).then(function (res) {
 	   wx.showToast({
 	     title: "删除成功",
-	     mask:true,
+	     mask:false,
 	     icon: 'success',
 	     duration: 3000
 	   })

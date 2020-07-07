@@ -8,14 +8,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+	  placeholder:"请提交相关影片信息，平台将在核实后添加维护",
+	  messages:"",
+	  focus:false,
+	  messagesLen:0,
 	  scrollHeight:"",
 	  active: 0,
 	  loading:true,
 	  progress:"61.8%",
 	  tabs:[
-	  	{tab:"书籍简介",name:"bookResume",info:"哈罗德•弗莱，六十岁，在酿酒厂干了四十年销售代表后默默退休，没有升迁，既无朋友，也无敌人，退休时公司甚至连欢送会都没开。他跟隔阂很深的妻子住在英国的乡间，生活平静，夫妻疏离，日复一日。一天早晨，他收到一封信，来自二十年未见的老友奎妮。她患了癌症，写信告别。震惊、悲痛之下，哈罗德写了回信，在寄出的路上，他由奎妮想到了自己的人生，经过了一个又一个邮筒，越走越远，最后，他从英国最西南一路走到了最东北，横跨整个英格兰。87天，627英里，只凭一个信念：只要他走，老友就会活下去！这是哈罗德千里跋涉的故事。从他脚步迈开的那一刻起，与他六百多英里旅程并行的，是他穿越时光隧道的另一场旅行。这个小说是这两年从英国、德国、到美国到台湾地区的黑马畅销作品，入围了2012年的布克文学奖，作者是英国的知名编剧，她第一次尝试写小说，她的语言真好，让人只想大段引用，她真细腻，女作家的穿针走线、静水流深的细腻，扩大了我的感官触觉，她讲了一个好故事，她介绍我认识了一个朋友——哈罗德，这个受伤的小孩，这个沉默的男人，这个妻子眼里的窝囊废，这个人生的loser，当我跟他一起一层一层靠近他自己，他毫无疑问地成了陪伴我的老朋友。《泰晤士报》有人评论说，“自从遇见哈罗德的那一刻起，我再也不想离开他。”而当那天傍晚我终于读完这个故事，把纸稿一推，伏在桌上大哭了一阵。我想，只有人类会不断地犯错，也只有人类才能如此承受，我是多么理解沉重而孤独的滋味啊，而哈罗德最终历经磨难获得重生。那一刻正如闷热无风的夏天里终于降下了一场凉爽的雨。"},
-	  	{tab:"精彩评论",name:"topComments",info:"精彩评论"},
-	  	{tab:"影片推荐",name:"videoRecommend",info:"影片推荐"}
+	  	{tab:"书籍简介",name:"bookResume",info:""},
+	  	{tab:"精彩评论",name:"topComments",info:""},
+	  	{tab:"影片推荐",name:"videoRecommend",info:""}
 	  ],
     maxStars:5,
 	visible: false,
@@ -23,14 +27,14 @@ Page({
 	bookInfo:{
 		bookStar:{
 			oneStar:"0.1%",
-			people: 150,
-			score: 8.5,
-			twoStar: "20%",
-			threeStar: "30%",
-			fourStar: "40%",
-			fiveStar: "50%",
-			resource: "system",
-			id: 1
+			people: 150,
+			score: 8.5,
+			twoStar: "20%",
+			threeStar: "30%",
+			fourStar: "40%",
+			fiveStar: "50%",
+			resource: "system",
+			id: 1
 		}
 	},
 	cardInfoArray:[
@@ -55,7 +59,27 @@ Page({
 				canIUse: wx.canIUse('button.open-type.getUserInfo'),
 				hasUserInfo:false
   },
- 
+ handlMessagesInput(e){
+ 	  let len=e.detail.value.length;
+ 	  this.setData({
+ 	    messagesLen:len,
+ 	  	messages:e.detail.value
+ 	  });
+ },
+ onClose() {
+    this.setData({
+    	 modalName:null,
+		 messages:''
+    });
+  },
+  handleOnFocus(e){
+  	
+  		 let bookInfo=this.data.bookInfo;
+  		 wx.navigateTo({
+  			 url: '../post-comment/post-comment'
+  		 })
+  		 wx.setStorageSync("postBookInfo",bookInfo)
+  },
   /**
      * @description 获取
   书对应的电影信息详情；
@@ -88,7 +112,7 @@ Page({
     	   			 }else{
     	   				 wx.showToast({
     	   				   title: res.message,
-    	   				   mask:true,
+    	   				   mask:false,
     	   				   icon: 'none',
     	   				   duration: 3000
     	   				 })
@@ -130,7 +154,7 @@ Page({
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,
-  	   				   mask:true,
+  	   				   mask:false,
   	   				   icon: 'none',
   	   				   duration: 3000
   	   				 })
@@ -171,7 +195,7 @@ Page({
 					 }else{
 						 wx.showToast({
 						   title: res.message,
-						   mask:true,
+						   mask:false,
 						   icon: 'none',
 						   duration: 3000
 						 })
@@ -213,7 +237,7 @@ Page({
 	   			 }else{
 	   				 wx.showToast({
 	   				   title: res.message,
-	   				   mask:true,
+	   				   mask:false,
 	   				   icon: 'none',
 	   				   duration: 3000
 	   				 })
@@ -271,7 +295,7 @@ Page({
   	   			 }else{
   	   				 wx.showToast({
   	   				   title: res.message,
-  	   				   mask:true,
+  	   				   mask:false,
   	   				   icon: 'none',
   	   				   duration: 3000
   	   				 })
@@ -320,18 +344,29 @@ Page({
    },
    
  
+   showMessageModal(e){
+   	  let modalName=e.target.dataset.target;
+   	  this.setData({
+   		  modalName,
+   		  focus:true
+   	  });
+   },
    
-   
+   toCreateCommentPost(e){
+	   let bookInfo=this.data.bookInfo;
+	   let describes=this.data.messages;
+	   let reqData={
+		   book:bookInfo.id,
+		   describes
+	   }
+	   this.goRecommendFilm(reqData);
+   },
    /**
 	* @description  推荐影片
 	* 
 	* */
-   goRecommendFilm(e){
-	   let reqData={
-	     		   book:"",
-				   describes:"",
-				   name:""
-	   }
+   goRecommendFilm(reqData){
+	  
 	   let that=this;
 	   api._fetch({
 	       url: '/api/i/recommend/movie',
@@ -342,11 +377,11 @@ Page({
 	   	
 	   			 // 此处发送修改交易；
 	   			 if(res.statusCode===200){
-	   			
+	   			that.onClose();
 	   			 }else{
 	   				 wx.showToast({
 	   				   title: res.message,
-	   				   mask:true,
+	   				   mask:false,
 	   				   icon: 'none',
 	   				   duration: 3000
 	   				 })

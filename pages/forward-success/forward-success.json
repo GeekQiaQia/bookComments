@@ -1,7 +1,7 @@
 {
  "usingComponents": {
  	     "copy-right":"../../components/copy-right/copy-right",
-		 "share-friends":"../../components/share-friends/share-friends",
+		 
 		 "poster": "../../components/poster/index"
 	     
  },

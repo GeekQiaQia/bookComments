@@ -19,6 +19,7 @@ Page({
 	images:"",
 	notebook:"我的笔记本",
 	note:null,
+
 	showNoteList:false,
   },
   /**
@@ -209,7 +210,7 @@ Page({
 	   if(notesLen==0){
 	   		  wx.showToast({
 	   		    title: '笔记内容不可为空哦',
-	   		    mask:true,
+	   		    mask:false,
 	   		    icon: 'none',
 	   		    duration: 3000
 	   		  })
@@ -266,7 +267,7 @@ Page({
 	   		   			 }else{
 	   		   				 wx.showToast({
 	   		   				   title: res.message,
-	   		   				   mask:true,
+	   		   				   mask:false,
 	   		   				   icon: 'none',
 	   		   				   duration: 3000
 	   		   				 })
@@ -285,7 +286,7 @@ Page({
 	   if(notesLen==0){
 	   		  wx.showToast({
 	   		    title: '笔记内容不可为空哦',
-	   		    mask:true,
+	   		    mask:false,
 	   		    icon: 'none',
 	   		    duration: 3000
 	   		  })
@@ -344,7 +345,7 @@ Page({
 		   			 }else{
 		   				 wx.showToast({
 		   				   title: res.message,
-		   				   mask:true,
+		   				   mask:false,
 		   				   icon: 'none',
 		   				   duration: 3000
 		   				 })
@@ -407,7 +408,7 @@ Page({
    	   			 }else{
    	   				 wx.showToast({
    	   				   title: res.message,
-   	   				   mask:true,
+   	   				   mask:false,
    	   				   icon: 'none',
    	   				   duration: 3000
    	   				 })
@@ -437,6 +438,7 @@ Page({
    	  }
    	 
    },
+
    
   /**
    * 生命周期函数--监听页面加载

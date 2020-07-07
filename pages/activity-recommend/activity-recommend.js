@@ -46,7 +46,7 @@ Page({
 	
 		wx.showToast({
 		  title: '推荐成功',
-		  mask:true,
+		  mask:false,
 		  icon: 'success',
 		  duration: 5000
 		})
@@ -67,7 +67,7 @@ Page({
 	// }, 10000)
 	wx.showToast({
 	  title: '已发送',
-	  mask:true,
+	  mask:false,
 	  icon: 'success',
 	  duration: 5000
 	})
