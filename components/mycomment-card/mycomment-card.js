@@ -66,6 +66,8 @@ Component({
 	showModal:function(e){
 		let id=e.target.dataset.id;
 		let target=e.target.dataset.target;
+		let noteDetail=e.target.dataset.item;
+		wx.setStorageSync("noteDetail",noteDetail);
 		var myEventDetail = {id,target} // detail对象，提供给事件监听函数
 		      var myEventOption = {} // 触发事件的选项
 		this.triggerEvent('onShowModal', myEventDetail, myEventOption)

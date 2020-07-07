@@ -19,8 +19,86 @@ Page({
 	images:"",
 	notebook:"我的笔记本",
 	note:null,
+
 	showNoteList:false,
   },
+  /**
+   * @description  我的书评，添加为笔记本；
+   * */
+   handleAddToNotes:function(e){
+	   let that=this;
+	   let notesLen=this.data.notesLen;
+	   if(notesLen==0){
+	   		  wx.showToast({
+	   		    title: '笔记内容不可为空哦',
+	   		    mask:true,
+	   		    icon: 'none',
+	   		    duration: 3000
+	   		  })
+	   }else{
+	   		   let postBookInfo=this.data.postBookInfo;
+	   		   let userInfo=wx.getStorageSync('userInfo');
+	   		   let content=this.data.notes,
+	   		   	   noteTitle=this.data.noteTitle,
+	   			   comment=this.data.note,
+	   		   	   notebook=this.data.noteBookRadio;
+	   		   		 
+	   		   let reqData={
+	   		   		    
+	   		   			comment,
+						content,
+						note:true,
+	   		   			notebook
+	   		      		 
+	   		   }
+	   		   if(noteTitle.length>0){
+	   		   			 reqData['title']=that.data.noteTitle;
+	   		   }
+	   		   let realImageList=this.data.realImageList;
+	   		
+	   		   if(realImageList.length>0){
+	   			    let images="",len=realImageList.length;
+	   				if(len>1){
+	   					for(let i=0;i<len;i++){
+	   						images+=realImageList[i]+";"
+	   					}
+	   				}else{
+	   					images=realImageList[0];
+	   				}
+	   				
+	   			    reqData['images']=images
+	   		   }
+	   		   
+	   		   	  
+	   		   api._fetch({
+	   		       url: '/api/i/comment/forward',
+	   		       data:reqData,
+	   		       method:'post',
+	   			   contentType:1
+	   		   }).then(function (res) {
+	   		      	 
+	   		   			 // 此处发送修改交易；
+	   		   			 if(res.statusCode===200){
+	   						
+	   						wx.navigateBack({
+	   							delta:1,
+	   						})
+	   		  
+	   		   			 }else{
+	   		   				 wx.showToast({
+	   		   				   title: res.message,
+	   		   				   mask:true,
+	   		   				   icon: 'none',
+	   		   				   duration: 3000
+	   		   				 })
+	   		   			 }
+	   		   			
+	   		       
+	   		   }).catch(function (error) {
+	   		       console.log(error);
+	   		   });
+	   }
+   },
    
    handlNoteTitleInput:function(e){
    	  let len=e.detail.value.length;
@@ -35,8 +113,8 @@ Page({
    	 handlNoteInput(e){
    		  let len=e.detail.value.length;
    		  this.setData({
-   			notesLen:len,
-   			notes:e.detail.value
+			  notes:e.detail.value,
+			  notesLen:len
    		  });
    	  },
    
@@ -360,12 +438,16 @@ Page({
    	  }
    	 
    },
+
    
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 	let type=options.type;
+	let notebook=null;
+	let noteBookRadio=null;
+	let postBookInfo=null;
 	console.log(options);
 	if(type=="forward"){
 		wx.setNavigationBarTitle({
@@ -373,6 +455,13 @@ Page({
 		})
 		this.setData({
 			type:"forward"
+		});
+	}else if(type=='add'){
+		wx.setNavigationBarTitle({
+			title:"我的书评-添加到笔记"
+		})
+		this.setData({
+			type:"add"
 		});
 	}
 	this.getNotebookList();
@@ -385,14 +474,22 @@ Page({
 	}else{
 		noteTitleLen=noteTitle.length;
 	}
-	let notebook=noteDetail.userNotebook.name;
-	let noteBookRadio=noteDetail.userNotebook.id;
+	if(type=='add'){
+		notebook="我的笔记本";
+		noteBookRadio=0;
+		postBookInfo=noteDetail.bookInfo;
+	}else{
+		 notebook=noteDetail.userNotebook.name;
+		 noteBookRadio=noteDetail.userNotebook.id;
+		 postBookInfo=noteDetail.book;
+	}
+
 	let note=noteDetail.id;
 	let images=noteDetail.images;
 	
 	if(noteDetail){
 		this.setData({
-			postBookInfo:noteDetail.book,
+			postBookInfo,
 			notes:noteDetail.content,
 			notesLen:noteDetail.content.length,
 			noteTitle,
