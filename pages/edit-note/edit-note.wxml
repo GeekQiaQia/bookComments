@@ -86,6 +86,13 @@
 				</view>
 			</view>
 		</block>
+		<block wx:elif="{{type=='add'}}">
+			<view class="button" bindtap="handleAddToNotes">
+				<view class="text">
+					保存笔记
+				</view>
+			</view>
+		</block>
 		<block wx:else>
 			
 			<view class="button" bindtap="handleSendComment">

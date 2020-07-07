@@ -244,15 +244,15 @@ Page({
 		this.deleteCommentReply(deleteId);
 	},
 	/**
-	 * @description  删除回复列表
+	 * @description  删除当前书评
 	 * */
-	 deleteCommentReply(reply){
+	 deleteCommentReply(id){
 		 let that=this;
 		let reqData={
-				  reply
+				  id
 		}
 		api._fetch({
-		    url: '/api/i/reply/delete',
+		    url: '/api/i/comment/delete',
 		    data:reqData,
 		    method:'post',
 			contentType: 1
@@ -325,6 +325,11 @@ Page({
 		  confirmDelete: true
 		})
 		
+	},
+	addNoteBooks(){
+		wx.navigateTo({
+		  url: '../edit-note/edit-note?type=add',
+		}) 	
 	},
 	/**
 	 * 
