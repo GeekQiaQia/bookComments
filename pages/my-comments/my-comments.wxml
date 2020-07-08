@@ -12,12 +12,12 @@
 				
 			</view>
 			<view class="comment-vedio" bindtap="handleMyLikedbook">
-				<text class="comment-num">{{commentInfo.likeNum}}</text>
+				<text class="comment-num">{{statistics.likeComment}}</text>
 				<text class="comment-type">我点赞的书</text>
 			</view>
 		</view>
 		<view class="comment-container">
-			<block wx:if="{{commentInfo.totalElements==0&&commentInfo.likeNum==0}}">                    
+			<block wx:if="{{commentInfo.totalElements==0}}">                    
 				<view class="no-comment">
 					<view class="no-icon">
 						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>

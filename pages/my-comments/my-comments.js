@@ -14,6 +14,7 @@ Page({
 		currentPage:0,
 		totalPages:0,
 		totalElements:0,
+		statistics:{},
 		pageSize:10,
 		posterConfig: {
 		    width: 750,
@@ -502,12 +503,45 @@ Page({
 			 url: '../my-likedbook/my-likedbook',
 		})
 	},
+	
+	/**
+	 * 
+	 * @description 获取我的书评
+	 * */
+	getLikedInfoList(page=0,pageSize=10){
+		  let that=this;
+		 
+		  let reqData={
+				page,
+				size:pageSize
+		  }
+		  api._fetch({
+		      url: '/api/i/commend/like/list.comment',
+		      data:reqData,
+		      method:'get',
+			  contentType:1
+		  }).then(function (res) {
+			let commentInfo=this.data.commentInfo;
+			let totalElements=res.data.totalElements;
+			commentInfo.likeNum=totalElements;
+			that.setData({
+				commentInfo
+			});
+			wx.hideLoading();
+		  }).catch(function (error) {
+		      console.log(error);
+		  });
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-	
+		let statistics =wx.getStorageSync('statistics')
 		this.getCommentList();
+		this.setData({
+			statistics
+		});
+		// this.getLikedInfoList();
 	},
 
 	/**

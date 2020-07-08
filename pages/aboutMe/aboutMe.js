@@ -120,6 +120,7 @@ Page({
   			 birthday,
   			 sign
   		 }
+		 wx.setStorageSync('statistics',statistics)
   		 that.setData({
   			 maintenanceInfo,
 			 statistics
