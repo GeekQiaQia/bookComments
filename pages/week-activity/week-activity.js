@@ -6,9 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-	imageSrc:"",
-	id:"",
-	recommendListInfo:{},
+	  currentPage:0,
+	  totalPages:0,
+	  totalElements:0,
+	  pageSize:10,
+		imageSrc:"",
+		id:"",
+		recommendListInfo:{},
 
   },
 
@@ -18,6 +22,51 @@ Page({
 		  url: '../activity-recommend/activity-recommend?id='+id
 		})
 	},
+	onHandleLikeReplyTrigger(e){
+		  // 自定义组件触发事件时提供的detail对象
+		  let id=e.target.dataset.id;
+		  let liked=e.target.dataset.liked;
+		  this.toCreateLikeReplyComment(id,liked);
+		  // 发送一个改变like状态的交易；
+	},
+	/**
+	 * @description: 点赞一个书评回复
+	 * */
+	 
+	 toCreateLikeReplyComment(recommend,liked){
+			  // 如果已经点赞，则执行取消点赞交易
+			  let that=this;
+			  let reqData={
+			  		  recommend
+			  }
+			  if(liked){
+					   api._fetch({
+					       url: '/api/i/activity/recommend/like/cancel',
+					       data:reqData,
+					       method:'post',
+					   	contentType: 1
+					   }).then(function (res) {
+					    
+							let id=that.data.id;
+					      	that.getActivityRecommendList(id);
+					   }).catch(function (error) {
+					       console.log(error);
+					   });
+			  }else{
+				  api._fetch({
+				      url: '/api/i/activity/recommend/like/create',
+				      data:reqData,
+				      method:'post',
+				  	contentType: 1
+				  }).then(function (res) {
+				   
+						 let id=that.data.id;
+						 that.getActivityRecommendList(id);
+				  }).catch(function (error) {
+				      console.log(error);
+				  });
+			  }
+	 },
 	
 	
   /**
@@ -25,13 +74,13 @@ Page({
 	   * 
 	   * */
 	  
-	  getActivityRecommendList(detail){
+	  getActivityRecommendList(detail,page=0,size=10){
 	  	  
 	  	let that=this;
 	  	let reqData={
 	  		detail,
-	  		page:0,
-	  		size:10
+	  		page,
+	  		size
 	  	}
 	  	api._fetch({
 	  	    url: '/api/activity/recommend/list',
@@ -40,9 +89,12 @@ Page({
 	  		 contentType:1
 	  	}).then(function (res) {
 			let recommendListInfo=res.data;
-			
+			let totalPages=res.data.totalPages;
+			let totalElements=res.data.totalElements;
 			that.setData({
-				recommendListInfo
+				recommendListInfo,
+				totalPages,
+				totalElements
 			})
 	  	    
 	  	}).catch(function (error) {
@@ -109,7 +161,30 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+	let self = this;
+	 
+	     // 显示加载图标
+	 
+	    
+	 	let totalElements=this.data.totalElements;
+	 	let page=this.data.currentPage;
+	 	let pageSize=this.data.pageSize;
+		let id=this.data.id;
+	 	if(pageSize<totalElements){
+	 		// page++;
+	 		pageSize+=10;
+	 		self.setData({
+	 			currentPage:page,
+	 			pageSize
+	 		});
+	 		wx.showLoading({
+	 			
+	 		  title: '更多加载中',
+	 			
+	 		})
+			 this.getActivityRecommendList(id,page,pageSize);
+			
+	 	}
   },
 
   /**

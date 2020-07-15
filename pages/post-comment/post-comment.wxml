@@ -10,7 +10,7 @@
 	<view class="notes">
 		<view class="input-container">
 			<view class="recommend-reason">
-			<textarea class="text-notes"   maxlength="2000" value="{{notes}}"  bindinput="handlNoteInput" placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></textarea>
+			<textarea hidden="{{showNoteList}}" class="text-notes"   maxlength="2000" value="{{notes}}"  bindinput="handlNoteInput" placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></textarea>
 			<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{notesLen}}/2000</view>
 			</view>
 		</view>
@@ -59,7 +59,7 @@
 		</view>
 	</view>
 	<van-overlay show="{{ showNoteList }}"   z-index="10000">
-	  <view class="wrapper">
+	  <view class="wrapper" style="z-index:10000">
 		<view class="card">
 			<view class="detail-info">
 				<view class="title">

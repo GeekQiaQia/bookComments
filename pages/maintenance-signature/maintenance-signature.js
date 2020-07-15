@@ -50,9 +50,10 @@ Page({
 		  contentType:1
   	  }).then(function (res) {
   	      console.info(res)
-		  wx.redirectTo({
-		    url: '../info-maintenance/info-maintenance',
-		  })
+		  wx.navigateBack()
+		  // wx.redirectTo({
+		  //   url: '../info-maintenance/info-maintenance',
+		  // })
   	  }).catch(function (error) {
   	      console.log(error);
   	  });

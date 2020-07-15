@@ -278,8 +278,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  // 页面初始加载获取登录用户信息；
-	this.getLoginUserInfo();
+	
   },
 
   /**
@@ -293,7 +292,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  // 页面初始加载获取登录用户信息；
+	this.getLoginUserInfo();
   },
 
   /**

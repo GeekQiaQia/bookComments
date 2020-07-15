@@ -118,8 +118,8 @@
 									
 								</view>
 								<view class="like-info">
-									<text class=" lg   size {{item.liked==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeReplyTrigger"></text>
-									<view class="like-num {{item.liked?'orange':''}}" >
+									<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeReplyTrigger"></text>
+									<view class="like-num {{item.meLike?'orange':''}}" >
 										{{item.liked}}
 									</view>
 								</view>

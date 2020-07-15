@@ -70,12 +70,12 @@ Page({
 		    title: '已发送',
 		    mask:false,
 		    icon: 'success',
-		    duration: 5000
+		    duration: 3000
 		  })
-		  
-  		  wx.redirectTo({
-  		    url: '../info-maintenance/info-maintenance',
-  		  })
+		    wx.navigateBack()
+  		  // wx.redirectTo({
+  		  //   url: '../info-maintenance/info-maintenance',
+  		  // })
   	  }).catch(function (error) {
   	      console.log(error);
   	  });

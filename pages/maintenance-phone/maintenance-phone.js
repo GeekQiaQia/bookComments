@@ -108,9 +108,7 @@ Page({
   		    duration: 3000
   		  })
   		  
-  		  wx.redirectTo({
-  		    url: '../info-maintenance/info-maintenance',
-  		  })
+  		 wx.navigateBack()
   	  }).catch(function (error) {
   	      console.log(error);
   	  });

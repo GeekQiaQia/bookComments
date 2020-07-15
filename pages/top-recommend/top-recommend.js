@@ -6,6 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+	  currentPage:0,
+	  totalPages:0,
+	  totalElements:0,
+	  pageSize:10,
 	imageSrc:"",
 	bookList:[
 		{
@@ -111,12 +115,12 @@ Page({
    * @description:top10榜单信息；
    * 
    * */
-   getTopRecommendInfo:function(){
+   getTopRecommendInfo:function(page=0,size=10){
 	   
 	 let that=this;
 	 let reqData={
-		 page:0,
-		 size:10,
+		 page,
+		 size,
 	 	type:"TOP100"	
 	 }
 	 api._fetch({
@@ -147,8 +151,13 @@ Page({
 					  					  translators
 					  }
 				  }
+				  let totalPages=res.data.totalPages;
+				  let totalElements=res.data.totalElements;
 					that.setData({
-						bookList:content
+						bookList:content,
+						totalPages,
+						totalElements
+						
 					});
 				}else{
 	 				 wx.showToast({
@@ -253,7 +262,28 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+let self = this;
+ 
+     // 显示加载图标
+ 
+    
+ 	let totalElements=this.data.totalElements;
+ 	let page=this.data.currentPage;
+ 	let pageSize=this.data.pageSize;
+ 	if(pageSize<totalElements){
+ 		// page++;
+ 		pageSize+=10;
+ 		self.setData({
+ 			currentPage:page,
+ 			pageSize
+ 		});
+ 		wx.showLoading({
+ 			
+ 		  title: '更多加载中',
+ 			
+ 		})
+		this.getTopRecommendInfo(page,pageSize);
+ 	}
   },
 
   /**

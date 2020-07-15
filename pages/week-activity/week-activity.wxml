@@ -25,8 +25,8 @@
 							</view>
 					</view>
 					<view class="like-info"> 
-						<text class="cuIcon-appreciate lg  text-orange size {{item.like==true?'cuIcon-appreciatefill':''}}  " ></text> 
-						<text class="like-num {{item.like==true?'liked':'unliked'}} ">{{item.liked}}</text>
+						<text class="cuIcon-appreciate lg  text-orange size {{item.meLike==true?'cuIcon-appreciatefill':'cuIcon-appreciate text-gray'}}  " data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeReplyTrigger"></text> 
+						<text class="like-num {{item.meLike==true?'liked':'unliked'}} ">{{item.liked}}</text>
 					</view>
 				</view>
 				<view class="activity-main">
