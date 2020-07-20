@@ -157,7 +157,7 @@ Page({
 
 	  let that=this;
 	  let sourceType=[e.target.dataset.source];
-	
+	 console.log(sourceType);
 	  wx.chooseImage({
 		  count:1,
 		   sizeType: ['original', 'compressed'],
@@ -180,7 +180,7 @@ Page({
 			     name: 'file',
 			     header:header,
 			     success (res){
-							   
+							   console.log('res=',res);
 						     let data=res.data;
 							 avatar=JSON.parse(data).url;
 							 let reqData={

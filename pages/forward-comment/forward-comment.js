@@ -63,6 +63,7 @@ Page({
 						 let successInfo={
 							
 							 bookName:that.data.item.bookInfo.name,
+							 book:that.data.item.bookInfo.id,
 							 content,
 							 nickName:userInfo.nickName
 						 }

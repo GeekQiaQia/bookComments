@@ -1,5 +1,5 @@
 // pages/forward-success/forward-success.js
-
+const api = require('../../utils/request.js')
 Page({
 
   /**
@@ -177,6 +177,7 @@ Page({
   
   
   onAllEvaluationChange(event){
+	  console.log(event);
 	   this.setData({
 	        allEvaluation: event.detail,
 	      });
@@ -277,7 +278,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+	
   },
 
   /**
@@ -291,7 +292,48 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+	let {paperEvaluation,
+		deepEvaluation,
+		easyEvaluation,
+		professionalEvaluation,
+		allEvaluation}=this.data;
+		let book=this.data.successInfo.book;
+	let reqData={
+		  book,
+		  depth:deepEvaluation,
+		  paper:paperEvaluation,
+		  professional:professionalEvaluation,
+		  readability:easyEvaluation,
+		  star:allEvaluation
+		  
+	}
+	 api._fetch({
+		   		       url: '/api/i/book/star',
+		   		       data:reqData,
+		   		       method:'post',
+		   			   contentType:1
+		   		   }).then(function (res) {
+		   		      	 
+		   		   			 // 此处发送修改交易；
+		   		   			 if(res.statusCode===200){
+		   						
+		   						wx.navigateBack({
+		   							delta:1,
+		   						})
+		   		  
+		   		   			 }else{
+		   		   				 wx.showToast({
+		   		   				   title: res.message,
+		   		   				   mask:true,
+		   		   				   icon: 'none',
+		   		   				   duration: 3000
+		   		   				 })
+		   		   			 }
+		   		   			
+		   		       
+		   		   }).catch(function (error) {
+		   		       console.log(error);
+		   		   });
   },
 
   /**

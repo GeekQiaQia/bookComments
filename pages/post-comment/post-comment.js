@@ -177,6 +177,7 @@ Page({
 						let successInfo={
 							
 							 bookName:that.data.postBookInfo.name,
+							 book:that.data.postBookInfo.id,
 							 content,
 							 nickName:userInfo.nickName
 						 }
