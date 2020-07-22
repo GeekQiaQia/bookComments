@@ -17,7 +17,14 @@ Page({
 		   {comment:"一口气读完"}
   ]
   },
-  
+  handleOnFocus(e){
+  	
+  		 let bookInfo=this.data.bookInfo;
+  		 wx.navigateTo({
+  			 url: '../post-comment/post-comment'
+  		 })
+  		 wx.setStorageSync("postBookInfo",bookInfo)
+  },
   /**
    * @description；获取书评详情
    * 

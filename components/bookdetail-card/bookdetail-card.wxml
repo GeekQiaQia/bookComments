@@ -1,7 +1,6 @@
 <!--pages/aboutMe/aboutMe.wxml-->
 <view class="container">
-	<view wx:for="{{cardInfo}}" wx:key="index">
-		
+
 	
   <view class="card-container">
 	  <view class="card-item">
@@ -61,5 +60,4 @@
 	  
   </view>
 	
-   </view>
 </view>

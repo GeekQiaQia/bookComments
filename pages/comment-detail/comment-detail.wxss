@@ -1,6 +1,3 @@
-.container {
-  height: 100%;
-}
 .container .comment-container {
   flex-grow: 1;
 }

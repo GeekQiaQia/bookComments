@@ -113,10 +113,13 @@
 											</veiw>
 										</view>
 									</view>
-									<view>
-										<bookdetail-card model:card-info="{{cardInfoArray}}" >
-											
-										</bookdetail-card>
+									<view  >
+										<block wx:for="{{cardInfoArray}}" wx:key="id">
+											<bookdetail-card model:item="{{item}}" >
+												
+											</bookdetail-card>
+										</block>
+									
 									</view>
 								</view>
 								
@@ -139,7 +142,7 @@
 									<block wx:for="{{filmInfo}}" wx:key="id">
 										<view class="film-card">
 											<view class="film-pic">
-												<cover-image src="{{item.image}}"></cover-image>
+												<image style="width: inherit;height: inherit;" src="{{item.image}}"></image>
 											</view>
 											<view class="film-info">
 												<view class="film-name">
@@ -188,7 +191,7 @@
 											<block wx:for="{{movieStarArray}}" wx:key="id">
 												<view class="star-item">
 													<view class="star-avatar">
-														<cover-image src="{{item.actor.avatar}}"></cover-image>
+														<image style="width: inherit;height: inherit;" src="{{item.actor.avatar}}"></image>
 													</view>
 													<view class="star-name">
 														<view>{{item.actor.name}}</view>

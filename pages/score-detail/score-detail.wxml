@@ -73,7 +73,10 @@
 			</view>
 		</view>
 	</scroll-view>
-	<view class="bottom-contianer">
+	<bottom-input bind:onFocus="handleOnFocus">
+		
+	</bottom-input>
+<!-- 	<view class="bottom-contianer">
 		<view class="bottom-input">
 			<input style="padding-left: 32rpx;" class="input" maxlength="24" value="{{nickname}}"  bindinput="handlNicknameInput"  placeholder="留下你对这本书的感悟，让Ta体味你的思想之旅～"></input>
 			
@@ -84,6 +87,6 @@
 		<view class="bottom-line">
 			<view class="line"></view>
 		</view>
-	</view>
+	</view> -->
 	
 </view>

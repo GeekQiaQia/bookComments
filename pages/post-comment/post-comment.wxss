@@ -326,6 +326,7 @@
   font-weight: 400;
   color: #666666;
   line-height: 40rpx;
+  z-index: -1;
 }
 .container .notes .input-container .input-len {
   background-color: #ffffff;

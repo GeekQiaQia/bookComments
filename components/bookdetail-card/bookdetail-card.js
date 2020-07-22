@@ -4,9 +4,9 @@ Component({
 	 */
 	properties:{
 		
-		cardInfo:{
-			type:Array,
-			value:[]
+		item:{
+			type:Object,
+			value:{}
 		},
 		starMax:{
 			type:Number,
@@ -37,12 +37,12 @@ Component({
 		},
 		handleLoadmore:function(e){
 			
-			let cardInfo=e.target.dataset.resume;
+			let item=e.target.dataset.resume;
 			let itemIndex=e.target.dataset.itemindex
-			cardInfo[itemIndex].readMore=!cardInfo[itemIndex].readMore
+			item[itemIndex].readMore=!item[itemIndex].readMore
 		
 			this.setData({
-				cardInfo:cardInfo
+				item:item
 			});
 			
 		},
