@@ -9,7 +9,7 @@
 				<input style="padding-left: 32rpx;" class="recommend-book" value="{{recommendBookName}}"  bindinput="recommendBookInput"placeholder="请输入推荐书名"></input>
 				<view class="title">推荐理由</view>
 				<view class="recommend-reason">
-				<textarea style="padding-left: 32rpx;height: inherit;" maxlength="500"  value="{{descriptInput}}"  bindinput="textareaAInput" placeholder="请输入推荐理由,不超过500字"></textarea>
+				<textarea style="padding-left: 32rpx;height: inherit;" maxlength="500"  adjust-position value="{{descriptInput}}"  bindinput="textareaAInput" placeholder="请输入推荐理由,不超过500字"></textarea>
 				<view  style="margin-right: 30rpx;margin-bottom: 14rpx;">{{descriptInputLen}}/500</view>
 				</view>
 				
