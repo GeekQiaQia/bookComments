@@ -6,10 +6,6 @@
   width: 100%;
   height: auto;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .container .filter-container .search-container {
   width: 750rpx;

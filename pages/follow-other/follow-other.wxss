@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   padding-top: 32rpx;
 }
 .container .follower-container .follow-main {
