@@ -71,6 +71,8 @@
   background: #07c160;
   border-radius: 8rpx;
   color: #ffffff;
+  line-height: 80rpx;
+  vertical-align: middle;
 }
 .container .follow-container {
   width: 750rpx;
