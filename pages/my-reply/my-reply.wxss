@@ -1,5 +1,6 @@
 .container {
   background-color: #f7f7f7;
+  height: 100%;
 }
 .container .reply-top {
   width: 100%;
@@ -53,6 +54,8 @@
 }
 .container .reply-top .reply-icon .icon-tip {
   color: rgba(229, 228, 229, 0.09);
+  width: inherit;
+  height: inherit;
 }
 .container .reply-container {
   display: flex;
@@ -68,6 +71,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: 100%;
 }
 .container .reply-container .reply-main .reply-info-container {
   flex-grow: 1;
@@ -81,10 +85,6 @@
   width: 100%;
   height: auto;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 16rpx 28rpx 28rpx 30rpx;
 }
 .container .reply-container .reply-main .reply-info-container .reply-card .content-container {

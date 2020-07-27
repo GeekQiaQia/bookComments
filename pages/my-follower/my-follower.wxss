@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   padding-top: 32rpx;
 }
 .container .follower-container .follow-main {
@@ -138,4 +139,8 @@
   width: 240rpx;
   height: 236rpx;
   margin-bottom: 56rpx;
+}
+.container .follower-container .follower-icon .icon-tip {
+  width: inherit;
+  height: inherit;
 }

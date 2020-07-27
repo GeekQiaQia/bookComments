@@ -9,14 +9,14 @@
 			<view class="liked-num">已点赞{{likedInfo.totalElements}}本</view>
 		</view>
 		<view class="liked-icon">
-			<cover-image src="../../images/icon-likeds.png" class="icon-tip"></cover-image>
+			<image src="../../images/icon-likeds.png" class="icon-tip"></image>
 		</view>
 	</view>
 	<view class="liked-container">
 		<view class="liked-main">
 			<block wx:if="{{likedInfo.totalElements==0}}">
 				<view class="liked-icon">
-						<cover-image src="../../images/icon-liked-no.png" class="icon-tip"></cover-image>
+						<image src="../../images/icon-liked-no.png" class="icon-tip"></image>
 				</view>
 				<view class="no-liked-container">
 					<view class="no-liked">喜欢，就不要吝啬你的手指</view>

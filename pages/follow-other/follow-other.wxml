@@ -3,7 +3,7 @@
 	<view class="follower-container">
 		<block wx:if="{{follower.totalElements==0}}">
 			<view class="follower-icon">
-				<cover-image src="../../images/Icon-heart.png" ></cover-image>
+				<image class="icon-tip" src="../../images/Icon-heart.png" ></image>
 			</view>
 			<view class="no-follower">
 				每个人都有闪光的点，Ta值得你欣赏
@@ -14,7 +14,7 @@
 				<block wx:for="{{follower.content}}" wx:key="id">
 					<view class="follow-list">
 						<view class="follow-info">
-							<cover-image src="{{item.focus.avatarUrl}}"  class="follow-icon"></cover-image>
+							<image src="{{item.focus.avatarUrl}}"  class="follow-icon"></image>
 							<view class="follow-nickname">
 								{{item.focus.nickName}}
 							</view>

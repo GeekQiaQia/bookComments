@@ -81,6 +81,10 @@
   height: 288rpx;
   margin: 286rpx 248rpx 92rpx 250rpx;
 }
+.container .comment-box .comment-container .no-comment .no-icon .icon-tip {
+  width: inherit;
+  height: inherit;
+}
 .container .comment-box .comment-container .no-comment .no-tip {
   width: auto;
   height: 40rpx;

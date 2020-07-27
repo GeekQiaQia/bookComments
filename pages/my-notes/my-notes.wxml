@@ -10,7 +10,7 @@
 			<view class="notes-num">共有笔记{{notesList.totalElements}}条</view>
 		</view>
 		<view class="notes-icon">
-			<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+			<image class="icon-tip{" src="../../images/Icon-bookNotes.png" ></image>
 		</view>
 	</view>
 	<view class="notes-container">
@@ -18,7 +18,7 @@
 		
 			<block wx:if="{{notesInfo.totalElements==0}}">
 				<view class="notes-icon">
-					<cover-image src="../../images/Icon-note.png" ></cover-image>
+					<image src="../../images/Icon-note.png" ></image>
 				</view>
 				<view class="no-notes">
 					你还没有创建笔记本

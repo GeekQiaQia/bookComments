@@ -1,5 +1,6 @@
 .container {
   background-color: #f7f7f7;
+  height: 100%;
 }
 .container .message-top {
   width: 100%;
@@ -73,6 +74,7 @@
   justify-content: flex-start;
   align-items: center;
   width: inherit;
+  height: inherit;
 }
 .container .message-container .message-main .message-info-container .message-card {
   width: 100%;

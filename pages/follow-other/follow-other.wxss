@@ -140,3 +140,7 @@
   height: 236rpx;
   margin-bottom: 56rpx;
 }
+.container .follower-container .follower-icon .icon-tip {
+  width: inherit;
+  height: inherit;
+}

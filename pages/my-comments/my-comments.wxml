@@ -20,7 +20,7 @@
 			<block wx:if="{{commentInfo.totalElements==0}}">                    
 				<view class="no-comment">
 					<view class="no-icon">
-						<cover-image src="../../images/Icon-bookComment-no.png" class="icon-tip"></cover-image>
+						<image src="../../images/Icon-bookComment-no.png" class="icon-tip"></image>
 					</view>
 					<view class="no-tip">
 						留下你对这本书的感悟，让Ta体味你的思想

@@ -3,7 +3,7 @@
 	<view class="follower-container">
 		<block wx:if="{{follower.totalElements==0}}">
 			<view class="follower-icon">
-				<cover-image src="../../images/Icon-man.png" ></cover-image>
+				<image class="icon-tip" src="../../images/Icon-man.png" ></image>
 			</view>
 			<view class="no-follower">
 				还没有人关注你，快去多发书评吧～

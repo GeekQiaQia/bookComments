@@ -8,14 +8,14 @@
 			<view class="reply-num">已回复{{replyInfo.totalElements}}个书评</view>
 		</view>
 		<view class="reply-icon">
-			<cover-image src="../../images/icon-replys.png" class="icon-tip"></cover-image>
+			<image src="../../images/icon-replys.png" class="icon-tip"></image>
 		</view>
 	</view>
 	<view class="reply-container">
 		<view class="reply-main">
 			<block wx:if="{{replyInfo.totalElements==0}}">
 				<view class="reply-icon">
-						<cover-image src="../../images/icon-reply-no.png" class="icon-tip"></cover-image>
+						<image src="../../images/icon-reply-no.png" class="icon-tip"></image>
 				</view>
 				<view class="no-reply">
 					你还没有回复，去发现有趣的书评吧～

@@ -1,5 +1,6 @@
 .container {
   background-color: #f7f7f7;
+  height: 100%;
 }
 .container .notes-top {
   width: 100%;
@@ -50,6 +51,10 @@
   width: 93rpx;
   height: 112rpx;
   background-color: rgba(229, 228, 229, 0.09);
+}
+.container .notes-top .notes-icon .icon-tip {
+  width: inherit;
+  height: inherit;
 }
 .container .notes-container {
   display: flex;

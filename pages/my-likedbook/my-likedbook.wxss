@@ -1,5 +1,6 @@
 .container {
   background-color: #f7f7f7;
+  height: 100%;
 }
 .container .liked-top {
   width: 100%;
@@ -53,6 +54,8 @@
 }
 .container .liked-top .liked-icon .icon-tip {
   color: rgba(229, 228, 229, 0.09);
+  width: inherit;
+  height: inherit;
 }
 .container .liked-container {
   display: flex;
@@ -104,8 +107,8 @@
   margin-bottom: 56rpx;
 }
 .container .liked-container .liked-main .liked-icon .icon-tip {
-  width: 312rpx;
-  height: 288rpx;
+  width: inherit;
+  height: inherit;
 }
 .container .liked-container .liked-main .no-liked-container {
   display: flex;
