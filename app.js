@@ -72,10 +72,15 @@ App({
 	    }else{
 			// 提示需要获取权限设置；
 			wx.showModal({
-				title:'提示！',
-				confirmText:'去设置',
+				title:'提示：尚未登录',
+				confirmText:'去登录',
 				showCancel:false,
-				content:'请授权'
+				content:'授权登录可获取更多权限哦',
+				success:function(res){
+					wx.switchTab({
+					  url: '../aboutMe/aboutMe'
+					})
+				}
 			})
 		}
 	  }
