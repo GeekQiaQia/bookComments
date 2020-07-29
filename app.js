@@ -12,6 +12,7 @@ App({
 		
 	    if (res.authSetting['scope.userInfo']) {
 	      // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+		  wx.setStorageSync('hasAuthed',true )
 	      wx.getUserInfo({
 	        success: res => {
 	          // 可以将 res 发送给后台解码出 unionId
@@ -72,14 +73,24 @@ App({
 	    }else{
 			// 提示需要获取权限设置；
 			wx.showModal({
-				title:'提示：尚未登录',
-				confirmText:'去登录',
-				showCancel:false,
-				content:'授权登录可获取更多权限哦',
+				title:'提示：您尚未授权',
+				confirmText:'授权登录',
+				showCancel:true,
+				content:'授权后，您将获得更多精彩功能',
 				success:function(res){
-					wx.switchTab({
-					  url: '../aboutMe/aboutMe'
-					})
+					console.log(res);
+					if(res.cancel){
+						wx.setStorageSync('hasAuthed',false )
+						return;
+					}else if(res.confirm){
+						wx.switchTab({
+						  url: '../aboutMe/aboutMe'
+						})
+					}
+					
+				},
+				fail:function(err){
+					console.log(err);
 				}
 			})
 		}

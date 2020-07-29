@@ -76,10 +76,11 @@ Page({
 		  [name]:userInfo.nickName,
 		  hasUserInfo: true
 		})
+		
 		try{
 	 
 		  // 同步接口立即写入
-		 
+		 wx.setStorageSync('hasAuthed',true )
 		  wx.setStorageSync('userInfo',userInfo )
 		 
 		  console.log('写入value2成功')
@@ -169,6 +170,7 @@ Page({
         }   
       }
     } else {
+		
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
@@ -193,7 +195,10 @@ Page({
           }   
         }
       })
+	  
     }
+	
+	
 	
 	
 	

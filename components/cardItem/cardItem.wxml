@@ -5,7 +5,7 @@
 	
   <view class="card-container">
 	  <view class="card-item">
-		  <view class="card-item-title" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" bindtap="handleBookDetail">
+		  <view class="card-item-title" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"   bindtap="handleCommentDetail">
 			  <view class="avatar" data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" >
 				<image data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}" 
 				                class="cover-image"
@@ -30,8 +30,9 @@
 			  
 		  </view>
 		  
-		  <view class="content-container">
-		  		<text class="resume  {{!cardInfo.readMore?'read-more':''}}"  data-itemIndex="{{cardInfo.id}}" data-resume="{{cardInfo}}" bindtap="handleLoadmore" >{{cardInfo.content}}</text>
+		  <view class="content-container" style="position: relative;overflow: hidden;">  
+		  		<text class="resume  {{!cardInfo.readMore?'read-more':''}}"  data-id="{{cardInfo.bookInfo.id}}" data-itemIndex="{{cardInfo.id}}"  bindtap="handleCommentDetail">{{cardInfo.content}}</text>
+				<a style='position: absolute;right: 0;top: 120rpx;background-color: white;z-index: 50;width: 42rpx;height: 40rpx;' wx-if='{{!cardInfo.readMore}}' data-resume="{{cardInfo}}" bindtap="handleLoadmore">...</a>
 		  </view>
 		  
 		  <view class="releation-container">

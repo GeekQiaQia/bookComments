@@ -35,12 +35,24 @@ Page({
 	  })
   },
   /**
+   * @description 监听点击书籍详情事件；
+   * */
+  handleBookDetail(e){
+  		// 组件传参过来的id;
+  		let id=e.detail.id;
+		console.log(id);
+  		wx.navigateTo({
+  		  url: '../book-detail/book-detail?id='+id
+  		})
+  },
+  /**
    * @description:处理点击banner图片进入活动页面
    * */
   handleImageTap:function(e){
 	  
 	  let tapName=e.target.dataset.itemname;
 	  let id=e.target.dataset.id;
+	  let describes=e.target.dataset.describes;
 	  if(tapName=="ActivityRecommend"){
 		  wx.navigateTo({
 		    url: '../week-activity/week-activity?id='+id
@@ -53,6 +65,10 @@ Page({
 		  // wx.navigateTo({
 		  //   url: '../top-recommend/top-recommend'
 		  // })
+
+		  wx.navigateTo({
+		    url: '../book-detail/book-detail?id='+describes
+		  })
 	  }
   },
   
@@ -124,6 +140,10 @@ Page({
 		that.setData({
 			cardInfoArray
 		});
+		// 取消标题栏进度条效果
+		wx.hideNavigationBarLoading();
+		// 取消页面刷新动画
+		wx.stopPullDownRefresh();
 	     
 	 }).catch(function (error) {
 	     console.log(error);
@@ -131,43 +151,7 @@ Page({
    },
  
   onLoad: function () {
-		// try {
-			
-  //     let userInfo = wx.getStorageSync('userInfo')
-  //     if (userInfo) {
-     
-  //       // Do something with return value
-  //       this.globalData.userInfo = res.userInfo
-  //     }
-  //   } catch (e) {
-  //     // Do something when catch error
-  //   }
-  //   if (app.globalData.userInfo) {
-  //     this.setData({
-  //       userInfo: app.globalData.userInfo,
-  //       hasUserInfo: true
-  //     })
-  //   } else if (this.data.canIUse){
-  //     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-  //     // 所以此处加入 callback 以防止这种情况
-  //     app.userInfoReadyCallback = res => {
-  //       this.setData({
-  //         userInfo: res.userInfo,
-  //         hasUserInfo: true
-  //       })
-  //     }
-  //   } else {
-  //     // 在没有 open-type=getUserInfo 版本的兼容处理
-  //     wx.getUserInfo({
-  //       success: res => {
-  //         app.globalData.userInfo = res.userInfo
-  //         this.setData({
-  //           userInfo: res.userInfo,
-  //           hasUserInfo: true
-  //         })
-  //       }
-  //     })
-  //   }
+
 	
 	this.getBannerList();
 	 this.getCommentInfo();
@@ -175,16 +159,14 @@ Page({
   },
    // 下拉刷新方法
    onPullDownRefresh: function() {
-      // 显示标题栏进度条效果
-      wx.showNavigationBarLoading();
-      this.setData({
-        loading:true 
-      }, () => {
-        // 取消标题栏进度条效果
-        wx.hideNavigationBarLoading();
-        // 取消页面刷新动画
-        wx.stopPullDownRefresh();
-      });
+      // // 显示标题栏进度条效果
+      // wx.showNavigationBarLoading();
+      // this.setData({
+      //   loading:true 
+      // }, () => {
+      
+      // });
+	  this.getCommentInfo();
     },
    
     // 上拉加载方法

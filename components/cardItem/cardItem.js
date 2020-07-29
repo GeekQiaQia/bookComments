@@ -27,6 +27,16 @@ Component({
 		imageError:()=>{
 			
 		},
+		getHeight:()=>{
+			let query = wx.createSelectorQuery();
+			    let that = this
+			    query.select('#meat').boundingClientRect(rect => {
+			      let clientHeight = rect.height;
+			      let clientWidth = rect.width;
+			      let ratio = 350 / clientWidth;
+			      that.data.height1 = clientHeight * ratio;
+			    }).exec();
+		},
 		/**
 		 * @description:readMore
 		 * */
@@ -41,7 +51,7 @@ Component({
 			});
 			
 		},
-		handleBookDetail:function(e){
+		handleCommentDetail:function(e){
 			
 			
 			      var myEventDetail = {
@@ -50,6 +60,15 @@ Component({
 				  } // detail对象，提供给事件监听函数
 			      var myEventOption = {} // 触发事件的选项
 			 this.triggerEvent('commentdetail', myEventDetail, myEventOption)
+		},
+		handleBookDetail:function(e){
+			console.log(e)
+			      var myEventDetail = {
+					  id:e.target.dataset.id,
+					  
+				  } // detail对象，提供给事件监听函数
+			      var myEventOption = {} // 触发事件的选项
+			 this.triggerEvent('bookdetail', myEventDetail, myEventOption)
 		}
 		
 	}

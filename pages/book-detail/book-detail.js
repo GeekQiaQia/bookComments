@@ -73,7 +73,7 @@ Page({
     });
   },
   handleOnFocus(e){
-  	
+
   		 let bookInfo=this.data.bookInfo;
   		 wx.navigateTo({
   			 url: '../post-comment/post-comment'
@@ -145,11 +145,15 @@ Page({
   	   			 // 此处发送修改交易；
   	   			 if(res.statusCode===200){
   	   			let filmInfo=res.data.content;
-  			    that.getActorList(filmInfo[0].id);
+				 let movieId=null
+				if(filmInfo.length>0){
+					that.getActorList(filmInfo[0].id);
+					let movieId=filmInfo[0].id
+				}
   			   
   				that.setData({
   					filmInfo,
-					movieId:filmInfo[0].id
+					movieId
   				});
   	   			 }else{
   	   				 wx.showToast({
@@ -428,6 +432,7 @@ Page({
 	this.getBookCommentList(id);
 	this.getBookRecommendList(id);
 	this.computeScrollViewHeight();
+
   },
 
   /**
