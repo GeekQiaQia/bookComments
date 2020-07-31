@@ -1,5 +1,6 @@
 .container {
   background-color: #ffffff;
+  height: 100%;
 }
 .container .top-container {
   flex-grow: 1;
@@ -30,6 +31,10 @@
 .container .top-container .press-title .press-icon {
   width: 112rpx;
   height: 112rpx;
+}
+.container .top-container .press-title .press-icon .icon-tip {
+  width: inherit;
+  height: inherit;
 }
 .container .top-container .author-description {
   width: 100%;

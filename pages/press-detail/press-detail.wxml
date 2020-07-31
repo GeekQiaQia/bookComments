@@ -7,7 +7,7 @@
 				{{pressInfo.name}}
 			</view>
 			<view class="press-icon">
-				<cover-image src="../../images/Icon-bookNotes.png" ></cover-image>
+				<image src="../../images/Icon-bookNotes.png"  class="icon-tip"></image>
 			</view>
 		</view>
 		<view class="author-description">

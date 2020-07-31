@@ -1,5 +1,6 @@
 .container {
   background-color: #ffffff;
+  height: 100%;
 }
 .container .top-container {
   flex-grow: 1;

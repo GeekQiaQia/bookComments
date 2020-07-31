@@ -41,10 +41,10 @@
 							
 						</view>
 			</view>
-			<van-tabs class="tabs-container" animated  color="#F96D3D" active="{{ active }}"  bind:change="onChange">
+			<van-tabs class="tabs-container" animated sticky='{{true}}' color="#F96D3D" active="{{ active }}"  bind:change="onChange">
 					
 				<block wx:for="{{tabs}}" wx:key="name">
-					<van-tab  class="tab-container" title="{{item.tab}}">
+					<van-tab  class="tab-container" title="{{item.tab}}" >
 						<block wx:if="{{item.name=='bookResume'}}">
 							<view class="bookresum-container">
 								<view class="editor-recommend">编辑推荐：</view>

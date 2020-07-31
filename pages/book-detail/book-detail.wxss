@@ -1,6 +1,7 @@
 .container {
   align-items: center;
   background-color: #ffffff;
+  height: 100%;
 }
 .container .top-container {
   flex: 1;
@@ -97,13 +98,6 @@ text-align-last:justify .container .top-container .book-card .info-detail .info-
   padding: 32rpx 30rpx 32rpx 32rpx;
   width: 688rpx;
   height: auto;
-}
-.container .top-container .tabs-container .tab-container {
-  font-size: 28rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #666666;
-  line-height: 39rpx;
 }
 .container .top-container .tabs-container .tab-container .recommend-container {
   display: flex;
