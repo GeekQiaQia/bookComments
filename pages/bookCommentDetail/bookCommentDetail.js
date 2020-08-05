@@ -39,7 +39,7 @@ Page({
       let screeHeight=750*height/width;
     
       // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
-      let scroll_height=screeHeight-166;
+      let scroll_height=screeHeight-90;
       
       this.setData({
         scrollHeight:scroll_height
@@ -76,55 +76,44 @@ Page({
 	 * */
 	
 	toFocusOnUsers: function(e) {
-		let user=e.target.dataset.id;
-		let fans=e.target.dataset.fans;
-		let id=this.data.itemindex;
-			let that = this;
-			console.log(fans);
-		if(fans==0){
-			
-			let reqData = {
-				user
-			}
-			api._fetch({
-				url: '/api/i/userRelationship/focus',
-				data: reqData,
-				method: 'post',
-				contentType: 1
-			})
-			.then(function(res) {
-			
-				// 此处发送修改交易；
-				if (res.statusCode === 200) {
-					wx.showToast({
-					  title: "关注成功",
-					  mask:false,
-					  icon: 'success',
-					  duration: 3000
-					})
-					that.getBookCommentDetail(id);
-				} else {
-					wx.showToast({
-						title: res.message,
-						mask: true,
-						icon: 'none',
-						duration: 3000
-					})
+		let hasAuthed=wx.getStorageSync('hasAuthed');
+		if(!hasAuthed){
+			// 提示需要获取权限设置；
+			wx.showModal({
+				title:'提示：您尚未授权',
+				confirmText:'授权登录',
+				showCancel:true,
+				content:'授权后，您将获得更多精彩功能',
+				success:function(res){
+					console.log(res);
+					if(res.cancel){
+						wx.setStorageSync('hasAuthed',false )
+						return;
+					}else if(res.confirm){
+						wx.switchTab({
+						  url: '../aboutMe/aboutMe'
+						})
+					}
+					
+				},
+				fail:function(err){
+					console.log(err);
 				}
-				
-		
-		
-		})
-		.catch(function(error) {
-			console.log(error);
-		});
-		}else if(fans==1||fans==2){
+			})
+		}else{
 			
-			let reqData = {
+			let user=e.target.dataset.id;
+			let fans=e.target.dataset.fans;
+			let id=this.data.itemindex;
+				let that = this;
+				console.log(fans);
+			if(fans==0){
+				
+				let reqData = {
 					user
 				}
 				api._fetch({
-					url: '/api/i/userRelationship/cancel.focus',
+					url: '/api/i/userRelationship/focus',
 					data: reqData,
 					method: 'post',
 					contentType: 1
@@ -133,7 +122,12 @@ Page({
 				
 					// 此处发送修改交易；
 					if (res.statusCode === 200) {
-					
+						wx.showToast({
+						  title: "关注成功",
+						  mask:false,
+						  icon: 'success',
+						  duration: 3000
+						})
 						that.getBookCommentDetail(id);
 					} else {
 						wx.showToast({
@@ -150,7 +144,42 @@ Page({
 			.catch(function(error) {
 				console.log(error);
 			});
+			}else if(fans==1||fans==2){
+				
+				let reqData = {
+						user
+					}
+					api._fetch({
+						url: '/api/i/userRelationship/cancel.focus',
+						data: reqData,
+						method: 'post',
+						contentType: 1
+					})
+					.then(function(res) {
+					
+						// 此处发送修改交易；
+						if (res.statusCode === 200) {
+						
+							that.getBookCommentDetail(id);
+						} else {
+							wx.showToast({
+								title: res.message,
+								mask: true,
+								icon: 'none',
+								duration: 3000
+							})
+						}
+						
+				
+				
+				})
+				.catch(function(error) {
+					console.log(error);
+				});
+			}
+			
 		}
+	
 	},
 	handleAboutOther(e){
 		  let id=e.target.dataset.id;

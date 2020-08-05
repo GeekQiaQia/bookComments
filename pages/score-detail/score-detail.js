@@ -95,7 +95,7 @@ Page({
 	  let screeHeight=750*height/width;
 	
 	  // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
-	  let scroll_height=screeHeight-166;
+	  let scroll_height=screeHeight-90;
 	  
 	  this.setData({
 	    scrollHeight:scroll_height

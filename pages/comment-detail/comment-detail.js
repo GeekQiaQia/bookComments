@@ -196,25 +196,52 @@ Page({
   },
   toShowShareDialog(e){
   	 console.log(e);
-  	let successInfo={},
-  		posterConfig=this.data.posterConfig;
-		successInfo['title']=e.currentTarget.dataset.title;
-  		successInfo['nickName']=e.currentTarget.dataset.nickname;
-  		successInfo['bookName']=e.currentTarget.dataset.bookname;
-  		successInfo['content']=e.currentTarget.dataset.content;
-  		if(successInfo){
-			if(successInfo['title']!==null){
-				posterConfig.texts[2].text=successInfo['title'];
-			}
-  			posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
-  			posterConfig.texts[4].text=successInfo.content;
-  			posterConfig.texts[5].text[1].text=successInfo.nickName;
-  		}
-  	this.setData({
-  	  modalName: e.currentTarget.dataset.target,
-  	  posterConfig,
-  	  successInfo
-  	})
+	 let hasAuthed=wx.getStorageSync('hasAuthed');
+	 if(!hasAuthed){
+	 	// 提示需要获取权限设置；
+	 	wx.showModal({
+	 		title:'提示：您尚未授权',
+	 		confirmText:'授权登录',
+	 		showCancel:true,
+	 		content:'授权后，您将获得更多精彩功能',
+	 		success:function(res){
+	 			console.log(res);
+	 			if(res.cancel){
+	 				wx.setStorageSync('hasAuthed',false )
+	 				return;
+	 			}else if(res.confirm){
+	 				wx.switchTab({
+	 				  url: '../aboutMe/aboutMe'
+	 				})
+	 			}
+	 			
+	 		},
+	 		fail:function(err){
+	 			console.log(err);
+	 		}
+	 	})
+	 }else{
+		    let successInfo={},
+		 	posterConfig=this.data.posterConfig;
+		 	successInfo['title']=e.currentTarget.dataset.title;
+		 	successInfo['nickName']=e.currentTarget.dataset.nickname;
+		 	successInfo['bookName']=e.currentTarget.dataset.bookname;
+		 	successInfo['content']=e.currentTarget.dataset.content;
+		 	if(successInfo){
+		 		if(successInfo['title']!==null){
+		 			posterConfig.texts[2].text=successInfo['title'];
+		 		}
+		 		posterConfig.texts[3].text="《"+successInfo.bookName+"》"+"的读书笔记";
+		 		posterConfig.texts[4].text=successInfo.content;
+		 		posterConfig.texts[5].text[1].text=successInfo.nickName;
+		 	}
+		 this.setData({
+		   modalName: e.currentTarget.dataset.target,
+		   posterConfig,
+		   successInfo
+		 })
+	 }
+ 
   },
   handleKeyboardHeight(e){
 
@@ -235,9 +262,37 @@ Page({
   },
   onHandleLikeTrigger(e){
 	  // 自定义组件触发事件时提供的detail对象
-	  let id=e.target.dataset.id;
-	  let liked=e.target.dataset.liked;
-	  this.toCreateLikeComment(id,liked);
+	  let hasAuthed=wx.getStorageSync('hasAuthed');
+	  if(!hasAuthed){
+	  	// 提示需要获取权限设置；
+	  	wx.showModal({
+	  		title:'提示：您尚未授权',
+	  		confirmText:'授权登录',
+	  		showCancel:true,
+	  		content:'授权后，您将获得更多精彩功能',
+	  		success:function(res){
+	  			console.log(res);
+	  			if(res.cancel){
+	  				wx.setStorageSync('hasAuthed',false )
+	  				return;
+	  			}else if(res.confirm){
+	  				wx.switchTab({
+	  				  url: '../aboutMe/aboutMe'
+	  				})
+	  			}
+	  			
+	  		},
+	  		fail:function(err){
+	  			console.log(err);
+	  		}
+	  	})
+	  }else{
+		  let id=e.target.dataset.id;
+		  let liked=e.target.dataset.liked;
+		  this.toCreateLikeComment(id,liked);
+	  }
+	  
+	 
 	  // 发送一个改变like状态的交易；
   },
   onHandleLikeReplyTrigger(e){
@@ -339,10 +394,37 @@ Page({
 	 * @description:展示转发对话框；
 	 * */
 	toShowForwardDialog(e){
-		let modalName=e.target.dataset.target;
-		this.setData({
-				  modalName
-		});
+		let hasAuthed=wx.getStorageSync('hasAuthed');
+		if(!hasAuthed){
+			// 提示需要获取权限设置；
+			wx.showModal({
+				title:'提示：您尚未授权',
+				confirmText:'授权登录',
+				showCancel:true,
+				content:'授权后，您将获得更多精彩功能',
+				success:function(res){
+					console.log(res);
+					if(res.cancel){
+						wx.setStorageSync('hasAuthed',false )
+						return;
+					}else if(res.confirm){
+						wx.switchTab({
+						  url: '../aboutMe/aboutMe'
+						})
+					}
+					
+				},
+				fail:function(err){
+					console.log(err);
+				}
+			})
+		}else{
+			let modalName=e.target.dataset.target;
+			this.setData({
+					  modalName
+			});
+		}
+		
 	},
   showMessageModal(e){
 	  let modalName=e.target.dataset.target;

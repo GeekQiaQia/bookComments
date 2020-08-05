@@ -36,7 +36,7 @@
 							</view>
 							<view class="info-obj">
 								<view class="info-key">出版年份<text></text></view>:
-								<text class="info-value">{{bookInfo.publication}}</text>
+								<text class="info-value" style="color:rgba(102,102,102,1);">{{bookInfo.publication}}</text>
 							</view>
 							
 						</view>
@@ -49,7 +49,7 @@
 							<view class="bookresum-container">
 								<view class="editor-recommend">编辑推荐：</view>
 								<view>{{bookInfo.describes}}</view>
-								<!-- <view class="editor-recommend">目录</view>
+								<!-- <view class="editor-recommend">目录</view> 
 								<view class="catalogue">
 									1、哈罗德与信 2、哈罗德、加油站女孩与信仰的问题 3、莫琳与电话 4、哈罗德与客店旅人 5、哈罗德、酒保与没有孩子的女人 6、莫琳与谎言 7、哈罗德、远足的男人与喜欢简奥斯丁的女人 8、哈罗德与银发绅士 9、莫琳与戴维 10、哈罗德与提示 11、莫琳与临时医生 12、哈罗德与骑自行车的母亲 13、哈罗德与医生 14、莫琳与雷克斯 15、哈罗德与全新的开始 16、哈罗德、外科医生与著名演员 17、莫琳与花园 18、哈罗德与决定
 								</view> -->

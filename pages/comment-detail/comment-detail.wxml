@@ -51,24 +51,24 @@
 					<view class="releation-container">
 								  <view class="releation-info">
 								
-									  <view class="comment-share"  >
-									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeTrigger"></text>
+									  <view class="comment-share"  bindtap="onHandleLikeTrigger" >
+									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" ></text>
 									  	
 									  	<block wx:if="{{item.meLike==true}}">
-									  		<view class="shared">{{item.liked}}</view>
+									  		<view class="shared" data-liked="{{item.meLike}}" data-id="{{item.id}}" >{{item.liked}}</view>
 									  	</block>
 									  	<block wx:else>
-									  		<view class="share">点赞</view>
+									  		<view class="share" data-liked="{{item.meLike}}" data-id="{{item.id}}">点赞</view>
 									  	</block>
 									  </view>
 									  
 									  <view class="comment-share" data-target="forwardModal" bindtap="toShowForwardDialog">
 									  	<text class=" lg text-gray {{item.meForward==true?'cuIcon-forwardfill text-orange':'cuIcon-forward text-gray'}}" data-target="forwardModal"></text>
 									  	<block wx:if="{{item.meForward==true}}">
-									  		<view class="shared">{{item.forwarding}}</view>
+									  		<view class="shared" data-target="forwardModal">{{item.forwarding}}</view>
 									  	</block>
 									  	<block wx:else>
-									  		<view class="share">转发</view>
+									  		<view class="share" data-target="forwardModal">转发</view>
 									  	</block>
 									  </view>
 									  

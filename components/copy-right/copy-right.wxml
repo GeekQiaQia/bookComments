@@ -3,5 +3,5 @@
 	<view class="copy-right">
 			Copyright © 2019-2020 medo.com
 	</view>
-	<view class="bottom-line" wx:if="{{showLine}}"></view>
+	<view class="bottom-line" wx:if="{{false}}"></view>
 </view>

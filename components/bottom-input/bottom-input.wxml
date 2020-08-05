@@ -9,7 +9,7 @@
 				<image src="../../images/Icon-bookComment-input.png" class="icon"></image>
 			</view>
 		</view>
-		<view class="bottom-line">
+		<!-- <view class="bottom-line">
 			<view class="line"></view>
-		</view>
+		</view> -->
 	</view>
