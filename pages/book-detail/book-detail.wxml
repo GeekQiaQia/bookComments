@@ -2,7 +2,7 @@
 <view class="container">
 	<scroll-view scroll-y="true" style='height: {{scrollHeight + "rpx"}}'>
 		<view class="top-container">
-			<view class="book-card">
+			<view class="book-card" >
 				
 					<image
 			                class="cover-image"
@@ -41,180 +41,189 @@
 							
 						</view>
 			</view>
-			<van-tabs class="tabs-container" animated sticky='{{true}}' color="#F96D3D" active="{{ active }}"  bind:change="onChange">
-					
-				<block wx:for="{{tabs}}" wx:key="name">
-					<van-tab  class="tab-container" title="{{item.tab}}" >
-						<block wx:if="{{item.name=='bookResume'}}">
-							<view class="bookresum-container">
-								<view class="editor-recommend">编辑推荐：</view>
-								<view>{{bookInfo.describes}}</view>
-								<!-- <view class="editor-recommend">目录</view> 
-								<view class="catalogue">
-									1、哈罗德与信 2、哈罗德、加油站女孩与信仰的问题 3、莫琳与电话 4、哈罗德与客店旅人 5、哈罗德、酒保与没有孩子的女人 6、莫琳与谎言 7、哈罗德、远足的男人与喜欢简奥斯丁的女人 8、哈罗德与银发绅士 9、莫琳与戴维 10、哈罗德与提示 11、莫琳与临时医生 12、哈罗德与骑自行车的母亲 13、哈罗德与医生 14、莫琳与雷克斯 15、哈罗德与全新的开始 16、哈罗德、外科医生与著名演员 17、莫琳与花园 18、哈罗德与决定
-								</view> -->
+			
+			<scroll-view scroll-x class="bg-white nav text-center">
+			 <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key='name'  bindtap="tabSelect" data-tab='{{item.name}}' data-id="{{index}}">
+			   {{item.tab}}
+			 </view>
+			</scroll-view>
+		
+			<view class="tab-container">
+				<block wx:if="{{TabName=='bookResume'}}">
+					<view class="bookresum-container">
+						<view class="editor-recommend">编辑推荐：</view>
+						<view>{{bookInfo.describes}}</view>
+						<!-- <view class="editor-recommend">目录</view> 
+						<view class="catalogue">
+							1、哈罗德与信 2、哈罗德、加油站女孩与信仰的问题 3、莫琳与电话 4、哈罗德与客店旅人 5、哈罗德、酒保与没有孩子的女人 6、莫琳与谎言 7、哈罗德、远足的男人与喜欢简奥斯丁的女人 8、哈罗德与银发绅士 9、莫琳与戴维 10、哈罗德与提示 11、莫琳与临时医生 12、哈罗德与骑自行车的母亲 13、哈罗德与医生 14、莫琳与雷克斯 15、哈罗德与全新的开始 16、哈罗德、外科医生与著名演员 17、莫琳与花园 18、哈罗德与决定
+						</view> -->
+					</view>
+				</block>
+				<block wx:elif="{{TabName=='topComments'}}">
+					<block wx:if="{{bookInfo.bookStar.people<=0||bookInfo.bookStar.people==null}}">
+						<view class="no-book-comment">
+							<view class="tip">
+								暂无评论，快来发布第一条评论吧～
 							</view>
-						</block>
-						<block wx:elif="{{item.name=='topComments'}}">
-							<block wx:if="{{bookInfo.bookStar.people<=0||bookInfo.bookStar.people==null}}">
-								<view class="no-book-comment">
-									<view class="tip">
-										暂无评论，快来发布第一条评论吧～
+							<view class="comment-btn" bindtap="handleOnFocus">
+								去评论
+							</view>
+						</view>
+					</block>
+					<block wx:else>
+						<view class="book-comments">
+							<view class="overall-scores">
+								<view class="top-container">
+									<view class="title">
+										综合评分
 									</view>
-									<view class="comment-btn" bindtap="handleOnFocus">
-										去评论
-									</view>
+									<text class="cuIcon-right lg text-gray"  data-id="{{bookInfo.id}}" data-bookname="{{bookInfo.name}}" bindtap="goScoreDetail"></text>
 								</view>
-							</block>
-							<block wx:else>
-								<view class="book-comments">
-									<view class="overall-scores">
-										<view class="top-container">
-											<view class="title">
-												综合评分
-											</view>
-											<text class="cuIcon-right lg text-gray"  data-id="{{bookInfo.id}}" data-bookname="{{bookInfo.name}}" bindtap="goScoreDetail"></text>
-										</view>
-										<view class="score-container">
-											<view class="scores">
-												<view class="score">{{bookInfo.bookStar.score}}</view>
-												<commentStars  model:stars="{{bookInfo.bookStar.star}}"></commentStars>
-												<view class="score-all">{{bookInfo.bookStar.people}}人评分</view>
-											</view>
-											<veiw class="star-progress"> 
-												<block >
-													<view class="progress-container">
-														<view class="star-name">五星</view>
-														<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fiveStar}}"></progress>
-														<view class="percent">{{bookInfo.bookStar.fiveStar}}</view>
-													</view>
-													<view class="progress-container">
-														<view class="star-name">四星</view>
-														<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fourStar}}"></progress>
-														<view class="percent">{{bookInfo.bookStar.fourStar}}</view>
-													</view>
-													<view class="progress-container">
-														<view class="star-name">三星</view>
-														<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.threeStar}}"></progress>
-														<view class="percent">{{bookInfo.bookStar.threeStar}}</view>
-													</view>
-													<view class="progress-container">
-														<view class="star-name">二星</view>
-														<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.twoStar}}"></progress>
-														<view class="percent">{{bookInfo.bookStar.twoStar}}</view>
-													</view>
-													<view class="progress-container">
-														<view class="star-name">一星</view>
-														<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.oneStar}}"></progress>
-														<view class="percent">{{bookInfo.bookStar.oneStar}}</view>
-													</view>
-												</block>
-												
-											</veiw>
-										</view>
+								<view class="score-container">
+									<view class="scores">
+										<view class="score">{{bookInfo.bookStar.score}}</view>
+										<commentStars  model:stars="{{bookInfo.bookStar.star}}"></commentStars>
+										<view class="score-all">{{bookInfo.bookStar.people}}人评分</view>
 									</view>
-									<view  >
-										<block wx:for="{{cardInfoArray}}" wx:key="id">
-											<bookdetail-card model:item="{{item}}" >
-												
-											</bookdetail-card>
+									<veiw class="star-progress"> 
+										<block >
+											<view class="progress-container">
+												<view class="star-name">五星</view>
+												<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fiveStar}}"></progress>
+												<view class="percent">{{bookInfo.bookStar.fiveStar}}</view>
+											</view>
+											<view class="progress-container">
+												<view class="star-name">四星</view>
+												<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.fourStar}}"></progress>
+												<view class="percent">{{bookInfo.bookStar.fourStar}}</view>
+											</view>
+											<view class="progress-container">
+												<view class="star-name">三星</view>
+												<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.threeStar}}"></progress>
+												<view class="percent">{{bookInfo.bookStar.threeStar}}</view>
+											</view>
+											<view class="progress-container">
+												<view class="star-name">二星</view>
+												<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.twoStar}}"></progress>
+												<view class="percent">{{bookInfo.bookStar.twoStar}}</view>
+											</view>
+											<view class="progress-container">
+												<view class="star-name">一星</view>
+												<progress style="width:200rpx;height: 16rpx;" model:percent="{{bookInfo.bookStar.oneStar}}"></progress>
+												<view class="percent">{{bookInfo.bookStar.oneStar}}</view>
+											</view>
 										</block>
-									
-									</view>
+										
+									</veiw>
 								</view>
-								
-							</block>
-						</block>
-						<block wx:else>
+							</view>
+							<view  >
+								<block wx:for="{{cardInfoArray}}" wx:key="id">
+									<bookdetail-card model:item="{{item}}" >
+										
+									</bookdetail-card>
+								</block>
 							
-							<block wx:if="{{filmInfo.length==0}}">
-								<view class="no-film-recommend">
-									<view class="tip">
-										暂无影片，快来推荐一部影片吧～
-									</view>
-									<view class="recommend-btn" data-target="messageModal"  bindtap="showMessageModal" >
-										去推荐
-									</view>
-								</view>
-							</block>
-							<block wx:else>
-								<view class="recommend-container">
-									<block wx:for="{{filmInfo}}" wx:key="id">
-										<view class="film-card">
-											<view class="film-pic">
-												<image style="width: inherit;height: inherit;" src="{{item.image}}"></image>
-											</view>
-											<view class="film-info">
-												<view class="film-name">
-													{{item.name}}
-												</view>
-												<view class="film-enName" wx:if="{{item.enName!==null}}">
-													{{item.enName}}
-												</view>
-												<view class="film-douban">
-													<view class="douban-key">
-														<view class="douban">豆瓣评分</view>
-													</view>
-													<view class="douban-value">
-														{{item.rating}}
-													</view>
-												</view>
-												<view class="info-item">
-													<view class="info-key">导演<text></text></view>：
-													<view class="blue">{{item.director.name}}</view>
-												</view>
-												<view class="info-item">
-													<view class="info-key">主演<text></text></view>：
-													<view class="info-value">{{item.starring}}</view>
-												</view>
-												<view class="info-item">
-													<view class="info-key">上映年份<text></text></view>：
-													<view class="info-value">{{item.releaseTime}}</view>
-												</view>
-												
-											</view>
-										</view>
-										<view class="resume">
-											<view>
-												简介
-											</view>
-										</view>
-										<view class="description">
-											{{item.intro}}
-										</view>
-										<view class="movie-star">
-											<view>
-												影人
-											</view>
-										</view>
-										<view class="star-pic">
-											<block wx:for="{{movieStarArray}}" wx:key="id">
-												<view class="star-item">
-													<view class="star-avatar">
-														<image style="width: inherit;height: inherit;" src="{{item.actor.avatar}}"></image>
-													</view>
-													<view class="star-name">
-														<view>{{item.actor.name}}</view>
-													</view>
-													<view class="star-relation" wx:if="{{item.relation=='player'}}">
-														演员
-													</view>
-												</view>
-												
-											</block>
-											
-										</view>
-									</block>
-								
-								</view>
-							</block>
-							
-						</block>
-					</van-tab>
+							</view>
+						</view>
+						
+					</block>
+				</block>
+				<block wx:else>
 					
-				</block>	
-			 
-			</van-tabs>
+					<block wx:if="{{filmInfo.length==0}}">
+						<view class="no-film-recommend">
+							<view class="tip">
+								暂无影片，快来推荐一部影片吧～
+							</view>
+							<view class="recommend-btn" data-target="messageModal"  bindtap="showMessageModal" >
+								去推荐
+							</view>
+						</view>
+					</block>
+					<block wx:else>
+						<view class="recommend-container">
+							<block wx:for="{{filmInfo}}" wx:key="id">
+								<view class="film-card">
+									<view class="film-pic">
+										<image style="width: inherit;height: inherit;" src="{{item.image}}"></image>
+									</view>
+									<view class="film-info">
+										<view class="film-name">
+											{{item.name}}
+										</view>
+										<view class="film-enName" wx:if="{{item.enName!==null}}">
+											{{item.enName}}
+										</view>
+										<view class="film-douban">
+											<view class="douban-key">
+												<view class="douban">豆瓣评分</view>
+											</view>
+											<view class="douban-value">
+												{{item.rating}}
+											</view>
+										</view>
+										<view class="info-item">
+											<view class="info-key">导演<text></text></view>：
+											<view class="blue">{{item.director.name}}</view>
+										</view>
+										<view class="info-item">
+											<view class="info-key">主演<text></text></view>：
+											<view class="info-value">{{item.starring}}</view>
+										</view>
+										<view class="info-item">
+											<view class="info-key">上映年份<text></text></view>：
+											<view class="info-value">{{item.releaseTime}}</view>
+										</view>
+										
+									</view>
+								</view>
+								<view class="resume">
+									<view>
+										简介
+									</view>
+								</view>
+								<view class="description">
+									{{item.intro}}
+								</view>
+								<view class="movie-star">
+									<view>
+										影人
+									</view>
+								</view>
+								<scroll-view scroll-x class="bg-white nav text-center" style="padding: 0rpx 32rpx;">
+									<view class="star-pic">
+									<block wx:for="{{movieStarArray}}" wx:key="id">
+										<view class="star-item">
+											<view class="star-avatar">
+												<image style="width: inherit;height: inherit;" src="{{item.actor.avatar}}"></image>
+											</view>
+											<view class="star-name">
+												<view>{{item.actor.name}}</view>
+											</view>
+											<view class="star-relation" wx:if="{{item.relation=='player'}}">
+												演员
+											</view>
+										</view>
+										
+									</block>
+									</view>
+								</scroll-view>
+								
+							</block>
+						
+						</view>
+					</block>
+					
+				</block>
+									
+									
+						
+				
+			</view>
+		
+		
+		
 			<view class="no-more">
 				— 到底啦 —
 			</view>

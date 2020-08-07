@@ -103,434 +103,440 @@
 			padding:32rpx 30rpx 32rpx 32rpx;
 			width:688rpx;
 			height:auto;
-			
-			.tab-container{
-				
-				.recommend-container{
+		
+		}
+		
+		.tab-container{
+			font-size:28rpx;
+			height: auto;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(102,102,102,1);
+			line-height:auto;
+			.recommend-container{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				.resume{
+					width:100%;
+					padding:0rpx 32rpx;
+					height:40rpx;
+					font-size:34rpx;
+					font-family:PingFangSC-Semibold,PingFang SC;
+					font-weight:600;
+					color:rgba(11,12,13,1);
+					line-height:39rpx;
+					margin-top: 48rpx;
+					margin-bottom:26rpx;
 					display: flex;
-					flex-direction: column;
+					flex-direction: row;
 					justify-content: flex-start;
 					align-items: center;
-					.resume{
-						width:100%;
-						padding:0rpx 32rpx;
-						height:40rpx;
-						font-size:34rpx;
-						font-family:PingFangSC-Semibold,PingFang SC;
-						font-weight:600;
-						color:rgba(11,12,13,1);
-						line-height:39rpx;
-						margin-top: 48rpx;
-						margin-bottom:26rpx;
+				}
+				.movie-star{
+					width:100%;
+					padding:0rpx 32rpx;
+					height:40rpx;
+					font-size:34rpx;
+					font-family:PingFangSC-Semibold,PingFang SC;
+					font-weight:600;
+					color:rgba(11,12,13,1);
+					line-height:39rpx;
+					margin-top: 54rpx;
+					margin-bottom: 40rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+				}
+				.star-pic{
+					width:688rpx;
+					height:288rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					flex-wrap: wrap;
+					.star-item{
 						display: flex;
-						flex-direction: row;
+						flex-direction: column;
 						justify-content: flex-start;
 						align-items: center;
+						width:122rpx;
+						margin-right: 30rpx;
+						.star-avatar{
+							width:122rpx;
+							height: 173rpx;
+							
+						}
+						.star-name{
+							width:auto;
+							height:32rpx;
+							font-size:22rpx;
+							font-family:PingFangSC-Regular,PingFang SC;
+							font-weight:400;
+							color:rgba(11,12,13,1);
+							line-height:32rpx;
+							margin-top: 16rpx;
+						}
+						.star-relation{
+							width:auto;
+							height:32rpx;
+							font-size:22rpx;
+							font-family:PingFangSC-Regular,PingFang SC;
+							font-weight:400;
+							color:rgba(102,102,102,1);
+							line-height:32rpx;
+							margin-top: 16rpx;
+						}
 					}
-					.movie-star{
-						width:100%;
-						padding:0rpx 32rpx;
-						height:40rpx;
-						font-size:34rpx;
-						font-family:PingFangSC-Semibold,PingFang SC;
-						font-weight:600;
-						color:rgba(11,12,13,1);
-						line-height:39rpx;
-						margin-top: 54rpx;
-						margin-bottom: 40rpx;
-						display: flex;
-						flex-direction: row;
-						justify-content: flex-start;
-						align-items: center;
+				}
+				
+				.description{
+					width:688rpx;
+					height:auto;
+					font-size:28rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(102,102,102,1);
+					line-height:39rpx;
+				}
+				.film-card{
+					width:688rpx;
+					height:auto;
+					background-color:rgba(247,247,247,1);
+					border-radius:10rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					padding: 16rpx 0rpx 16rpx 16rpx;
+					.film-pic{
+						width:176rpx;
+						height:256rpx;
 					}
-					.star-pic{
-						width:688rpx;
-						height:288rpx;
+					.film-info{
 						display: flex;
-						flex-direction: row;
+						flex-direction: column;
 						justify-content: flex-start;
-						align-items: center;
-						flex-wrap: wrap;
-						.star-item{
+						align-items: flex-start;
+						margin-left: 32rpx;
+						.film-name{
+							width:auto;
+							height:48rpx;
+							font-size:34rpx;
+							font-family:PingFangSC-Semibold,PingFang SC;
+							font-weight:600;
+							color:rgba(0,0,0,1);
+							line-height:48rpx;
+						}
+						.film-enName{
+							width:auto;
+							height:40rpx;
+							font-size:28rpx;
+							font-family:PingFangSC-Semibold,PingFang SC;
+							font-weight:600;
+							color:rgba(150,150,150,1);
+							line-height:40rpx;
 							display: flex;
-							flex-direction: column;
+							flex-direction: row;
 							justify-content: flex-start;
 							align-items: center;
-							width:122rpx;
-							margin-right: 30rpx;
-							.star-avatar{
-								width:122rpx;
-								height: 173rpx;
-								
-							}
-							.star-name{
-								width:auto;
+							
+						}
+						.film-douban{
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: center;
+							margin: 8rpx 0rpx;
+		
+							.douban-key{
+								width:96rpx;
 								height:32rpx;
-								font-size:22rpx;
+								border-radius:4rpx;
+								border:2rpx solid rgba(7,193,96,1);
+								display: flex;
+								flex-direction: row;
+								justify-content: center;
+								align-items: center;
+								margin-right: 35rpx;
+								.douban{
+									width:72rpx;
+									height:26rpx;
+									font-size:18rpx;
+									font-family:PingFangSC-Regular,PingFang SC;
+									font-weight:400;
+									color:rgba(7,193,96,1);
+									line-height:26rpx;
+								}
+							}
+							.douban-value{
+								width:auto;
+								height:34rpx;
+								font-size:24rpx;
 								font-family:PingFangSC-Regular,PingFang SC;
 								font-weight:400;
-								color:rgba(11,12,13,1);
-								line-height:32rpx;
-								margin-top: 16rpx;
+								color:rgba(150,150,150,1);
+								line-height:34rpx;
 							}
-							.star-relation{
-								width:auto;
+						}
+						.info-item{
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							align-items: flex-start;
+							width: auto;
+							height: auto;
+		
+							.info-key{
+								width:110rpx;
 								height:32rpx;
 								font-size:22rpx;
 								font-family:PingFangSC-Regular,PingFang SC;
 								font-weight:400;
 								color:rgba(102,102,102,1);
+								
+								 display: inline-block;
+								 text-align: justify;
+								 text-align-last:justify
+								&::after{
+									width:100%;
+									display:inline-block;
+									content:'';
+								}
+								text{
+									display: inline-block;
+									height: 0;
+									width: 100%;
+								}
+							}
+							.blue{
+								width:auto;
+								height:32rpx;
+								font-size:22rpx;
+								font-family:PingFangSC-Regular,PingFang SC;
+								font-weight:400;
+								color:rgba(87,107,149,1);
 								line-height:32rpx;
-								margin-top: 16rpx;
+								margin-left: 18rpx;
+								
+							}
+							.info-value{
+								width:auto;
+								height:auto;
+								font-size:22rpx;
+								font-family:PingFangSC-Regular,PingFang SC;
+								font-weight:400;
+								color:rgba(102,102,102,1);
+								line-height:auto;
+								display: flex;
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+								flex-wrap: wrap;
 							}
 						}
+						
 					}
+				}
+			}
+			.bookresum-container{
+				padding:32rpx 30rpx 0rpx 32rpx;
+				
+				.editor-recommend{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					margin-bottom: 45rpx;
+					margin-top: 32rpx;
+				}
+				.catalogue{
 					
-					.description{
-						width:688rpx;
-						height:auto;
-						font-size:28rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(102,102,102,1);
-						line-height:39rpx;
-					}
-					.film-card{
-						width:688rpx;
-						height:auto;
-						background-color:rgba(247,247,247,1);
-						border-radius:10rpx;
+				}
+			}
+			.no-film-recommend{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 246rpx;
+				margin-bottom:412rpx ;
+				width:100%;
+				.tip{
+					width:360rpx;
+					height:34rpx;
+					font-size:24rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(184,184,184,1);
+					line-height:34rpx;
+				}
+				.recommend-btn{
+					margin-top: 40rpx;
+					width:368rpx;
+					height:80rpx;
+					background:rgba(249,109,61,1);
+					border-radius:10rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					font-size:36rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(255,255,255,1);
+				}
+			}
+			.book-comments{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				margin-top: 32rpx;
+					.overall-scores{
+					width: 688rpx;
+					height: 288rpx;
+					background-color: #f7f7f7;
+					border-radius: 10rpx;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: center;
+					padding: 32rpx 32rpx 38rpx 36rpx;
+		
+					.top-container{
 						display: flex;
 						flex-direction: row;
-						justify-content: flex-start;
+						justify-content: space-between;
 						align-items: center;
-						padding: 16rpx 0rpx 16rpx 16rpx;
-						.film-pic{
-							width:176rpx;
-							height:256rpx;
+						width: 100%;
+						height: 40rpx;
+		               
+						.title{
+							width:112rpx;
+							height:40rpx;
+							font-size:28rpx;
+							font-family:PingFangSC-Semibold,PingFang SC;
+							font-weight:600;
+							color:rgba(0,0,0,1);
+							line-height:40rpx;
 						}
-						.film-info{
+					}
+					.score-container{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						height: auto;
+						flex-grow: 1;
+		
+						.scores{
+							width:128rpx;
+							height:128rpx;
+							// background-color:rgba(0,0,0,1);
+							// opacity:0.04;
+							background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFk0lEQVR4XsVbCW4bMQxUerf//2uTNmmKMTyLMU1dJNdZwEjr1UGNhqfkp/Yxz9fW2ufW2tN1+n+ttdfW2tujxaEAj5oX831vrX3qTPi3tYbPw55qALgw7Kj3/Bgsnu17IJAx7601jI+/6acCAIwBSn8RaSgkae3tPBaK93gsK/gO/TCuqgunQd8/WQSyAMwo3ZPP2+UVdtjxYDNeMiBkAcDOYXf4gJoYczTuSM9HIIBVWDDUTG0IWEAmbWORAQBCQGA+2AlacbxT6lqVGAnKfmpPrIeAyuGDB6A/b6/82iEDgAqRpuLmAiD3T+nzO2oUMwAoXR/uvq6Gk+oXnj8KAGj6TXYAFOy5vs3NXW5uZYAtUPe45CZXAADK+FAnrZF7NP0VoRWjOXSVIwBWXFzKAC3vdb/hioxgAhjqMmIEwAxdWOaHhq0DwKznsOvqblQPAKtfWChdHJBc0q+CHc4MgTXAU3GN6qaPcXsAaIATtrAZ6Yv6wlAzRHfX0QNA6e8iVyTg2cNorLIFgDIgFWqevcLJ+FMm9xig1CnJuoygcKvYHbhWGCi1MZWYTZm8YgSr/bzNIbjgM4IphMtcozt+DwDVnWoG2AySAFQDjXFDKmDdR6UNsEkMw2dGmeGkpqM31p0DZKzncOPKAAgB3ddcuzrSU2ZBZoapzCvOcLke4w5WEwCLFPNsuMDKoEd1EuNix/Hwe/2u0hiqUb9ROQDgGaVqvcekFmSdQwWsVDkFUT0Pv38BADo5KF+x68wYyTD8BQCqXmqVdRN4RkDmMfSuYqKu941GaegqFrnIyvBKiu3ZlpWiKEDIJmFqiN8tAFErbI3bDDMvvAZFYbBWnoyxvGEbAKgobalxwwIsffkdi6O9IzAWXrToYtWJY9GArgCmbdQrvFI3s+UtC8AZRlR1N+ot7kp51FdlQcT3d93M7vZ02ltfHgGYbOeaL2rE/0AvMMmweLCRebFp1qtAHntsFg2ZdfePTVaLXRH/e8YQdIXR260a200BqBnj5xZHFABFKEIx7joMGSbTsQECApzV8387xm5/j6zuBquQFd6AE3t5xY7hUqMK5rDmnzEp6mYPVhIAS91oPKAC2hB7x7jqZlTWCe6MvZcLZPRMARjF/rOdPCs3sHblj5cLhE9azaqsa9wpripdM/bIA/rGG9hIcEfI2S7a4MiqFbMzWnc1kDfxuqTNszlX3/+6NrzkAmfomy4Ac6n+k3V6sQJtbLVG5aqwSWqgea/hAoBGWdEgwyLf039bbrP9YJ15P+gMO2ADq0s6bLOwijK11X8sSk+YmdBAvwGKTaEhAzaDt0Aq7IAXrj9zYq9ulmGDN5nutvU0s3Q6A4AXTkOWS+WpFwpT2CgIvdr/XVVWUOnZBjTJxAK20HITWFnqeUJEa3TR059ov5nLU/tytLUA8EXZLaxVv3RSu/DpsFJ4J4Y/aR3hYaeHvD0GqGfYieHDkp7UcXrI2wNA/XjUEJ60pq1hp+tYsQFVydGW5EWNp0xeASDjg4vWER4mzAAbHUZdYVjyYEdsKDdVk60j8LHj9hiAdt5JDev9DFXDt7SDC+x1m51KbV+Tw0TMFEcgZau+FTjMjtSGMo4WR+HgSrxfbPD9R7pJm8PoHUb+vmDI0hUAuFC2ZQbJTK2rXxXbOxjD1hxCdmoHACvLR4fL7kHHLugZAGzGV1m1WVnH9ALUyiAZADC+1v1swAS7oZciVj2H9oN8qss8XbJuOpwuZwGwpS8IiM/MaPZuocwKIzRyetMkFapnAQALevf+Rgz0PId3UWvG4rQbrgAAQnolMKUu/s2CqLpP3tnz3pElViXYn1dlUneHqgBg4ARqUm/19zsUekZxtBvFFbOf5s4Yc/e+EoDVyUcgpCm9KoQNbnb7ZdtbD0F1efhPcP4DtzewmrgcY/oAAAAASUVORK5CYII=) ;
 							display: flex;
 							flex-direction: column;
-							justify-content: flex-start;
-							align-items: flex-start;
-							margin-left: 32rpx;
-							.film-name{
+							justify-content:flex-start;
+							align-items: center;
+							.score{
 								width:auto;
-								height:48rpx;
-								font-size:34rpx;
+								height:50rpx;
+								font-size:36rpx;
 								font-family:PingFangSC-Semibold,PingFang SC;
 								font-weight:600;
 								color:rgba(0,0,0,1);
-								line-height:48rpx;
+								line-height:50rpx;
+								margin-bottom: 10rpx;
 							}
-							.film-enName{
+							.score-all{
 								width:auto;
-								height:40rpx;
-								font-size:28rpx;
-								font-family:PingFangSC-Semibold,PingFang SC;
-								font-weight:600;
+								height:26rpx;
+								font-size:18rpx;
+								font-family:PingFangSC-Regular,PingFang SC;
+								font-weight:400;
 								color:rgba(150,150,150,1);
-								line-height:40rpx;
-								display: flex;
-								flex-direction: row;
-								justify-content: flex-start;
-								align-items: center;
-								
+								line-height:26rpx;
 							}
-							.film-douban{
+						}
+						.star-progress{
+							height: 128rpx;
+							width: 337rpx;
+							.progress-container{
 								display: flex;
 								flex-direction: row;
 								justify-content: flex-start;
 								align-items: center;
-								margin: 8rpx 0rpx;
-
-								.douban-key{
-									width:96rpx;
-									height:32rpx;
-									border-radius:4rpx;
-									border:2rpx solid rgba(7,193,96,1);
-									display: flex;
-									flex-direction: row;
-									justify-content: center;
-									align-items: center;
-									margin-right: 35rpx;
-									.douban{
-										width:72rpx;
-										height:26rpx;
-										font-size:18rpx;
-										font-family:PingFangSC-Regular,PingFang SC;
-										font-weight:400;
-										color:rgba(7,193,96,1);
-										line-height:26rpx;
-									}
-								}
-								.douban-value{
+								.star-name{
 									width:auto;
-									height:34rpx;
-									font-size:24rpx;
-									font-family:PingFangSC-Regular,PingFang SC;
-									font-weight:400;
-									color:rgba(150,150,150,1);
-									line-height:34rpx;
-								}
-							}
-							.info-item{
-								display: flex;
-								flex-direction: row;
-								justify-content: flex-start;
-								align-items: flex-start;
-								width: auto;
-								height: auto;
-
-								.info-key{
-									width:110rpx;
 									height:32rpx;
 									font-size:22rpx;
 									font-family:PingFangSC-Regular,PingFang SC;
 									font-weight:400;
 									color:rgba(102,102,102,1);
-									
-									 display: inline-block;
-									 text-align: justify;
-									 text-align-last:justify
-									&::after{
-										width:100%;
-										display:inline-block;
-										content:'';
-									}
-									text{
-										display: inline-block;
-										height: 0;
-										width: 100%;
-									}
-								}
-								.blue{
-									width:auto;
-									height:32rpx;
-									font-size:22rpx;
-									font-family:PingFangSC-Regular,PingFang SC;
-									font-weight:400;
-									color:rgba(87,107,149,1);
 									line-height:32rpx;
-									margin-left: 18rpx;
-									
+									margin-right: 16rpx;
 								}
-								.info-value{
+								.percent{
 									width:auto;
-									height:auto;
+									height:32rpx;
 									font-size:22rpx;
 									font-family:PingFangSC-Regular,PingFang SC;
 									font-weight:400;
 									color:rgba(102,102,102,1);
-									line-height:auto;
-									display: flex;
-									flex-direction: row;
-									justify-content: space-between;
-									align-items: center;
-									flex-wrap: wrap;
+									line-height:32rpx;
+									margin-left: 12rpx;
 								}
+							}
+							.bg-orange{
+								background-color: #F96D3D;
 							}
 							
 						}
 					}
 				}
-				.bookresum-container{
-					padding:32rpx 30rpx 0rpx 32rpx;
-					
-					.editor-recommend{
-						display: flex;
-						flex-direction: row;
-						justify-content: flex-start;
-						align-items: center;
-						margin-bottom: 45rpx;
-						margin-top: 32rpx;
-					}
-					.catalogue{
-						
-					}
-				}
-				.no-film-recommend{
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					margin-top: 246rpx;
-					margin-bottom:412rpx ;
-					width:100%;
-					.tip{
-						width:360rpx;
-						height:34rpx;
-						font-size:24rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(184,184,184,1);
-						line-height:34rpx;
-					}
-					.recommend-btn{
-						margin-top: 40rpx;
-						width:368rpx;
-						height:80rpx;
-						background:rgba(249,109,61,1);
-						border-radius:10rpx;
-						display: flex;
-						flex-direction: row;
-						justify-content: center;
-						align-items: center;
-						font-size:36rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(255,255,255,1);
-					}
-				}
-				.book-comments{
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-items: center;
-					margin-top: 32rpx;
-						.overall-scores{
-						width: 688rpx;
-						height: 288rpx;
-						background-color: #f7f7f7;
-						border-radius: 10rpx;
-						display: flex;
-						flex-direction: column;
-						justify-content: flex-start;
-						align-items: center;
-						padding: 32rpx 32rpx 38rpx 36rpx;
-
-						.top-container{
-							display: flex;
-							flex-direction: row;
-							justify-content: space-between;
-							align-items: center;
-							width: 100%;
-							height: 40rpx;
-                           
-							.title{
-								width:112rpx;
-								height:40rpx;
-								font-size:28rpx;
-								font-family:PingFangSC-Semibold,PingFang SC;
-								font-weight:600;
-								color:rgba(0,0,0,1);
-								line-height:40rpx;
-							}
-						}
-						.score-container{
-							display: flex;
-							flex-direction: row;
-							justify-content: space-between;
-							align-items: center;
-							width: 100%;
-							height: auto;
-							flex-grow: 1;
-
-							.scores{
-								width:128rpx;
-								height:128rpx;
-								// background-color:rgba(0,0,0,1);
-								// opacity:0.04;
-								background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFk0lEQVR4XsVbCW4bMQxUerf//2uTNmmKMTyLMU1dJNdZwEjr1UGNhqfkp/Yxz9fW2ufW2tN1+n+ttdfW2tujxaEAj5oX831vrX3qTPi3tYbPw55qALgw7Kj3/Bgsnu17IJAx7601jI+/6acCAIwBSn8RaSgkae3tPBaK93gsK/gO/TCuqgunQd8/WQSyAMwo3ZPP2+UVdtjxYDNeMiBkAcDOYXf4gJoYczTuSM9HIIBVWDDUTG0IWEAmbWORAQBCQGA+2AlacbxT6lqVGAnKfmpPrIeAyuGDB6A/b6/82iEDgAqRpuLmAiD3T+nzO2oUMwAoXR/uvq6Gk+oXnj8KAGj6TXYAFOy5vs3NXW5uZYAtUPe45CZXAADK+FAnrZF7NP0VoRWjOXSVIwBWXFzKAC3vdb/hioxgAhjqMmIEwAxdWOaHhq0DwKznsOvqblQPAKtfWChdHJBc0q+CHc4MgTXAU3GN6qaPcXsAaIATtrAZ6Yv6wlAzRHfX0QNA6e8iVyTg2cNorLIFgDIgFWqevcLJ+FMm9xig1CnJuoygcKvYHbhWGCi1MZWYTZm8YgSr/bzNIbjgM4IphMtcozt+DwDVnWoG2AySAFQDjXFDKmDdR6UNsEkMw2dGmeGkpqM31p0DZKzncOPKAAgB3ddcuzrSU2ZBZoapzCvOcLke4w5WEwCLFPNsuMDKoEd1EuNix/Hwe/2u0hiqUb9ROQDgGaVqvcekFmSdQwWsVDkFUT0Pv38BADo5KF+x68wYyTD8BQCqXmqVdRN4RkDmMfSuYqKu941GaegqFrnIyvBKiu3ZlpWiKEDIJmFqiN8tAFErbI3bDDMvvAZFYbBWnoyxvGEbAKgobalxwwIsffkdi6O9IzAWXrToYtWJY9GArgCmbdQrvFI3s+UtC8AZRlR1N+ot7kp51FdlQcT3d93M7vZ02ltfHgGYbOeaL2rE/0AvMMmweLCRebFp1qtAHntsFg2ZdfePTVaLXRH/e8YQdIXR260a200BqBnj5xZHFABFKEIx7joMGSbTsQECApzV8387xm5/j6zuBquQFd6AE3t5xY7hUqMK5rDmnzEp6mYPVhIAS91oPKAC2hB7x7jqZlTWCe6MvZcLZPRMARjF/rOdPCs3sHblj5cLhE9azaqsa9wpripdM/bIA/rGG9hIcEfI2S7a4MiqFbMzWnc1kDfxuqTNszlX3/+6NrzkAmfomy4Ac6n+k3V6sQJtbLVG5aqwSWqgea/hAoBGWdEgwyLf039bbrP9YJ15P+gMO2ADq0s6bLOwijK11X8sSk+YmdBAvwGKTaEhAzaDt0Aq7IAXrj9zYq9ulmGDN5nutvU0s3Q6A4AXTkOWS+WpFwpT2CgIvdr/XVVWUOnZBjTJxAK20HITWFnqeUJEa3TR059ov5nLU/tytLUA8EXZLaxVv3RSu/DpsFJ4J4Y/aR3hYaeHvD0GqGfYieHDkp7UcXrI2wNA/XjUEJ60pq1hp+tYsQFVydGW5EWNp0xeASDjg4vWER4mzAAbHUZdYVjyYEdsKDdVk60j8LHj9hiAdt5JDev9DFXDt7SDC+x1m51KbV+Tw0TMFEcgZau+FTjMjtSGMo4WR+HgSrxfbPD9R7pJm8PoHUb+vmDI0hUAuFC2ZQbJTK2rXxXbOxjD1hxCdmoHACvLR4fL7kHHLugZAGzGV1m1WVnH9ALUyiAZADC+1v1swAS7oZciVj2H9oN8qss8XbJuOpwuZwGwpS8IiM/MaPZuocwKIzRyetMkFapnAQALevf+Rgz0PId3UWvG4rQbrgAAQnolMKUu/s2CqLpP3tnz3pElViXYn1dlUneHqgBg4ARqUm/19zsUekZxtBvFFbOf5s4Yc/e+EoDVyUcgpCm9KoQNbnb7ZdtbD0F1efhPcP4DtzewmrgcY/oAAAAASUVORK5CYII=) ;
-								display: flex;
-								flex-direction: column;
-								justify-content:flex-start;
-								align-items: center;
-								.score{
-									width:auto;
-									height:50rpx;
-									font-size:36rpx;
-									font-family:PingFangSC-Semibold,PingFang SC;
-									font-weight:600;
-									color:rgba(0,0,0,1);
-									line-height:50rpx;
-									margin-bottom: 10rpx;
-								}
-								.score-all{
-									width:auto;
-									height:26rpx;
-									font-size:18rpx;
-									font-family:PingFangSC-Regular,PingFang SC;
-									font-weight:400;
-									color:rgba(150,150,150,1);
-									line-height:26rpx;
-								}
-							}
-							.star-progress{
-								height: 128rpx;
-								width: 337rpx;
-								.progress-container{
-									display: flex;
-									flex-direction: row;
-									justify-content: flex-start;
-									align-items: center;
-									.star-name{
-										width:auto;
-										height:32rpx;
-										font-size:22rpx;
-										font-family:PingFangSC-Regular,PingFang SC;
-										font-weight:400;
-										color:rgba(102,102,102,1);
-										line-height:32rpx;
-										margin-right: 16rpx;
-									}
-									.percent{
-										width:auto;
-										height:32rpx;
-										font-size:22rpx;
-										font-family:PingFangSC-Regular,PingFang SC;
-										font-weight:400;
-										color:rgba(102,102,102,1);
-										line-height:32rpx;
-										margin-left: 12rpx;
-									}
-								}
-								.bg-orange{
-									background-color: #F96D3D;
-								}
-								
-							}
-						}
-					}
-				}
-				.no-book-comment{
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					margin-top: 246rpx;
-					margin-bottom:412rpx ;
-					width:100%;
-					.tip{
-						width:auto;
-						height:34rpx;
-						font-size:24rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(184,184,184,1);
-						line-height:34rpx;
-					}
-					.comment-btn{
-						margin-top: 40rpx;
-						width:368rpx;
-						height:80rpx;
-						background:rgba(249,109,61,1);
-						border-radius:10rpx;
-						display: flex;
-						flex-direction: row;
-						justify-content: center;
-						align-items: center;
-						font-size:36rpx;
-						font-family:PingFangSC-Regular,PingFang SC;
-						font-weight:400;
-						color:rgba(255,255,255,1);
-					}
-				}
-			
 			}
-		}
+			.no-book-comment{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 246rpx;
+				margin-bottom:412rpx ;
+				width:100%;
+				.tip{
+					width:auto;
+					height:34rpx;
+					font-size:24rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(184,184,184,1);
+					line-height:34rpx;
+				}
+				.comment-btn{
+					margin-top: 40rpx;
+					width:368rpx;
+					height:80rpx;
+					background:rgba(249,109,61,1);
+					border-radius:10rpx;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					font-size:36rpx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:400;
+					color:rgba(255,255,255,1);
+				}
+			}
 		
+		}
+				
 		.no-more{
 			width:100%;
 			height:32rpx;
@@ -1194,10 +1200,20 @@
 .cu-progress.striped view {
 	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 	background-size: 72rpx 72rpx;
+	
 }
 
 .cu-progress.active view {
 	animation: progress-stripes 2s linear infinite;
+}
+.van-sticky{
+	z-index: 999!important;
+}
+.van-sticky-wrap{
+	z-index: 999!important;
+}
+.van-tabs__wrap.van-hairline--top-bottom, .van-tabs__nav.van-tabs__nav--line, .van-ellipsis.van-tab.van-tab--active, .van-ellipsis{
+	z-index: 999!important;
 }
 
 @keyframes progress-stripes {

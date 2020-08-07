@@ -8,14 +8,7 @@ Page({
   data: {
   scrollHeight:"",
   bookInfo:{},
-  commentsList:[
-	  {comment:"自我救赎"},
-	   {comment:"值得一读"},
-	    {comment:"说走就走的旅行"},
-		 {comment:"另一只脚前面"},
-		  {comment:"加油站女孩"},
-		   {comment:"一口气读完"}
-  ]
+  commentsList:[  ]
   },
   handleOnFocus(e){
   	
@@ -25,6 +18,50 @@ Page({
   		 })
   		 wx.setStorageSync("postBookInfo",bookInfo)
   },
+  
+  
+  /**
+   * @description；获取书评详情
+   * 
+   * */
+  
+   getBooktags:function(id){
+  	   let reqData={
+  		   book:id
+  	   }
+  	   let that=this;
+  	   api._fetch({
+  	       url: '/api/category/tags',
+  	       data:reqData,
+  	       method:'get',
+  	   	contentType:1
+  	   }).then(function (res) {
+  	   	
+  	   			 // 此处发送修改交易；
+  	   			 if(res.statusCode===200){
+					 
+					 let comment =res.data;
+					 
+					 that.setData({
+					   	commentsList:comment
+					 });
+  	   			  
+  				
+  	   			 }else{
+  	   				 wx.showToast({
+  	   				   title: res.message,
+  	   				   mask:false,
+  	   				   icon: 'none',
+  	   				   duration: 3000
+  	   				 })
+  	   			 }
+  	   			
+  	       
+  	   }).catch(function (error) {
+  	       console.log(error);
+  	   });
+   },
+   
   /**
    * @description；获取书评详情
    * 
@@ -112,6 +149,7 @@ Page({
 			title
 		  })
 		this.getBookCommentDetail(id);
+		this.getBooktags(id);
 		this.computeScrollViewHeight();	
   },
 

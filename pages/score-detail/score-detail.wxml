@@ -56,14 +56,14 @@
 				  			  评分分析
 				  </view>
 		   </view>
-		   <view class="mention-comment">
+		   <view class="mention-comment" wx:if='{{commentsList.length>0}}'>
 			   <view class="mention-title">
 				   阅读提及的评论
 			   </view>
 			   <view class="comments-list">
 					<block wx:for="{{commentsList}}" wx:key="*this">
 						<view class="list-item">
-									{{item.comment}}		   
+									{{item}}		   
 						</view>
 					</block>
 			   </view>

@@ -10,6 +10,9 @@ Page({
   data: {
 	  placeholder:"请提交相关影片信息，平台将在核实后添加维护",
 	  messages:"",
+	  TabName:'bookResume',
+	  TabCur:0,
+	  
 	  focus:false,
 	  messagesLen:0,
 	  scrollHeight:"",
@@ -58,6 +61,13 @@ Page({
 		  },
 				canIUse: wx.canIUse('button.open-type.getUserInfo'),
 				hasUserInfo:false
+  },
+  tabSelect(e) {
+	  console.log(e.currentTarget.dataset.tab);
+    this.setData({
+      TabName: e.currentTarget.dataset.tab,
+	  TabCur:e.currentTarget.dataset.id
+    })
   },
  handlMessagesInput(e){
  	  let len=e.detail.value.length;
@@ -413,8 +423,8 @@ Page({
       let screeHeight=750*height/width;
 
       // 设置出其余view的高度； swiperHeight=420rpx;tabBarHeight=139rpx
-      let scroll_height=screeHeight-90;
-   551
+      let scroll_height=screeHeight-100;
+   
       this.setData({
         scrollHeight:scroll_height
       });
