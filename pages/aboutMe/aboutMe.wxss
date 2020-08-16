@@ -126,6 +126,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 .container .bookinfo-container .book-comment .comment-num {
   width: auto;
@@ -146,6 +147,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 .container .bookinfo-container .book-record .cover-image {
   width: 80rpx;
@@ -177,7 +179,6 @@
   margin-left: 32rpx ;
 }
 .container .aboutme-container .aboutme-split .split {
-  margin-left: 32rpx ;
   margin-right: 12rpx;
   width: 4rpx;
   height: 36rpx;

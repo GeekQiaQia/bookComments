@@ -2,6 +2,8 @@
 //获取应用实例
 const api = require('../../utils/request.js')
 
+const {formatTime} = require('../../utils/util.js')
+
 const app = getApp()
 Page({
 
@@ -80,7 +82,7 @@ Page({
 		try{
 	 
 		  // 同步接口立即写入
-		 wx.setStorageSync('hasAuthed',true )
+		  wx.setStorageSync('hasAuthed',true )
 		  wx.setStorageSync('userInfo',userInfo )
 		 
 		  console.log('写入value2成功')

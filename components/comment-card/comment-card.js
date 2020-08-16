@@ -45,6 +45,13 @@ Component({
 				cardInfo:cardInfo
 			});
 			
+			var myEventDetail = {
+							  itemindex:e.target.dataset.itemindex
+						  } // detail对象，提供给事件监听函数
+			     var myEventOption = {} // 触发事件的选项
+			this.triggerEvent('onCommentDetail', myEventDetail, myEventOption)
+			
+			
 		},
 		handleBookDetail:function(e){
 			

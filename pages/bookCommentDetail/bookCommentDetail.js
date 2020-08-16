@@ -21,7 +21,7 @@ Page({
 		cardInfoArray:[],
 		commentNum:"",
 		loading:true,
-		item: {},
+		topComment: {},
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		hasUserInfo: false
 	},
@@ -263,9 +263,9 @@ Page({
 			   contentType:1
 		   }).then(function (res) {
 		      
-		     let item=res.data;
+		     let topComment=res.data;
 			 that.setData({
-				 item,
+				 topComment,
 				 loading:false
 			 });
 		   			
@@ -369,6 +369,16 @@ Page({
 	 handleCommentDetail(e){
 		 let id=this.data.id;
 		 let itemindex=this.data.itemindex;
+		 
+		 wx.navigateTo({
+		   url: '../comment-detail/comment-detail?id='+id+'&itemindex='+itemindex
+		 })
+	 },
+	 
+	 handleMoreCommentDetail(e){
+		 console.log(e);
+		 let id=this.data.id;
+		 let itemindex=e.detail.itemindex;
 		 
 		 wx.navigateTo({
 		   url: '../comment-detail/comment-detail?id='+id+'&itemindex='+itemindex

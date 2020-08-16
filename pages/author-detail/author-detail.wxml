@@ -21,16 +21,21 @@
 					</block>
 					
 					<view class="info-item">
-						<view class="info-key">国际：</view>
+						<view class="info-key">国籍：</view>
 						<view class="info-value">{{authorInfo.nationality}}</view>
 					</view>
 					<view class="info-item">
 						<view class="info-key">出生日期：</view>
-						<view class="info-value">{{authorInfo.birthday}}</view>
+						
+						<view class="info-value" wx:if='{{authorInfo.birthday==null}}'>暂无</view>
+						<view class="info-value" wx:else>{{authorInfo.birthday}}</view>
 					</view>
 					<view class="info-item">
-						<view class="info-key">代表作品：</view>
-						<view class="info-value">{{authorInfo.magnumOpus}}</view>
+						<view class="info-key" >代表作品：</view>
+						<view class="info-value" wx:if='{{authorInfo.magnumOpus==null}}'>暂无</view>
+						<view class="info-value" wx:else>{{authorInfo.magnumOpus}}</view>
+						
+						
 					</view>
 				</view>
 			</view>
@@ -39,9 +44,14 @@
 			<view class="title">
 				作者简介
 			</view>
-			<view class="description">
-				{{authorInfo.info}}
+			<view class="description"  wx:if='{{authorInfo.info==null}}'>
+				暂无
 			</view>
+			<view class="description"  wx:else>
+				{{authorInfo.info}}
+				暂无
+			</view>
+			
 			<view class="title">
 				代表作品
 			</view>

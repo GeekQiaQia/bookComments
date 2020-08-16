@@ -68,11 +68,11 @@
 					</view>
 				</view>
 				<view class="split-line2"></view>
-				<view class="select-cate">
-					<view class="cate-tip" wx:if="{{choosedCataName==''}}">
+				<view class="select-cate" bindtap="handleChooseCatagory">
+					<view class="cate-tip"  wx:if="{{choosedCataName==''}}">
 						选择类别
 					</view>
-					<view class="cate-tip" wx:else>
+					<view class="cate-tip" wx:else >
 						{{choosedCataName}}
 					</view>
 					<text class="cuIcon-right lg text-gray" bindtap="handleChooseCatagory"></text>

@@ -18,28 +18,28 @@
 							        <commentStars  data-id="{{bookInfo.id}}"  model:stars="{{bookInfo.stars}}"></commentStars>
 									<text class="commentsNum" data-id="{{bookInfo.id}}" >{{bookInfo.scorer}}人评分</text>
 									<view class="info-obj" wx:if="{{bookInfo.authors.author.length>0}}">
-										<view class="info-key ">作者<text></text></view>:
+										<view class="info-key " data-id="{{bookInfo.id}}">作者<text></text></view>:
 										<block wx:for="{{bookInfo.authors.author}}" wx:key="*this">
 											<text class="info-value" style="margin-right: 5rpx;" data-id="{{item.author.id}}" catchtap="handleAuthorDetail" >{{item.author.name}} </text>
 										</block>
 									</view>
 									<view class="info-obj" wx:if="{{bookInfo.authors.translators.length>0}}">
-										<view class="info-key ">译者<text></text></view>:
+										<view class="info-key " data-id="{{bookInfo.id}}">译者<text></text></view>:
 										<block wx:for="{{bookInfo.authors.translators}}" wx:key="*this">
 											<text class="info-value"  style="margin-right: 5rpx;" data-id="{{item.author.id}}" catchtap="handleAuthorDetail" >{{item.author.name}} </text>
 										</block>
 									</view>
 									<view class="info-obj">
-										<view class="info-key ">类别<text></text></view>:
+										<view class="info-key " data-id="{{bookInfo.id}}">类别<text></text></view>:
 										<text class="info-value" data-catename="{{bookInfo.category.name}}" data-id="{{bookInfo.category.id}}" catchtap="handleCategoryDetail">{{bookInfo.category.name}}</text>
 									</view>
 									<view class="info-obj">
-										<view class="info-key">出版社<text></text></view>:
+										<view class="info-key" data-id="{{bookInfo.id}}">出版社<text></text></view>:
 										<text class="info-value" data-id="{{bookInfo.press.id}}" catchtap="handlePressDetail" >{{bookInfo.press.name}}</text>
 									</view>
 									<view class="info-obj">
-										<view class="info-key">出版年份<text></text></view>:
-										<text class="info-value">{{bookInfo.publication}}</text>
+										<view class="info-key" data-id="{{bookInfo.id}}">出版年份<text></text></view>:
+										<text class="info-value" style="color:rgba(102,102,102,1);"  data-id="{{bookInfo.id}}">{{bookInfo.publication}}</text>
 									</view>
 									
 								</view>
@@ -52,46 +52,46 @@
 					<view class="card-item" bindtap="handleCommentDetail">
 					<view class="card-item-title">
 								 <view class="info">
-									 <view class="avatar" data-id="{{item.userInfo.id}}" catchtap="handleAboutOther">
-									 									<image          data-id="{{item.userInfo.id}}"
+									 <view class="avatar" data-id="{{topComment.userInfo.id}}" catchtap="handleAboutOther">
+									 									<image          data-id="{{topComment.userInfo.id}}"
 									 									                class="cover-image"
-									 									                src="{{item.userInfo.avatarUrl}}"
+									 									                src="{{topComment.userInfo.avatarUrl}}"
 									 									               >
 									 									            </image>
 									 </view>
 									 <view class="basicinfo">
 									 									  <view style="display: flex;">
-									 										  <view class="name">{{item.userInfo.nickName}}</view>
+									 										  <view class="name">{{topComment.userInfo.nickName}}</view>
 									 										
-									 										  <block wx:if="{{item.forward==true}}">
+									 										  <block wx:if="{{topComment.forward==true}}">
 									 										  		<text class="notice">转发</text>
 									 										  </block>
-									 										  <block  wx:if="{{item.readBook==true&&item.forward==false}}">
+									 										  <block  wx:if="{{topComment.readBook==true&&topComment.forward==false}}">
 									 										  		 <text class="notice">已读</text>
 									 										  </block>
 									 									  </view>
 									 									  <view class="time-star">
-									 									  		<text class="time">{{item.createTime}}</text>
-									 											<commentStars  model:stars="{{item.bookInfo.stars}}"></commentStars>
+									 									  		<text class="time">{{topComment.createTime}}</text>
+									 											<commentStars  model:stars="{{topComment.bookInfo.stars}}"></commentStars>
 									 									  </view>
 									 </view>
 								 </view>
-								  <view class="follow-other" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}" catchtap="toFocusOnUsers">
-									  <block wx:if="{{item.fans==0}}">
-										  <text class="cuIcon-add lg text-orange" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
-										  <view class="text orange" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+								  <view class="follow-other" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}" catchtap="toFocusOnUsers">
+									  <block wx:if="{{topComment.fans==0}}">
+										  <text class="cuIcon-add lg text-orange" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}"></text>
+										  <view class="text orange" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}">
 										  										  关注
 										  </view>
 									  </block>
-									  <block wx:elif="{{item.fans==1}}">
-										  <text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
-										  <view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+									  <block wx:elif="{{topComment.fans==1}}">
+										  <text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}"></text>
+										  <view class="text green" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}">
 										  										  已关注
 										  </view>
 									  </block>
-									  <block wx:elif="{{item.fans==2}}">
-									  		<text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}"></text>
-									  		<view class="text green" data-id="{{item.userInfo.id}}" data-fans="{{item.fans}}">
+									  <block wx:elif="{{topComment.fans==2}}">
+									  		<text class="cuIcon-check lg text-green" style="color:#009051" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}"></text>
+									  		<view class="text green" data-id="{{topComment.userInfo.id}}" data-fans="{{topComment.fans}}">
 									  										  	 互相关注
 									  		</view>
 									  </block>
@@ -100,15 +100,15 @@
 					</view>
 					
 					<view class="content-container">
-						<text class="book-topic" wx:if="{{item.title!==null}}">{{item.title}}</text>
-							<text class="resume "  >{{item.content}}</text>
+						<text class="book-topic" wx:if="{{topComment.title!==null}}">{{topComment.title}}</text>
+							<text class="resume "  >{{topComment.content}}</text>
 					</view>
 					
 					<view class="releation-container">
 								  <view class="releation-info">
-									  <text class="releation ">{{item.liked}}有用 · </text>
-									  <text class="releation ">{{item.reply}}回复 · </text>
-									  <text class="releation ">{{item.forwarding}}转发</text>
+									  <text class="releation ">{{topComment.liked}}有用 · </text>
+									  <text class="releation ">{{topComment.reply}}回复 · </text>
+									  <text class="releation ">{{topComment.forwarding}}转发</text>
 									  <text class="cuIcon-right lg text-gray" catchtap="handleCommentDetail"></text>
 								  </view>
 								  
@@ -126,7 +126,7 @@
 				</view>
 			</view>
 			<block wx:for="{{cardInfoArray}}" wx:key="id">
-				<commentCard model:card-info="{{item}}">
+				<commentCard model:card-info="{{item}}"   bind:onCommentDetail="handleMoreCommentDetail" >
 					
 				</commentCard>
 			</block>

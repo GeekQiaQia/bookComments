@@ -6,11 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-	tabs:[],
-	 radio: '',
+	 tabs:[],
+	 radio: '42',
 	 keyword:""
   },
     onChange(event) {
+		console.log(event);
 		
        this.setData({
          radio: event.detail,
@@ -18,13 +19,30 @@ Page({
 	   
      },
 	 onClick(e){
-	
+		console.log(e)
 		 let name=e.currentTarget.dataset.name;
 		 let id=e.currentTarget.dataset.id;
 		 let keyword=this.data.keyword;
-		 wx.navigateTo({
-		   url: '../hot-search/hot-search?id='+id+'&name='+name+'&keyword='+keyword
-		 })		
+		 let pages=getCurrentPages();
+		   		
+		 let beforePage=pages[pages.length-2];
+		 console.log(beforePage);
+		 // beforePage.setDate({
+			//  choosedCataId:id,
+			//  choosedCataName:name,
+			//  keyword:keyword
+		 // });
+		 wx.setStorageSync('choosedCat',{
+			 choosedCataId:id,
+			 choosedCataName:name,
+			 keyword:keyword
+		 })
+		   	wx.navigateBack({
+		   		delta:1,
+		   	})
+		 // wx.navigateTo({
+		 //   url: '../hot-search/hot-search?id='+id+'&name='+name+'&keyword='+keyword
+		 // })		
 	 },
 
 /**
@@ -58,9 +76,20 @@ Page({
    */
   onLoad: function (options) {
 	  let keyword=options.keyword
-	  this.setData({
-		  keyword
-	  });
+	  if(options.radio){
+		  let radio=Number(options.radio);
+		  console.log(radio);
+		  this.setData({
+		  		  keyword,
+				  radio
+		  });
+		  console.log(this.data.radio);
+	  }else{
+		  this.setData({
+		  		  keyword
+		  });
+	  }
+	 
 	this.getBannerList();
   },
 

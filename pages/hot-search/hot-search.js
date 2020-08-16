@@ -53,11 +53,22 @@ Page({
    * */
   handleChooseCatagory(e){
 	  let that=this;
-
+      
 	  let keyword=that.data.keyword;
-	  wx.navigateTo({
-	    url: '../choose-catagory/choose-catagory?keyword='+keyword
-	  })
+	  let choosedCataId=that.data.choosedCataId;
+	  if(choosedCataId!==''){
+		  wx.navigateTo({
+			  
+		    url: '../choose-catagory/choose-catagory?keyword='+keyword+'&radio='+choosedCataId
+		  })
+	  }else{
+		  
+		  wx.navigateTo({
+		    url: '../choose-catagory/choose-catagory?keyword='+keyword
+		  })
+		  
+	  }
+	 
   },
   /**
    * @description: 获取热门搜索历史
@@ -120,13 +131,43 @@ Page({
    * @description  完成
    * */
   handleComplete(e){
-	  
-	  let bookName=this.data.keyword;
-	  this.handleAddBook();
-	  wx.navigateTo({
-	    url: '../recommend-result/recommend-result?bookName='+bookName
-	  })
-	  
+	  let hasAuthed=wx.getStorageSync('hasAuthed');
+	  if(!hasAuthed){
+	  	// 提示需要获取权限设置；
+	  	wx.showModal({
+	  		title:'提示：您尚未授权',
+	  		confirmText:'授权登录',
+	  		showCancel:true,
+	  		content:'授权后，您将获得更多精彩功能',
+	  		success:function(res){
+	  			console.log(res);
+	  			if(res.cancel){
+	  				wx.setStorageSync('hasAuthed',false )
+	  				return;
+	  			}else if(res.confirm){
+	  				wx.switchTab({
+	  				  url: '../aboutMe/aboutMe'
+	  				})
+	  			}
+	  			
+	  		},
+	  		fail:function(err){
+	  			console.log(err);
+	  		}
+	  	})
+	  	
+	  }else{
+	  	
+			let bookName=this.data.keyword;
+			this.handleAddBook();
+			wx.navigateTo({
+			  url: '../recommend-result/recommend-result?bookName='+bookName
+			})
+	  	
+	  	
+	  	}
+	  		
+	 
 	  
   },
   handleAddBook(){
@@ -166,18 +207,18 @@ Page({
   onLoad: function (options) {
 	 
 	 
-	  let choosedCataId=options.id;
-	  let choosedCataName=options.name;
-	  let keyword=options.keyword;
-	  if(choosedCataId&&choosedCataName&&keyword){
-	  		this.setData({
-	  				  choosedCataId,
-	  				  choosedCataName,
-	  				  keyword,
-					  noneResult:true
-	  		});  
-	  }
-	
+	  // let choosedCataId=options.id;
+	  // let choosedCataName=options.name;
+	  // let keyword=options.keyword;
+	  // if(choosedCataId&&choosedCataName&&keyword){
+	  // 		this.setData({
+	  // 				  choosedCataId,
+	  // 				  choosedCataName,
+	  // 				  keyword,
+			// 		  noneResult:true
+	  // 		});  
+	  // }
+	 
 	  
 	this.getHotSearch();
 	this.getMySearchHistory();
@@ -194,7 +235,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+	let choosedCat=wx.getStorageSync('choosedCat')
+	console.log('sdssssssssssss',choosedCat);
+	let {choosedCataId,choosedCataName,keyword}=choosedCat
+			if(choosedCataId&&choosedCataName&&keyword){
+					this.setData({
+							  choosedCataId,
+							  choosedCataName,
+							  keyword,
+								  noneResult:true
+					});  
+			}
   },
 
   /**

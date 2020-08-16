@@ -83,12 +83,42 @@ Page({
     });
   },
   handleOnFocus(e){
-
-  		 let bookInfo=this.data.bookInfo;
-  		 wx.navigateTo({
-  			 url: '../post-comment/post-comment'
-  		 })
-  		 wx.setStorageSync("postBookInfo",bookInfo)
+		
+		let hasAuthed=wx.getStorageSync('hasAuthed');
+		if(!hasAuthed){
+			// 提示需要获取权限设置；
+			wx.showModal({
+				title:'提示：您尚未授权',
+				confirmText:'授权登录',
+				showCancel:true,
+				content:'授权后，您将获得更多精彩功能',
+				success:function(res){
+					console.log(res);
+					if(res.cancel){
+						wx.setStorageSync('hasAuthed',false )
+						return;
+					}else if(res.confirm){
+						wx.switchTab({
+						  url: '../aboutMe/aboutMe'
+						})
+					}
+					
+				},
+				fail:function(err){
+					console.log(err);
+				}
+			})
+			
+		}else{
+			
+			let bookInfo=this.data.bookInfo;
+			wx.navigateTo({
+			  			 url: '../post-comment/post-comment'
+			})
+			wx.setStorageSync("postBookInfo",bookInfo)
+			
+			}
+  		
   },
   /**
      * @description 获取
@@ -361,11 +391,42 @@ Page({
    
  
    showMessageModal(e){
-   	  let modalName=e.target.dataset.target;
-   	  this.setData({
-   		  modalName,
-   		  focus:true
-   	  });
+	   let hasAuthed=wx.getStorageSync('hasAuthed');
+	   if(!hasAuthed){
+	   	// 提示需要获取权限设置；
+	   	wx.showModal({
+	   		title:'提示：您尚未授权',
+	   		confirmText:'授权登录',
+	   		showCancel:true,
+	   		content:'授权后，您将获得更多精彩功能',
+	   		success:function(res){
+	   			console.log(res);
+	   			if(res.cancel){
+	   				wx.setStorageSync('hasAuthed',false )
+	   				return;
+	   			}else if(res.confirm){
+	   				wx.switchTab({
+	   				  url: '../aboutMe/aboutMe'
+	   				})
+	   			}
+	   			
+	   		},
+	   		fail:function(err){
+	   			console.log(err);
+	   		}
+	   	})
+	   	
+	   }else{
+	   	
+		   let modalName=e.target.dataset.target;
+		   this.setData({
+					  modalName,
+					  focus:true
+		   });
+	   	
+	   	}
+		
+   
    },
    
    toCreateCommentPost(e){
