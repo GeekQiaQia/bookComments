@@ -578,6 +578,7 @@ Page({
   			 item,
 			 placeholder
   		 });
+		 wx.setStorageSync('item',item)
 		 
   	   }).catch(function (error) {
   	       console.log(error);

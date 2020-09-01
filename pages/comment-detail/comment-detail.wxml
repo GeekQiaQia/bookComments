@@ -51,7 +51,7 @@
 					<view class="releation-container">
 								  <view class="releation-info">
 								
-									  <view class="comment-share"  bindtap="onHandleLikeTrigger" >
+									  <view class="comment-share"  data-liked="{{item.meLike}}" data-id="{{item.id}}" bindtap="onHandleLikeTrigger" >
 									  	<text class=" lg   size {{item.meLike==true?'cuIcon-appreciatefill text-orange':'cuIcon-appreciate text-gray'}}" data-liked="{{item.meLike}}" data-id="{{item.id}}" ></text>
 									  	
 									  	<block wx:if="{{item.meLike==true}}">

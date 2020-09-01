@@ -80,10 +80,12 @@ Page({
 		})
 		
 		try{
+			
 	 
 		  // 同步接口立即写入
 		  wx.setStorageSync('hasAuthed',true )
 		  wx.setStorageSync('userInfo',userInfo )
+		 
 		 
 		  console.log('写入value2成功')
 		 
@@ -137,8 +139,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-	  // 页面初始加载获取登录用户信息；
-	  this.getLoginUserInfo();
+	 
 	  
 	  let name="loginInfo.name"
     if (app.globalData.userInfo) {
@@ -180,7 +181,7 @@ Page({
           this.setData({
             userInfo: res.userInfo,
 			 [name]:res.userInfo.nickName,
-            hasUserInfo: true
+             hasUserInfo: true
           })
           try{
  
