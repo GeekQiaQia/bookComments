@@ -29,7 +29,8 @@
 		</view>
 
 		<button class="wechat-phone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> <text class="text">微信手机号登录</text></button>
-		<button class="other-phone"  bandtap="handleOtherPhoneLogin"> <text class="text">其他手机号登录</text></button>
+		
+		<!--<button class="other-phone"  bandtap="handleOtherPhoneLogin"> <text class="text">其他手机号登录</text></button>-->
 	</view>	
 	
 	<view class="main-info" wx:else>
